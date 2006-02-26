@@ -1,0 +1,25 @@
+1	tablet	
+2	capsule	
+3	syrup	
+4	suspension	
+5	powder	
+6	cream	
+7	ointment	
+8	lotion	
+9	suppository	
+10	solution	
+11	dermal patch	
+12	kit	
+13	stick	
+14	disc	
+15	film	
+16	shampoo	
+17	spray	
+18	wafer	
+19	paste	
+20	implant	
+21	insert	
+22	other	
+23	bandage	
+24	dressing	
+25	foam	

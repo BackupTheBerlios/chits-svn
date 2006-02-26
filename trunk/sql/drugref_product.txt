@@ -1,0 +1,1605 @@
+137893	7521	21503	10	1	4	250	Mouth wash 2 mg per mL (0.2%), 250 mL
+137900	7522	21504	1	7	4	1	Lozenge 10 mg
+137905	7523	21830	4	1	4	24	Oral suspension 100,000 units per mL, 24 mL
+137911	7524	26641	10	1	4	500	Mouth and throat rinse 22.5 mg per 15 mL, 500 mL
+137916	7525	26642	10	1	4	500	Mouth and throat rinse 22.5 mg-18 mg per 15 mL, 500 mL
+137924	7526	21533	10	7	4	1	Solution 100 mL
+137929	7527	21533	10	7	4	1	Solution 25 mL
+137934	7528	21555	1	7	1	1	Tablet 420 mg-180 mg
+137942	7529	26643	4	1	4	500	Oral suspension 200 mg-200 mg per 5 mL, 500 mL
+137952	7530	26643	1	7	1	1	Tablet 200 mg-200 mg
+137959	7531	26644	4	1	1	500	Oral suspension 400 mg-400 mg-30 mg per 5 mL, 500 mL
+137969	7532	26644	1	7	1	1	Tablet 400 mg-400 mg-30 mg
+137976	7533	26645	4	1	4	500	Oral suspension 250 mg-120 mg-120 mg per 5 mL, 500 mL
+137986	7534	26645	1	7	1	1	Tablet 250 mg-120 mg-120 mg
+137993	7535	21570	1	7	4	1	Effervescent tablet 800 mg (as hydrochloride)
+138007	7536	21570	1	7	1	1	Tablet 200 mg
+138019	7537	21570	1	7	1	1	Tablet 400 mg
+138037	7538	21570	1	7	1	1	Tablet 800 mg
+138051	7539	21571	1	7	4	1	Effervescent tablet 150 mg (base)
+138065	7540	21571	3	1	4	300	Syrup 150 mg (base) per 10 mL, 300 mL
+138079	7541	21571	1	7	1	1	Tablet 150 mg (base)
+138105	7542	21571	1	7	1	1	Tablet 300 mg (base)
+138131	7543	21572	1	7	1	1	Tablet 20 mg
+138149	7544	21572	1	7	1	1	Tablet 40 mg
+138167	7545	21573	2	7	1	1	Capsule 150 mg
+138181	7546	21573	2	7	1	1	Capsule 300 mg
+138195	7547	21579	1	7	1	1	Tablet 200 micrograms
+138200	7548	21582	2	7	1	1	Capsule 20 mg
+138210	7549	21582	1	7	1	1	Tablet 10 mg (base)
+138215	7550	21582	1	7	1	1	Tablet 20 mg (base)
+138225	7551	21583	1	7	1	1	Tablet (enteric coated), equivalent to 20 mg pantoprazole
+138230	7552	21583	1	7	1	1	Tablet (enteric coated), equivalent to 40 mg pantoprazole
+138238	7553	21584	2	7	1	1	Capsule 15 mg
+138243	7554	21584	2	7	1	1	Capsule 30 mg
+138251	7555	21584	5	7	1	1	Sachet containing granules for oral suspension, 30 mg per sachet
+138259	7556	21585	1	7	1	1	Tablet 10 mg (enteric coated)
+138264	7557	21585	1	7	1	1	Tablet 20 mg (enteric coated)
+138272	7558	21586	1	7	1	1	Tablet (enteric coated), equivalent to 20 mg esomeprazole
+138277	7559	21586	1	7	1	1	Tablet (enteric coated), equivalent to 40 mg esomeprazole
+138282	7560	26646	12	11	1	14	Pack containing 14 capsules omeprazole 20 mg, 14 tablets clarithromycin 500 mg and 28 capsules amoxycillin 500 mg
+138286	7561	26647	12	11	1	14	Pack containing 14 tablets omeprazole 20 mg (base), 14 tablets clarithromycin 500 mg and 28 capsules amoxycillin 500 mg
+138290	7562	21596	1	7	1	1	Tablet equivalent to 1 g anhydrous sucralfate
+138296	7563	21618	1	7	1	1	Tablet 135 mg
+138302	7564	21630	1	7	1	1	Tablet 15 mg
+138307	7565	21677	10	7	12	1	Injection 600 micrograms in 1 mL
+138312	7566	21681	10	7	12	1	Injection 20 mg in 1 mL
+138317	7567	21721	10	7	12	1	Injection 10 mg in 2 mL
+138322	7568	21721	3	1	4	100	Syrup 5 mg per 5 mL, 100 mL
+138327	7569	21721	1	7	1	1	Tablet 10 mg
+138333	7570	21722	4	1	4	200	Oral suspension 1 mg per mL, 200 mL
+138338	7571	21722	1	7	1	1	Tablet 10 mg
+138343	7572	21722	1	7	1	1	Tablet 5 mg
+138348	7573	21723	1	7	1	1	Tablet 10 mg
+138353	7574	21729	10	7	6	1	I.V. injection 4 mg in 2 mL
+138358	7575	21729	10	7	6	1	I.V. injection 8 mg in 4 mL
+138363	7576	21729	3	1	4	50	Syrup 4 mg per 5 mL, 50 mL
+138368	7577	21729	1	7	1	1	Tablet 4 mg
+138376	7578	21729	1	7	1	1	Tablet 8 mg
+138384	7579	21729	18	7	4	1	Wafer 4 mg
+138392	7580	21729	18	7	4	1	Wafer 8 mg
+138400	7581	21731	2	7	1	1	Capsule 5 mg (base)
+138405	7582	21731	10	7	6	1	I.V. injection 5 mg (base) in 5 mL
+138410	7583	21732	10	7	6	1	I.V. injection 100 mg in 5 mL
+138415	7584	21732	1	7	1	1	Tablet 200 mg
+138420	7585	21746	2	7	1	1	Capsule 250 mg
+138425	7586	21765	1	7	1	1	Tablet 50 mg
+138430	7587	21769	1	7	5	1	Suppositories 10 mg, 10
+138435	7588	21769	1	7	5	1	Suppositories 10 mg, 12
+138441	7589	21769	1	7	1	1	Tablet 5 mg
+138446	7590	21769	1	7	4	1	Tablets 5 mg, 200
+138448	7591	21773	1	7	1	1	Tablet 7.5 mg
+138453	7592	21779	1	7	5	1	Suppositories 100 mg-10 mg, 5
+138461	7593	21781	1	7	1	1	Tablet 50 mg-8 mg
+138469	7594	26648	5	7	4	1	Sachets 3.5 g, 30
+138474	7595	26649	5	7	4	1	Oral powder (non-flavoured) 336 g
+138479	7596	26649	5	7	4	1	Oral powder (orange-flavoured, sugar-free) 283 g
+138484	7597	26649	5	7	4	1	Oral powder (sugar-free) 275 g
+138489	7598	26649	5	7	4	1	Oral powder 300 g
+138494	7599	21792	5	13	4	225	Oral powder 2.7 g-0.7 g per 7.5 g, 225 g
+138502	7600	21792	5	13	4	440	Oral powder 2.7 g-0.7 g per 7.5 g, 440 g
+138508	7601	21793	5	13	4	250	Granules 473 mg-83 mg per g (47.3%-8.3%), 250 g
+138519	7602	21793	5	13	4	500	Granules 620 mg-80 mg per g (62%-8%), 500 g
+138528	7603	21801	3	1	4	500	Mixture 3.34 g per 5 mL, 500 mL
+138536	7604	21805	5	7	1	1	Sachets containing powder for solution 13.125 g with electrolytes, 30
+138541	7605	21769	10	1	5	5	Enemas 10 mg in 5 mL, 25
+138546	7606	21822	10	1	5	5	Enemas 3.125 g-450 mg-45 mg in 5 mL, 12
+138556	7607	21822	10	1	5	5	Enemas 3.125 g-450 mg-45 mg in 5 mL, 4
+138563	7608	21822	10	1	5	5	Enemas 3.150 g-450 mg-45 mg in 5 mL, 12
+138570	7609	21817	1	7	5	1	Suppositories 1.4 g (for children), 12
+138575	7610	21817	1	7	5	1	Suppositories 2.8 g (for adults), 12
+138583	7611	21817	1	7	5	1	Suppositories 700 mg (for infants), 12
+138588	7612	21829	1	7	1	1	Tablet 500 mg
+138593	7613	21830	2	7	1	1	Capsule 500,000 units
+138598	7614	21830	1	7	1	1	Tablet 500,000 units
+138603	7615	21837	2	7	1	1	Capsule 125 mg (125,000 i.u.) vancomycin activity
+138608	7616	21837	2	7	1	1	Capsule 250 mg (250,000 i.u.) vancomycin activity
+138613	7617	21855	1	7	4	1	Tablets 300 mg, 500
+138615	7618	21869	1	7	1	1	Tablet 2.5 mg-25 micrograms
+138624	7619	21871	2	7	1	1	Capsule 2 mg
+138630	7620	21878	22	7	4	1	Retention enema equivalent to 20 mg prednisolone in 100 mL
+138635	7621	21878	1	7	5	1	Suppositories equivalent to 5 mg prednisolone, 10
+138640	7622	21879	25	12	5	14	Rectal foam 90 mg per applicatorful, 14 applications, aerosol 21.1 g
+138645	7623	21888	1	7	1	1	Tablet 500 mg
+138650	7624	21888	1	7	1	1	Tablet 500 mg (enteric coated)
+138656	7625	21889	6	1	5	60	Enemas 2 g in 60 mL, 7
+138661	7626	21889	6	1	5	60	Enemas 4 g in 60 mL, 7
+138666	7627	21889	5	7	1	1	Sachet containing granules, 1 g per sachet
+138671	7628	21889	5	7	1	1	Sachet containing granules, 500 mg per sachet
+138676	7629	21889	1	7	1	1	Tablet 250 mg
+138681	7630	21890	2	7	1	1	Capsule 250 mg
+138686	7631	21890	1	7	1	1	Tablet 500 mg
+138691	7632	26650	2	7	1	1	Capsule (containing enteric coated minimicrospheres) providing not less than 10,000 BP units of lipase activity
+138696	7633	26650	2	7	1	1	Capsule (containing enteric coated minimicrospheres) providing not less than 25,000 BP units of lipase activity
+138701	7634	26650	2	7	1	1	Capsule (containing enteric coated minimicrospheres) providing not less than 5,000 BP units of lipase activity
+138706	7635	26651	2	7	1	1	Capsule (containing enteric coated microspheres) providing not less than 10,000 BP units of lipase activity
+138711	7636	26651	2	7	1	1	Capsule (containing enteric coated microtablets) providing not less than 25,000 BP units of lipase activity
+138716	7637	26651	2	7	1	1	Capsule providing not less than 5,000 BP units of lipase activity
+138721	7638	21934	10	1	8	10	Injection (human) 100 units per mL, 10 mL
+138727	7639	21934	10	1	8	3	Injections (human) 100 units per mL, 3 mL, 5
+138734	7640	21934	10	1	8	10	Injection (bovine) 100 units per mL, 10 mL
+138739	7641	21937	10	1	8	10	Injection (human analogue) 100 units per mL, 10 mL
+138744	7642	21937	10	1	8	1.5	Injections (human analogue) 100 units per mL, 1.5 mL, 5
+138749	7643	21937	10	1	8	3	Injections (human analogue) 100 units per mL, 3 mL, 5
+138754	7644	21938	10	1	8	10	Injection (human analogue) 100 units per mL, 10 mL
+138759	7645	21938	10	1	8	3	Injections (human analogue) 100 units per mL, 3 mL, 5
+138766	7646	26652	10	1	8	10	Injection (human) 100 units per mL, 10 mL
+138772	7647	26652	10	1	8	3	Injections (human) 100 units per mL, 3 mL, 5
+138780	7648	26653	10	1	8	10	Injection (human) 100 units per mL, 10 mL
+138786	7649	26652	10	1	8	10	Injection (bovine) 100 units per mL, 10 mL
+138791	7650	21947	10	1	8	10	Injection (human) 100 units (30 units-70 units) per mL, 10 mL
+138800	7651	21947	10	1	8	10	Injection (human) 100 units (50 units-50 units) per mL, 10 mL
+138807	7652	21947	10	1	8	3	Injections (human) 100 units (20 units-80 units) per mL, 3 mL, 5
+138815	7653	21947	10	1	8	3	Injections (human) 100 units (30 units-70 units) per mL, 3 mL, 5
+138824	7654	21947	10	1	8	3	Injections (human) 100 units (50 units-50 units) per mL, 3 mL, 5
+138831	7655	21950	10	7	8	1	Injections (human analogue) 100 units (25 units-75 units) per mL, 3 mL, 5
+138839	7656	21953	10	1	8	10	Injection (human) 100 units per mL, 10 mL
+138845	7657	21961	1	7	1	1	Tablet 1 g
+138850	7658	21961	1	7	1	1	Tablet 500 mg
+138864	7659	21961	1	7	1	1	Tablet 850 mg
+138878	7660	21964	1	7	1	1	Tablet 5 mg
+138884	7661	21970	1	7	1	1	Tablet 5 mg
+138890	7662	21972	1	7	1	1	Tablet 30 mg (modified release)
+138895	7663	21972	1	7	1	1	Tablet 80 mg
+138906	7664	21975	1	7	1	1	Tablet 1 mg
+138911	7665	21975	1	7	1	1	Tablet 2 mg
+138916	7666	21975	1	7	1	1	Tablet 3 mg
+138921	7667	21975	1	7	1	1	Tablet 4 mg
+138926	7668	21983	1	7	1	1	Tablet 100 mg
+138931	7669	21983	1	7	1	1	Tablet 50 mg
+138936	7670	22015	2	7	1	1	Capsule 0.25 microgram
+138944	7671	22021	10	7	12	1	Injection 100 mg in 1 mL
+138949	7672	22021	1	7	1	1	Tablet 100 mg
+138954	7673	23492	1	7	1	1	Tablet 250 mg
+138959	7674	22037	1	7	1	1	Tablet 25 mg
+138964	7675	22051	1	7	1	1	Tablet (chewable) 500 mg (as carbonate)
+138969	7676	22051	1	7	1	1	Tablet 600 mg (as carbonate)
+138974	7677	22068	1	7	4	1	Effervescent tablet 14 mmol K + and 8 mmol Cl -
+138979	7678	22068	1	7	1	1	Tablet 600 mg (sustained release)
+138987	7679	22114	1	7	1	1	Tablet 2.5 mg
+138992	7680	22117	10	7	12	1	Injection 50 mg in 1 mL, disposable syringe
+138997	7681	22146	1	7	1	1	Tablet 1 mg
+139003	7682	22146	1	7	1	1	Tablet 2 mg
+139008	7683	22146	1	7	1	1	Tablet 3 mg
+139013	7684	22146	1	7	1	1	Tablet 5 mg
+139019	7685	26654	10	7	12	1	Injection 5,000 units in 0.2 mL
+139025	7686	26655	10	7	8	1	Injection (preservative-free) 5,000 units in 5 mL
+139030	7687	26655	10	1	12	35	Injection 35,000 units in 35 mL
+139035	7688	26655	10	7	12	1	Injection 5,000 units in 0.2 mL
+139040	7689	26655	10	7	12	1	Injection 5,000 units in 1 mL
+139045	7690	22156	10	7	12	1	Injection 10,000 units (anti-Xa) in 1 mL single dose pre-filled syringe
+139050	7691	22156	10	7	12	1	Injection 2,500 units (anti-Xa) in 0.2 mL single dose pre-filled syringe
+139055	7692	22156	10	7	12	1	Injection 5,000 units (anti-Xa) in 0.2 mL single dose pre-filled syringe
+139060	7693	22156	10	7	12	1	Injection 7,500 units (anti-Xa) in 0.75 mL single dose pre-filled syringe
+139065	7694	22157	10	7	12	1	Injection 100 mg (10,000 i.u. anti-Xa) in 1 mL pre-filled syringe
+139070	7695	22157	10	7	12	1	Injection 20 mg (2,000 i.u. anti-Xa) in 0.2 mL pre-filled syringe
+139075	7696	22157	10	7	12	1	Injection 40 mg (4,000 i.u. anti-Xa) in 0.4 mL pre-filled syringe
+139080	7697	22157	10	7	12	1	Injection 60 mg (6,000 i.u. anti-Xa) in 0.6 mL pre-filled syringe
+139085	7698	22157	10	7	12	1	Injection 80 mg (8,000 i.u. anti-Xa) in 0.8 mL pre-filled syringe
+139090	7699	22169	1	7	1	1	Tablet 75 mg (base)
+139100	7700	22170	1	7	1	1	Tablet 250 mg
+139107	7701	22171	2	7	1	1	Capsule 100 mg (containing enteric coated pellets)
+139112	7702	22171	1	7	1	1	Tablet 100 mg
+139118	7703	22171	1	7	1	1	Tablet 100 mg (enteric coated)
+139123	7704	22171	1	7	1	1	Tablet 100 mg (with glycine)
+139128	7705	22171	1	7	1	1	Tablet 300 mg
+139133	7706	22171	1	7	1	1	Tablet 300 mg (dispersible)
+139138	7707	22172	2	7	1	1	Capsule 200 mg (sustained release)
+139143	7708	22177	10	7	6	1	I.V. injection 10 mg in 5 mL
+139148	7709	22181	10	7	6	1	Solution concentrate for I.V. infusion 12.5 mg (base) in 50 mL
+139153	7710	22183	2	7	1	1	Capsule 200 mg (sustained release)-25 mg
+139161	7711	22186	10	7	12	1	Injection set containing 1 vial 50 mg in 2333 mg dry powder, 1 vial sterile water for injection 50 mL and 1 transfer cannula
+139166	7712	22191	5	7	6	1	Pack containing 2 vials powder for injection 10 units, 2 single use pre-filled syringes with solvent, 2 reconstitution spikes and 2 needles
+139171	7713	22194	5	7	6	1	Powder for I.V. infusion 20 mg
+139176	7714	22194	5	7	6	1	Powder for I.V. infusion 5 mg
+139181	7715	22204	1	7	1	1	Tablet 500 mg
+139186	7716	22247	3	1	4	100	Paediatric elixir 300 mg per 5 mL (6%), 100 mL
+139191	7717	22275	1	7	1	1	Tablet 250 mg-300 micrograms (sustained release)
+139199	7718	22286	10	7	12	1	Injection 1 mg in 1 mL
+139204	7719	22291	1	7	1	1	Tablet 5 mg
+139210	7720	22291	1	7	1	1	Tablet 500 micrograms
+139216	7721	22294	10	7	12	1	Injection 1,000 units in 0.5 mL pre-filled syringe
+139218	7722	22294	10	7	12	1	Injection 10,000 units in 1 mL pre-filled syringe
+139220	7723	22294	10	7	12	1	Injection 2,000 units in 0.5 mL pre-filled syringe
+139222	7724	22294	10	7	12	1	Injection 3,000 units in 0.3 mL pre-filled syringe
+139224	7725	22294	10	7	12	1	Injection 4,000 units in 0.4 mL pre-filled syringe
+139226	7726	22294	10	1	12	1	Injection 40,000 units in 1 mL pre-filled syringe
+139228	7727	22294	10	1	12	0.5	Injection 5,000 units in 0.5 mL pre-filled syringe
+139230	7728	22294	10	1	12	0.6	Injection 6,000 units in 0.6 mL pre-filled syringe
+139232	7729	22294	10	1	12	0.7	Injection 7,000 units in 0.7 mL pre-filled syringe
+139234	7730	22294	10	1	12	0.8	Injection 8,000 units in 0.8 mL pre-filled syringe
+139236	7731	22294	10	1	12	0.9	Injection 9,000 units in 0.9 mL pre-filled syringe
+139238	7732	22295	10	1	12	0.4	Injection 10 micrograms in 0.4 mL pre-filled syringe
+139240	7733	22295	10	1	12	0.5	Injection 100 micrograms in 0.5 mL pre-filled syringe
+139242	7734	22295	10	1	12	0.5	Injection 20 micrograms in 0.5 mL pre-filled syringe
+139244	7735	22295	10	1	12	0.3	Injection 30 micrograms in 0.3 mL pre-filled syringe
+139246	7736	22295	10	1	12	0.4	Injection 40 micrograms in 0.4 mL pre-filled syringe
+139248	7737	22295	10	1	12	0.5	Injection 50 micrograms in 0.5 mL pre-filled syringe
+139250	7738	22295	10	1	12	0.3	Injection 60 micrograms in 0.3 mL pre-filled syringe
+139252	7739	26656	10	1	6	500	I.V. infusion 100 mg per mL-139 mmol (anhydrous) per 500 mL (10%-5%), 500 mL
+139260	7740	26657	10	1	6	500	I.V. infusion 100 mg per mL-77 mmol per 500 mL (10%-0.9%), 500 mL
+139268	7741	26658	10	1	6	500	I.V. infusion 60 mg per mL-77 mmol per 500 mL (6%-0.9%), 500 mL
+139276	7742	26659	10	1	6	500	I.V. infusion 20 g per 500 mL, 500 mL
+139281	7743	26660	10	1	6	500	I.V. infusion 17.5 g per 500 mL (3.5%) with electrolytes, 500 mL
+139286	7744	22340	10	\N	6	1	I.V. infusion 278 mmol (anhydrous) per L (5%), 1 L
+139291	7745	26661	10	7	6	1	I.V. infusion 1 L
+139296	7746	22077	10	\N	6	1	I.V. infusion 154 mmol per L (0.9%), 1 L
+139301	7747	22077	10	\N	6	1	I.V. infusion 513 mmol per L (3%), 1 L
+139306	7748	26663	10	7	6	1	I.V. infusion 1 L
+139311	7749	26664	10	7	6	1	I.V. infusion 1 L
+139316	7750	22316	10	1	6	500	I.V. infusion 19 mmol-104 mmol (anhydrous) per 500 mL (0.225%-3.75%), 500 mL
+139324	7751	22316	10	\N	6	1	I.V. infusion 31 mmol-222 mmol (anhydrous) per L (0.18%-4%), 1 L
+139330	7752	22316	10	1	6	500	I.V. infusion 39 mmol-69 mmol (anhydrous) per 500 mL (0.45%-2.5%), 500 mL
+139336	7753	22077	10	1	4	1000	Irrigation solution 9 mg per mL (0.9%), 1 L
+139341	7754	22077	10	1	4	500	Irrigation solution 9 mg per mL (0.9%), 500 mL
+139346	7755	22397	10	1	4	60	Oral solution for children 50 micrograms per mL, 60 mL
+139351	7756	22397	1	7	1	1	Tablet 250 micrograms
+139357	7757	22397	1	7	1	1	Tablet 62.5 micrograms
+139363	7758	22413	1	7	1	1	Tablet 250 mg (sustained release)
+139368	7759	22414	2	7	1	1	Capsule 250 mg
+139373	7760	22415	2	7	1	1	Capsule 100 mg
+139378	7761	22415	2	7	1	1	Capsule 150 mg
+139383	7762	22423	10	1	12	5	Infusion 500 mg in 5 mL
+139388	7763	22423	10	7	12	1	Injection 100 mg in 5 mL
+139393	7764	22424	2	7	1	1	Capsule 200 mg
+139398	7765	22424	2	7	1	1	Capsule 50 mg
+139403	7766	22429	1	7	1	1	Tablet 100 mg
+139409	7767	22429	1	7	1	1	Tablet 50 mg
+139414	7768	22433	1	7	1	1	Tablet 100 mg
+139422	7769	22433	1	7	1	1	Tablet 200 mg
+139433	7770	22465	10	7	12	1	Injection 1 mg in 1 mL (1 in 1,000)
+139438	7771	22479	17	12	4	200	Buccal/sublingual spray (pump pack) 400 micrograms per dose (200 doses)
+139443	7772	22479	1	7	4	1	Tablets 600 micrograms, 100
+139448	7773	22479	11	7	4	1	Transdermal patch releasing approximately 10 mg per 24 hours
+139455	7774	22479	11	7	4	1	Transdermal patch releasing approximately 15 mg per 24 hours
+139461	7775	22479	11	7	4	1	Transdermal patch releasing approximately 5 mg per 24 hours
+139468	7776	22483	1	7	4	1	Sublingual tablet 5 mg
+139473	7777	22483	1	7	1	1	Tablet 10 mg
+139479	7778	22483	1	7	1	1	Tablet 20 mg
+139484	7779	22486	1	7	1	1	Tablet 120 mg (sustained release)
+139490	7780	22486	1	7	1	1	Tablet 60 mg (sustained release)
+139504	7781	22515	1	7	1	1	Tablets 10 mg, 60
+139509	7782	22515	1	7	1	1	Tablets 20 mg, 60
+139514	7783	22550	1	7	1	1	Tablet 250 mg
+139520	7784	22554	1	7	1	1	Tablet 100 micrograms
+139525	7785	22554	1	7	1	1	Tablet 150 micrograms
+139530	7786	22567	1	7	1	1	Tablet 1 mg (base)
+139544	7787	22567	1	7	1	1	Tablet 2 mg (base)
+139558	7788	22567	1	7	1	1	Tablet 5 mg (base)
+139572	7789	22585	1	7	1	1	Tablet 25 mg
+139577	7790	22585	1	7	1	1	Tablet 50 mg
+139582	7791	22589	1	7	1	1	Tablet 10 mg
+139587	7792	22591	10	7	6	1	I.V. infusion 50 mg
+139592	7793	22642	1	7	1	1	Tablet 5 mg
+139597	7794	22671	1	7	1	1	Tablet 25 mg
+139602	7795	22677	1	7	1	1	Tablet 1.5 mg (sustained release)
+139607	7796	22677	1	7	1	1	Tablet 2.5 mg
+139620	7797	22696	10	7	12	1	Injection 20 mg in 2 mL
+139625	7798	22696	10	1	4	30	Oral solution 10 mg per mL, 30 mL
+139630	7799	22696	1	7	1	1	Tablet 20 mg
+139643	7800	22696	1	7	1	1	Tablet 40 mg
+139657	7801	22696	1	7	1	1	Tablet 500 mg
+139663	7802	22697	1	7	1	1	Tablet 1 mg
+139668	7803	22704	1	7	1	1	Tablet 50 mg
+139673	7804	22712	1	7	1	1	Tablet 100 mg
+139679	7805	22712	1	7	1	1	Tablet 25 mg
+139685	7806	22716	1	7	1	1	Tablet 5 mg
+139691	7807	26665	1	7	1	1	Tablet 50 mg-5 mg
+139700	7808	26666	1	7	1	1	Tablet 25 mg-50 mg
+139708	7809	22761	2	7	1	1	Capsule 10 mg
+139713	7810	22779	7	13	4	30	Ointment 5 mg-5 mg per g (0.5%-0.5%), 30 g
+139721	7811	22779	1	7	5	1	Suppositories 5 mg-5 mg, 12
+139727	7812	22800	7	7	4	1	Compound ointment 50 g
+139732	7813	22800	1	7	5	1	Compound suppositories, 12
+139737	7814	22835	1	7	1	1	Tablet 20 mg
+139742	7815	22835	1	7	1	1	Tablet 40 mg
+139747	7816	22836	1	7	1	1	Tablet 15 mg
+139753	7817	22836	1	7	1	1	Tablet 5 mg
+139759	7818	22837	1	7	1	1	Tablet 10 mg
+139765	7819	22837	1	7	1	1	Tablet 160 mg
+139770	7820	22837	1	7	1	1	Tablet 40 mg
+139776	7821	22839	1	7	1	1	Tablet 160 mg
+139790	7822	22839	1	7	1	1	Tablet 80 mg
+139797	7823	22851	1	7	1	1	Tablet 100 mg
+139811	7824	22851	1	7	1	1	Tablet 50 mg
+139825	7825	22852	1	7	1	1	Tablet 50 mg
+139839	7826	22856	1	7	1	1	Tablet 10 mg
+139844	7827	22856	1	7	1	1	Tablet 2.5 mg
+139849	7828	22856	1	7	1	1	Tablet 5 mg
+139854	7829	22865	1	7	1	1	Tablet 100 mg
+139860	7830	22865	1	7	1	1	Tablet 200 mg
+139866	7831	22866	1	7	1	1	Tablet 12.5 mg
+139872	7832	22866	1	7	1	1	Tablet 25 mg
+139878	7833	22866	1	7	1	1	Tablet 3.125 mg
+139884	7834	22866	1	7	1	1	Tablet 6.25 mg
+139890	7835	22913	1	7	1	1	Tablet 10 mg (base)
+139898	7836	22913	1	7	1	1	Tablet 5 mg (base)
+139906	7837	22914	1	7	1	1	Tablet 10 mg (extended release)
+139913	7838	22914	1	7	1	1	Tablet 2.5 mg (extended release)
+139920	7839	22914	1	7	1	1	Tablet 5 mg (extended release)
+139927	7840	22917	1	7	1	1	Tablet 10 mg
+139933	7841	22917	1	7	1	1	Tablet 20 mg
+139945	7842	22917	1	7	1	1	Tablet 20 mg (controlled release)
+139953	7843	22917	1	7	1	1	Tablet 30 mg (controlled release)
+139961	7844	22917	1	7	1	1	Tablet 60 mg (controlled release)
+139969	7845	22925	1	7	1	1	Tablet 10 mg
+139974	7846	22932	2	7	1	1	Capsule 160 mg (sustained release)
+139979	7847	22932	2	7	1	1	Capsule 240 mg (sustained release)
+139984	7848	22932	10	7	12	1	Injection 5 mg in 2 mL
+139989	7849	22932	1	7	1	1	Tablet 120 mg
+139995	7850	22932	1	7	1	1	Tablet 160 mg
+140000	7851	22932	1	7	1	1	Tablet 180 mg (sustained release)
+140006	7852	22932	1	7	1	1	Tablet 240 mg (sustained release)
+140013	7853	22932	1	7	1	1	Tablet 40 mg
+140020	7854	22932	1	7	1	1	Tablet 80 mg
+140027	7855	22936	2	7	1	1	Capsule 180 mg (controlled delivery)
+140037	7856	22936	2	7	1	1	Capsule 240 mg (controlled delivery)
+140047	7857	22936	2	7	1	1	Capsule 360 mg (controlled delivery)
+140053	7858	22936	1	7	1	1	Tablet 60 mg
+140068	7859	22943	1	7	1	1	Tablet 100 mg
+140073	7860	22948	1	7	1	1	Tablet 12.5 mg
+140087	7861	22948	1	7	1	1	Tablet 25 mg
+140101	7862	22948	1	7	1	1	Tablet 50 mg
+140115	7863	22949	1	7	1	1	Tablet 10 mg
+140130	7864	22949	1	7	1	1	Tablet 20 mg
+140145	7865	22949	1	7	1	1	Tablet 5 mg
+140160	7866	22950	1	7	1	1	Tablet 10 mg
+140173	7867	22950	1	7	1	1	Tablet 20 mg
+140186	7868	22950	1	7	1	1	Tablet 5 mg
+140199	7869	22951	1	7	1	1	Tablet 2 mg
+140204	7870	22951	1	7	1	1	Tablet 4 mg
+140209	7871	22952	2	7	1	1	Capsule 10 mg
+140217	7872	22952	1	7	1	1	Tablet 1.25 mg
+140223	7873	22952	1	7	1	1	Tablet 2.5 mg
+140229	7874	22952	1	7	1	1	Tablet 5 mg
+140235	7875	22953	1	7	1	1	Tablet 10 mg (base)
+140241	7876	22953	1	7	1	1	Tablet 20 mg (base)
+140247	7877	22953	1	7	1	1	Tablet 5 mg (base)
+140253	7878	22956	1	7	1	1	Tablet 10 mg
+140258	7879	22956	1	7	1	1	Tablet 20 mg
+140263	7880	22957	2	7	1	1	Capsule 1 mg
+140269	7881	22957	2	7	1	1	Capsule 2 mg
+140275	7882	22957	2	7	1	1	Capsule 500 micrograms
+140281	7883	22967	1	7	1	1	Tablet 20 mg-6 mg
+140289	7884	22969	1	7	1	1	Tablet 4 mg-1.25 mg
+140297	7885	22971	1	7	1	1	Tablet 10 mg (base)-12.5 mg
+140305	7886	22971	1	7	1	1	Tablet 20 mg (base)-12.5 mg
+140311	7887	22974	1	7	1	1	Tablet 10 mg-12.5 mg
+140319	7888	22974	1	7	1	1	Tablet 20 mg-12.5 mg
+140325	7889	22982	1	7	1	1	Tablet 400 mg (base)
+140330	7890	22982	1	7	1	1	Tablet 600 mg (base)
+140335	7891	22984	1	7	1	1	Tablet 150 mg
+140341	7892	22984	1	7	1	1	Tablet 300 mg
+140347	7893	22984	1	7	1	1	Tablet 75 mg
+140353	7894	22986	1	7	1	1	Tablet 16 mg
+140358	7895	22986	1	7	1	1	Tablet 4 mg
+140363	7896	22986	1	7	1	1	Tablet 8 mg
+140368	7897	22987	1	7	1	1	Tablet 40 mg
+140374	7898	22987	1	7	1	1	Tablet 80 mg
+140380	7899	22992	1	7	1	1	Tablet 150 mg-12.5 mg
+140389	7900	22992	1	7	1	1	Tablet 300 mg-12.5 mg
+140396	7901	22993	1	7	1	1	Tablet 16 mg-12.5 mg
+140404	7902	23000	1	7	1	1	Tablet 10 mg
+140410	7903	23000	1	7	1	1	Tablet 20 mg
+140416	7904	23000	1	7	1	1	Tablet 40 mg
+140422	7905	23000	1	7	1	1	Tablet 5 mg
+140428	7906	23000	1	7	1	1	Tablet 80 mg
+140434	7907	23002	1	7	1	1	Tablet 10 mg
+140439	7908	23002	1	7	1	1	Tablet 20 mg
+140444	7909	23002	1	7	1	1	Tablet 40 mg
+140449	7910	23003	2	7	1	1	Capsule 20 mg (fluvastatin)
+140455	7911	23003	2	7	1	1	Capsule 40 mg (fluvastatin)
+140461	7912	23004	1	7	1	1	Tablet 10 mg (atorvastatin)
+140466	7913	23004	1	7	1	1	Tablet 20 mg (atorvastatin)
+140471	7914	23004	1	7	1	1	Tablet 40 mg (atorvastatin)
+140476	7915	23004	1	7	1	1	Tablet 80 mg (atorvastatin)
+140481	7916	23010	1	7	1	1	Tablet 600 mg
+140495	7917	23018	5	7	4	1	Sachets 4.7 g (equivalent to 4 g cholestyramine), 50
+140500	7918	23018	5	7	4	1	Sachets 9.4 g (equivalent to 8 g cholestyramine), 50
+140505	7919	23019	5	7	4	1	Sachets 5 g, 120
+140510	7920	22742	1	7	1	1	Tablet 250 mg
+140515	7921	21830	6	13	4	15	Cream 100,000 units per g, 15 g
+140521	7922	21830	7	13	4	15	Ointment 100,000 units per g, 15 g
+140526	7923	21518	6	13	4	20	Cream 10 mg per g (1%), 20 g
+140531	7924	21518	8	1	4	20	Lotion 10 mg per mL (1%), 20 mL
+140536	7925	21509	7	1	4	20	Tincture 20 mg per mL (2%), 30 mL
+140541	7926	23051	6	13	4	20	Cream 20 mg per g (2%), 20 g
+140546	7927	23052	6	13	4	25	Cream 10 mg per g (1%), 25 g
+140551	7928	23057	16	1	4	100	Shampoo 20 mg per g (2%), 100 mL
+140556	7929	23057	16	1	4	60	Shampoo 20 mg per g (2%), 60 mL
+140561	7930	23059	6	13	4	15	Cream 10 mg per g (1%), 15 g
+140566	7931	23084	7	13	4	15	Gel 10 mg per g (1%), 15 g
+140571	7932	23084	6	13	4	15	Cream 10 mg per g (1%), 15 g
+140576	7933	23085	8	1	4	5	Nail treatment kit containing nail lacquer 50 mg (base) per mL (5%), 5 mL, 60 isopropyl alcohol cleaning pads, 10 spatulas and 30 nail files
+140581	7934	23087	17	13	4	100	Spray aerosol 10 mg per g (1%), 100 g
+140586	7935	23047	1	7	1	1	Tablet 125 mg
+140591	7936	23047	1	7	1	1	Tablet 330 mg
+140596	7937	23047	1	7	1	1	Tablet 500 mg
+140601	7938	23084	1	7	1	1	Tablet 250 mg (base)
+140609	7939	23101	6	13	4	100	Cream 100 mg per g (10%), 100 g
+140617	7940	23146	19	1	4	200	Mucilage 20 mg-25 mg per mL (2%-2.5%), 200 mL
+140625	7941	23165	7	13	4	30	Ointment 50 micrograms per g (0.005%), 30 g
+140630	7942	23176	2	7	1	1	Capsule 10 mg
+140635	7943	23176	2	7	1	1	Capsule 25 mg
+140640	7944	23193	6	13	4	15	Cream 20 mg (as calcium) per g (2%), 15 g
+140645	7945	23193	7	13	4	15	Ointment 20 mg per g (2%), 15 g
+140650	7946	23203	6	13	4	100	Cream 10 mg-2 mg per g (1%-0.2%), 100 g
+140658	7947	23203	6	13	4	50	Cream 10 mg-2 mg per g (1%-0.2%), 50 g
+140664	7948	23208	8	1	4	3.5	Paint 5 mg per mL (0.5%), 3.5 mL (with 30 swabs)
+140669	7949	21517	6	13	4	30	Cream 7.5 mg per g (0.75%), 30 g
+140674	7950	21517	7	13	4	15	Gel 7.5 mg per g (0.75%), 15 g
+140679	7951	21525	6	13	4	50	Cream 10 mg per g (1%), 50 g
+140684	7952	21879	6	13	4	30	Cream 10 mg per g (1%), 30 g
+140689	7953	21879	6	13	4	50	Cream 10 mg per g (1%), 50 g
+140695	7954	21879	7	13	4	30	Topical ointment 10 mg per g (1%), 30 g
+140700	7955	21879	7	13	4	50	Topical ointment 10 mg per g (1%), 50 g
+140705	7956	23233	6	13	4	100	Cream 200 micrograms per g (0.02%), 100 g
+140710	7957	23233	7	13	4	100	Ointment 200 micrograms per g (0.02%), 100 g
+140715	7958	26667	6	13	4	15	Cream 500 micrograms (base) per g (0.05%), 15 g
+140721	7959	26667	7	13	4	15	Ointment 500 micrograms (base) per g (0.05%), 15 g
+140727	7960	26668	6	13	4	30	Cream 1 mg (base) per g (0.1%), 30 g
+140732	7961	26668	6	13	4	100	Cream 200 micrograms (base) per g (0.02%), 100 g
+140739	7962	26668	6	13	4	15	Cream 500 micrograms (base) per g (0.05%), 15 g
+140745	7963	26668	6	13	4	30	Cream 500 micrograms (base) per g (0.05%), 30 g
+140750	7964	26668	7	13	4	30	Ointment 1 mg (base) per g (0.1%), 30 g
+140755	7965	26668	7	13	4	100	Ointment 200 micrograms (base) per g (0.02%), 100 g
+140761	7966	26668	7	13	4	15	Ointment 500 micrograms (base) per g (0.05%), 15 g
+140767	7967	26668	7	13	4	30	Ointment 500 micrograms (base) per g (0.05%), 30 g
+140772	7968	26668	6	13	4	30	Scalp application 1 mg (base) per g (0.1%), 30 g
+140777	7969	23252	6	13	4	15	Cream 1 mg per g (0.1%), 15 g
+140783	7970	23252	6	13	4	45	Cream 1 mg per g (0.1%), 45 g
+140789	7971	23252	8	1	4	30	Lotion 1 mg per g (0.1% w/w), 30 mL
+140795	7972	23252	7	13	4	15	Ointment 1 mg per g (0.1%), 15 g
+140801	7973	23252	7	13	4	45	Ointment 1 mg per g (0.1%), 45 g
+140807	7974	23253	6	13	4	15	Cream 1 mg per g (0.1%), 15 g
+140812	7975	23253	7	13	4	15	Fatty ointment 1 mg per g (0.1%), 15 g
+140817	7976	23253	8	13	4	20	Lotion 1 mg per g (0.1%), 20 g
+140822	7977	23253	7	13	4	15	Ointment 1 mg per g (0.1%), 15 g
+140827	7978	23284	7	13	4	15	Ointment 1 mg-2.5 mg (base)-250 micrograms- 100,000 units per g (0.1%-0.25% (base)-0.025%- 100,000 units in 1 g), 15 g
+140837	7979	23340	10	1	4	100	Solution 100 mg per mL (10%), 100 mL
+140843	7980	23388	22	7	\N	1	Pads 22.5 cm x 7.5 cm, 12
+140847	7981	23393	23	7	4	1	Bandage 10 cm x 9.1 m
+140851	7982	23393	23	7	4	1	Bandage 7.5 cm x 6 m
+140857	7983	23393	23	7	4	1	Bandage 8 cm x 5 m (compression)
+140861	7984	23393	23	7	4	1	Bandages 80 cm (stockings), 4
+140865	7985	23411	2	7	1	1	Capsule 10 mg
+140873	7986	23411	2	7	1	1	Capsule 20 mg
+140882	7987	23082	16	1	4	125	Shampoo 25 mg per mL (2.5%), 125 mL
+140887	7988	26669	8	1	4	350	Scalp cleanser 3 mg-3 mg-1 mg-3 mg-10 mg per mL (0.3%-0.3%-0.1%-0.3%-1%), 350 mL
+140904	7989	26670	8	1	4	250	Scalp cleanser 20 mg-2 mg-130 mg-216 mg per mL (2%-0.2%-13%-21.6%), 250 mL
+140916	7990	26671	8	1	4	250	Scalp cleanser 20 mg-2 mg-130 mg-50 mg-216 mg per mL (2%-0.2%-13%-5%-21.6%), 250 mL
+140928	7991	26672	8	1	4	250	Scalp cleanser 20 mg-10 mg-10 mg-10 mg per mL (2%- 1%-1%-1%), 250 mL
+140940	7992	26673	16	1	4	200	Shampoo 10 mg per mL (1%), 200 mL
+140945	7993	26673	16	1	4	200	Shampoo 10 mg per mL (1%), 200 mL
+140950	7994	21830	6	7	5	1	Cream pessaries 100,000 units, 15
+140955	7995	21830	6	12	4	15	Vaginal cream 100,000 units per dose, 15 doses, 75 g
+140960	7996	21518	1	7	4	1	Pessaries 100 mg, 6
+140966	7997	21518	1	7	4	1	Pessary 500 mg
+140972	7998	21518	6	13	4	20	Vaginal cream 100 mg per 5 g (2%), 20 g
+140978	7999	21518	6	13	4	35	Vaginal cream 50 mg per 5 g (1%), 35 g
+140985	8000	23051	1	7	4	1	Pessaries 100 mg, 7
+140990	8001	23051	6	13	4	40	Vaginal cream 100 mg per 5 g (2%), 40 g
+140995	8002	23560	2	7	1	1	Capsule 10 mg (base)
+141001	8003	23560	2	7	1	1	Capsule 5 mg (base)
+141010	8004	23560	1	7	1	1	Tablet 2.5 mg (base)
+141026	8005	23562	1	7	1	1	Tablet 500 micrograms
+141034	8006	26674	12	11	1	28	Pack containing 21 tablets 1 mg-35 micrograms and 7 inert tablets
+141043	8007	26674	12	11	4	28	Pack containing 21 tablets 500 micrograms-35 micrograms and 7 inert tablets
+141050	8008	26674	1	7	4	1	Tablets 1 mg-35 micrograms, 21
+141056	8009	26674	1	7	4	1	Tablets 500 micrograms-35 micrograms, 21
+141062	8010	26675	12	11	4	28	Pack containing 21 tablets 1 mg-50 micrograms and 7 inert tablets
+141070	8011	26675	1	7	4	1	Tablets 1 mg-50 micrograms, 21
+141076	8012	23580	12	11	4	28	Pack containing 21 tablets 125 micrograms-50 micrograms and 7 inert tablets
+141084	8013	23580	12	11	4	28	Pack containing 21 tablets 150 micrograms-30 micrograms and 7 inert tablets
+141093	8014	23580	1	7	4	1	Tablets 150 micrograms-30 micrograms, 21
+141099	8015	23580	12	11	4	28	Pack containing 11 tablets 50 micrograms-50 micrograms, 10 tablets 125 micrograms-50 micrograms and 7 inert tablets
+141103	8016	23580	12	11	4	28	Pack containing 6 tablets 50 micrograms-30 micrograms, 5 tablets 75 micrograms-40 micrograms and 10 tablets
+141107	8017	23580	12	11	4	28	Pack containing 6 tablets 50 micrograms-30 micrograms, 5 tablets 75 micrograms-40 micrograms, 10 tablets
+141114	8018	26674	12	11	4	28	Pack containing 12 tablets 500 micrograms-35 micrograms, 9 tablets 1 mg-35 micrograms and 7 inert tablets
+141119	8019	23595	1	7	4	1	Tablets 350 micrograms, 28
+141126	8020	23597	1	7	4	1	Tablets 30 micrograms, 28
+141132	8021	23600	10	7	12	1	Injection 150 mg in 1 mL
+141138	8022	23602	20	7	8	1	Subcutaneous implant 68 mg
+141143	8023	23608	20	7	8	1	Subcutaneous implant 100 mg
+141148	8024	23608	20	7	8	1	Subcutaneous implant 200 mg
+141153	8025	23608	11	7	4	1	Transdermal patches 12.2 mg (releasing approximately 2.5 mg per 24 hours), 60
+141158	8026	23608	\N	7	4	1	Transdermal patches 24.3 mg (releasing approximately 5 mg per 24 hours), 30
+141163	8027	26676	10	7	12	1	Injection 250 mg in 1 mL
+141168	8028	26677	10	7	12	1	Injection 100 mg
+141173	8029	26677	10	7	12	1	Injection 250 mg
+141178	8030	26678	2	7	1	1	Capsule 40 mg
+141183	8031	26679	20	7	8	1	Implant 100 mg
+141188	8032	26679	20	7	8	1	Implant 50 mg
+141193	8033	26679	1	7	1	1	Tablet 2 mg
+141198	8034	26679	7	13	4	1	Transdermal gel 1 mg in 1 g sachet, 28
+141203	8035	26679	11	7	4	1	Transdermal patches 1.5 mg (releasing approximately 50 micrograms per 24 hours), 8
+141208	8036	26679	11	7	4	1	Transdermal patches 2 mg (releasing approximately 25 micrograms per 24 hours), 4
+141214	8037	26679	11	7	4	1	Transdermal patches 2 mg (releasing approximately 25 micrograms per 24 hours), 8
+141220	8038	26679	11	7	4	1	Transdermal patches 3 mg (releasing approximately 100 micrograms per 24 hours), 8
+141225	8039	26679	11	7	4	1	Transdermal patches 3.28 mg (releasing approximately 37.5 micrograms per 24 hours), 8
+141230	8040	26679	11	7	4	1	Transdermal patches 3.8 mg (releasing approximately 50 micrograms per 24 hours), 4
+141236	8041	26679	11	7	4	1	Transdermal patches 4 mg (releasing approximately 50 micrograms per 24 hours), 8
+141242	8042	26679	11	7	4	1	Transdermal patches 4.33 mg (releasing approximately 50 micrograms per 24 hours), 8
+141247	8043	26679	11	7	4	1	Transdermal patches 5.7 mg (releasing approximately 75 micrograms per 24 hours), 4
+141253	8044	26679	11	7	4	1	Transdermal patches 6.57 mg (releasing approximately 75 micrograms per 24 hours), 8
+141258	8045	26679	11	7	4	1	Transdermal patches 7.6 mg (releasing approximately 100 micrograms per 24 hours), 4
+141264	8046	26679	11	7	4	1	Transdermal patches 750 micrograms (releasing approximately 25 micrograms per 24 hours), 8
+141269	8047	26679	11	7	4	1	Transdermal patches 8 mg (releasing approximately 100 micrograms per 24 hours), 8
+141275	8048	26679	11	7	4	1	Transdermal patches 8.66 mg (releasing approximately 100 micrograms per 24 hours), 8
+141280	8049	26679	1	7	4	1	Vaginal tablets 25 micrograms, 15
+141285	8050	26680	10	7	12	1	Injection 10 mg in 1 mL
+141290	8051	26680	1	7	1	1	Tablet 1 mg
+141295	8052	26680	1	7	1	1	Tablet 2 mg
+141300	8053	23616	1	7	4	1	Pessaries 500 micrograms, 15
+141305	8054	23616	1	7	1	1	Tablet 1 mg
+141310	8055	23616	6	13	4	15	Vaginal cream 1 mg per g (0.1%), 15 g
+141315	8056	23618	1	7	1	1	Tablet 1.46 mg (equivalent to 1.25 mg sodium oestrone sulfate)
+141321	8057	23618	1	7	1	1	Tablet 730 micrograms (equivalent to 625 micrograms sodium oestrone sulfate)
+141327	8058	23621	1	7	1	1	Tablet 300 micrograms
+141332	8059	23621	1	7	1	1	Tablet 625 micrograms
+141337	8060	23600	10	7	12	1	Injection 50 mg in 1 mL
+141342	8061	23600	1	7	1	1	Tablet 10 mg
+141353	8062	23600	1	7	1	1	Tablet 5 mg
+141359	8063	23639	1	7	1	1	Tablet 10 mg
+141364	8064	23595	1	7	1	1	Tablet 5 mg
+141369	8065	23664	1	7	4	1	Tablets 1 mg-500 micrograms, 28
+141377	8066	23664	1	7	4	1	Tablets 2 mg-1 mg, 28
+141383	8067	23664	11	7	4	1	Transdermal patches 510 micrograms-4.8 mg (releasing approximately 50 micrograms- 250 micrograms per 24 hours), 8
+141389	8068	23664	11	7	4	1	Transdermal patches 620 micrograms-2.7 mg (releasing approximately 50 micrograms- 140 micrograms per 24 hours), 8
+141395	8069	26681	12	11	4	28	Pack containing 28 tablets conjugated oestrogens 625 micrograms and 28 tablets medroxyprogesterone acetate 5 mg
+141399	8070	26682	1	7	4	1	Tablets 625 micrograms-2.5 mg, 28
+141407	8071	26682	1	7	4	1	Tablets 625 micrograms-5 mg, 28
+141413	8072	23684	12	11	4	28	Pack containing 12 tablets oestradiol 2 mg, 10 tablets oestradiol 2 mg with norethisterone acetate 1 mgand 6 tablets oestradiol 1 mg
+141417	8073	23684	12	11	1	18	Pack containing 12 tablets oestradiol 4 mg, 10 tablets oestradiol 4 mg with norethisterone acetate 1 mg and 6 tablets oestradiol 1 mg
+141421	8074	23684	11	7	4	1	Pack containing 4 transdermal patches oestradiol 4 mg (releasing approximately 50 micrograms per 24 hours) and 4 transdermal patches oestradiol
+141426	8075	23684	11	7	4	1	Pack containing 4 transdermal patches oestradiol 4.33 mg (releasing approximately 50 micrograms per 24 hours) and 4 transdermal patches oestradiol
+141432	8076	23685	12	11	1	28	Pack containing 14 tablets conjugated oestrogens 625 micrograms and 14 tablets conjugated oestrogens 625 micrograms with
+141437	8077	23687	12	11	1	28	Pack containing 14 tablets oestradiol 2 mg and 14 tablets oestradiol 2 mg with dydrogesterone 10 mg
+141441	8078	23693	10	7	12	1	Injection set containing 1 ampoule powder for injection 5,000 units and 1 ampoule solvent 1 mL
+141446	8079	23693	10	7	12	1	Injection set containing 3 ampoules powder for injection 1,500 units and 3 ampoules solvent 1 mL
+141451	8080	23693	10	7	12	1	Injection set containing 3 ampoules powder for injection 2,000 units and 3 ampoules solvent 1 mL
+141456	8081	23693	10	7	12	1	Injection set containing 3 ampoules powder for injection 5,000 units and 3 ampoules solvent 1 mL
+141458	8082	23693	10	7	12	1	Injection set containing 3 ampoules powder for injection 500 units and 3 ampoules solvent 1 mL
+141466	8083	23694	10	7	12	1	Injection set containing 10 ampoules powder for injection providing 75 units follicle stimulating hormone and 75 units lu
+141474	8084	23696	10	7	12	1	Injection set containing 10 ampoules powder for injection providing 150 units follicle stimulating hormone and 10 ampoules solvent 1 mL
+141479	8085	23696	10	7	12	1	Injection set containing 10 ampoules powder for injection providing 75 units follicle stimulating hormone and 10 ampoules solvent 1 mL
+141484	8086	23697	5	7	12	1	Injection set containing 1 vial powder for injection 1,200 i.u. and 2 mL solvent in pre-filled syringe
+141489	8087	23697	10	7	12	1	Injection set containing 10 ampoules powder for injection 150 i.u. and 10 ampoules solvent 1 mL
+141494	8088	23697	10	7	12	1	Injection set containing 10 ampoules powder for injection 37.5 i.u. and 10 ampoules solvent 1 mL
+141499	8089	23697	10	7	12	1	Injection set containing 10 ampoules powder for injection 75 i.u. and 10 ampoules solvent 1 mL
+141504	8090	23697	10	7	12	1	Injection set containing 5 ampoules powder for injection 37.5 i.u. and 5 ampoules solvent 1 mL
+141509	8091	23697	10	7	12	1	Injection set containing 50 ampoules powder for injection 150 i.u. and 50 ampoules solvent 1 mL
+141511	8092	23697	10	7	12	1	Injection set containing 50 ampoules powder for injection 75 i.u. and 50 ampoules solvent 1 mL
+141513	8093	23698	10	7	12	1	Solution for injection 100 i.u. in 0.5 mL
+141518	8094	23698	10	7	12	1	Solution for injection 100 i.u. in 0.5 mL, single use vial
+141520	8095	23698	10	7	12	1	Solution for injection 150 i.u. in 0.5 mL
+141525	8096	23698	10	7	12	1	Solution for injection 150 i.u. in 0.5 mL, single use vial
+141527	8097	23698	10	7	12	1	Solution for injection 200 i.u. in 0.5 mL, single use vial
+141529	8098	23698	10	1	12	0.36	Solution for injection 300 i.u. in 0.36 mL multi-dose cartridge
+141534	8099	23698	10	7	12	1	Solution for injection 50 i.u. in 0.5 mL
+141539	8100	23698	10	7	12	1	Solution for injection 50 i.u. in 0.5 mL, single use vial
+141541	8101	23698	10	1	12	0.72	Solution for injection 600 i.u. in 0.72 mL multi-dose cartridge
+141546	8102	23702	1	7	1	1	Tablet 50 mg
+141556	8103	23706	1	7	1	1	Tablet 100 mg
+141562	8104	23706	1	7	1	1	Tablet 50 mg
+141578	8105	23708	12	11	4	28	Pack containing 11 tablets oestradiol valerate 2 mg and 10 tablets oestradiol valerate 2 mg with cyproterone acetate 1 mg
+141582	8106	23708	12	11	1	28	Pack containing 16 tablets oestradiol valerate 2 mg and 12 tablets oestradiol valerate 2 mg with cyproterone acetate 1 mg
+141586	8107	23711	2	7	1	1	Capsule 100 mg
+141592	8108	23711	2	7	1	1	Capsule 200 mg
+141598	8109	23712	2	7	1	1	Capsule 2.5 mg
+141603	8110	23716	1	7	1	1	Tablet 60 mg
+141608	8111	22353	1	7	1	1	Tablet 500 mg
+141613	8112	23727	1	7	1	1	Tablet 5 mg
+141618	8113	22523	10	7	7	1	Intracavernosal injection 10 micrograms in 1 mL
+141623	8114	22523	10	7	7	1	Intracavernosal injection 20 micrograms in 1 mL
+141628	8115	23734	1	7	1	1	Tablet 100 mg (base)
+141633	8116	23734	1	7	1	1	Tablet 25 mg (base)
+141638	8117	23734	1	7	1	1	Tablet 50 mg (base)
+141643	8118	23751	2	7	1	1	Capsule 400 micrograms (modified release)
+141648	8119	23752	12	11	\N	28	Starter pack containing 7 tablets 1 mg and 7 tablets 2 mg
+141652	8120	23752	1	7	1	1	Tablet 10 mg
+141657	8121	23752	1	7	1	1	Tablet 2 mg
+141662	8122	23752	1	7	1	1	Tablet 5 mg
+141667	8123	23457	1	7	1	1	Tablet 5 mg
+141672	8124	23764	10	7	12	1	Injection 1 mg in 1 mL
+141677	8125	23768	10	7	12	1	Injection 0.8 mg (2.4 i.u.) with diluent in single use syringe (without preservative)
+141679	8126	23768	10	7	12	1	Injection 1 mg (3 i.u.) with diluent in single use syringe (without preservative)
+141681	8127	23768	10	7	12	1	Injection 1.2 mg (3.6 i.u.) with diluent in single use syringe (without preservative)
+141683	8128	23768	10	1	12	1	Injection 1.33 mg (4 i.u.) vial with 1 mL diluent (without preservative)
+141685	8129	23768	10	7	12	1	Injection 1.4 mg (4.2 i.u.) with diluent in single use syringe (without preservative)
+141687	8130	23768	10	7	12	1	Injection 1.6 mg (4.8 i.u.) with diluent in single use syringe (without preservative)
+141689	8131	23768	10	7	12	1	Injection 1.8 mg (5.4 i.u.) with diluent in single use syringe (without preservative)
+141691	8132	23768	10	7	12	1	Injection 12 i.u. (4 mg) vial with 3 mL diluent (with preservative)
+141693	8133	23768	10	7	12	1	Injection 16 i.u. (5.33 mg) vial with 8 mL diluent (with preservative)
+141695	8134	23768	10	7	12	1	Injection 18 i.u. (6 mg) cartridge with 3.15 mL diluent (with preservative)
+141697	8135	23768	10	7	12	1	Injection 2 mg (6 i.u.) with diluent in single use syringe (without preservative)
+141699	8136	23768	10	1	12	5	Injection 3.33 mg (10 i.u.) vial with 5 mL diluent (with preservative)
+141701	8137	23768	10	7	12	1	Injection 36 i.u. (12 mg) cartridge with 3.15 mL diluent (with preservative)
+141703	8138	23768	10	7	12	1	Injection 4 i.u. (1.33 mg) vial with 2 mL diluent (with preservative)
+141705	8139	23768	10	1	12	3.5	Injection 4 mg (12 i.u.) vial with 3.5 mL diluent (with preservative)
+141707	8140	23768	10	1	12	1	Injection 5 mg (15 i.u.) in 1 mL cartridge (with preservative)
+141709	8141	23768	10	1	12	3.15	Injection 72 i.u. (24 mg) cartridge with 3.15 mL diluent (with preservative)
+141711	8142	23768	10	1	12	1.37	Injection 8 mg (24 i.u.) vial with 1.37 mL diluent cartridge (with preservative) (for use with Easyject auto-injector)
+141713	8143	23768	10	1	8	1.37	Injection 8 mg (24 i.u.) vial with 1.37 mL diluent cartridge (with preservative) (for use with one.click auto-injector)
+141715	8144	23768	10	1	12	5	Injection 8 mg (24 i.u.) vial with 5 mL diluent (with preservative)
+141717	8145	23768	10	1	12	1.5	Solution for injection 10 mg (30 i.u.) in 1.5 mL cartridge (with preservative)
+141719	8146	23768	10	1	12	1.5	Solution for injection 15 mg (45 i.u.) in 1.5 mL cartridge (with preservative)
+141721	8147	23768	10	1	12	1.5	Solution for injection 5 mg (15 i.u.) in 1.5 mL cartridge (with preservative)
+141723	8148	23775	10	1	3	2.5	Intranasal solution 100 micrograms per mL, 2.5 mL
+141728	8149	23775	17	12	3	50	Nasal spray (pump pack) 10 micrograms per actuation, 50 actuations, 5 mL
+141736	8150	23787	17	12	3	60	Nasal spray (pump pack) 200 micrograms (base) per dose (60 doses)
+141741	8151	23791	10	7	12	1	Injection 100 micrograms in 1 mL ampoule
+141743	8152	23791	10	1	12	1	Injection 50 micrograms in 1 mL ampoule
+141745	8153	23791	10	7	12	1	Injection 500 micrograms in 1 mL ampoule
+141747	8154	23791	10	7	12	1	Injection (modified release) 10 mg (base) vial and 2 ampoules diluent 2 mL
+141749	8155	23791	10	7	12	1	Injection (modified release) 20 mg (base) vial and 2 ampoules diluent 2 mL
+141751	8156	23791	10	7	12	1	Injection (modified release) 30 mg (base) vial and 2 ampoules diluent 2 mL
+141753	8157	23792	5	7	12	1	Powder for suspension for injection 30 mg (base) with diluent ampoule
+141755	8158	23800	1	7	1	1	Tablet 100 micrograms
+141760	8159	23803	10	7	12	1	Injection 3 mg-3.9 mg (equivalent to 5.7 mg betamethasone) in 1 mL
+141768	8160	21524	1	7	1	1	Tablet 4 mg
+141773	8161	21524	1	7	1	1	Tablet 500 micrograms
+141778	8162	23804	10	7	12	1	Injection equivalent to 120 mg dexamethasone phosphate in 5 mL
+141783	8163	23804	10	7	12	1	Injection equivalent to 4 mg dexamethasone phosphate in 1 mL
+141788	8164	23804	10	7	12	1	Injection equivalent to 8 mg dexamethasone phosphate in 2 mL
+141793	8165	26683	10	7	12	1	Injection 40 mg in 1 mL
+141799	8166	26684	10	7	12	1	Injection equivalent to 40 mg methylprednisolone in 1 mL
+141804	8167	21878	1	7	1	1	Tablet 1 mg
+141809	8168	21878	1	7	1	1	Tablet 25 mg
+141815	8169	21878	1	7	1	1	Tablet 5 mg
+141821	8170	21878	10	1	4	20	Oral solution equivalent to 5 mg prednisolone per mL, 30 mL
+141827	8171	21880	1	7	1	1	Tablet 1 mg
+141832	8172	21880	1	7	1	1	Tablet 25 mg
+141838	8173	21880	1	7	1	1	Tablet 5 mg
+141844	8174	23233	10	7	12	1	Injection 10 mg in 1 mL
+141849	8175	21525	1	7	1	1	Tablet 20 mg
+141854	8176	21525	1	7	1	1	Tablet 4 mg
+141859	8177	23811	10	7	12	1	Injection equivalent to 100 mg hydrocortisone with 2 mL solvent
+141867	8178	23811	10	7	12	1	Injection equivalent to 250 mg hydrocortisone with 2 mL solvent
+141875	8179	23812	1	7	1	1	Tablet 25 mg
+141880	8180	23812	1	7	1	1	Tablet 5 mg
+141885	8181	23828	1	7	1	1	Tablet equivalent to 100 micrograms anhydrous thyroxine sodium
+141891	8182	23828	1	7	1	1	Tablet equivalent to 200 micrograms anhydrous thyroxine sodium
+141897	8183	23828	1	7	1	1	Tablet equivalent to 50 micrograms anhydrous thyroxine sodium
+141903	8184	23829	1	7	1	1	Tablet 20 micrograms
+141908	8185	23836	1	7	1	1	Tablet 50 mg
+141913	8186	23839	1	7	1	1	Tablet 5 mg
+141918	8187	23850	10	7	12	1	Injection set containing 1 mg (1 i.u.) and 1 mL solvent in disposable syringe
+141923	8188	23856	10	7	12	1	Injection (salmon) 100 i.u. in 1 mL ampoule
+141928	8189	23856	10	7	12	1	Injection (salmon) 50 i.u. in 1 mL ampoule
+141933	8190	23863	2	7	1	1	Capsule 150 mg
+141938	8191	21521	2	7	1	1	Capsule 100 mg
+141964	8192	21521	2	7	1	1	Capsule 50 mg
+141974	8193	21521	1	7	1	1	Tablet 100 mg
+142014	8194	21521	1	7	1	1	Tablet 50 mg
+142026	8195	26685	2	7	1	1	Capsule 250 mg
+142034	8196	26686	2	7	1	1	Capsule 250 mg
+142042	8197	23870	2	7	1	1	Capsule 100 mg
+142048	8198	23870	1	7	1	1	Tablet 50 mg
+142054	8199	23188	2	7	1	1	Capsule 250 mg
+142059	8200	23882	2	7	1	1	Capsule 250 mg
+142064	8201	23882	2	7	1	1	Capsule 500 mg
+142069	8202	23882	10	7	12	1	Injection 1 g (solvent required)
+142075	8203	23882	10	7	12	1	Injection 500 mg (solvent required)
+142081	8204	23885	2	7	1	1	Capsule 250 mg
+142096	8205	23885	2	7	1	1	Capsule 500 mg
+142111	8206	23885	1	7	4	1	Chewable tablet 250 mg
+142116	8207	23885	5	1	4	20	Powder for paediatric oral drops 100 mg per mL, 20 mL
+142121	8208	23885	5	2	1	100	Powder for syrup 125 mg per 5 mL, 100 mL
+142136	8209	23885	5	1	1	100	Powder for syrup 250 mg per 5 mL, 100 mL
+142151	8210	23885	5	7	4	1	Sachet containing oral powder 3 g
+142156	8211	23885	1	7	1	1	Tablet 1 g
+142161	8212	23903	10	7	12	1	Injection 3 g (solvent required)
+142166	8213	23903	10	7	12	1	Injection 3 g (with sterilised Water for Injections 10 mL)
+142168	8214	23903	10	7	12	1	Injection 600 mg (solvent required)
+142173	8215	23903	10	7	12	1	Injection 600 mg (with sterilised Water for Injections 2 mL)
+142175	8216	23904	2	7	1	1	Capsule 250 mg
+142189	8217	23904	2	7	1	1	Capsule 500 mg
+142197	8218	23904	4	1	4	100	Oral suspension 250 mg per 5 mL, 100 mL
+142204	8219	23904	4	1	4	100	Paediatric oral suspension 125 mg per 5 mL, 100 mL
+142211	8220	23904	1	7	1	1	Tablet 125 mg
+142219	8221	23904	1	7	1	1	Tablet 250 mg
+142227	8222	23904	1	7	1	1	Tablet 500 mg
+142232	8223	23910	10	7	12	1	Injection 1.8 g in 4 mL, disposable syringe
+142237	8224	23910	10	7	12	1	Injection 900 mg in 2 mL cartridge-needle unit (for use with Tubex Injector)
+142242	8225	23911	10	7	7	1	Injection 1.5 g
+142247	8226	23915	2	7	1	1	Capsule 250 mg
+142254	8227	23915	2	7	1	1	Capsule 500 mg
+142261	8228	23915	10	7	12	1	Injection 1 g (solvent required)
+142266	8229	23915	10	7	12	1	Injection 500 mg (solvent required)
+142271	8230	23919	2	7	1	1	Capsule 250 mg
+142279	8231	23919	2	7	1	1	Capsule 500 mg
+142287	8232	23919	10	7	12	1	Injection 1 g (solvent required)
+142293	8233	23919	10	7	12	1	Injection 500 mg (solvent required)
+142298	8234	23919	5	2	1	100	Powder for syrup 125 mg per 5 mL, 100 mL
+142304	8235	23919	5	1	1	100	Powder for syrup 250 mg per 5 mL, 100 mL
+142310	8236	23925	5	1	1	75	Powder for syrup 125 mg-31.25 mg per 5 mL, 75 mL
+142321	8237	23925	5	1	1	60	Powder for syrup 400 mg-57 mg per 5 mL, 60 mL
+142330	8238	23925	1	7	1	1	Tablet 500 mg-125 mg
+142339	8239	23925	1	7	1	1	Tablet 875 mg-125 mg
+142348	8240	23926	10	7	12	1	Injection 3 g-100 mg (solvent required)
+142356	8241	23932	2	7	1	1	Capsule 250 mg
+142369	8242	23932	2	7	1	1	Capsule 500 mg
+142382	8243	23932	3	1	4	100	Granules for syrup 125 mg per 5 mL, 100 mL
+142389	8244	23932	3	1	4	100	Granules for syrup 250 mg per 5 mL, 100 mL
+142396	8245	23934	10	7	12	1	Injection 1 g (solvent required)
+142402	8246	23935	10	7	12	1	Injection 1 g (solvent required)
+142411	8247	23935	10	7	12	1	Injection 500 mg (solvent required)
+142417	8248	23937	1	7	1	1	Tablet 250 mg (base)
+142422	8249	23939	5	1	4	100	Powder for oral suspension 125 mg per 5 mL, 100 mL
+142434	8250	23939	5	1	4	75	Powder for oral suspension 250 mg per 5 mL, 75 mL
+142446	8251	23939	1	7	1	1	Tablet 375 mg (sustained release)
+142457	8252	23941	10	7	12	1	Injection 1 g (solvent required)
+142466	8253	23941	10	7	12	1	Injection 2 g (solvent required)
+142475	8254	23944	10	7	12	1	Injection 1 g (solvent required)
+142481	8255	23944	10	7	12	1	Injection 2 g (solvent required)
+142487	8256	23944	10	7	12	1	Injection 250 mg (solvent required)
+142495	8257	23944	10	7	12	1	Injection 500 mg (solvent required)
+142500	8258	23945	10	7	12	1	Injection 1 g (solvent required)
+142505	8259	23945	10	7	12	1	Injection 2 g (solvent required)
+142510	8260	23954	10	7	12	1	Injection 1 g (solvent required)
+142515	8261	23954	10	7	12	1	Injection 2 g (solvent required)
+142520	8262	23954	10	7	12	1	Injection 500 mg (solvent required)
+142525	8263	23979	1	7	1	1	Tablet 300 mg
+142531	8264	24008	4	1	4	100	Oral suspension 40 mg-200 mg per 5 mL, 100 mL
+142541	8265	24008	1	7	1	1	Tablet 160 mg-800 mg
+142555	8266	24008	1	7	1	1	Tablet 80 mg-400 mg
+142562	8267	23420	2	7	1	1	Capsule 175 mg
+142568	8268	23420	2	7	1	1	Capsule 250 mg
+142574	8269	26687	5	1	4	100	Powder for oral liquid 200 mg (base) per 5 mL, 100 mL
+142580	8270	26687	5	1	4	100	Powder for oral liquid 400 mg (base) per 5 mL, 100 mL
+142586	8271	26687	1	7	1	1	Tablet 400 mg (base)
+142592	8272	26688	10	7	6	1	I.V. infusion 300 mg (base)
+142597	8273	26689	4	1	4	100	Oral suspension 250 mg (base) per 5 mL, 100 mL
+142602	8274	26689	4	1	4	100	Paediatric oral suspension 125 mg (base) per 5 mL, 100 mL
+142607	8275	26689	1	7	1	1	Tablet 250 mg (base)
+142612	8276	24019	1	7	1	1	Tablet 150 mg
+142618	8277	24019	1	7	1	1	Tablet 300 mg
+142624	8278	24019	1	7	1	1	Tablet for oral suspension 50 mg
+142629	8279	24022	1	7	1	1	Tablet 250 mg
+142634	8280	24022	1	7	1	1	Tablet 500 mg
+142636	8281	24023	5	1	4	15	Powder for oral suspension 200 mg per 5 mL, 15 mL
+142641	8282	24023	1	7	1	1	Tablet 500 mg
+142652	8283	24023	1	7	1	1	Tablet 600 mg
+142654	8284	23419	2	7	1	1	Capsule 150 mg
+142660	8285	24030	10	7	12	1	Injection 600 mg in 2 mL
+142665	8286	24039	10	7	12	1	Injection 80 mg (base)
+142674	8287	24040	10	7	12	1	Injection 40 mg (base) in 1 mL
+142679	8288	24040	10	7	12	1	Injection 60 mg (base) in 1.5 mL
+142684	8289	24040	10	7	12	1	Injection 80 mg (base) in 2 mL
+142692	8290	24052	1	7	1	1	Tablet 250 mg
+142701	8291	24052	1	7	1	1	Tablet 500 mg
+142707	8292	24052	1	7	1	1	Tablet 750 mg
+142713	8293	24056	1	7	1	1	Tablet 400 mg
+142726	8294	24064	10	1	6	250	I.V. infusion 400 mg in 250 mL
+142731	8295	24064	1	7	1	1	Tablet 400 mg
+142736	8296	24066	10	1	6	200	I.V. infusion 400 mg in 200 mL
+142741	8297	24066	10	1	6	40	Solution concentrate for I.V. infusion 400 mg in 40 mL
+142746	8298	24066	1	7	1	1	Tablet 400 mg
+142751	8299	21837	10	7	12	1	Injection 500 mg (500,000 i.u.) vancomycin activity (solvent required)
+142761	8300	23187	4	1	4	90	Oral suspension 50 mg per mL, 90 mL
+142766	8301	23187	1	7	1	1	Tablet (sodium salt) 250 mg
+142771	8302	21517	10	1	6	100	I.V. infusion 500 mg in 100 mL
+142776	8303	21517	1	7	5	1	Suppositories 500 mg, 10
+142781	8304	21517	1	7	1	1	Tablet 200 mg
+142788	8305	21517	1	7	1	1	Tablet 400 mg
+142798	8306	24089	4	1	4	100	Oral suspension 320 mg per 5 mL (equivalent to 200 mg metronidazole in 5 mL), 100 mL
+142803	8307	24090	1	7	1	1	Tablet 500 mg
+142809	8308	24093	2	7	1	1	Capsule 100 mg
+142815	8309	24093	2	7	1	1	Capsule 50 mg
+142821	8310	24093	4	1	4	200	Paediatric oral suspension 25 mg per 5 mL, 200 mL
+142826	8311	24098	10	7	12	1	Injection 2 g with 3.2 mL diluent
+142831	8312	24099	1	7	1	1	Tablet 1 g
+142836	8313	21504	10	7	12	1	Injection 50 mg (solvent required)
+142841	8314	23057	1	7	1	1	Tablet 200 mg
+142849	8315	23064	2	7	1	1	Capsule 100 mg
+142854	8316	23064	2	7	1	1	Capsule 200 mg
+142859	8317	23064	2	7	1	1	Capsule 50 mg
+142864	8318	23064	10	7	6	1	Solution for I.V. infusion 100 mg in 50 mL
+142869	8319	23064	10	7	6	1	Solution for I.V. infusion 200 mg in 100 mL
+142874	8320	24112	2	7	1	1	Capsule 100 mg
+142879	8321	24124	2	7	1	1	Capsule 150 mg
+142887	8322	24124	2	7	1	1	Capsule 300 mg
+142895	8323	24124	3	1	4	60	Syrup 100 mg per 5 mL, 60 mL
+142900	8324	24126	2	7	1	1	Capsule 150 mg
+142902	8325	24129	1	7	1	1	Tablet 100 mg
+142907	8326	23207	1	7	1	1	Tablet 200 mg
+142930	8327	23207	1	7	1	1	Tablet 800 mg
+142947	8328	24158	2	7	1	1	Capsule 250 mg
+142949	8329	24158	2	7	1	1	Capsule 500 mg
+142951	8330	24158	10	7	6	1	Powder for I.V. infusion equivalent to 500 mg ganciclovir, vial
+142953	8331	24159	1	7	1	1	Tablet 125 mg
+142958	8332	24159	1	7	1	1	Tablet 250 mg
+142966	8333	24160	1	7	1	1	Tablet 500 mg (base)
+142977	8334	24161	10	7	6	1	Solution for I.V. infusion 375 mg (anhydrous) in 5 mL single use vial
+142979	8335	24163	1	7	1	1	Tablet 450 mg (base)
+142981	8336	24164	12	11	4	28	Pack containing 140 capsules ribavirin 200 mg and 2 multi-dose cartridges interferon alfa-2b solution for injection 18,000,000 i.u. in 1.2 mL
+142982	8337	24164	12	11	4	28	Pack containing 168 capsules ribavirin 200 mg and 2 multi-dose cartridges interferon alfa-2b solution for injection 18,000,000 i.u. in 1.2 mL
+142983	8338	24164	\N	7	\N	1	Pack containing 84 capsules ribavirin 200 mg and 2 multi-dose cartridges interferon alfa-2b solution for injection 18,000,000 i.u. in 1.2 mL
+142984	8339	24169	10	1	6	250	I.V. infusion 24 mg per mL, 250 mL bottle
+142986	8340	24172	2	7	1	1	Soft gelatin capsule 200 mg
+142988	8341	24172	2	7	1	1	Capsule 200 mg (base)
+142990	8342	24173	2	7	1	1	Capsule 100 mg (base)
+142992	8343	24173	2	7	1	1	Capsule 200 mg (base)
+142994	8344	24173	2	7	1	1	Capsule 400 mg (base)
+142996	8345	24174	2	7	1	1	Capsule 100 mg
+142998	8346	24174	10	1	4	240	Oral solution 600 mg per 7.5 mL (80 mg per mL), 240 mL
+143000	8347	24175	5	13	4	144	Oral powder 50 mg (base) per g, 144 g
+143002	8348	24175	1	7	1	1	Tablet 250 mg (base)
+143004	8349	24176	2	7	1	1	Capsule 150 mg
+143006	8350	24176	10	1	1	240	Oral solution 15 mg per mL, 240 mL
+143008	8351	24179	2	7	1	1	Capsule 100 mg
+143010	8352	24179	2	7	1	1	Capsule 250 mg
+143012	8353	24179	3	1	4	200	Syrup 10 mg per mL, 200 mL bottle
+143014	8354	24180	2	7	1	1	Capsule 125 mg (containing enteric coated beadlets)
+143016	8355	24180	2	7	1	1	Capsule 200 mg (containing enteric coated beadlets)
+143018	8356	24180	2	7	1	1	Capsule 250 mg (containing enteric coated beadlets)
+143020	8357	24180	2	7	1	1	Capsule 400 mg (containing enteric coated beadlets)
+143022	8358	24180	5	1	4	120	Powder for paediatric oral solution 2 g in 120 mL bottle
+143024	8359	24181	1	7	1	1	Tablet 375 micrograms
+143026	8360	24181	1	7	1	1	Tablet 750 micrograms
+143028	8361	24182	2	7	1	1	Capsule 20 mg
+143030	8362	24182	2	7	1	1	Capsule 30 mg
+143032	8363	24182	2	7	1	1	Capsule 40 mg
+143034	8364	24182	5	1	4	200	Powder for oral solution 1 mg per mL, 200 mL
+143036	8365	24183	10	1	4	240	Oral solution 10 mg per mL, 240 mL
+143038	8366	24183	10	1	4	240	Oral solution 5 mg per mL, 240 mL
+143040	8367	24183	1	7	1	1	Tablet 100 mg
+143042	8368	24183	1	7	1	1	Tablet 150 mg
+143044	8369	24184	10	1	4	240	Oral solution 20 mg (base) per mL, 240 mL
+143046	8370	24184	1	7	1	1	Tablet 300 mg (base)
+143048	8371	24185	1	7	1	1	Tablet 300 mg
+143050	8372	26690	1	7	1	1	Tablet 300 mg (base)-150 mg-300 mg
+143057	8373	26691	1	7	1	1	Tablet 150 mg-300 mg
+143062	8374	24188	1	7	1	1	Tablet 200 mg
+143064	8375	24189	1	7	1	1	Tablet 100 mg
+143066	8376	24190	2	7	1	1	Capsule 100 mg
+143068	8377	24190	2	7	1	1	Capsule 200 mg
+143070	8378	24190	2	7	1	1	Capsule 50 mg
+143072	8379	24190	1	7	1	1	Tablet 600 mg
+143074	8380	24200	10	7	12	1	Injection 10,000 units
+143079	8381	24261	10	7	7	1	Injection 0.5 mL (23 valent)
+143083	8382	24264	10	7	7	1	Injection 0.5 mL
+143087	8383	26692	10	7	7	1	Injection 0.5 mL
+143091	8384	26693	10	7	7	1	Injection 0.5 mL
+143095	8385	24283	10	7	7	1	Injection (trivalent) 0.5 mL (containing A/New Caledonia/20/99, A/Moscow/10/99 and B/Sichuan/379/99 like strains)
+143102	8386	24325	10	7	12	1	Injection 1 g
+143104	8387	24325	10	7	12	1	Injection 1 g (solvent required)
+143110	8388	24325	10	7	12	1	Injection 2 g
+143112	8389	24325	10	7	12	1	Injection 2 g (solvent required)
+143117	8390	24325	10	7	12	1	Injection 500 mg
+143119	8391	24325	10	7	12	1	Injection 500 mg (solvent required)
+143124	8392	24325	1	7	1	1	Tablet 50 mg
+143129	8393	24326	1	7	1	1	Tablet 2 mg
+143134	8394	24327	1	7	1	1	Tablet 2 mg
+143139	8395	24329	10	7	6	1	Powder for I.V. injection 1 g
+143144	8396	24329	10	7	6	1	Powder for I.V. injection 2 g
+143149	8397	24333	1	7	1	1	Tablet 2 mg
+143154	8398	24337	10	7	12	1	Injection 15 mg
+143156	8399	24337	10	7	12	1	Injection 15 mg (solvent required)
+143161	8400	24353	2	7	1	1	Capsule 100 mg
+143166	8401	24353	2	7	1	1	Capsule 20 mg
+143171	8402	24353	2	7	1	1	Capsule 250 mg
+143176	8403	24353	2	7	1	1	Capsule 5 mg
+143181	8404	24357	10	7	12	1	Injection 5 mg in 2 mL
+143186	8405	24357	10	1	12	2	Injection 50 mg in 2 mL
+143192	8406	24357	1	7	1	1	Tablet 10 mg
+143197	8407	24357	1	7	1	1	Tablet 2.5 mg
+143204	8408	24358	10	7	6	1	Powder for I.V. infusion 2 mg
+143209	8409	24360	1	7	1	1	Tablet 50 mg
+143214	8410	24361	1	7	1	1	Tablet 40 mg
+143219	8411	24362	10	7	6	1	Solution for I.V. infusion 10 mg in 10 mL
+143224	8412	24365	10	7	12	1	Injection 100 mg in 1 mL
+143229	8413	24365	10	7	12	1	Injection 100 mg in 5 mL
+143234	8414	24365	10	1	12	25	Injection 500 mg in 25 mL
+143239	8415	24365	10	1	12	5	Injection 500 mg in 5 mL
+143244	8416	24366	6	13	4	20	Cream 50 mg per g (5%), 20 g
+143249	8417	24366	10	2	12	10	Injection 250 mg in 10 mL
+143254	8418	24366	10	1	12	10	Injection 500 mg in 10 mL
+143259	8419	24369	10	7	6	1	Powder for I.V. infusion 1 g (base)
+143264	8420	24369	10	7	6	1	Powder for I.V. infusion 200 mg (base)
+143269	8421	24370	1	7	1	1	Tablet 150 mg
+143274	8422	24370	1	7	1	1	Tablet 500 mg
+143279	8423	24375	10	7	12	1	Injection 10 mg
+143281	8424	24375	10	7	12	1	Injection 10 mg (solvent required)
+143286	8425	24375	10	7	6	1	Solution for I.V. injection 10 mg in 10 mL
+143291	8426	24376	10	7	6	1	I.V. injection 1 mg in 1 mL
+143297	8427	24376	10	7	12	1	Injection set containing 1 mg and 10 mL solvent
+143302	8428	24378	10	7	6	1	Solution for I.V. infusion 10 mg (base) in 1 mL
+143307	8429	24378	10	7	6	1	Solution for I.V. infusion 50 mg (base) in 5 mL
+143312	8430	24380	2	7	1	1	Capsule 100 mg
+143317	8431	24380	2	7	1	1	Capsule 50 mg
+143322	8432	24380	10	7	6	1	Solution for I.V. infusion 100 mg in 5 mL
+143327	8433	24380	10	7	6	1	Powder for I.V. infusion 113.6 mg (equivalent to 100 mg etoposide)
+143332	8434	24380	5	7	6	1	Powder for I.V. infusion 1136 mg (equivalent to 1 g etoposide)
+143337	8435	24385	10	7	6	1	Solution concentrate for I.V. infusion 100 mg in 16.7 mL
+143342	8436	24385	10	7	6	1	Solution concentrate for I.V. infusion 150 mg in 25 mL
+143347	8437	24385	10	7	6	1	Solution concentrate for I.V. infusion 30 mg in 5 mL
+143353	8438	24385	10	7	6	1	Solution concentrate for I.V. infusion 300 mg in 50 mL
+143358	8439	24386	10	7	12	1	Injection set containing 1 single use vial concentrate for I.V. infusion 20 mg (anhydrous) in 0.5 mL and 1 single use vial solvent 1.5 mL
+143363	8440	24386	10	7	12	1	Injection set containing 1 single use vial concentrate for I.V. infusion 80 mg (anhydrous) in 2 mL and 1 single use vial solvent 6 mL
+143368	8441	26694	10	7	6	1	Solution for I.V. injection or intravesical administration 10 mg in 5 mL
+143375	8442	26694	10	7	6	1	Solution for I.V. injection or intravesical administration 20 mg in 10 mL
+143382	8443	26694	10	7	6	1	Solution for I.V. injection or intravesical administration 50 mg in 25 mL
+143389	8444	26695	4	1	6	10	Suspension for I.V. infusion 20 mg in 10 mL
+143394	8445	26695	4	7	6	1	Suspension for I.V. infusion 20 mg in 10 mL vial
+143396	8446	26695	4	1	6	25	Suspension for I.V. infusion 50 mg in 25 mL
+143401	8447	24393	10	7	6	1	Solution for I.V. injection 10 mg in 5 mL
+143406	8448	24393	10	7	6	1	Solution for I.V. injection 20 mg in 10 mL
+143411	8449	24393	10	7	6	1	Solution for I.V. injection 50 mg in 25 mL
+143416	8450	24396	2	7	1	1	Capsule 10 mg
+143421	8451	24396	2	7	1	1	Capsule 25 mg
+143426	8452	24396	2	7	1	1	Capsule 5 mg
+143431	8453	24396	10	7	6	1	Powder for I.V. injection 10 mg
+143436	8454	24396	10	7	6	1	Powder for I.V. injection 5 mg
+143441	8455	24396	10	7	6	1	Solution for I.V. injection 10 mg in 10 mL
+143446	8456	24396	10	1	6	5	Solution for I.V. injection 5 mg in 5 mL
+143451	8457	24397	10	7	12	1	Injection 10 mg (base) in 5 mL
+143458	8458	24397	10	7	12	1	Injection 20 mg (base) in 10 mL
+143465	8459	24397	10	1	12	12.5	Injection 25 mg (base) in 12.5 mL
+143472	8460	24401	5	7	6	1	Powder for injection 15,000 i.u.
+143474	8461	24401	5	7	12	1	Powder for injection 15,000 i.u. (solvent required)
+143476	8462	24406	10	7	6	1	I.V. injection 10 mg in 10 mL
+143482	8463	24406	10	1	6	100	I.V. injection 100 mg in 100 mL
+143487	8464	24406	10	1	6	50	I.V. injection 50 mg in 50 mL
+143493	8465	24407	10	7	6	1	Solution for I.V. injection 150 mg in 15 mL
+143499	8466	24407	10	7	6	1	Solution for I.V. injection 450 mg in 45 mL
+143505	8467	24407	10	7	6	1	Solution for I.V. injection 50 mg in 5 mL
+143511	8468	24408	5	7	6	1	Powder for I.V. infusion 100 mg
+143516	8469	24408	5	7	6	1	Powder for I.V. infusion 50 mg
+143521	8470	24413	10	7	6	1	Solution for I.V. infusion 100 mg in 10 mL
+143526	8471	24413	10	7	6	1	Solution for I.V. infusion 500 mg in 50 mL
+143531	8472	24421	2	7	1	1	Capsule 50 mg
+143536	8473	24422	2	7	1	1	Capsule 500 mg
+143541	8474	24430	10	7	6	1	Powder for I.V. infusion 4 mg (base)
+143546	8475	24432	10	7	6	1	I.V. injection 100 mg in 5 mL
+143551	8476	24432	10	7	6	1	I.V. injection 40 mg in 2 mL
+143556	8477	24438	2	7	1	1	Capsules 100 mg (base), 120
+143561	8478	24438	2	7	1	1	Capsules 100 mg (base), 180
+143566	8479	24447	1	7	1	1	Tablet 120 mg
+143571	8480	24449	1	7	1	1	Tablet 160 mg
+143576	8481	24449	1	7	1	1	Tablet 40 mg
+143581	8482	23600	1	7	1	1	Tablet 100 mg
+143586	8483	23600	1	7	1	1	Tablet 200 mg
+143591	8484	23600	1	7	1	1	Tablet 250 mg
+143596	8485	23600	1	7	1	1	Tablet 500 mg
+143601	8486	24454	10	7	7	1	I.M. injection (modified release), set containing 1 vial powder for injection 22.5 mg, 1 ampoule diluent 2 mL and 1 syringe with 2 needles
+143606	8487	24454	10	7	7	1	I.M. injection (modified release), set containing 1 vial powder for injection 30 mg, 1 ampoule diluent 2 mL and 1 syringe with 2 needles
+143611	8488	24454	10	7	7	1	I.M. injection (modified release), set containing 1 vial powder for injection 7.5 mg, 1 ampoule diluent 2 mL and 1 syringe with 2 needles
+143616	8489	24455	20	7	8	1	Subcutaneous implant (long acting) 10.8 mg (base) in pre-filled injection syringe
+143621	8490	24455	20	7	8	1	Subcutaneous implant 3.6 mg (base) in pre-filled injection syringe
+143626	8491	24460	1	7	1	1	Tablet 10 mg (base)
+143638	8492	24460	1	7	1	1	Tablet 20 mg (base)
+143654	8493	24461	1	7	1	1	Tablet 60 mg (base)
+143659	8494	24464	1	7	1	1	Tablet 250 mg
+143666	8495	24465	1	7	1	1	Tablet 150 mg
+143671	8496	24466	1	7	1	1	Tablet 50 mg
+143676	8497	24468	1	7	1	1	Tablet 250 mg
+143681	8498	24470	1	7	1	1	Tablet 1 mg
+143686	8499	24471	1	7	1	1	Tablet 2.5 mg
+143691	8500	24473	1	7	1	1	Tablet 25 mg
+143696	8501	24477	10	7	12	1	Injection 300 micrograms in 0.5 mL single use pre-filled syringe
+143698	8502	24477	10	7	12	1	Injection 300 micrograms in 1 mL vial
+143700	8503	24477	10	7	12	1	Injection 480 micrograms in 0.5 mL single use pre-filled syringe
+143702	8504	24477	10	7	12	1	Injection 480 micrograms in 1.6 mL vial
+143704	8505	24480	10	7	12	1	Powder for injection 13,400,000 i.u. (105 micrograms) vial
+143706	8506	24480	10	7	12	1	Powder for injection 33,600,000 i.u. (263 micrograms) vial
+143708	8507	24485	10	7	12	1	Injection 2,000,000 i.u. in 0.5 mL vial
+143710	8508	24486	10	7	8	1	Injection 3,000,000 i.u. in 0.5 mL single dose pre-filled syringe
+143718	8509	24486	10	7	12	1	Injection 4,500,000 i.u. in 0.5 mL single dose pre-filled syringe
+143726	8510	24486	10	7	12	1	Injection 6,000,000 i.u. in 0.5 mL single dose pre-filled syringe
+143734	8511	24486	10	7	12	1	Injection 9,000,000 i.u. in 0.5 mL single dose pre-filled syringe
+143742	8512	24487	10	7	12	1	Solution for injection 10,000,000 i.u. in 1 mL single dose vial
+143744	8513	24487	10	7	8	1	Solution for injection 18,000,000 i.u. in 1.2 mL multi-dose cartridge
+143752	8514	24487	10	1	12	3	Solution for injection 18,000,000 i.u. in 3 mL single dose vial
+143754	8515	24487	10	1	12	2.5	Solution for injection 25,000,000 i.u. in 2.5 mL single dose vial
+143756	8516	24487	10	7	8	1	Solution for injection 3,000,000 i.u. in 0.5 mL single dose vial
+143764	8517	24487	10	7	8	1	Solution for injection 30,000,000 i.u. in 1.2 mL multi-dose cartridge
+143769	8518	24487	10	7	8	1	Solution for injection 5,000,000 i.u. in 0.5 mL single dose vial
+143774	8519	24487	10	1	8	1.2	Solution for injection 60,000,000 i.u. in 1.2 mL multi-dose cartridge
+143776	8520	24489	10	7	12	1	Injection 44 micrograms (12,000,000 i.u.) in 0.5 mL single dose pre-filled syringe
+143781	8521	24489	10	7	8	1	Injection set comprising 1 vial powder for injection 30 micrograms (6,000,000 i.u.) and 1 ampoule solvent 2 mL
+143786	8522	24490	5	7	12	1	Injection set comprising 1 vial powder for injection 8,000,000 i.u. (250 micrograms) and solvent
+143791	8523	24492	5	7	12	1	Powder for injection 100 micrograms vial with diluent ampoule
+143793	8524	24492	5	7	12	1	Powder for injection 120 micrograms vial with diluent ampoule
+143795	8525	24492	5	7	12	1	Powder for injection 150 micrograms vial with diluent ampoule
+143797	8526	24492	5	7	12	1	Powder for injection 50 micrograms vial with diluent ampoule
+143799	8527	24492	5	7	12	1	Powder for injection 80 micrograms vial with diluent ampoule
+143801	8528	26696	22	7	\N	1	Single dose set comprising 1 vial powder for intravesical administration containing 6.6 to 19.2 x 10 8 CFU and 1 vial diluent 3 mL
+143805	8529	26697	22	7	\N	1	Vial containing powder for intravesical administration approximately 5 x 10 8 CFU
+143809	8530	24509	10	7	8	1	Powder for subcutaneous injection 20 mg in single use vial and 1 ampoule diluent 1.1 mL
+143814	8531	24512	2	7	1	1	Capsule 10 mg
+143816	8532	24512	2	7	1	1	Capsule 100 mg
+143818	8533	24512	2	7	1	1	Capsule 25 mg
+143820	8534	24512	2	7	1	1	Capsule 50 mg
+143822	8535	24512	10	1	1	50	Oral liquid 100 mg per mL, 50 mL
+143824	8536	24512	10	7	6	1	Solution concentrate for I.V. infusion 250 mg in 5 mL ampoule
+143826	8537	24512	10	7	6	1	Solution concentrate for I.V. infusion 50 mg in 1 mL ampoule
+143828	8538	23461	2	7	1	1	Capsule 1 mg
+143830	8539	23461	2	7	1	1	Capsule 5 mg
+143832	8540	23461	2	7	1	1	Capsule 500 micrograms
+143834	8541	24517	2	7	1	1	Capsule 250 mg
+143836	8542	24517	1	7	1	1	Tablet 500 mg
+143838	8543	24523	12	11	4	28	Pack containing 3 tablets leflunomide 100 mg and 30 tablets leflunomide 20 mg
+143842	8544	24523	1	7	1	1	Tablet 10 mg
+143847	8545	24523	1	7	1	1	Tablet 20 mg
+143852	8546	24526	1	7	1	1	Tablet 25 mg
+143858	8547	24526	1	7	1	1	Tablet 50 mg
+143867	8548	24538	2	7	1	1	Capsule 25 mg
+143873	8549	24538	1	7	5	1	Suppository 100 mg
+143878	8550	24539	1	7	1	1	Tablet 100 mg
+143886	8551	24539	1	7	1	1	Tablet 200 mg
+143892	8552	26698	1	7	4	1	Tablets 50 mg, 20
+143897	8553	26699	1	7	5	1	Suppository 100 mg
+143902	8554	26699	1	7	1	1	Tablet 25 mg (enteric coated)
+143917	8555	26699	1	7	1	1	Tablet 50 mg (enteric coated)
+143930	8556	24556	1	7	1	1	Tablet 50 mg-200 micrograms
+143938	8557	24558	2	7	1	1	Capsule 10 mg
+143950	8558	24558	2	7	1	1	Capsule 20 mg
+143962	8559	24558	1	7	4	1	Dispersible tablet 10 mg
+143972	8560	24558	1	7	4	1	Dispersible tablet 20 mg
+143985	8561	24562	1	7	1	1	Tablet 15 mg
+143990	8562	24562	1	7	1	1	Tablet 7.5 mg
+143995	8563	23566	1	7	1	1	Tablet 200 mg
+144000	8564	23566	1	7	1	1	Tablet 400 mg
+144005	8565	23566	1	7	4	1	Tablets 400 mg, 20
+144010	8566	23567	1	7	1	1	Tablet 1 g (sustained release)
+144016	8567	23567	1	7	1	1	Tablet 250 mg
+144022	8568	23567	1	7	1	1	Tablet 500 mg
+144028	8569	23567	1	7	1	1	Tablet 750 mg (sustained release)
+144034	8570	24565	1	7	1	1	Tablet 550 mg
+144040	8571	24566	2	7	1	1	Capsule 100 mg (sustained release)
+144045	8572	24566	2	7	1	1	Capsule 200 mg (sustained release)
+144051	8573	24566	2	7	1	1	Capsule 50 mg
+144056	8574	24566	1	7	5	1	Suppository 100 mg
+144061	8575	24574	1	7	1	1	Tablet 200 mg
+144066	8576	24574	1	7	1	1	Tablet 300 mg
+144071	8577	24584	2	7	1	1	Capsule 250 mg
+144077	8578	24589	2	7	1	1	Capsule 100 mg
+144082	8579	24589	2	7	1	1	Capsule 200 mg
+144087	8580	24590	4	1	4	150	Oral suspension 12.5 mg per 5 mL, 150 mL
+144092	8581	24590	4	1	4	150	Oral suspension 25 mg per 5 mL, 150 mL
+144097	8582	24590	1	7	1	1	Tablet 12.5 mg
+144102	8583	24590	1	7	1	1	Tablet 25 mg
+144107	8584	24617	10	7	12	1	Injection 10 mg
+144112	8585	24617	10	7	12	1	Injection 20 mg
+144117	8586	24617	10	7	12	1	Injection 50 mg
+144122	8587	24619	1	7	1	1	Tablet 3 mg
+144127	8588	24623	1	7	1	1	Tablet 125 mg
+144132	8589	24623	1	7	1	1	Tablet 250 mg
+144137	8590	26700	5	7	7	1	Lyophilised powder for I.M. injection 100 units vial
+144139	8591	26701	5	7	7	1	Lyophilised powder for I.M. injection 500 units vial
+144141	8592	24703	10	7	10	1	Intrathecal injection 10 mg in 20 mL
+144143	8593	24703	10	7	10	1	Intrathecal injection 10 mg in 5 mL
+144145	8594	24703	1	7	1	1	Tablet 10 mg
+144157	8595	24703	1	7	1	1	Tablet 25 mg
+144169	8596	24714	2	7	1	1	Capsule 25 mg
+144174	8597	24714	2	7	1	1	Capsule 50 mg
+144179	8598	24717	2	7	1	1	Capsule 300 mg
+144184	8599	24717	1	7	1	1	Tablet 100 mg
+144195	8600	24717	1	7	1	1	Tablet 300 mg
+144206	8601	24721	1	7	1	1	Tablet 500 mg
+144211	8602	24726	1	7	1	1	Tablet 500 micrograms
+144216	8603	24733	1	7	1	1	Tablet 200 mg
+144221	8604	24734	2	7	1	1	Capsule equivalent to 400 mg sodium clodronate
+144226	8605	24734	1	7	1	1	Tablet equivalent to 800 mg sodium clodronate
+144231	8606	24735	10	1	12	5	Concentrated injection 15 mg in 5 mL
+144237	8607	24735	10	1	12	10	Concentrated injection 30 mg in 10 mL
+144243	8608	24735	10	1	12	10	Concentrated injection 60 mg in 10 mL
+144249	8609	24735	10	1	12	10	Concentrated injection 90 mg in 10 mL
+144251	8610	24735	10	7	12	1	Injection set containing 1 vial powder for I.V. infusion 90 mg and 1 ampoule solvent 10 mL
+144253	8611	24735	10	7	12	1	Injection set containing 2 vials powder for I.V. infusion 30 mg and 2 ampoules solvent 10 mL
+144258	8612	24735	10	7	12	1	Injection set containing 4 vials powder for I.V. infusion 15 mg and 4 ampoules solvent 5 mL
+144263	8613	24736	1	7	1	1	Tablet equivalent to 10 mg alendronic acid
+144268	8614	24736	1	7	1	1	Tablet equivalent to 40 mg alendronic acid
+144273	8615	24736	1	7	1	1	Tablet equivalent to 70 mg alendronic acid
+144278	8616	24737	1	7	1	1	Tablet equivalent to 200 mg tiludronic acid
+144283	8617	24739	1	7	1	1	Tablet 30 mg
+144288	8618	24739	1	7	1	1	Tablet 5 mg
+144293	8619	24740	5	7	6	1	Powder for I.V. infusion 4 mg vial with diluent ampoule
+144295	8620	24742	12	11	4	28	Pack containing 28 tablets disodium etidronate 200 mg and 76 tablets calcium carbonate 1.25 g (equivalent to 500 mg calcium)
+144299	8621	26702	10	1	4	200	Oral solution 10 mg per mL, 200 mL
+144307	8622	26702	10	1	4	200	Oral solution 2 mg per mL, 200 mL
+144315	8623	26702	10	1	4	200	Oral solution 5 mg per mL, 200 mL
+144323	8624	26703	2	7	1	1	Capsule 10 mg (containing sustained release pellets)
+144331	8625	26703	2	7	1	1	Capsule 100 mg (containing sustained release pellets)
+144339	8626	26703	2	7	1	1	Capsule 120 mg (controlled release)
+144347	8627	26703	2	7	1	1	Capsule 20 mg (containing sustained release pellets)
+144355	8628	26703	2	7	1	1	Capsule 30 mg (controlled release)
+144363	8629	26703	2	7	1	1	Capsule 50 mg (containing sustained release pellets)
+144371	8630	26703	2	7	1	1	Capsule 60 mg (controlled release)
+144379	8631	26703	2	7	1	1	Capsule 90 mg (controlled release)
+144387	8632	26703	10	7	12	1	Injection 10 mg in 1 mL
+144393	8633	26703	10	7	12	1	Injection 15 mg in 1 mL
+144399	8634	26703	10	7	12	1	Injection 30 mg in 1 mL
+144404	8635	26703	5	7	4	1	Sachet containing controlled release granules for oral suspension, 100 mg per sachet
+144412	8636	26703	5	7	4	1	Sachet containing controlled release granules for oral suspension, 20 mg per sachet
+144420	8637	26703	5	7	4	1	Sachet containing controlled release granules for oral suspension, 200 mg per sachet
+144425	8638	26703	5	7	4	1	Sachet containing controlled release granules for oral suspension, 30 mg per sachet
+144433	8639	26703	5	7	4	1	Sachet containing controlled release granules for oral suspension, 60 mg per sachet
+144441	8640	26703	1	7	1	1	Tablet 10 mg (controlled release)
+144449	8641	26703	1	7	1	1	Tablet 100 mg (controlled release)
+144457	8642	26703	1	7	1	1	Tablet 15 mg (controlled release)
+144465	8643	26703	1	7	1	1	Tablet 200 mg (controlled release)
+144476	8644	26703	1	7	1	1	Tablet 30 mg
+144484	8645	26703	1	7	1	1	Tablet 30 mg (controlled release)
+144492	8646	26703	1	7	1	1	Tablet 5 mg (controlled release)
+144500	8647	26703	1	7	1	1	Tablet 60 mg (controlled release)
+144508	8648	26704	10	7	12	1	Injection 120 mg in 1.5 mL
+144513	8649	24835	10	7	12	1	Injection 10 mg in 1 mL
+144518	8650	24835	10	7	12	1	Injection 2 mg in 1 mL
+144523	8651	24835	10	1	12	5	Injection 50 mg in 5 mL
+144528	8652	24835	10	1	12	50	Injection 500 mg in 50 mL
+144533	8653	24835	10	1	4	473	Oral liquid 1 mg per mL, 473 mL
+144541	8654	24835	1	7	1	1	Tablet 2 mg
+144549	8655	24835	1	7	1	1	Tablet 4 mg
+144557	8656	24835	1	7	1	1	Tablet 8 mg
+144565	8657	24837	1	7	5	1	Suppository 30 mg
+144573	8658	24837	2	7	1	1	Capsule 10 mg
+144581	8659	24837	2	7	1	1	Capsule 20 mg
+144589	8660	24837	2	7	1	1	Capsule 5 mg
+144597	8661	24837	1	7	1	1	Tablet 10 mg (controlled release)
+144605	8662	24837	1	7	1	1	Tablet 20 mg (controlled release)
+144613	8663	24837	1	7	1	1	Tablet 40 mg (controlled release)
+144621	8664	24837	1	7	1	1	Tablet 5 mg
+144629	8665	24837	1	7	1	1	Tablet 80 mg (controlled release)
+144637	8666	24843	1	7	1	1	Tablet 30 mg-500 mg
+144652	8667	24847	10	7	12	1	Injection 100 mg in 2 mL
+144658	8668	24847	10	7	12	1	Injection 50 mg in 1 mL
+144664	8669	24780	11	7	4	1	Transdermal patch 10 mg (releasing approximately 100 micrograms per hour)
+144669	8670	24780	11	7	4	1	Transdermal patch 2.5 mg (releasing approximately 25 micrograms per hour)
+144674	8671	24780	11	7	4	1	Transdermal patch 5 mg (releasing approximately 50 micrograms per hour)
+144679	8672	24780	11	7	4	1	Transdermal patch 7.5 mg (releasing approximately 75 micrograms per hour)
+144684	8673	24854	2	7	1	1	Capsule 100 mg
+144689	8674	24874	2	7	1	1	Capsule 50 mg
+144699	8675	24874	10	7	12	1	Injection 100 mg in 2 mL
+144704	8676	24874	1	7	1	1	Tablet 100 mg (sustained release)
+144712	8677	24874	1	7	1	1	Tablet 150 mg (sustained release)
+144720	8678	24874	1	7	1	1	Tablet 200 mg (sustained release)
+144728	8679	22171	1	7	1	1	Tablet 300 mg
+144733	8680	22171	1	7	1	1	Tablet 300 mg (dispersible)
+144738	8681	24889	1	7	1	1	Tablet 250 mg
+144743	8682	24889	1	7	1	1	Tablet 500 mg
+144748	8683	24894	1	7	1	1	Tablet soluble 8 mg-300 mg
+144756	8684	24918	10	1	4	100	Oral liquid 120 mg per 5 mL, 100 mL
+144763	8685	24918	10	1	4	200	Oral liquid 240 mg per 5 mL, 200 mL
+144769	8686	24918	1	7	1	1	Tablet 500 mg
+144781	8687	24843	1	7	1	1	Tablet 15 mg-500 mg
+144787	8688	24843	1	7	1	1	Tablet 8 mg-500 mg
+144794	8689	24936	10	7	12	1	Injection 1 mg in 1 mL
+144799	8690	24938	1	7	1	1	Tablet 1 mg
+144804	8691	24941	1	7	5	1	Suppositories 2 mg-100 mg, 5
+144812	8692	24946	17	7	3	1	Nasal spray 20 mg in 0.1 mL single dose unit
+144817	8693	24946	1	7	1	1	Tablet 50 mg (base)
+144823	8694	24947	1	7	1	1	Tablet 2.5 mg (base)
+144828	8695	24948	1	7	1	1	Tablet 2.5 mg
+144833	8696	24952	1	7	1	1	Tablet 500 micrograms (base)
+144838	8697	24959	1	7	1	1	Tablet 60 mg
+144843	8698	26705	1	7	1	1	Tablet 30 mg
+144848	8699	26706	10	7	12	1	Injection 200 mg in 1 mL
+144853	8700	24961	1	7	1	1	Tablet 250 mg
+144858	8701	24966	4	1	4	500	Paediatric oral suspension 30 mg per 5 mL, 500 mL
+144863	8702	24966	1	7	1	1	Tablet 50 mg
+144868	8703	24966	2	7	1	1	Capsule 100 mg
+144873	8704	24966	2	7	1	1	Capsule 30 mg
+144878	8705	24977	2	7	1	1	Capsule 250 mg
+144883	8706	24977	3	1	1	200	Paediatric syrup 250 mg per 5 mL, 200 mL
+144888	8707	24982	10	7	12	1	Injection 1 mg in 2 mL (set containing solution 1 mg in 1 mL and 1 mL diluent)
+144893	8708	24982	10	1	1	10	Oral liquid 2.5 mg per mL, 10 mL
+144898	8709	24982	1	7	1	1	Tablet 2 mg
+144904	8710	24982	1	7	1	1	Tablet 500 micrograms
+144910	8711	24984	4	1	4	300	Oral suspension 100 mg per 5 mL, 300 mL
+144915	8712	24984	1	7	1	1	Tablet 100 mg
+144921	8713	24984	1	7	1	1	Tablet 200 mg
+144928	8714	24984	1	7	1	1	Tablet 200 mg (controlled release)
+144933	8715	24984	1	7	1	1	Tablet 400 mg (controlled release)
+144938	8716	24985	4	1	1	250	Oral suspension 60 mg per mL, 250 mL
+144943	8717	24985	1	7	1	1	Tablet 150 mg
+144948	8718	24985	1	7	1	1	Tablet 300 mg
+144953	8719	24985	1	7	1	1	Tablet 600 mg
+144958	8720	24987	1	7	4	1	Crushable tablet 100 mg
+144963	8721	24987	10	1	4	300	Oral liquid 200 mg per 5 mL, 300 mL
+144968	8722	24987	3	1	4	300	Syrup 200 mg per 5 mL, 300 mL
+144973	8723	24987	1	7	1	1	Tablet 200 mg (enteric coated)
+144979	8724	24987	1	7	1	1	Tablet 500 mg (enteric coated)
+144985	8725	24990	5	7	4	1	Oral powder, sachet 500 mg
+144990	8726	24990	1	7	1	1	Tablet 500 mg
+144995	8727	24992	1	7	1	1	Tablet 10 mg (base)
+145000	8728	24992	1	7	1	1	Tablet 15 mg (base)
+145005	8729	24992	1	7	1	1	Tablet 5 mg (base)
+145010	8730	24994	1	7	1	1	Tablet 200 mg
+145015	8731	24994	1	7	1	1	Tablet 50 mg
+145020	8732	24996	1	7	1	1	Tablet 100 mg
+145025	8733	24996	1	7	1	1	Tablet 200 mg
+145030	8734	24996	1	7	1	1	Tablet 25 mg
+145035	8735	24996	1	7	1	1	Tablet 5 mg
+145040	8736	24996	1	7	1	1	Tablet 50 mg
+145045	8737	24998	2	7	1	1	Capsule 15 mg
+145050	8738	24998	2	7	1	1	Capsule 25 mg
+145055	8739	24998	2	7	1	1	Capsule 50 mg
+145060	8740	24998	1	7	1	1	Tablet 100 mg
+145065	8741	24998	1	7	1	1	Tablet 200 mg
+145070	8742	24998	1	7	1	1	Tablet 25 mg
+145075	8743	24998	1	7	1	1	Tablet 50 mg
+145080	8744	24999	2	7	1	1	Capsule 100 mg
+145089	8745	24999	2	7	1	1	Capsule 300 mg
+145102	8746	24999	2	7	1	1	Capsule 400 mg
+145115	8747	24999	1	7	1	1	Tablet 600 mg
+145123	8748	24999	1	7	1	1	Tablet 800 mg
+145133	8749	25006	1	7	1	1	Tablet 2 mg
+145138	8750	25006	1	7	1	1	Tablet 5 mg
+145143	8751	25007	1	7	1	1	Tablet 2 mg
+145148	8752	25020	10	7	12	1	Injection 2 mg in 2 mL
+145153	8753	25020	1	7	1	1	Tablet 2 mg
+145158	8754	26707	2	7	1	1	Capsule 100 mg-25 mg
+145166	8755	26707	2	7	1	1	Capsule 100 mg-25 mg (sustained release)
+145172	8756	26707	2	7	1	1	Capsule 200 mg-50 mg
+145178	8757	26707	2	7	1	1	Capsule 50 mg-12.5 mg
+145184	8758	26707	1	7	4	1	Dispersible tablet 100 mg-25 mg
+145190	8759	26707	1	7	4	1	Dispersible tablet 50 mg-12.5 mg
+145196	8760	26707	1	7	1	1	Tablet 100 mg-25 mg
+145202	8761	26707	1	7	1	1	Tablet 200 mg-50 mg
+145208	8762	26708	1	7	1	1	Tablet 100 mg-25 mg
+145217	8763	26708	1	7	1	1	Tablet 200 mg-50 mg (modified release)
+145223	8764	26708	1	7	1	1	Tablet 250 mg-25 mg
+145229	8765	25027	2	7	1	1	Capsule 100 mg
+145234	8766	23560	2	7	1	1	Capsule 10 mg (base)
+145240	8767	23560	2	7	1	1	Capsule 5 mg (base)
+145249	8768	23560	1	7	1	1	Tablet 2.5 mg (base)
+145265	8769	25030	1	7	1	1	Tablet 1 mg (base)
+145270	8770	25030	1	7	1	1	Tablet 250 micrograms (base)
+145275	8771	25030	1	7	1	1	Tablet 50 micrograms (base)
+145280	8772	23562	1	7	1	1	Tablet 1 mg
+145285	8773	23562	1	7	1	1	Tablet 2 mg
+145290	8774	23562	1	7	1	1	Tablet 4 mg
+145295	8775	25035	10	7	12	1	Injection 10 mg in 1 mL
+145297	8776	25037	1	7	1	1	Tablet 5 mg
+145303	8777	25040	1	7	1	1	Tablet 200 mg
+145308	8778	25045	10	1	12	2	Injection 50 mg in 2 mL
+145313	8779	25045	3	1	4	100	Mixture 25 mg per 5 mL, 100 mL
+145318	8780	25045	1	7	1	1	Tablet 10 mg
+145323	8781	25045	1	7	1	1	Tablet 100 mg
+145328	8782	25045	1	7	1	1	Tablet 25 mg
+145333	8783	25054	10	7	12	1	Injection 12.5 mg in 0.5 mL
+145338	8784	25054	10	7	12	1	Injection 25 mg in 1 mL
+145343	8785	25054	10	1	12	2	Injection 50 mg in 2 mL
+145348	8786	25056	10	7	12	1	Injection 12.5 mg in 1 mL
+145353	8787	25056	1	7	5	1	Suppositories 25 mg, 5
+145358	8788	25056	1	7	5	1	Suppositories 5 mg, 5
+145363	8789	25056	1	7	1	1	Tablet 5 mg
+145369	8790	25058	1	7	1	1	Tablet 1 mg (base)
+145374	8791	25058	1	7	1	1	Tablet 2 mg (base)
+145379	8792	25058	1	7	1	1	Tablet 5 mg (base)
+145384	8793	25064	1	7	1	1	Tablet 10 mg
+145389	8794	25064	1	7	1	1	Tablet 2.5 mg
+145394	8795	25065	4	1	4	500	Oral suspension 10 mg per mL, 500 mL
+145399	8796	25065	1	7	1	1	Tablet 10 mg
+145405	8797	25065	1	7	1	1	Tablet 100 mg
+145411	8798	25065	1	7	1	1	Tablet 25 mg
+145417	8799	25065	1	7	1	1	Tablet 50 mg
+145423	8800	25069	10	7	12	1	Injection 5 mg in 1 mL
+145428	8801	25069	10	1	4	100	Oral liquid 2 mg per mL, 100 mL
+145433	8802	25069	1	7	1	1	Tablet 1.5 mg
+145438	8803	25069	1	7	1	1	Tablet 5 mg
+145443	8804	25069	1	7	1	1	Tablet 500 micrograms
+145448	8805	25069	10	7	7	1	I.M. injection equivalent to 150 mg haloperidol in 3 mL
+145453	8806	25069	10	7	7	1	I.M. injection equivalent to 50 mg haloperidol in 1 mL
+145458	8807	25084	10	7	7	1	Oily I.M. injection 100 mg in 1 mL
+145463	8808	25084	10	7	7	1	Oily I.M. injection 20 mg in 1 mL
+145468	8809	25084	10	7	7	1	Oily I.M. injection 40 mg in 2 mL
+145473	8810	25088	10	7	7	1	Oily I.M. injection 200 mg in 1 mL
+145478	8811	25095	1	7	1	1	Tablet 100 mg
+145480	8812	25095	1	7	1	1	Tablet 25 mg
+145482	8813	25096	1	7	1	1	Tablet 10 mg
+145487	8814	25096	1	7	1	1	Tablet 2.5 mg
+145492	8815	25096	1	7	1	1	Tablet 5 mg
+145497	8816	25096	1	7	1	1	Tablet 7.5 mg
+145502	8817	25096	18	7	4	1	Wafer 10 mg
+145507	8818	25096	18	7	4	1	Wafer 5 mg
+145512	8819	25097	1	7	1	1	Tablet 100 mg (base)
+145517	8820	25097	1	7	1	1	Tablet 200 mg (base)
+145522	8821	25097	1	7	1	1	Tablet 25 mg (base)
+145527	8822	25097	1	7	1	1	Tablet 300 mg (base)
+145532	8823	25099	1	7	1	1	Tablet 25 mg
+145537	8824	25105	1	7	1	1	Tablet 100 mg
+145542	8825	25105	1	7	1	1	Tablet 200 mg
+145547	8826	25105	1	7	1	1	Tablet 400 mg
+145552	8827	25108	1	7	1	1	Tablet 250 mg
+145557	8828	25108	1	7	1	1	Tablet 450 mg (slow release)
+145562	8829	25111	10	1	4	100	Oral solution 1 mg per mL, 100 mL
+145567	8830	25111	1	7	1	1	Tablet 1 mg
+145572	8831	25111	1	7	1	1	Tablet 2 mg
+145577	8832	25111	1	7	1	1	Tablet 3 mg
+145582	8833	25111	1	7	1	1	Tablet 4 mg
+145587	8834	25117	10	7	12	1	Injection 10 mg in 2 mL
+145592	8835	25117	1	7	1	1	Tablet 2 mg
+145606	8836	25117	1	7	1	1	Tablet 5 mg
+145620	8837	25120	1	7	1	1	Tablet 15 mg
+145630	8838	25120	1	7	1	1	Tablet 30 mg
+145642	8839	25124	1	7	1	1	Tablet 3 mg
+145647	8840	25124	1	7	1	1	Tablet 6 mg
+145652	8841	25128	1	7	1	1	Tablet 1 mg
+145665	8842	25128	1	7	1	1	Tablet 2 mg
+145677	8843	25128	1	7	1	1	Tablet 250 micrograms
+145684	8844	25128	1	7	1	1	Tablet 500 micrograms
+145692	8845	25152	1	7	1	1	Tablet 10 mg
+145697	8846	25152	1	7	1	1	Tablet 5 mg
+145702	8847	25188	1	7	1	1	Tablet 5 mg
+145712	8848	25189	1	7	1	1	Tablet 1 mg
+145717	8849	25193	2	7	1	1	Capsule 10 mg
+145731	8850	25193	1	7	1	1	Tablet 10 mg
+145743	8851	25205	1	7	1	1	Tablet 7.5 mg
+145748	8852	25235	1	7	1	1	Tablet 10 mg
+145753	8853	25235	1	7	1	1	Tablet 25 mg
+145759	8854	25237	1	7	1	1	Tablet 25 mg
+145771	8855	25242	1	7	1	1	Tablet 10 mg
+145776	8856	25242	1	7	1	1	Tablet 25 mg
+145782	8857	25242	1	7	1	1	Tablet 50 mg
+145787	8858	25243	1	7	1	1	Tablet 10 mg (base)
+145792	8859	25243	1	7	1	1	Tablet 25 mg (base)
+145797	8860	25245	2	7	1	1	Capsule 10 mg (base)
+145803	8861	25245	2	7	1	1	Capsule 25 mg (base)
+145809	8862	25245	1	7	1	1	Tablet 50 mg (base)
+145814	8863	25249	2	7	1	1	Capsule 25 mg
+145820	8864	25249	1	7	1	1	Tablet 75 mg
+145826	8865	25257	2	7	1	1	Capsule 20 mg (base)
+145840	8866	25257	10	1	4	140	Oral solution 20 mg (base) per 5 mL, 140 mL
+145845	8867	25257	1	7	1	1	Tablet 20 mg (base) (dispersible)
+145851	8868	25258	1	7	1	1	Tablet 20 mg (base)
+145858	8869	25259	1	7	1	1	Tablet 20 mg (base)
+145865	8870	25260	1	7	1	1	Tablet 100 mg (base)
+145870	8871	25260	1	7	1	1	Tablet 50 mg (base)
+145875	8872	25262	1	7	1	1	Tablet 100 mg
+145881	8873	25262	1	7	1	1	Tablet 50 mg
+145886	8874	25267	1	7	1	1	Tablet 15 mg (base)
+145888	8875	25268	1	7	1	1	Tablet 10 mg (base)
+145893	8876	25272	1	7	1	1	Tablet 150 mg
+145907	8877	25272	1	7	1	1	Tablet 300 mg
+145921	8878	25277	1	7	1	1	Tablet 10 mg
+145927	8879	25277	1	7	1	1	Tablet 20 mg
+145933	8880	25280	1	7	1	1	Tablet 100 mg
+145938	8881	25280	1	7	1	1	Tablet 200 mg
+145943	8882	25280	1	7	1	1	Tablet 300 mg
+145948	8883	25285	1	7	1	1	Tablet 30 mg
+145955	8884	25289	2	7	1	1	Capsule 150 mg (base) (modified release)
+145960	8885	25289	2	7	1	1	Capsule 75 mg (base) (modified release)
+145965	8886	25289	1	7	1	1	Tablet 37.5 mg (base)
+145970	8887	25289	1	7	1	1	Tablet 75 mg (base)
+145975	8888	25291	1	7	1	1	Tablet 4 mg (base)
+145980	8889	25295	1	7	1	1	Tablet 5 mg
+145985	8890	25332	1	7	1	1	Tablet 10 mg
+145990	8891	25332	1	7	1	1	Tablet 5 mg
+145995	8892	25333	2	7	1	1	Capsule 1.5 mg (base)
+146000	8893	25333	2	7	1	1	Capsule 3 mg (base)
+146005	8894	25333	2	7	1	1	Capsule 4.5 mg (base)
+146010	8895	25333	2	7	1	1	Capsule 6 mg (base)
+146015	8896	25333	10	1	1	120	Oral solution 2 mg (base) per mL, 120 mL
+146020	8897	25334	1	7	1	1	Tablet 4 mg (base)
+146025	8898	25334	1	7	1	1	Tablet 8 mg (base)
+146030	8899	25342	1	7	1	1	Tablet 10 mg
+146035	8900	25342	1	7	1	1	Tablet 180 mg (sustained release)
+146037	8901	25342	1	7	1	1	Tablet 60 mg
+146042	8902	25348	1	7	1	1	Tablet 10 mg
+146047	8903	25354	11	7	4	1	Transdermal patches releasing approximately 10 mg per 16 hours, 7
+146052	8904	25354	11	7	4	1	Transdermal patches releasing approximately 14 mg per 24 hours, 7
+146057	8905	25354	11	7	4	1	Transdermal patches releasing approximately 15 mg per 16 hours, 7
+146062	8906	25354	11	7	4	1	Transdermal patches releasing approximately 21 mg per 24 hours, 7
+146067	8907	25354	11	7	4	1	Transdermal patches releasing approximately 5 mg per 16 hours, 7
+146072	8908	25354	11	7	4	1	Transdermal patches releasing approximately 7 mg per 24 hours, 7
+146077	8909	25355	1	7	1	1	Tablet 150 mg (sustained release)
+146082	8910	25359	1	7	1	1	Tablet 333 mg (enteric coated)
+146087	8911	25360	1	7	1	1	Tablet 50 mg
+146092	8912	25362	1	7	4	1	Sublingual tablet 2 mg (base)
+146094	8913	25362	1	7	4	1	Sublingual tablet 400 micrograms (base)
+146096	8914	25362	1	7	4	1	Sublingual tablet 8 mg (base)
+146098	8915	25363	10	7	12	1	Injection 10 mg in 1 mL
+146106	8916	25363	10	1	4	1000	Oral liquid 25 mg per 5 mL, 1 L
+146108	8917	25363	10	1	4	200	Oral liquid 25 mg per 5 mL, 200 mL
+146110	8918	25363	5	7	4	1	Powder 1 g (for preparation of other dosage forms)
+146112	8919	25363	1	7	1	1	Tablet 10 mg
+146120	8920	21517	1	7	5	1	Suppositories 500 mg, 10
+146125	8921	21517	1	7	1	1	Tablet 200 mg
+146132	8922	21517	1	7	1	1	Tablet 400 mg
+146142	8923	24089	4	1	4	100	Oral suspension 320 mg per 5 mL (equivalent to 200 mg metronidazole in 5 mL), 100 mL
+146147	8924	24090	1	7	1	1	Tablet 500 mg
+146153	8925	25406	4	1	4	210	Oral suspension 750 mg per 5 mL, 210 mL
+146158	8926	25414	1	7	1	1	Tablet 200 mg
+146163	8927	26709	1	7	1	1	Tablet 300 mg
+146170	8928	26710	1	7	1	1	Tablet 300 mg
+146177	8929	25425	1	7	1	1	Tablet 25 mg
+146182	8930	25465	1	7	1	1	Tablet 100 mg
+146187	8931	25467	1	7	1	1	Tablet 200 mg
+146192	8932	25467	1	7	1	1	Tablet 400 mg
+146197	8933	25476	1	7	1	1	Tablet 125 mg (base)
+146202	8934	25476	1	7	1	1	Tablet 250 mg (base)
+146207	8935	25479	1	7	1	1	Tablet 50 mg (base)
+146212	8936	25481	1	7	1	1	Tablet 3 mg
+146217	8937	25508	6	13	4	30	Cream 50 mg per g (5%), 30 g
+146222	8938	25514	19	1	4	200	Application 50 g in 200 mL (25%)
+146227	8939	25538	8	1	3	15	Nasal drops 500 micrograms per mL (0.05%), 15 mL
+146232	8940	25538	17	1	3	15	Nasal spray 500 micrograms per mL (0.05%), 15 mL
+146237	8941	25538	17	1	3	10	Nasal spray 500 micrograms per mL (0.05%), 18 mL
+146242	8942	25557	17	1	3	26	Nasal spray metered dose pump 20 mg per mL (2%), 26 mL
+146247	8943	25558	17	1	3	10	Nasal spray 500 micrograms per mL (0.05%), 10 mL (100 doses)
+146252	8944	25566	17	12	3	200	Aqueous nasal spray (pump pack) 50 micrograms per dose (200 doses)
+146257	8945	25566	17	12	3	400	Aqueous nasal spray 50 micrograms per dose, 400 doses set containing 1 pump pack (200 doses) and 1 refill (200 doses)
+146262	8946	25566	17	12	3	400	Aqueous nasal spray 50 micrograms per dose, 400 doses set containing 2 pump packs each providing 200 doses
+146267	8947	21883	17	\N	3	120	Aqueous nasal spray (pump pack) 64 micrograms per dose (120 doses)
+146273	8948	25583	17	12	3	180	Aqueous nasal spray (pump pack) 21 micrograms (anhydrous) per dose (180 doses)
+146278	8949	25583	17	12	3	180	Aqueous nasal spray (pump pack) 42 micrograms (anhydrous) per dose (180 doses)
+146283	8950	26711	1	7	1	1	Tablet 60 mg
+146289	8951	26712	1	7	1	1	Tablet 60 mg
+146294	8952	25636	2	7	11	1	Capsule containing powder for oral inhalation 200 micrograms (base) (for use in Ventolin Rotahaler)
+146298	8953	25636	10	1	11	30	Nebuliser solution 5 mg (base) per mL (0.5%), 30 mL
+146303	8954	25636	10	7	11	1	Nebuliser solution single dose units 2.5 mg (base) in 2.5 mL, 30
+146314	8955	25636	10	7	11	1	Nebuliser solution single dose units 5 mg (base) in 2.5 mL, 30
+146325	8956	25636	5	12	11	200	Oral pressurised inhalation 100 micrograms (base) per dose (200 doses), CFC-free formulation
+146333	8957	25636	5	12	11	200	Oral pressurised inhalation in breath actuated device 100 micrograms (base) per dose (200 doses), CFC-free formulation
+146338	8958	25637	10	1	11	50	Nebuliser solution 10 mg per mL (1%), 50 mL
+146343	8959	25637	10	7	11	1	Nebuliser solution single dose units 5 mg in 2 mL, 30
+146348	8960	25637	5	12	11	200	Powder for oral inhalation in breath actuated device 500 micrograms per dose (200 doses)
+146353	8961	25646	5	12	11	120	Oral pressurised inhalation 25 micrograms (base) per dose (120 doses)
+146358	8962	25646	5	12	11	60	Powder for oral inhalation in breath actuated device 50 micrograms (base) per dose (60 doses)
+146363	8963	25647	2	7	11	1	Capsule containing powder for oral inhalation 12 micrograms (for use in Foradile Aerolizer)
+146368	8964	25647	5	12	11	60	Powder for oral inhalation in breath actuated device 12 micrograms per dose (60 doses)
+146373	8965	25647	5	12	11	60	Powder for oral inhalation in breath actuated device 6 micrograms per dose (60 doses)
+146378	8966	25657	5	12	11	200	Oral pressurised inhalation 20 micrograms (anhydrous)-100 micrograms (base) per dose (200 doses)
+146386	8967	25659	5	12	11	120	Oral pressurised inhalation 125 micrograms-25 micrograms (base) per dose (120 doses), CFC-free formulation
+146394	8968	25659	5	12	11	120	Oral pressurised inhalation 250 micrograms-25 micrograms (base) per dose (120 doses), CFC-free formulation
+146400	8969	25659	5	12	11	120	Oral pressurised inhalation 50 micrograms-25 micrograms (base) per dose (120 doses), CFC-free formulation
+146406	8970	25659	5	12	11	60	Powder for oral inhalation in breath actuated device 100 micrograms-50 micrograms (base) perdose (60 doses)
+146412	8971	25659	5	12	11	60	Powder for oral inhalation in breath actuated device 250 micrograms-50 micrograms (base) perdose (60 doses)
+146418	8972	25659	5	12	11	60	Powder for oral inhalation in breath actuated device 500 micrograms-50 micrograms (base) perdose (60 doses)
+146424	8973	25566	5	12	11	200	Oral pressurised inhalation 100 micrograms per dose (200 doses), CFC-free formulation
+146429	8974	25566	5	12	11	200	Oral pressurised inhalation 50 micrograms per dose (200 doses), CFC-free formulation
+146434	8975	25566	5	12	11	200	Oral pressurised inhalation in breath actuated device 100 micrograms per dose (200 doses), CFC-free formulation
+146439	8976	25566	5	12	11	200	Oral pressurised inhalation in breath actuated device 50 micrograms per dose (200 doses), CFC-free formulation
+146444	8977	21883	10	7	11	1	Nebuliser suspension single dose units 1 mg in 2 mL, 30
+146449	8978	21883	10	7	11	1	Nebuliser suspension single dose units 500 micrograms in 2 mL, 30
+146454	8979	21883	5	12	11	200	Powder for oral inhalation in breath actuated device 100 micrograms per dose (200 doses)
+146459	8980	21883	5	12	11	200	Powder for oral inhalation in breath actuated device 200 micrograms per dose (200 doses)
+146464	8981	21883	5	12	11	200	Powder for oral inhalation in breath actuated device 400 micrograms per dose (200 doses)
+146469	8982	25667	5	12	11	120	Oral pressurised inhalation 125 micrograms per dose (120 doses), CFC-free formulation
+146474	8983	25667	5	12	11	120	Oral pressurised inhalation 250 micrograms per dose (120 doses), CFC-free formulation
+146479	8984	25667	5	12	11	120	Oral pressurised inhalation 50 micrograms per dose (120 doses), CFC-free formulation
+146484	8985	25667	5	12	11	60	Powder for oral inhalation in breath actuated device 100 micrograms per dose (60 doses)
+146489	8986	25667	5	12	11	60	Powder for oral inhalation in breath actuated device 250 micrograms per dose (60 doses)
+146494	8987	25667	5	12	11	60	Powder for oral inhalation in breath actuated device 500 micrograms per dose (60 doses)
+146499	8988	25583	10	1	11	20	Nebuliser solution 250 micrograms (anhydrous) per mL (0.025%), 20 mL
+146504	8989	25583	10	7	11	1	Nebuliser solution single dose units 250 micrograms (anhydrous) in 1 mL, 30
+146517	8990	25583	10	7	11	1	Nebuliser solution single dose units 500 micrograms (anhydrous) in 1 mL, 30
+146530	8991	25583	5	12	11	200	Oral pressurised inhalation 20 micrograms (anhydrous) per dose (200 doses)
+146535	8992	25583	5	12	11	200	Oral pressurised inhalation 40 micrograms (anhydrous) per dose (200 doses)
+146540	8993	25583	5	12	11	200	Oral pressurised inhalation in breath actuated device 20 micrograms (anhydrous) per dose (200 doses)
+146545	8994	25557	2	7	11	1	Capsule containing powder for oral inhalation 20 mg (for use in Intal Spinhaler or Intal Halermatic)
+146550	8995	25557	5	12	11	200	Oral pressurised inhalation 1 mg per dose (200 doses)
+146555	8996	25557	5	12	11	112	Oral pressurised inhalation 5 mg per dose (112 doses), CFC-free formulation
+146560	8997	25557	10	7	11	1	Solution for inhalation 20 mg in 2 mL ampoule
+146566	8998	25677	5	12	11	112	Oral pressurised inhalation 2 mg per dose (112 doses), CFC-free formulation
+146571	8999	25636	3	1	4	300	Syrup 2 mg (base) per 5 mL, 300 mL
+146576	9000	25637	10	7	12	1	Injection 100 micrograms in 1 mL
+146581	9001	25637	10	7	12	1	Injection 500 micrograms in 1 mL
+146586	9002	25709	3	1	4	500	Syrup 133.3 mg per 25 mL, 500 mL
+146591	9003	25709	1	7	1	1	Tablet 125 mg
+146596	9004	25709	1	7	1	1	Tablet 200 mg (sustained release)
+146601	9005	25709	1	7	1	1	Tablet 250 mg (sustained release)
+146606	9006	25709	1	7	1	1	Tablet 300 mg (sustained release)
+146611	9007	25751	3	7	4	1	Mixture 200 mL
+146616	9008	25754	10	1	11	10	Solution for inhalation 200 mg per mL (20%), 10 mL
+146621	9009	25766	10	7	11	1	Solution for inhalation 2.5 mg (2,500 units) in 2.5 mL ampoule
+146623	9010	25773	1	7	1	1	Tablet 30 mg
+146628	9011	25777	3	1	4	100	Linctus 1 mg per mL (0.1%), 100 mL
+146634	9012	25852	10	1	12	2	Injection 50 mg in 2 mL
+146639	9013	25852	1	7	1	1	Tablet 10 mg
+146644	9014	25852	1	7	1	1	Tablet 25 mg
+146649	9015	25868	1	7	1	1	Tablet 10 mg
+146654	9016	25876	1	7	1	1	Tablet 4 mg
+146659	9017	25885	1	7	1	1	Tablet 10 mg
+146664	9018	25896	1	7	1	1	Tablet 120 mg
+146669	9019	25896	1	7	1	1	Tablet 60 mg
+146674	9020	23188	8	1	4	10	Eye drops 5 mg per mL (0.5%), 10 mL
+146680	9021	23188	7	13	4	4	Eye ointment 10 mg per g (1%), 4 g
+146686	9022	26685	7	13	4	5	Eye ointment 10 mg per g (1%), 5 g
+146691	9023	24040	8	1	4	5	Eye drops 3 mg (base) per mL (0.3%), 5 mL
+146696	9024	24039	8	1	4	5	Eye drops 3 mg per mL (0.3%), 5 mL
+146701	9025	24039	7	13	4	3.5	Eye ointment 3 mg per g (0.3%), 3.5 g
+146706	9026	26713	7	13	4	4	Eye ointment 5,000 units-400 units-5 mg per g, 4 g
+146716	9027	26714	8	1	4	10	Eye drops 5,000 units-2.5 mg-25 micrograms per mL, 10 mL
+146726	9028	25950	8	1	4	15	Eye drops 100 mg per mL (10%), 15 mL
+146732	9029	23207	7	13	4	4.5	Eye ointment 30 mg per g (3%), 4.5 g
+146737	9030	24158	20	7	4	1	Intravitreal implant 4.5 mg
+146739	9031	24051	8	1	4	5	Eye drops 3 mg per mL (0.3%), 5 mL
+146744	9032	24052	8	1	4	5	Eye drops 3 mg per mL (0.3%), 5 mL
+146750	9033	21524	8	1	4	5	Eye drops 1 mg per mL (0.1%), 5 mL
+146755	9034	21525	8	1	4	10	Eye drops 10 mg per mL (1%), 10 mL
+146760	9035	21525	8	1	4	10	Eye drops 5 mg per mL (0.5%), 10 mL
+146765	9036	21879	7	13	4	5	Eye ointment 10 mg per g (1%), 5 g
+146770	9037	21879	7	13	4	5	Eye ointment 5 mg per g (0.5%), 5 g
+146775	9038	22782	8	1	4	5	Eye drops 1 mg per mL (0.1%), 5 mL
+146781	9039	25987	8	1	4	5	Eye drops 1 mg per mL (0.1%), 5 mL
+146786	9040	26699	8	1	4	5	Eye drops 1 mg per mL (0.1%), 5 mL
+146791	9041	26003	8	1	4	5	Eye drops 300 micrograms per mL (0.03%), 5 mL
+146796	9042	26033	8	1	4	10	Eye drops 1 mg per mL (0.1%), 10 mL
+146801	9043	26034	8	1	4	10	Eye drops 5 mg (base) per mL (0.5%), 10 mL
+146806	9044	26036	8	1	4	5	Eye drops 2 mg per mL (0.2%), 5 mL
+146812	9045	26039	8	1	4	15	Eye drops 10 mg per mL (1%), 15 mL
+146819	9046	26039	8	1	4	15	Eye drops 20 mg per mL (2%), 15 mL
+146826	9047	26039	8	1	4	15	Eye drops 30 mg per mL (3%), 15 mL
+146833	9048	26039	8	1	4	15	Eye drops 40 mg per mL (4%), 15 mL
+146840	9049	26039	8	1	4	15	Eye drops 5 mg per mL (0.5%), 15 mL
+146846	9050	26039	8	1	4	15	Eye drops 60 mg per mL (6%), 15 mL
+146852	9051	25347	8	1	4	15	Eye drops 15 mg per mL (1.5%), 15 mL
+146857	9052	25347	8	1	4	15	Eye drops 30 mg per mL (3%), 15 mL
+146862	9053	26052	10	7	12	1	Injection 500 mg (solvent required)
+146867	9054	26052	1	7	1	1	Tablet 250 mg
+146872	9055	26054	8	1	4	5	Eye drops 20 mg (base) per mL (2%), 5 mL
+146877	9056	26055	8	1	4	5	Eye drops 10 mg per mL (1%), 5 mL
+146882	9057	26057	8	1	4	2.5	Eye drops (gellan gum solution) 2.5 mg (base) per mL (0.25%), 2.5 mL
+146887	9058	26057	8	1	4	2.5	Eye drops (gellan gum solution) 5 mg (base) per mL (0.5%), 2.5 mL
+146892	9059	26057	8	1	4	5	Eye drops 2.5 mg (base) per mL (0.25%), 5 mL
+146899	9060	26057	8	1	4	5	Eye drops 5 mg (base) per mL (0.5%), 5 mL
+146906	9061	26058	8	1	4	5	Eye drops, solution, 5 mg (base) per mL (0.5%), 5 mL
+146912	9062	26058	8	1	4	5	Eye drops, suspension, 2.5 mg (base) per mL (0.25%), 5 mL
+146917	9063	26059	8	1	4	5	Eye drops 2.5 mg per mL (0.25%), 5 mL
+146922	9064	26715	10	1	4	5	Eye drops 20 mg (base)-5 mg (base) per mL (2%-0.5%), 5 mL
+146930	9065	26716	10	1	4	2.5	Eye drops 50 micrograms-5 mg (base) per mL (0.005%-0.5%), 2.5 mL
+146938	9066	26717	8	1	4	5	Eye drops 5 mg (base)-20 mg per mL (0.5%-2%), 5 mL
+146946	9067	26717	8	1	4	5	Eye drops 5 mg (base)-40 mg per mL (0.5%-4%), 5 mL
+146952	9068	26069	8	1	4	2.5	Eye drops 50 micrograms per mL (0.005%), 2.5 mL
+146957	9069	21677	8	1	4	15	Eye drops 10 mg per mL (1%), 15 mL
+146962	9070	21677	8	1	4	15	Eye drops 5 mg per mL (0.5%), 15 mL
+146967	9071	26077	8	1	4	15	Eye drops 20 mg per mL (2%), 15 mL
+146972	9072	26077	8	1	4	15	Eye drops 50 mg per mL (5%), 15 mL
+146977	9073	26086	8	1	4	15	Eye drops 1 mg per mL (0.1%), 15 mL
+146983	9074	26718	8	1	4	15	Eye drops 5 mg (phosphate)-500 micrograms (hydrochloride) per mL (0.5%-0.05%), 15 mL
+146991	9075	26718	8	1	4	10	Eye drops 5 mg (sulfate)-250 micrograms (nitrate) per mL (0.5%-0.025%), 10 mL
+146997	9076	26719	8	1	4	15	Eye drops 250 micrograms-3 mg per mL (0.025%-0.3%), 15 mL
+147005	9077	26095	8	1	4	15	Eye drops 2.5 mg-1.2 mg per mL (0.25%-0.12%), 15 mL
+147013	9078	25557	8	1	4	10	Eye drops 20 mg per mL (2%), 10 mL
+147018	9079	25558	8	1	4	4	Eye drops 500 micrograms per mL (0.05%), 4 mL (120 doses)
+147023	9080	26102	8	1	4	10	Eye drops 1 mg (base) per mL (0.1%), 10 mL
+147028	9081	26720	7	13	4	10	Ocular lubricating gel 2 mg per g (0.2%), 10 g
+147033	9082	26721	6	13	4	0.5	Ocular lubricating gel 3 mg per g (0.3%), single dose units 0.5 g, 30
+147038	9083	26722	10	1	4	0.6	Eye drops 2 mg per g (0.2%), single dose units 0.6 mL, 30
+147043	9084	26722	7	13	4	10	Ocular lubricating gel 2 mg per g (0.2%), 10 g
+147048	9085	26723	8	1	4	15	Eye drops 10 mg per mL (1%), 15 mL
+147053	9086	26723	8	1	4	12	Eye drops 10 mg per mL (1%), single dose units 0.4 mL, 30
+147058	9087	26723	8	1	4	15	Eye drops 5 mg per mL (0.5%), 15 mL
+147063	9088	26723	8	1	4	12	Eye drops 5 mg per mL (0.5%), single dose units 0.4 mL, 30
+147068	9089	26724	21	7	4	1	Ophthalmic inserts 5 mg, 60
+147073	9090	26126	8	1	4	15	Eye drops 10 mg per mL (1%), 15 mL
+147078	9091	26126	8	1	4	15	Eye drops 3 mg per mL (0.3%), 15 mL (contains sodium perborate as preservative)
+147084	9092	26126	8	1	4	15	Eye drops 5 mg per mL (0.5%), 15 mL
+147090	9093	26726	6	13	4	10	Ocular lubricating gel 3 mg-2 mg per g (0.3%-0.2%), 10 g
+147098	9094	26727	8	1	4	15	Eye drops 3 mg-1 mg per mL (0.3%-0.1%), 15 mL
+147107	9095	26727	8	1	4	11.2	Eye drops 3 mg-1 mg per mL (0.3%-0.1%), single dose units 0.4 mL, 28
+147113	9096	26728	7	7	4	1	Compound eye ointment 3.5 g
+147119	9097	26728	7	7	4	1	Pack containing 2 tubes compound eye ointment 3.5 g
+147125	9098	26729	8	1	4	15	Eye drops 14 mg per mL (1.4%), 15 mL
+147131	9099	26729	8	1	4	15	Eye drops 30 mg per mL (3%), 15 mL
+147137	9100	26730	8	1	4	15	Eye drops 14 mg-6 mg per mL (1.4%-0.6%), 15 mL
+147145	9101	23188	8	1	4	5	Ear drops (aqueous) 5 mg per mL (0.5%), 5 mL
+147150	9102	26163	7	13	4	10	Ear ointment 12 mg (3.5 mg base)-400 units per g, 10 g
+147158	9103	26172	10	1	4	10	Ear drops 2 mg (base)-10 mg per mL (0.2%-1%), 10 mL
+147166	9104	23284	8	1	4	7.5	Ear drops 1 mg-2.5 mg (base)- 250 micrograms-100,000 units per g (0.1%-0.25%-0.025%-100,000 units per g), 7.5 mL
+147177	9105	23284	7	13	4	5	Ear ointment 1 mg-2.5 mg (base)- 250 micrograms-100,000 units per g (0.1%-0.25%-0.025%-100,000 units per g), 5 g
+147186	9106	26175	8	1	4	8	Ear drops 500 micrograms-5 mg-50 micrograms per mL, 8 mL
+147197	9107	26175	7	13	4	5	Ear ointment 500 micrograms-5 mg-50 micrograms per g, 5 g
+147205	9108	21878	8	1	4	5	Eye and ear drops 5 mg per mL (0.5%), 5 mL
+147210	9109	26731	10	7	12	1	Injection set containing 550 micrograms
+147215	9110	26732	10	7	12	1	Injection set containing 550 micrograms
+147220	9111	26733	10	7	12	1	Injection set containing 550 micrograms
+147225	9112	26231	10	7	12	1	Injection 2 mg in 5 mL
+147230	9113	26231	10	7	12	1	Injection 40 micrograms in 2 mL
+147235	9114	26231	10	7	12	1	Injection 400 micrograms in 1 mL
+147240	9115	26231	10	7	12	1	Injection 800 micrograms in 2 mL
+147245	9116	26250	10	7	12	1	Powder for injection 2 g vial
+147247	9117	26250	10	7	12	1	Powder for injection 500 mg vial
+147249	9118	26253	5	7	4	1	Oral powder 454 g
+147254	9119	25758	10	7	6	1	Solution for I.V. injection 1 g in 10 mL
+147259	9120	25758	10	7	6	1	Solution for I.V. injection 400 mg in 4 mL
+147264	9121	26258	1	7	1	1	Tablet equivalent to 15 mg folinic acid
+147269	9122	26278	14	7	4	1	Discs containing electrode sensors, 10 sensors per disc, 5
+147273	9123	26278	22	7	4	1	Electrode strips, 100
+147281	9124	26278	22	7	4	1	Electrode strips, 50
+147288	9125	26278	22	7	\N	1	Reagent strips, 50

@@ -1,0 +1,5 @@
+7	1	increases half-life
+8	2	decreases half-life
+9	3	worsens disease
+10	4	unknown
+11	5	blocks receptor

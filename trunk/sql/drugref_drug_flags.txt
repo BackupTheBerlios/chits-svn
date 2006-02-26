@@ -1,0 +1,5 @@
+1	paediatric
+2	gluten-free
+3	slow-release
+4	enteric-coated
+5	flavoured

@@ -1,0 +1,13 @@
+1	ml
+2	mg
+3	mg/ml
+4	mg/g
+5	U
+6	IU
+7	each
+8	mcg
+9	mcg/ml
+10	IU/ml
+11	day
+12	dose
+13	g

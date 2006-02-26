@@ -1,0 +1,104 @@
+<?xml version = ''1.0'' encoding = ''UTF-8''?>
+<message>
+  <administration>
+    <healthcenter>
+      <healthcenter_name>lagrosa</healthcenter_name>
+      <healthcenter_id>001</healthcenter_id>
+    </healthcenter>
+    <to>Tolentino, Herman</to>
+    <from>Sy, Peachy</from>
+    <recordtype>
+      <generationdate>20040502120000</generationdate>
+      <code>referral</code>
+    </recordtype>
+    <healthinsurance>
+<!--This comes from the Philhealth Module-->      <carrier>
+        <inherited>
+          <flag/>
+          <firstname/>
+          <lastname/>
+        </inherited>
+        <carrier_name>philhealth</carrier_name>
+        <insurance_id>AXY123948</insurance_id>
+        <coverage_date>
+          <startdate>20040101</startdate>
+          <enddate>20041231</enddate>
+        </coverage_date>
+      </carrier>
+    </healthinsurance>
+    <surveillance>
+      <system>
+        <notifiable>
+          <icd10/>
+          <reportdate/>
+        </notifiable>
+        <notifiable>
+          <icd10/>
+          <reportdate/>
+        </notifiable>
+      </system>
+    </surveillance>
+  </administration>
+  <patient>
+    <id>000000001</id>
+    <family>
+<!--This comes from the Family Module-->      <familyid>00001</familyid>
+      <member>
+        <lastname>Santos</lastname>
+        <firstname>Juan</firstname>
+        <middlename>Perez</middlename>
+        <patient_id>00000002</patient_id>
+        <role>Father</role>
+      </member>
+    </family>
+    <demographics>
+<!--This comes from the Patient Module-->      <lastname>Santos</lastname>
+      <firstname>Maria</firstname>
+      <middlename>Perez</middlename>
+      <gender>F</gender>
+      <birthdate>19601205</birthdate>
+    </demographics>
+    <transactions>
+<!--Content comes from different modules related to consult-->      <familyplanning/>
+      <dots/>
+      <maternalcare/>
+      <immunizations>
+<!--This comes from the Vaccine Module-->        <vaccination>
+          <id/>
+          <date/>
+          <givenby/>
+        </vaccination>
+        <vaccination>
+          <id/>
+          <date/>
+          <givenby/>
+        </vaccination>
+      </immunizations>
+      <consult>
+        <episode>
+          <startdate/>
+          <enddate/>
+          <provider_id/>
+          <sawphysician/>
+          <chiefcomplaints/>
+          <history/>
+          <diagnosis/>
+          <plan/>
+        </episode>
+      </consult>
+      <procedures/>
+      <laboratory/>
+    </transactions>
+    <history>
+      <problemlist>
+        <problem>
+          <icdcode/>
+          <onsetdate/>
+        </problem>
+      </problemlist>
+      <allergies>
+        <allergy/>
+      </allergies>
+    </history>
+  </patient>
+</message>

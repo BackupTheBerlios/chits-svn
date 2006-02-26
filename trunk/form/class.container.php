@@ -1,0 +1,7 @@
+<?
+Class Container {
+
+    function container() {
+    }
+}
+?>

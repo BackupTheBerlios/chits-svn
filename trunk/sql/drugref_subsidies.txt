@@ -1,0 +1,2 @@
+12	1	au	PBS	Pharmaceutical Benefits Schedule
+13	2	au	RPBS	Repatriation (i.e. war veteran's) Pharmaceutical Benefits Schedule

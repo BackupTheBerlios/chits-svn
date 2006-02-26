@@ -1,0 +1,7 @@
+1	general	h
+2	pharmaco-kinetics	h
+3	indications	h
+4	action	h
+5	chemical structure	h
+6	side-effects	p
+7	general	p

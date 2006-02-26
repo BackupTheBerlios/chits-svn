@@ -1,0 +1,7 @@
+1	general	\N
+2	pregnancy	\N
+3	lactation	\N
+4	children	\N
+5	elderly	\N
+6	renal	\N
+7	hepatic	\N

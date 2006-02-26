@@ -1,0 +1,12 @@
+1	oral	o.	
+2	sublingual	s.l.	
+3	nasal	nas.	
+4	topical	top.	
+5	rectal	rect.	
+6	intravenous	i.v.	
+7	intramuscular	i.m.	
+8	subcutaneous	s.c.	
+9	intraarterial	art.	
+10	intrathecal	i.th.	
+11	inhaled	inh.	
+12	iv/im/sc	iv/im/sc	

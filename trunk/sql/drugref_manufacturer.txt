@@ -1,0 +1,156 @@
+137729	15	AU	Captain Cook Drive Kurnell NSW 2231	(02) 9668 9711	(02) 9668 8459\r		AB	Abbott Australasia Pty Ltd
+137730	16	AU	14 Loyalty Road North Rocks NSW 2151	(02) 9630 5099	(02) 9683 5026\r		AC	Alberto Culver Company
+137731	17	AU	54-68 Ferndell Street South Granville NSW 2142	(02) 9795 9500	(02) 9795 9595\r		AD	Amrad Pharmaceuticals Pty Ltd
+137732	18	AU	Chase Building 2 Wentworth Park Road Glebe NSW 2037	(02) 9298 3999	(02) 9566 4686\r		AF	Alphapharm Pty Limited
+137733	19	AU	77 Ridge Street Gordon NSW 2072	1800 252 224	(02) 9498 0290\r		AG	Allergan Australia Pty Ltd
+137734	20	AU	Chase Building 2 Wentworth Park Road Glebe NSW 2037	(02) 9298 3999	(02) 9566 4686\r		AL	Alphapharm Medical A Division of Alphapharm Pty Limited
+137735	21	AU	Level 7, 123 Epping Road North Ryde NSW 2113	(02) 9870 1333	(02) 9870 1344\r		AN	Amgen Australia Pty Ltd
+137736	22	AU	Alma Road North Ryde NSW 2113	(02) 9978 3500	(02) 9978 3700\r		AP	AstraZeneca Pty Ltd
+137737	23	AU	Allambie Grove Park 25 Frenchs Forest Road East Frenchs Forest NSW 2086	1800 025 004	(02) 9452 5209\r		AQ	Alcon Laboratories (Australia) Pty Ltd
+137738	24	AU	Suite 3, Ground Floor 34-36 Chandos Street St Leonards NSW 2065	(02) 8436 8300	(02) 9901 3540\r		AS	Aspen Pharmacare Australia Pty Ltd
+137739	25	AU	27 Sirius Road Lane Cove NSW 2066	1800 555 995	1800 555 335\r		AV	Aventis Pharma Pty Limited
+137740	26	AU	24 Rothschild Avenue Rosebery NSW 2018	(02) 8344 8344	(02) 8344 8355\r		AW	Arrow Pharmaceuticals Limited
+137741	27	AU	Suite 308 Level 3, Lakeside Corporate Centre 29-31 Solent Circuit Baulkham Hills NSW 2153	(02) 8852 4200	(02) 8852 4299\r		AX	Aventis Pasteur Pty Limited
+137742	28	AU	101 Waterloo Road North Ryde NSW 2113	(02) 9870 6000	(02) 9870 6100\r		BA	Boots Pharmaceuticals A Division of Boots Healthcare Australia Pty Ltd
+137743	29	AU	23 Roseberry Street Balgowlah NSW 2093	(02) 9951 0111	(02) 9949 1954\r		BB	Blackmores Ltd
+137744	30	AU	556 Princes Highway Noble Park Vic 3174	(03) 9213 4000	(03) 9701 1518\r		BC	Bristol Laboratories A Division of Bristol-Myers Squibb Australia Pty Ltd
+137745	31	AU	Suite 2601, North Point Level 26, 100 Miller Street North Sydney NSW 2060	1800 286 639	(02) 8907 3332\r		BD	Biogen Australia Pty Limited
+137746	32	AU	112-118 Talavera Road North Ryde NSW 2113	1800 269 933	(02) 9887 3487\r		BE	BDF Australia Ltd
+137747	33	AU	Level 2, 11-17 Khartoum Road North Ryde NSW 2113	(02) 9888 8550	(02) 9888 8557\r		BG	Biochemie Australia Pty Ltd
+137748	34	AU	100 Antimony Street Carole Park Qld 4300	(07) 3271 9600	(07) 3271 1315\r		BI	Biotech Pharmaceuticals Pty Ltd
+137749	35	AU	PO Box 84 Sydney South NSW 2000		\r		BJ	Barrere Surgical Co.
+137750	36	AU	80 Rushdale Street Knoxfield Vic 3180	(03) 9764 2444	(03) 9764 2550\r		BK	Becton Dickinson Pty Ltd
+137751	37	AU	2-10 Lexia Place Mulgrave North Vic 3170	(03) 9560 2533	(03) 9550 8341\r		BL	David Bull Laboratories A Division of F.H. Faulding & Co. Limited
+137752	38	AU	875-893 Pacific Highway Pymble NSW 2073	(02) 9391 6000	(02) 9988 3311\r		BN	Bayer Australia Limited
+137753	39	AU	Unit A, 31-33 Sirius Road Lane Cove NSW 2066	(02) 9428 9411	(02) 9428 1732\r		BP	British Pharmaceuticals
+137754	40	AU	556 Princes Highway Noble Park Vic 3174	(03) 9213 4000	(03) 9701 1518\r		BQ	Bristol-Myers Squibb Pharmaceuticals A Division of Bristol-Myers Squibb Australia Pty Ltd
+137755	41	AU	Unit 3, 9 Packard Avenue Castle Hill NSW 2154	(02) 9680 4111	(02) 9680 2051\r		BR	B Braun Australia Pty Ltd
+137756	42	AU	101 Waterloo Road North Ryde NSW 2113	(02) 9870 6000	(02) 9870 6100\r		BT	Boots Healthcare Australia Pty Ltd
+137757	43	AU	Level 4, 113 Wicks Road North Ryde NSW 2113	(02) 9887 1444	(02) 9888 9642\r		BU	Bausch & Lomb Surgical A Division of Bausch & Lomb (Australia) Pty Ltd
+137758	44	AU	211 Wellington Road Clayton Vic 3168	(03) 9566 1200	(03) 9562 2600\r		BV	B.S.N.
+137759	45	AU	1 Baxter Drive Old Toongabbie NSW 2146	(02) 9848 1111	(02) 9848 1123\r		BX	Baxter Healthcare Pty Limited
+137760	46	AU	85 Waterloo Road North Ryde NSW 2113	(02) 8875 8800	(02) 8875 8801\r		BY	Boehringer Ingelheim Pty Limited
+137761	47	AU	118-124 Willoughby Road Crows Nest NSW 2065	(02) 9436 3922	(02) 9906 7147\r		BZ	Boucher & Muir Pty Limited
+137762	48	AU	606 Hawthorn Road East Brighton Vic 3187	1800 335 276	(03) 9525 0920\r		CC	ConvaTec A Division of Bristol-Myers Squibb Australia Pty Ltd
+137763	49	AU	115 Sherriff Street Underdale SA 5032	(08) 8408 3000	(08) 8408 3383\r		CH	Chem mart Pty Limited
+137764	50	AU	45 Poplar Road Parkville Vic 3052	(03) 9389 1911	(03) 9388 2351\r		CS	CSL Limited
+137765	51	AU	Unit 6, 154 Highbury Road Burwood Vic 3125	(03) 9888 7022	(03) 9888 8656\r		CT	Coloplast Pty Ltd
+137766	52	AU	Unit 1/42 Carrington Road Castle Hill NSW 2154	(02) 9680 6655	(02) 9899 9640\r		CV	Ciba Vision Australia Pty Ltd
+137767	53	AU	PO Box 96 Rundle Street SA 5000		\r		CY	Colostomy Association of South Australia
+137768	54	AU	112 Wharf Road West Ryde NSW 2114	(02) 9325 4444	(02) 9325 4410\r		DL	Dista Products (Australia) & Company A Division of Eli Lilly Australia Pty Limited
+137769	55	AU	3/10 Inglewood Place Norwest Business Park Baulkham Hills NSW 2153	(02) 8818 2111	(02) 8818 2122\r		DP	Douglas Pharmaceuticals Australia Ltd
+137770	56	AU	118-120 Adderley Street Auburn NSW 2144	(02) 748 6776	(02) 748 6754\r		DY	Denyer Bros Pty Ltd
+137771	57	AU	6/15 Carrington Road Castle Hill NSW 2154	(02) 9899 9099	(02) 9634 2301\r		EG	Eagle Pharmaceuticals Pty Ltd
+137772	58	AU	PO Box 164 Rozelle NSW 2039		\r		EK	T.G. Eakin Ltd
+137773	59	AU	21-31 Malcolm Road Braeside Vic 3195	(03) 9587 1088	(03) 9580 7647\r		EO	Ego Pharmaceuticals Pty Ltd
+137774	60	AU	11 Gibbon Road Baulkham Hills NSW 2153	(02) 9852 7444	(02) 9852 7500\r		EX	Essex Laboratories
+137775	61	AU	1538 Main North Road Salisbury South SA 5106	(08) 8209 2666	(08) 8281 5833\r		FA	Faulding Pharmaceuticals A Division of F.H. Faulding & Co. Limited
+137776	62	AU	Unit 26B, Parkview Business Centre 1 Maitland Place Baulkham Hills NSW 2153	(02) 8858 2800	(02) 8858 2888\r		FB	Pierre Fabre Medicament Australia Pty Limited
+137777	63	AU	115 Sherriff Street Underdale SA 5032	(08) 8408 3000	(08) 8408 3383\r		FH	Faulding Healthcare Pty Ltd
+137778	64	AU	25 Macbeth Street Braeside Vic 3195	(03) 9580 2755	(03) 9580 2899\r		FL	C. B. Fleet Co. (Aust.) Pty Ltd
+137779	65	AU	96 Merrindale Drive Croydon Vic 3136	(03) 9839 2800	(03) 9839 2801\r		FM	Fawns and McAllan Pty Ltd A member of Sigma Group of Companies
+137780	66	AU	Suite 2B, Level 2 802 Pacific Highway Gordon NSW 2072	(02) 9497 2300	(02) 9497 2399\r		FP	Ferring Pharmaceuticals Pty Ltd
+137781	67	AU	54-68 Ferndell Street South Granville NSW 2142	(02) 9795 9500	(02) 9795 9595\r		FR	Charles E. Frosst Division of Merck Sharp & Dohme (Australia) Pty Ltd
+137782	68	AU	P.O. Box 163 Gardenvale Vic 3185	(03) 9596 8809	\r		FS	Future Environmental Services Pty Ltd
+137783	69	AU	9 Rodborough Road Frenchs Forest NSW 2086	1800 800 765	(02) 9975 5374\r		GA	Galderma Australia Pty Ltd
+137784	70	AU	82 Hughes Avenue Ermington NSW 2115	(02) 9684 0888	(02) 9684 6958\r		GC	GlaxoSmithKline Consumer Healthcare
+137785	71	AU	Rear, 137 Mt Alexander Road Flemington Vic 3031	(03) 9372 2389	(03) 9376 4158\r		GD	General Diabetes Services
+137786	72	AU	Unit 2, 41 Stamford Road Oakleigh Vic 3166	(03) 9563 0433	(03) 9563 0170\r		GI	Gilead Sciences Pty Ltd
+137787	73	AU	1061 Mountain Highway Boronia Vic 3155	(03) 9721 6000	(03) 9729 5319\r		GK	GlaxoSmithKline Australia Pty Ltd
+137788	74	AU	38-42 Wharf Road West Ryde NSW 2114	(02) 9850 3333	(02) 9858 1347\r		GP	GP Laboratories A Division of Pfizer Pty Limited
+137789	75	AU	182 Alison Road Carrara Qld 4211	(07) 5594 1616	(07) 5594 1616\r		GR	GenPharm Australia
+137790	76	AU	217 Flinders Street Adelaide SA 5000	(08) 8223 2957	(08) 8232 1480\r		HA	Hamilton Laboratories Pty Ltd
+137791	77	AU	Dock Lane, Melton Woodbridge, Suffolk England IP12 1PE Australian Agents: General Diabetes Services Rear, 137 Mt Alexander Road Flemington Vic 3031	(03) 9372 2389	(03) 9376 4158\r		HG	Hypoguard (Exports) Ltd
+137792	78	AU	Australian Distributor Liberty Medical Pty Ltd 9 Central Boulevard Port Melbourne Vic 3207	(03) 9646 4033	(03) 9646 4018\r		HO	Hollister Incorporated, U.S.A.
+137793	79	AU	27 Sirius Road Lane Cove NSW 2066	1800 555 995	1800 555 335\r		HP	Hoechst Division of Aventis Pharma Pty Limited
+137794	80	AU	115 Sherriff Street Underdale SA 5032	(08) 8408 3000	(08) 8408 3383\r		HS	healthsense
+137795	81	AU	Level 4, Suite 1-6 100 Harris Street Pyrmont NSW 2009	(02) 9566 1500	(02) 9566 1458\r		HX	Hexal Australia Pty Ltd
+137796	82	AU	Unit 85, Level 1 79-97 Saint Hilliers Road Auburn NSW 2144	(02) 9648 4266	(02) 9648 4655\r		ID	ICN Pharmaceuticals Australasia Pty Ltd
+137797	83	AU	PO Box 405 Mona Vale NSW 2103	(02) 9997 8033	(02) 9997 3760\r		IP	Indoplas Pty Ltd
+137798	84	AU	Allambie Grove Park 25 Frenchs Forest Road East Frenchs Forest NSW 2086	1800 025 004	(02) 9452 5209\r		IQ	Ioquin A Division of Alcon Laboratories (Australia) Pty Ltd
+137799	85	AU	21 Aristoc Road Glen Waverley Vic 3150	(03) 9550 1843	(03) 9562 5152\r		IS	Ipsen Pty Limited
+137800	86	AU	1-5 Khartoum Road North Ryde NSW 2113	(02) 8875 3333	(02) 8875 3300\r		JC	Janssen-Cilag Pty Ltd
+137801	87	AU	1-5 Khartoum Road North Ryde NSW 2113	(02) 9878 9111	1800 808 233\r		JJ	Johnson & Johnson Medical
+137802	88	AU	Stephen Road Botany NSW 2019	(02) 9316 0466	(02) 9666 3162\r		JT	Johnson & Johnson Pacific Pty Limited
+137803	89	AU	52 Alfred Street South Milsons Point NSW 2061	(02) 9963 8888	(02) 9957 5687\r		KC	Kimberly-Clark Australia Pty Ltd
+137804	90	AU	22 Giffnock Avenue North Ryde NSW 2113	1800 252 467	(02) 9888 7378\r		KE	Kendall Australasia Pty Ltd
+137805	91	AU	Captain Cook Drive Kurnell NSW 2231	(02) 9668 9711	(02) 9668 8459\r		KN	Knoll A Division of Abbott Australasia Pty Ltd
+137806	92	AU	59 Kirby Street Rydalmere NSW 2116	(02) 9848 3000	(02) 9848 3333\r		KR	Kenral Division of Pharmacia Australia Pty Limited
+137807	93	AU	21 Leeds Street Rhodes NSW 2138	(02) 9736 3811	(02) 9736 3316\r		KY	Key Pharmaceuticals Pty Ltd
+137808	94	AU	213 Angas Street Adelaide SA 5000	(08) 414 1711	(08) 231 3916\r		LA	L.A. Chemicals Pty Ltd
+137809	95	AU	Level 1, Bridgepoint Centre 3 Brady Street Mosman NSW 2088	(02) 9960 0150	(02) 9960 0149\r		LM	Link Medical Products Pty Ltd
+137810	96	AU	Suite 3, Ground Floor 34-36 Chandos Street St Leonards NSW 2065	(02) 8436 8300	(02) 9901 3540\r		LN	Lennon Healthcare A Division of Aspen Pharmacare Australia Pty Ltd
+137811	97	AU	Unit 1, 10 Inglewood Place Norwest Business Park Baulkham Hills NSW 2153	(02) 9836 1655	(02) 9836 1755\r		LU	Lundbeck Australia Pty Ltd
+137812	98	AU	112 Wharf Road West Ryde NSW 2114	(02) 9325 4444	(02) 9325 4410\r		LY	Eli Lilly Australia Pty Limited
+137813	99	AU	2 McCabe Place Willoughby NSW 2068	(02) 9417 7955	(02) 9417 5779\r		MA	Medical Specialties Australia Pty Limited
+137814	100	AU	4-10 Inman Road Dee Why NSW 2099	(02) 9454 9000	(02) 9981 3229\r		MD	Macarthur Research Division of Roche Products Pty Ltd
+137815	101	AU	1061 Mountain Highway Boronia Vic 3155	(03) 9721 6000	(03) 9729 5319\r		ME	Menley & James Division of GlaxoSmithKline Australia Pty Ltd
+137816	102	AU	Level 26, 6 O'Connell Street Sydney NSW 2000	(02) 9231 7200	(02) 9223 0011\r		MF	Mundipharma Pty Ltd
+137817	103	AU	Unit 5, 13 Hoyle Avenue Castle Hill NSW 2154	(02) 9894 4844	(02) 9894 4393\r		MG	McGloins Classic Brands
+137818	104	AU	54-68 Ferndell Street South Granville NSW 2142	(02) 9795 9500	(02) 9795 9595\r		MK	Merck Sharp & Dohme (Australia) Pty Ltd
+137819	105	AU	27 Sirius Road Lane Cove NSW 2066	1800 555 995	1800 555 335\r		ML	Marion Division of Aventis Pharma Pty Limited
+137820	106	AU	9-15 Chilvers Road Thornleigh NSW 2120	(02) 9875 6333	(02) 9875 6416\r		MM	3M Pharmaceuticals Australia Pty Ltd
+137821	107	AU	61 Danks Street Port Melbourne Vic 3207	(03) 9646 4144	\r		MP	Medical Products Distribution Pty Ltd
+137822	108	AU	666 Doncaster Road Doncaster Vic 3108	(03) 9843 7100	(03) 9855 8020\r		MS	Abbott Diagnostics Division (MediSense Products)
+137823	109	AU	PO Box 76 Mentone Vic 3194		\r		MU	Melbourne Ostomy Supplies
+137824	110	AU	c/- B Braun Australia Pty Ltd Unit 3, 9 Packard Avenue Castle Hill NSW 2154	(02) 9680 4111	(02) 9680 2051\r		MW	McGaw Biomed Australia Pty Ltd
+137825	111	AU	Suite 501, 83 York Street Sydney NSW 2000	(02) 9299 3603	(02) 9290 3401\r		MZ	Mission Pharmacal Australia Pty Ltd
+137826	112	AU	7-9 Merriwa Street Gordon NSW 2072	(02) 9418 1100	(02) 9418 1181\r		NA	National Diagnostic Products (Aust) Pty Limited
+137827	113	AU	35-37 South Corporate Avenue Rowville Vic 3178	(03) 9764 5111	(03) 9764 5044\r		NC	Novartis Consumer Health Australasia Pty Ltd
+137828	114	AU	3/14 Rodborough Road Frenchs Forest NSW 2086	(02) 9972 7500	(02) 9972 7522\r		NE	Norgine Pty Limited
+137829	115	AU	22 Loyalty Road North Rocks NSW 2151	(02) 9683 3600	(02) 9683 3029\r		NF	FlexPen Products of Novo Nordisk Pharmaceuticals Pty Ltd
+137830	116	AU	22 Loyalty Road North Rocks NSW 2151	(02) 9683 3600	(02) 9683 3029\r		NI	InnoLet Products of Novo Nordisk Pharmaceuticals Pty Ltd
+137831	117	AU	22 Loyalty Road North Rocks NSW 2151	(02) 9683 3600	(02) 9683 3029\r		NL	NovoLet Products of Novo Nordisk Pharmaceuticals Pty Ltd
+137832	118	AU	22 Loyalty Road North Rocks NSW 2151	(02) 9683 3600	(02) 9683 3029\r		NO	Novo Nordisk Pharmaceuticals Pty Ltd
+137833	119	AU	60 Bathurst Street Sydney NSW 2000	(02) 9931 2345	(02) 9931 2610\r		NT	Nestle Australia Ltd
+137834	120	AU	Norwest Business Park 14-16 Brookhollow Avenue Baulkham Hills NSW 2153	(02) 8853 9600	(02) 9894 6498\r		NU	Nutricia Australia Pty Limited
+137835	121	AU	54 Waterloo Road North Ryde NSW 2113	(02) 9805 3555	(02) 9887 4551\r		NV	Novartis Pharmaceuticals Australia Pty Ltd
+137836	122	AU	48 Kangan Drive Berwick Vic 3806	(03) 9769 5744	(03) 9769 5944\r		OA	Orphan Australia Pty Ltd
+137837	123	AU	Level 3, 90 Mount Street North Sydney NSW 2060	(02) 9957 6499	(02) 9957 5383\r		OB	Oral B Laboratories Pty Ltd
+137838	124	AU	22 Wellington Street St Kilda Vic 3182	(03) 9526 6954	(03) 9529 2663\r		OG	Omnigon Pty Ltd
+137839	125	AU	9 Rodborough Road Frenchs Forest NSW 2086	1800 800 765	(02) 9975 5374\r		OL	Owen Laboratories Division of Galderma Australia Pty Ltd
+137840	126	AU	345 George Street Sydney NSW 2000	(02) 9229 5600	(02) 9232 8448\r		OM	Colgate Oral Care
+137841	127	AU	31-33 Sirius Road Lane Cove NSW 2066	(02) 9428 9411	(02) 9428 1732\r		OR	Organon (Australia) Pty Limited
+137842	128	AU	32 Cawarra Road Caringbah NSW 2229	(02) 9710 6500	(02) 9710 6400\r		PD	Parke Davis Pty Ltd
+137843	129	AU	77 Ridge Street Gordon NSW 2072	1800 252 224	(02) 9498 0290\r		PE	Pacific EyeCare A Division of Allergan Australia Pty Ltd
+137844	130	AU	38-42 Wharf Road West Ryde NSW 2114	(02) 9850 3333	(02) 9858 1347\r		PF	Pfizer Pty Limited
+137845	131	AU	59 Kirby Street Rydalmere NSW 2116	(02) 9848 3000	(02) 9848 3333\r		PH	Pharmacia Australia Pty Limited
+137846	132	AU	332 Burns Bay Road Lane Cove NSW 2066	(02) 9420 9199	(02) 9420 9177\r		PL	Pharmalab
+137847	133	AU	Alma Road North Ryde NSW 2113	(02) 9978 3500	(02) 9978 3700\r		PM	PMC Pharma A Division of AstraZeneca Pty Ltd
+137848	134	AU	1360 Viveash Road Swan View WA 6056	(08) 9294 4333	(08) 9294 4777\r		PP	Petrus Pharmaceuticals
+137849	135	AU	59 Kirby Street Rydalmere NSW 2116	(02) 9848 3000	(02) 9848 3333\r		PU	Pharmacia & Upjohn Pty Limited
+137850	136	AU	99 Phillip Street Parramatta NSW 2150	(02) 9685 4500	(02) 9685 4777\r		PY	Procter & Gamble Pharmaceuticals Australia Pty Ltd
+137851	137	AU	27 Sirius Road Lane Cove NSW 2066	1800 555 995	1800 555 335\r		QM	Qualimed Division of Aventis Pharma Pty Limited
+137852	138	AU	44 Wharf Road West Ryde NSW 2114	(02) 9857 2000	(02) 9857 2004\r		RC	Reckitt Benckiser (Australia) Pty Limited
+137853	139	AU	31 Victoria Avenue Castle Hill NSW 2154	(02) 9899 7999	(02) 9634 4696\r		RD	Roche Diagnostics Australia Pty Ltd
+137854	140	AU	4-10 Inman Road Dee Why NSW 2099	(02) 9454 9000	(02) 9981 3229\r		RO	Roche Products Pty Ltd
+137855	141	AU	Level 7, 2 Bligh Street Sydney NSW 2000	(02) 9234 1700	(02) 9234 1777\r		SA	SciGen Pty Limited
+137856	142	AU	Norwest Business Park 14-16 Brookhollow Avenue Baulkham Hills NSW 2153	(02) 8853 9600	(02) 9894 6498\r		SB	Scientific Hospital Supplies Australia Products
+137857	143	AU	27-31 Doody Street Alexandria NSW 2015	(02) 9317 8666	(02) 9317 2138\r		SC	Schering Pty Ltd Australian Subsidiary of Schering AG, Berlin
+137858	144	AU	Servier House 13 Cato Street Hawthorn Vic 3122	(03) 9822 2144	(03) 9822 9790\r		SE	Servier Laboratories (Aust.) Pty Ltd
+137859	145	AU	Unit 4, Allambie Grove Business Park 25 Frenchs Forest Road East Frenchs Forest NSW 2086	(02) 9975 3100	(02) 9975 1516\r		SG	Serono Australia Pty Ltd
+137860	146	AU	11 Gibbon Road Baulkham Hills NSW 2153	(02) 9852 7444	(02) 9852 7500\r		SH	Schering-Plough Pty Ltd
+137861	147	AU	96 Merrindale Drive Croydon Vic 3136	(03) 9839 2800	(03) 9839 2801\r		SI	Sigma Pharmaceuticals Pty Ltd
+137862	148	AU	12 Hope Street Ermington NSW 2115	(02) 9858 5622	(02) 9858 5957\r		SJ	Sharpe Laboratories Pty Ltd
+137863	149	AU	Level 1, Building 2 Pymble Corporate Centre 20 Bridge Street Pymble NSW 2073	(02) 9440 0977	(02) 9440 0910\r		SM	Solvay Pharmaceuticals Division of Solvay Biosciences Pty Ltd
+137864	150	AU	211 Wellington Road Clayton Vic 3168	(03) 9566 1200	(03) 9562 0500\r		SN	Smith & Nephew (Aust.) Pty Ltd
+137865	151	AU	9 Milverton Avenue Karrinyup WA 6018		\r		SP	Simpla Plastics Australia Pty Ltd
+137866	152	AU	225 Beach Road Mordialloc Vic 3195	(03) 9587 6770	(03) 9587 6870\r		SS	Seton Scholl Healthcare Australia Pty Ltd
+137867	153	AU	4-10 Inman Road Dee Why NSW 2099	(02) 9454 9000	(02) 9981 3229\r		SU	Sauter Laboratories (Aust.) Pty Ltd
+137868	154	AU	16 Byfield Street North Ryde NSW 2113	(02) 8899 0700	(02) 8899 0600\r		SW	Sanofi-Synthelabo Australia Pty Limited
+137869	155	AU	Unit 14, 5 Salisbury Road Castle Hill NSW 2154	(02) 9894 5088	(02) 9894 5016\r		SX	Stiefel Laboratories Pty Limited
+137870	156	AU	27-31 Doody Street Alexandria NSW 2015	(02) 9317 8666	(02) 9317 2138\r		SY	Schering AG
+137871	157	AU	6735 Cutrock Road Lisarow NSW 2250	0417 210 398	(02) 4362 7077\r		TC	Technostic Consulting Pty Ltd
+137872	158	AU	Unit D1, 46-62 Maddox Street Alexandria NSW 2015	(02) 9319 2644	1800 810 257\r		TH	Richard Thomson Pty Ltd
+137873	159	AU	13 Bourke Street North Parramatta NSW 2151	(02) 9890 9311	(02) 9890 7488\r		TM	Technipro Marketing Pty Ltd
+137874	160	AU	Alma Road North Ryde NSW 2113	(02) 9978 3500	(02) 9978 3700\r		TP	TheraPharm A Division of AstraZeneca Pty Ltd
+137875	161	AU	115 Sherriff Street Underdale SA 5032	(08) 8408 3000	(08) 8408 3383\r		TW	Terry White Chemists
+137876	162	AU	Australian Distributor Boucher & Muir Pty Limited	(02) 9436 3922	(02) 9906 7147\r		UW	United Works of Pharmaceutical and Dietetic Products, Hungary
+137877	163	AU	14 Neich Road Glenorie NSW 2157	(02) 9652 1144	(02) 9652 1144\r		VF	Vitaflo Australia Pty Ltd
+137878	164	AU	80C Charles Street Putney NSW 2112	(02) 809 2322	(02) 807 3235\r		WO	Wooltec Australia
+137879	165	AU	32 Cawarra Road Caringbah NSW 2229	(02) 9710 6500	(02) 9710 6245\r		WR	Warner Lambert Consumer Healthcare Pty Ltd
+137880	166	AU	17-19 Solent Circuit Norwest Business Park Baulkham Hills NSW 2153	1800 555 057	(02) 9023 0016\r		WT	Whitehall Consumer Healthcare Pty Ltd
+137881	167	AU	32 Cawarra Road Caringbah NSW 2229	(02) 9710 6500	(02) 9710 6400\r		WW	Wm R. Warner
+137882	168	AU	17-19 Solent Circuit Norwest Business Park Baulkham Hills NSW 2153	(02) 9761 8200	(02) 9023 0000\r		WX	Wyeth Australia Pty Limited
+137883	169	AU	17-19 Solent Circuit Norwest Business Park Baulkham Hills NSW 2153	(02) 9761 8200	(02) 9023 0000\r		WY	Wyeth Pharmaceuticals Division of Wyeth Australia Pty Limited
+137884	170	AU	6 The Return Woodvale WA 6026	(08) 9409 5200	(08) 9409 5211\r		ZT	Synthon AU Pty Ltd

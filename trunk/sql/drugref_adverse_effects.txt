@@ -1,0 +1,10 @@
+1	1	pruritis
+2	1	nausea
+3	2	postural hypotension
+4	3	hepatitis
+5	3	renal failure
+6	3	ototoxicity
+7	2	drowsiness
+8	2	tremor
+9	3	confusion
+10	3	psychosis

@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<mysqldump>
+<database name="game">
+	<table_data name="m_patient">
+	<row>
+		<field name="patient_id">8</field>
+		<field name="healthcenter_id">1</field>
+		<field name="user_id">1</field>
+		<field name="patient_lastname">Sanchez</field>
+		<field name="patient_firstname">Benito</field>
+		<field name="patient_middle"></field>
+		<field name="patient_dob">1990-12-12</field>
+		<field name="patient_mother">Lina Sanchez</field>
+		<field name="registration_date">2004-05-12 04:36:54</field>
+		<field name="patient_gender">M</field>
+		<field name="uniquid"></field>
+	</row>
+	</table_data>
+	<table_data name="m_consult">
+	<row>
+		<field name="consult_id">1</field>
+		<field name="patient_id">8</field>
+		<field name="user_id">1</field>
+		<field name="healthcenter_id">001</field>
+		<field name="consult_timestamp">2004-05-19 19:58:53</field>
+		<field name="consult_end">2004-05-19 07:58:53</field>
+		<field name="consult_visit_type"></field>
+		<field name="elapsed_time">97.7769</field>
+		<field name="consult_date">2004-05-12 00:00:00</field>
+		<field name="see_doctor_flag">Y</field>
+	</row>
+	</table_data>
+	<table_data name="m_consult_icd10">
+	</table_data>
+</database>
+</mysqldump>

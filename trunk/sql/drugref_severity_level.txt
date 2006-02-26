@@ -1,0 +1,5 @@
+2	1	irrelevant	largely academic point. No warning given
+3	2	trivial	only useful in post-hoc checking. No warning given
+4	3	minor	noticeable, but usually does not affect clinical decision, warning in sidebar
+5	4	major	usually affects clinical decision, but sometimes is overridden, warning highlighted
+6	5	critical	Warning in dialogue box, prescriber must click to override, entry made in notes. Use very rarely. Example: Roaccutane in pregnant woman

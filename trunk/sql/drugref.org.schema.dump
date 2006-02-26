@@ -1,0 +1,2660 @@
+--
+-- PostgreSQL database dump
+--
+
+\connect - pgsql
+
+SET search_path = public, pg_catalog;
+
+--
+-- TOC entry 222 (OID 44191)
+-- Name: plpgsql_call_handler (); Type: FUNCTION; Schema: public; Owner: pgsql
+--
+
+CREATE FUNCTION plpgsql_call_handler () RETURNS language_handler
+    AS '/usr/local/pgsql/lib/plpgsql.so', 'plpgsql_call_handler'
+    LANGUAGE c;
+
+
+--
+-- TOC entry 221 (OID 44192)
+-- Name: plpgsql; Type: PROCEDURAL LANGUAGE; Schema: public; Owner: 
+--
+
+CREATE TRUSTED PROCEDURAL LANGUAGE plpgsql HANDLER plpgsql_call_handler;
+
+
+\connect - ihaywood
+
+SET search_path = public, pg_catalog;
+
+--
+-- TOC entry 2 (OID 180823)
+-- Name: atc; Type: TABLE; Schema: public; Owner: ihaywood
+--
+
+CREATE TABLE atc (
+    code character varying(7) NOT NULL,
+    text text
+);
+
+
+--
+-- TOC entry 3 (OID 180830)
+-- Name: audit_drugs; Type: TABLE; Schema: public; Owner: ihaywood
+--
+
+CREATE TABLE audit_drugs (
+    audit_id serial NOT NULL
+);
+
+
+--
+-- TOC entry 5 (OID 180835)
+-- Name: info_reference; Type: TABLE; Schema: public; Owner: ihaywood
+--
+
+CREATE TABLE info_reference (
+    id serial NOT NULL,
+    source_category character(1),
+    description text,
+    CONSTRAINT info_reference_source_category CHECK (((((((source_category = 'p'::bpchar) OR (source_category = 'a'::bpchar)) OR (source_category = 'i'::bpchar)) OR (source_category = 'm'::bpchar)) OR (source_category = 'o'::bpchar)) OR (source_category = 's'::bpchar)))
+)
+INHERITS (audit_drugs);
+
+
+--
+-- TOC entry 9 (OID 180835)
+-- Name: info_reference; Type: ACL; Schema: public; Owner: ihaywood
+--
+
+REVOKE ALL ON TABLE info_reference FROM PUBLIC;
+GRANT ALL ON TABLE info_reference TO GROUP contributors;
+GRANT SELECT ON TABLE info_reference TO GROUP browsers;
+
+
+--
+-- TOC entry 10 (OID 180845)
+-- Name: code_systems; Type: TABLE; Schema: public; Owner: ihaywood
+--
+
+CREATE TABLE code_systems (
+    id serial NOT NULL,
+    iso_countrycode character(2) DEFAULT '**',
+    name character varying(30),
+    "version" character varying(30),
+    revision character varying(30)
+);
+
+
+--
+-- TOC entry 16 (OID 180845)
+-- Name: code_systems; Type: ACL; Schema: public; Owner: ihaywood
+--
+
+REVOKE ALL ON TABLE code_systems FROM PUBLIC;
+GRANT SELECT ON TABLE code_systems TO PUBLIC;
+
+
+--
+-- TOC entry 17 (OID 180851)
+-- Name: disease_code; Type: TABLE; Schema: public; Owner: ihaywood
+--
+
+CREATE TABLE disease_code (
+    id serial NOT NULL,
+    code character varying(20),
+    id_system integer,
+    description text
+);
+
+
+--
+-- TOC entry 19 (OID 180851)
+-- Name: disease_code; Type: ACL; Schema: public; Owner: ihaywood
+--
+
+REVOKE ALL ON TABLE disease_code FROM PUBLIC;
+GRANT SELECT ON TABLE disease_code TO PUBLIC;
+
+
+--
+-- TOC entry 20 (OID 180859)
+-- Name: drug_units; Type: TABLE; Schema: public; Owner: ihaywood
+--
+
+CREATE TABLE drug_units (
+    id serial NOT NULL,
+    unit character varying(30)
+);
+
+
+--
+-- TOC entry 23 (OID 180859)
+-- Name: drug_units; Type: ACL; Schema: public; Owner: ihaywood
+--
+
+REVOKE ALL ON TABLE drug_units FROM PUBLIC;
+GRANT SELECT ON TABLE drug_units TO PUBLIC;
+
+
+--
+-- TOC entry 24 (OID 180864)
+-- Name: drug_formulations; Type: TABLE; Schema: public; Owner: ihaywood
+--
+
+CREATE TABLE drug_formulations (
+    id serial NOT NULL,
+    description character varying(60),
+    "comment" text
+);
+
+
+--
+-- TOC entry 27 (OID 180864)
+-- Name: drug_formulations; Type: ACL; Schema: public; Owner: ihaywood
+--
+
+REVOKE ALL ON TABLE drug_formulations FROM PUBLIC;
+GRANT SELECT ON TABLE drug_formulations TO PUBLIC;
+
+
+--
+-- TOC entry 28 (OID 180872)
+-- Name: drug_routes; Type: TABLE; Schema: public; Owner: ihaywood
+--
+
+CREATE TABLE drug_routes (
+    id serial NOT NULL,
+    description character varying(60),
+    abbreviation character varying(10),
+    "comment" text
+);
+
+
+--
+-- TOC entry 31 (OID 180872)
+-- Name: drug_routes; Type: ACL; Schema: public; Owner: ihaywood
+--
+
+REVOKE ALL ON TABLE drug_routes FROM PUBLIC;
+GRANT SELECT ON TABLE drug_routes TO PUBLIC;
+
+
+--
+-- TOC entry 32 (OID 180880)
+-- Name: drug_element; Type: TABLE; Schema: public; Owner: ihaywood
+--
+
+CREATE TABLE drug_element (
+    id serial NOT NULL,
+    category character(1),
+    description text,
+    CONSTRAINT drug_element_category CHECK ((((((category = 't'::bpchar) OR (category = 'p'::bpchar)) OR (category = 's'::bpchar)) OR (category = 'c'::bpchar)) OR (category = 'k'::bpchar)))
+)
+INHERITS (audit_drugs);
+
+
+--
+-- TOC entry 35 (OID 180880)
+-- Name: drug_element; Type: ACL; Schema: public; Owner: ihaywood
+--
+
+REVOKE ALL ON TABLE drug_element FROM PUBLIC;
+GRANT ALL ON TABLE drug_element TO GROUP contributors;
+GRANT SELECT ON TABLE drug_element TO GROUP browsers;
+
+
+--
+-- TOC entry 36 (OID 180890)
+-- Name: drug_class; Type: VIEW; Schema: public; Owner: ihaywood
+--
+
+CREATE VIEW drug_class AS
+    SELECT drug_element.audit_id, drug_element.id, drug_element.category, drug_element.description FROM drug_element WHERE ((drug_element.category = 't'::bpchar) OR (drug_element.category = 'p'::bpchar));
+
+
+--
+-- TOC entry 39 (OID 180891)
+-- Name: link_drug_atc; Type: TABLE; Schema: public; Owner: ihaywood
+--
+
+CREATE TABLE link_drug_atc (
+    id_drug integer,
+    atccode character varying(8)
+)
+INHERITS (audit_drugs);
+
+
+--
+-- TOC entry 41 (OID 180896)
+-- Name: drug_warning_categories; Type: TABLE; Schema: public; Owner: ihaywood
+--
+
+CREATE TABLE drug_warning_categories (
+    id serial NOT NULL,
+    description text,
+    "comment" text
+);
+
+
+--
+-- TOC entry 44 (OID 180896)
+-- Name: drug_warning_categories; Type: ACL; Schema: public; Owner: ihaywood
+--
+
+REVOKE ALL ON TABLE drug_warning_categories FROM PUBLIC;
+GRANT SELECT ON TABLE drug_warning_categories TO PUBLIC;
+
+
+--
+-- TOC entry 45 (OID 180904)
+-- Name: drug_warning; Type: TABLE; Schema: public; Owner: ihaywood
+--
+
+CREATE TABLE drug_warning (
+    id serial NOT NULL,
+    id_warning integer,
+    id_reference integer,
+    code character(4),
+    details text
+)
+INHERITS (audit_drugs);
+
+
+--
+-- TOC entry 48 (OID 180904)
+-- Name: drug_warning; Type: ACL; Schema: public; Owner: ihaywood
+--
+
+REVOKE ALL ON TABLE drug_warning FROM PUBLIC;
+GRANT ALL ON TABLE drug_warning TO GROUP contributors;
+GRANT SELECT ON TABLE drug_warning TO GROUP browsers;
+
+
+--
+-- TOC entry 49 (OID 180913)
+-- Name: information_topic; Type: TABLE; Schema: public; Owner: ihaywood
+--
+
+CREATE TABLE information_topic (
+    id serial NOT NULL,
+    title character varying(60),
+    target character(1),
+    CONSTRAINT information_topic_target CHECK (((target = 'h'::bpchar) OR (target = 'p'::bpchar)))
+);
+
+
+--
+-- TOC entry 52 (OID 180913)
+-- Name: information_topic; Type: ACL; Schema: public; Owner: ihaywood
+--
+
+REVOKE ALL ON TABLE information_topic FROM PUBLIC;
+GRANT SELECT ON TABLE information_topic TO PUBLIC;
+
+
+--
+-- TOC entry 53 (OID 180919)
+-- Name: drug_information; Type: TABLE; Schema: public; Owner: ihaywood
+--
+
+CREATE TABLE drug_information (
+    id serial NOT NULL,
+    id_info_reference integer,
+    info text,
+    id_topic integer,
+    "comment" text
+)
+INHERITS (audit_drugs);
+
+
+--
+-- TOC entry 56 (OID 180919)
+-- Name: drug_information; Type: ACL; Schema: public; Owner: ihaywood
+--
+
+REVOKE ALL ON TABLE drug_information FROM PUBLIC;
+GRANT ALL ON TABLE drug_information TO GROUP contributors;
+GRANT SELECT ON TABLE drug_information TO GROUP browsers;
+
+
+--
+-- TOC entry 57 (OID 180928)
+-- Name: generic_drug; Type: VIEW; Schema: public; Owner: ihaywood
+--
+
+CREATE VIEW generic_drug AS
+    SELECT drug_element.id, (drug_element.category = 'c'::bpchar) AS is_compound FROM drug_element WHERE ((drug_element.category = 'c'::bpchar) OR (drug_element.category = 's'::bpchar));
+
+
+--
+-- TOC entry 60 (OID 180931)
+-- Name: generic_drug_name; Type: TABLE; Schema: public; Owner: ihaywood
+--
+
+CREATE TABLE generic_drug_name (
+    id serial NOT NULL,
+    id_drug integer,
+    name character varying(100),
+    "comment" text
+)
+INHERITS (audit_drugs);
+
+
+--
+-- TOC entry 63 (OID 180931)
+-- Name: generic_drug_name; Type: ACL; Schema: public; Owner: ihaywood
+--
+
+REVOKE ALL ON TABLE generic_drug_name FROM PUBLIC;
+GRANT ALL ON TABLE generic_drug_name TO GROUP contributors;
+GRANT SELECT ON TABLE generic_drug_name TO GROUP browsers;
+
+
+--
+-- TOC entry 64 (OID 180938)
+-- Name: link_compound_generics; Type: TABLE; Schema: public; Owner: ihaywood
+--
+
+CREATE TABLE link_compound_generics (
+    id_compound integer NOT NULL,
+    id_component integer NOT NULL
+)
+INHERITS (audit_drugs);
+
+
+--
+-- TOC entry 66 (OID 180938)
+-- Name: link_compound_generics; Type: ACL; Schema: public; Owner: ihaywood
+--
+
+REVOKE ALL ON TABLE link_compound_generics FROM PUBLIC;
+GRANT ALL ON TABLE link_compound_generics TO GROUP contributors;
+GRANT SELECT ON TABLE link_compound_generics TO GROUP browsers;
+
+
+--
+-- TOC entry 67 (OID 180941)
+-- Name: link_country_drug_name; Type: TABLE; Schema: public; Owner: ihaywood
+--
+
+CREATE TABLE link_country_drug_name (
+    id_drug_name integer,
+    iso_countrycode character(2)
+);
+
+
+--
+-- TOC entry 69 (OID 180941)
+-- Name: link_country_drug_name; Type: ACL; Schema: public; Owner: ihaywood
+--
+
+REVOKE ALL ON TABLE link_country_drug_name FROM PUBLIC;
+GRANT ALL ON TABLE link_country_drug_name TO GROUP contributors;
+GRANT SELECT ON TABLE link_country_drug_name TO GROUP browsers;
+
+
+--
+-- TOC entry 223 (OID 180943)
+-- Name: get_drug_name (integer); Type: FUNCTION; Schema: public; Owner: ihaywood
+--
+
+CREATE FUNCTION get_drug_name (integer) RETURNS character varying
+    AS 'select coalesce (
+(select name from generic_drug_name, link_country_drug_name where 
+	iso_countrycode = ''**'' and 
+	id_drug_name = generic_drug_name.id and 
+	id_drug = $1 limit 1), 
+(select name from generic_drug_name where 
+id_drug = $1 and 
+not exists (select * from link_country_drug_name where id_drug_name = generic_drug_name.id) limit 1),
+(select name from generic_drug_name where id_drug = $1 limit 1),
+''NONAME'')'
+    LANGUAGE sql;
+
+
+--
+-- TOC entry 70 (OID 180946)
+-- Name: drug_dosage; Type: TABLE; Schema: public; Owner: ihaywood
+--
+
+CREATE TABLE drug_dosage (
+    id serial NOT NULL,
+    id_drug integer,
+    id_drug_warning_categories integer,
+    id_info_reference integer,
+    id_route integer,
+    dosage_hints text
+)
+INHERITS (audit_drugs);
+
+
+--
+-- TOC entry 74 (OID 180946)
+-- Name: drug_dosage; Type: ACL; Schema: public; Owner: ihaywood
+--
+
+REVOKE ALL ON TABLE drug_dosage FROM PUBLIC;
+GRANT ALL ON TABLE drug_dosage TO GROUP contributors;
+GRANT SELECT ON TABLE drug_dosage TO GROUP browsers;
+
+
+--
+-- TOC entry 75 (OID 180955)
+-- Name: substance_dosage; Type: TABLE; Schema: public; Owner: ihaywood
+--
+
+CREATE TABLE substance_dosage (
+    id serial NOT NULL,
+    id_dosage integer,
+    id_unit integer,
+    id_component integer,
+    dosage_type character(1),
+    dosage_start double precision,
+    dosage_max double precision,
+    CONSTRAINT substance_dosage_dosage_type CHECK (((((dosage_type = '*'::bpchar) OR (dosage_type = 'w'::bpchar)) OR (dosage_type = 's'::bpchar)) OR (dosage_type = 'a'::bpchar)))
+)
+INHERITS (audit_drugs);
+
+
+--
+-- TOC entry 81 (OID 180955)
+-- Name: substance_dosage; Type: ACL; Schema: public; Owner: ihaywood
+--
+
+REVOKE ALL ON TABLE substance_dosage FROM PUBLIC;
+GRANT ALL ON TABLE substance_dosage TO GROUP contributors;
+GRANT SELECT ON TABLE substance_dosage TO GROUP browsers;
+
+
+--
+-- TOC entry 82 (OID 180960)
+-- Name: link_drug_class; Type: TABLE; Schema: public; Owner: ihaywood
+--
+
+CREATE TABLE link_drug_class (
+    id_drug integer,
+    id_class integer
+)
+INHERITS (audit_drugs);
+
+
+--
+-- TOC entry 84 (OID 180960)
+-- Name: link_drug_class; Type: ACL; Schema: public; Owner: ihaywood
+--
+
+REVOKE ALL ON TABLE link_drug_class FROM PUBLIC;
+GRANT ALL ON TABLE link_drug_class TO GROUP contributors;
+GRANT SELECT ON TABLE link_drug_class TO GROUP browsers;
+
+
+--
+-- TOC entry 85 (OID 180963)
+-- Name: link_drug_warning; Type: TABLE; Schema: public; Owner: ihaywood
+--
+
+CREATE TABLE link_drug_warning (
+    id_drug integer,
+    id_warning integer,
+    id integer
+)
+INHERITS (audit_drugs);
+
+
+--
+-- TOC entry 87 (OID 180963)
+-- Name: link_drug_warning; Type: ACL; Schema: public; Owner: ihaywood
+--
+
+REVOKE ALL ON TABLE link_drug_warning FROM PUBLIC;
+GRANT ALL ON TABLE link_drug_warning TO GROUP contributors;
+GRANT SELECT ON TABLE link_drug_warning TO GROUP browsers;
+
+
+--
+-- TOC entry 88 (OID 180966)
+-- Name: link_drug_information; Type: TABLE; Schema: public; Owner: ihaywood
+--
+
+CREATE TABLE link_drug_information (
+    id_drug integer,
+    id_info integer
+)
+INHERITS (audit_drugs);
+
+
+--
+-- TOC entry 90 (OID 180966)
+-- Name: link_drug_information; Type: ACL; Schema: public; Owner: ihaywood
+--
+
+REVOKE ALL ON TABLE link_drug_information FROM PUBLIC;
+GRANT ALL ON TABLE link_drug_information TO GROUP contributors;
+GRANT SELECT ON TABLE link_drug_information TO GROUP browsers;
+
+
+--
+-- TOC entry 91 (OID 180971)
+-- Name: severity_level; Type: TABLE; Schema: public; Owner: ihaywood
+--
+
+CREATE TABLE severity_level (
+    id serial NOT NULL,
+    description character varying(100),
+    "comment" text
+)
+INHERITS (audit_drugs);
+
+
+--
+-- TOC entry 92 (OID 180980)
+-- Name: adverse_effects; Type: TABLE; Schema: public; Owner: ihaywood
+--
+
+CREATE TABLE adverse_effects (
+    id serial NOT NULL,
+    severity integer,
+    description text
+);
+
+
+--
+-- TOC entry 96 (OID 180980)
+-- Name: adverse_effects; Type: ACL; Schema: public; Owner: ihaywood
+--
+
+REVOKE ALL ON TABLE adverse_effects FROM PUBLIC;
+GRANT ALL ON TABLE adverse_effects TO GROUP contributors;
+GRANT SELECT ON TABLE adverse_effects TO GROUP browsers;
+
+
+--
+-- TOC entry 97 (OID 180986)
+-- Name: link_drug_adverse_effects; Type: TABLE; Schema: public; Owner: ihaywood
+--
+
+CREATE TABLE link_drug_adverse_effects (
+    id_drug integer,
+    id_adverse_effect integer,
+    frequency character(1),
+    important boolean,
+    "comment" text,
+    id integer DEFAULT nextval('link_drug_adverse_effects_id_seq'::text),
+    CONSTRAINT link_drug_adverse_effects_frequency CHECK ((((frequency = 'c'::bpchar) OR (frequency = 'i'::bpchar)) OR (frequency = 'r'::bpchar)))
+)
+INHERITS (audit_drugs);
+
+
+--
+-- TOC entry 101 (OID 180986)
+-- Name: link_drug_adverse_effects; Type: ACL; Schema: public; Owner: ihaywood
+--
+
+REVOKE ALL ON TABLE link_drug_adverse_effects FROM PUBLIC;
+GRANT ALL ON TABLE link_drug_adverse_effects TO GROUP contributors;
+GRANT SELECT ON TABLE link_drug_adverse_effects TO GROUP browsers;
+
+
+--
+-- TOC entry 102 (OID 180996)
+-- Name: interactions; Type: TABLE; Schema: public; Owner: ihaywood
+--
+
+CREATE TABLE interactions (
+    id serial NOT NULL,
+    description text
+)
+INHERITS (audit_drugs);
+
+
+--
+-- TOC entry 105 (OID 180996)
+-- Name: interactions; Type: ACL; Schema: public; Owner: ihaywood
+--
+
+REVOKE ALL ON TABLE interactions FROM PUBLIC;
+GRANT ALL ON TABLE interactions TO GROUP contributors;
+GRANT SELECT ON TABLE interactions TO GROUP browsers;
+
+
+--
+-- TOC entry 106 (OID 181005)
+-- Name: link_drug_interactions; Type: TABLE; Schema: public; Owner: ihaywood
+--
+
+CREATE TABLE link_drug_interactions (
+    id serial NOT NULL,
+    id_drug integer,
+    id_interacts_with integer,
+    id_interaction integer,
+    severity integer,
+    "comment" text
+)
+INHERITS (audit_drugs);
+
+
+--
+-- TOC entry 108 (OID 181005)
+-- Name: link_drug_interactions; Type: ACL; Schema: public; Owner: ihaywood
+--
+
+REVOKE ALL ON TABLE link_drug_interactions FROM PUBLIC;
+GRANT ALL ON TABLE link_drug_interactions TO GROUP contributors;
+GRANT SELECT ON TABLE link_drug_interactions TO GROUP browsers;
+
+
+--
+-- TOC entry 109 (OID 181014)
+-- Name: link_drug_disease_interactions; Type: TABLE; Schema: public; Owner: ihaywood
+--
+
+CREATE TABLE link_drug_disease_interactions (
+    id serial NOT NULL,
+    id_drug integer,
+    id_disease_code integer,
+    id_interaction integer,
+    "comment" text
+)
+INHERITS (audit_drugs);
+
+
+--
+-- TOC entry 111 (OID 181014)
+-- Name: link_drug_disease_interactions; Type: ACL; Schema: public; Owner: ihaywood
+--
+
+REVOKE ALL ON TABLE link_drug_disease_interactions FROM PUBLIC;
+GRANT ALL ON TABLE link_drug_disease_interactions TO GROUP contributors;
+GRANT SELECT ON TABLE link_drug_disease_interactions TO GROUP browsers;
+
+
+--
+-- TOC entry 112 (OID 181023)
+-- Name: product; Type: TABLE; Schema: public; Owner: ihaywood
+--
+
+CREATE TABLE product (
+    id serial NOT NULL,
+    id_drug integer,
+    id_formulation integer,
+    id_packing_unit integer,
+    id_route integer,
+    amount double precision DEFAULT 1.0,
+    "comment" text
+)
+INHERITS (audit_drugs);
+
+
+--
+-- TOC entry 116 (OID 181023)
+-- Name: product; Type: ACL; Schema: public; Owner: ihaywood
+--
+
+REVOKE ALL ON TABLE product FROM PUBLIC;
+GRANT ALL ON TABLE product TO GROUP contributors;
+GRANT SELECT ON TABLE product TO GROUP browsers;
+
+
+--
+-- TOC entry 117 (OID 181031)
+-- Name: package_size; Type: TABLE; Schema: public; Owner: ihaywood
+--
+
+CREATE TABLE package_size (
+    id_product integer,
+    size double precision
+)
+INHERITS (audit_drugs);
+
+
+--
+-- TOC entry 119 (OID 181031)
+-- Name: package_size; Type: ACL; Schema: public; Owner: ihaywood
+--
+
+REVOKE ALL ON TABLE package_size FROM PUBLIC;
+GRANT ALL ON TABLE package_size TO GROUP contributors;
+GRANT SELECT ON TABLE package_size TO GROUP browsers;
+
+
+--
+-- TOC entry 120 (OID 181034)
+-- Name: link_product_component; Type: TABLE; Schema: public; Owner: ihaywood
+--
+
+CREATE TABLE link_product_component (
+    id_product integer,
+    id_component integer,
+    strength double precision,
+    id_unit integer
+)
+INHERITS (audit_drugs);
+
+
+--
+-- TOC entry 122 (OID 181034)
+-- Name: link_product_component; Type: ACL; Schema: public; Owner: ihaywood
+--
+
+REVOKE ALL ON TABLE link_product_component FROM PUBLIC;
+GRANT ALL ON TABLE link_product_component TO GROUP contributors;
+GRANT SELECT ON TABLE link_product_component TO GROUP browsers;
+
+
+--
+-- TOC entry 123 (OID 181039)
+-- Name: drug_flags; Type: TABLE; Schema: public; Owner: ihaywood
+--
+
+CREATE TABLE drug_flags (
+    id serial NOT NULL,
+    description character varying(100)
+);
+
+
+--
+-- TOC entry 125 (OID 181039)
+-- Name: drug_flags; Type: ACL; Schema: public; Owner: ihaywood
+--
+
+REVOKE ALL ON TABLE drug_flags FROM PUBLIC;
+GRANT SELECT ON TABLE drug_flags TO PUBLIC;
+
+
+--
+-- TOC entry 126 (OID 181042)
+-- Name: link_flag_product; Type: TABLE; Schema: public; Owner: ihaywood
+--
+
+CREATE TABLE link_flag_product (
+    id_product integer,
+    id_flag integer
+)
+INHERITS (audit_drugs);
+
+
+--
+-- TOC entry 128 (OID 181042)
+-- Name: link_flag_product; Type: ACL; Schema: public; Owner: ihaywood
+--
+
+REVOKE ALL ON TABLE link_flag_product FROM PUBLIC;
+GRANT ALL ON TABLE link_flag_product TO GROUP contributors;
+GRANT SELECT ON TABLE link_flag_product TO GROUP browsers;
+
+
+--
+-- TOC entry 129 (OID 181045)
+-- Name: available; Type: TABLE; Schema: public; Owner: ihaywood
+--
+
+CREATE TABLE available (
+    id_product integer,
+    iso_countrycode character(2),
+    available_from date,
+    banned date,
+    "comment" text
+);
+
+
+--
+-- TOC entry 134 (OID 181045)
+-- Name: available; Type: ACL; Schema: public; Owner: ihaywood
+--
+
+REVOKE ALL ON TABLE available FROM PUBLIC;
+GRANT ALL ON TABLE available TO GROUP contributors;
+GRANT SELECT ON TABLE available TO GROUP browsers;
+
+
+--
+-- TOC entry 135 (OID 181052)
+-- Name: manufacturer; Type: TABLE; Schema: public; Owner: ihaywood
+--
+
+CREATE TABLE manufacturer (
+    id serial NOT NULL,
+    iso_countrycode character(2),
+    address text,
+    phone text,
+    fax text,
+    "comment" text,
+    code character(2),
+    name character varying(100)
+)
+INHERITS (audit_drugs);
+
+
+--
+-- TOC entry 142 (OID 181052)
+-- Name: manufacturer; Type: ACL; Schema: public; Owner: ihaywood
+--
+
+REVOKE ALL ON TABLE manufacturer FROM PUBLIC;
+GRANT ALL ON TABLE manufacturer TO GROUP contributors;
+GRANT SELECT ON TABLE manufacturer TO GROUP browsers;
+
+
+--
+-- TOC entry 143 (OID 181059)
+-- Name: link_product_manufacturer; Type: TABLE; Schema: public; Owner: ihaywood
+--
+
+CREATE TABLE link_product_manufacturer (
+    id_product integer,
+    id_manufacturer integer,
+    brandname character varying(60) DEFAULT 'GENERIC'
+)
+INHERITS (audit_drugs);
+
+
+--
+-- TOC entry 145 (OID 181059)
+-- Name: link_product_manufacturer; Type: ACL; Schema: public; Owner: ihaywood
+--
+
+REVOKE ALL ON TABLE link_product_manufacturer FROM PUBLIC;
+GRANT ALL ON TABLE link_product_manufacturer TO GROUP contributors;
+GRANT SELECT ON TABLE link_product_manufacturer TO GROUP browsers;
+
+
+--
+-- TOC entry 146 (OID 181065)
+-- Name: subsidies; Type: TABLE; Schema: public; Owner: ihaywood
+--
+
+CREATE TABLE subsidies (
+    id serial NOT NULL,
+    iso_countrycode character(2),
+    name character varying(30),
+    "comment" text
+)
+INHERITS (audit_drugs);
+
+
+--
+-- TOC entry 150 (OID 181065)
+-- Name: subsidies; Type: ACL; Schema: public; Owner: ihaywood
+--
+
+REVOKE ALL ON TABLE subsidies FROM PUBLIC;
+GRANT SELECT ON TABLE subsidies TO PUBLIC;
+
+
+--
+-- TOC entry 151 (OID 181074)
+-- Name: conditions; Type: TABLE; Schema: public; Owner: ihaywood
+--
+
+CREATE TABLE conditions (
+    id serial NOT NULL,
+    "comment" text,
+    title character varying(60),
+    id_subsidy integer,
+    id_drug integer,
+    authority boolean
+)
+INHERITS (audit_drugs);
+
+
+--
+-- TOC entry 156 (OID 181074)
+-- Name: conditions; Type: ACL; Schema: public; Owner: ihaywood
+--
+
+REVOKE ALL ON TABLE conditions FROM PUBLIC;
+GRANT ALL ON TABLE conditions TO GROUP contributors;
+GRANT SELECT ON TABLE conditions TO GROUP browsers;
+
+
+--
+-- TOC entry 157 (OID 181083)
+-- Name: subsidized_products; Type: TABLE; Schema: public; Owner: ihaywood
+--
+
+CREATE TABLE subsidized_products (
+    id serial NOT NULL,
+    id_product integer,
+    id_subsidy integer,
+    quantity integer DEFAULT 1,
+    max_rpt integer DEFAULT 0,
+    copayment double precision DEFAULT 0.0,
+    "comment" text,
+    restriction text
+)
+INHERITS (audit_drugs);
+
+
+--
+-- TOC entry 163 (OID 181083)
+-- Name: subsidized_products; Type: ACL; Schema: public; Owner: ihaywood
+--
+
+REVOKE ALL ON TABLE subsidized_products FROM PUBLIC;
+GRANT ALL ON TABLE subsidized_products TO GROUP contributors;
+GRANT SELECT ON TABLE subsidized_products TO GROUP browsers;
+
+
+--
+-- TOC entry 164 (OID 181095)
+-- Name: link_dosage_indication; Type: TABLE; Schema: public; Owner: ihaywood
+--
+
+CREATE TABLE link_dosage_indication (
+    id serial NOT NULL,
+    id_drug_dosage integer,
+    id_disease_code integer,
+    "comment" text,
+    line integer
+)
+INHERITS (audit_drugs);
+
+
+--
+-- TOC entry 168 (OID 181104)
+-- Name: link_drug_indication; Type: TABLE; Schema: public; Owner: ihaywood
+--
+
+CREATE TABLE link_drug_indication (
+    id serial NOT NULL,
+    id_drug integer,
+    id_disease_code integer,
+    "comment" text,
+    line integer
+)
+INHERITS (audit_drugs);
+
+
+--
+-- TOC entry 172 (OID 181104)
+-- Name: link_drug_indication; Type: ACL; Schema: public; Owner: ihaywood
+--
+
+REVOKE ALL ON TABLE link_drug_indication FROM PUBLIC;
+GRANT ALL ON TABLE link_drug_indication TO GROUP contributors;
+GRANT SELECT ON TABLE link_drug_indication TO GROUP browsers;
+
+
+--
+-- TOC entry 173 (OID 237414)
+-- Name: comments; Type: TABLE; Schema: public; Owner: ihaywood
+--
+
+CREATE TABLE comments (
+    id serial NOT NULL,
+    table_name name,
+    table_row integer,
+    stamp timestamp without time zone DEFAULT ('now'::text)::timestamp(6) with time zone,
+    who name DEFAULT "current_user"(),
+    "comment" text,
+    source integer,
+    signature text
+);
+
+
+--
+-- TOC entry 180 (OID 237414)
+-- Name: comments; Type: ACL; Schema: public; Owner: ihaywood
+--
+
+REVOKE ALL ON TABLE comments FROM PUBLIC;
+GRANT SELECT ON TABLE comments TO PUBLIC;
+GRANT ALL ON TABLE comments TO GROUP contributors;
+
+
+--
+-- TOC entry 195 (OID 237124)
+-- Name: idx_link_compound_generics; Type: INDEX; Schema: public; Owner: ihaywood
+--
+
+CREATE INDEX idx_link_compound_generics ON link_compound_generics USING btree (id_compound, id_component);
+
+
+--
+-- TOC entry 196 (OID 237125)
+-- Name: idx_link_country_drug_name; Type: INDEX; Schema: public; Owner: ihaywood
+--
+
+CREATE INDEX idx_link_country_drug_name ON link_country_drug_name USING btree (iso_countrycode, id_drug_name);
+
+
+--
+-- TOC entry 199 (OID 237126)
+-- Name: idx_link_drug_class; Type: INDEX; Schema: public; Owner: ihaywood
+--
+
+CREATE INDEX idx_link_drug_class ON link_drug_class USING btree (id_drug, id_class);
+
+
+--
+-- TOC entry 200 (OID 237127)
+-- Name: idx_link_drug_warning; Type: INDEX; Schema: public; Owner: ihaywood
+--
+
+CREATE INDEX idx_link_drug_warning ON link_drug_warning USING btree (id_drug, id_warning);
+
+
+--
+-- TOC entry 201 (OID 237128)
+-- Name: idx_link_drug_information; Type: INDEX; Schema: public; Owner: ihaywood
+--
+
+CREATE INDEX idx_link_drug_information ON link_drug_information USING btree (id_drug, id_info);
+
+
+--
+-- TOC entry 210 (OID 237129)
+-- Name: idx_link_product_manufacturer; Type: INDEX; Schema: public; Owner: ihaywood
+--
+
+CREATE INDEX idx_link_product_manufacturer ON link_product_manufacturer USING btree (id_product, id_manufacturer);
+
+
+--
+-- TOC entry 214 (OID 237130)
+-- Name: idx_dosage_indication; Type: INDEX; Schema: public; Owner: ihaywood
+--
+
+CREATE INDEX idx_dosage_indication ON link_dosage_indication USING btree (id_drug_dosage);
+
+
+--
+-- TOC entry 215 (OID 237131)
+-- Name: idx_indication_dosage; Type: INDEX; Schema: public; Owner: ihaywood
+--
+
+CREATE INDEX idx_indication_dosage ON link_dosage_indication USING btree (id_disease_code);
+
+
+--
+-- TOC entry 217 (OID 237132)
+-- Name: idx_drug_indication; Type: INDEX; Schema: public; Owner: ihaywood
+--
+
+CREATE INDEX idx_drug_indication ON link_drug_indication USING btree (id_drug);
+
+
+--
+-- TOC entry 218 (OID 237133)
+-- Name: idx_indication_drug; Type: INDEX; Schema: public; Owner: ihaywood
+--
+
+CREATE INDEX idx_indication_drug ON link_drug_indication USING btree (id_disease_code);
+
+
+--
+-- TOC entry 181 (OID 237134)
+-- Name: atc_pkey; Type: CONSTRAINT; Schema: public; Owner: ihaywood
+--
+
+ALTER TABLE ONLY atc
+    ADD CONSTRAINT atc_pkey PRIMARY KEY (code);
+
+
+--
+-- TOC entry 182 (OID 237136)
+-- Name: info_reference_pkey; Type: CONSTRAINT; Schema: public; Owner: ihaywood
+--
+
+ALTER TABLE ONLY info_reference
+    ADD CONSTRAINT info_reference_pkey PRIMARY KEY (id);
+
+
+--
+-- TOC entry 183 (OID 237138)
+-- Name: code_systems_pkey; Type: CONSTRAINT; Schema: public; Owner: ihaywood
+--
+
+ALTER TABLE ONLY code_systems
+    ADD CONSTRAINT code_systems_pkey PRIMARY KEY (id);
+
+
+--
+-- TOC entry 185 (OID 237140)
+-- Name: disease_code_pkey; Type: CONSTRAINT; Schema: public; Owner: ihaywood
+--
+
+ALTER TABLE ONLY disease_code
+    ADD CONSTRAINT disease_code_pkey PRIMARY KEY (id);
+
+
+--
+-- TOC entry 184 (OID 237142)
+-- Name: disease_code_code_key; Type: CONSTRAINT; Schema: public; Owner: ihaywood
+--
+
+ALTER TABLE ONLY disease_code
+    ADD CONSTRAINT disease_code_code_key UNIQUE (code);
+
+
+--
+-- TOC entry 225 (OID 237144)
+-- Name: $1; Type: CONSTRAINT; Schema: public; Owner: ihaywood
+--
+
+ALTER TABLE ONLY disease_code
+    ADD CONSTRAINT "$1" FOREIGN KEY (id_system) REFERENCES code_systems(id) ON UPDATE NO ACTION ON DELETE NO ACTION;
+
+
+--
+-- TOC entry 186 (OID 237148)
+-- Name: drug_units_pkey; Type: CONSTRAINT; Schema: public; Owner: ihaywood
+--
+
+ALTER TABLE ONLY drug_units
+    ADD CONSTRAINT drug_units_pkey PRIMARY KEY (id);
+
+
+--
+-- TOC entry 187 (OID 237150)
+-- Name: drug_formulations_pkey; Type: CONSTRAINT; Schema: public; Owner: ihaywood
+--
+
+ALTER TABLE ONLY drug_formulations
+    ADD CONSTRAINT drug_formulations_pkey PRIMARY KEY (id);
+
+
+--
+-- TOC entry 188 (OID 237152)
+-- Name: drug_routes_pkey; Type: CONSTRAINT; Schema: public; Owner: ihaywood
+--
+
+ALTER TABLE ONLY drug_routes
+    ADD CONSTRAINT drug_routes_pkey PRIMARY KEY (id);
+
+
+--
+-- TOC entry 189 (OID 237154)
+-- Name: drug_element_pkey; Type: CONSTRAINT; Schema: public; Owner: ihaywood
+--
+
+ALTER TABLE ONLY drug_element
+    ADD CONSTRAINT drug_element_pkey PRIMARY KEY (id);
+
+
+--
+-- TOC entry 226 (OID 237156)
+-- Name: $1; Type: CONSTRAINT; Schema: public; Owner: ihaywood
+--
+
+ALTER TABLE ONLY link_drug_atc
+    ADD CONSTRAINT "$1" FOREIGN KEY (id_drug) REFERENCES drug_element(id) ON UPDATE NO ACTION ON DELETE NO ACTION;
+
+
+--
+-- TOC entry 227 (OID 237160)
+-- Name: $2; Type: CONSTRAINT; Schema: public; Owner: ihaywood
+--
+
+ALTER TABLE ONLY link_drug_atc
+    ADD CONSTRAINT "$2" FOREIGN KEY (atccode) REFERENCES atc(code) ON UPDATE NO ACTION ON DELETE NO ACTION;
+
+
+--
+-- TOC entry 190 (OID 237164)
+-- Name: drug_warning_categories_pkey; Type: CONSTRAINT; Schema: public; Owner: ihaywood
+--
+
+ALTER TABLE ONLY drug_warning_categories
+    ADD CONSTRAINT drug_warning_categories_pkey PRIMARY KEY (id);
+
+
+--
+-- TOC entry 191 (OID 237166)
+-- Name: drug_warning_pkey; Type: CONSTRAINT; Schema: public; Owner: ihaywood
+--
+
+ALTER TABLE ONLY drug_warning
+    ADD CONSTRAINT drug_warning_pkey PRIMARY KEY (id);
+
+
+--
+-- TOC entry 228 (OID 237168)
+-- Name: $1; Type: CONSTRAINT; Schema: public; Owner: ihaywood
+--
+
+ALTER TABLE ONLY drug_warning
+    ADD CONSTRAINT "$1" FOREIGN KEY (id_warning) REFERENCES drug_warning_categories(id) ON UPDATE NO ACTION ON DELETE NO ACTION;
+
+
+--
+-- TOC entry 229 (OID 237172)
+-- Name: $2; Type: CONSTRAINT; Schema: public; Owner: ihaywood
+--
+
+ALTER TABLE ONLY drug_warning
+    ADD CONSTRAINT "$2" FOREIGN KEY (id_reference) REFERENCES info_reference(id) ON UPDATE NO ACTION ON DELETE NO ACTION;
+
+
+--
+-- TOC entry 192 (OID 237176)
+-- Name: information_topic_id_key; Type: CONSTRAINT; Schema: public; Owner: ihaywood
+--
+
+ALTER TABLE ONLY information_topic
+    ADD CONSTRAINT information_topic_id_key UNIQUE (id);
+
+
+--
+-- TOC entry 193 (OID 237178)
+-- Name: drug_information_pkey; Type: CONSTRAINT; Schema: public; Owner: ihaywood
+--
+
+ALTER TABLE ONLY drug_information
+    ADD CONSTRAINT drug_information_pkey PRIMARY KEY (id);
+
+
+--
+-- TOC entry 230 (OID 237180)
+-- Name: $1; Type: CONSTRAINT; Schema: public; Owner: ihaywood
+--
+
+ALTER TABLE ONLY drug_information
+    ADD CONSTRAINT "$1" FOREIGN KEY (id_info_reference) REFERENCES info_reference(id) ON UPDATE NO ACTION ON DELETE NO ACTION;
+
+
+--
+-- TOC entry 231 (OID 237184)
+-- Name: $2; Type: CONSTRAINT; Schema: public; Owner: ihaywood
+--
+
+ALTER TABLE ONLY drug_information
+    ADD CONSTRAINT "$2" FOREIGN KEY (id_topic) REFERENCES information_topic(id) ON UPDATE NO ACTION ON DELETE NO ACTION;
+
+
+--
+-- TOC entry 194 (OID 237188)
+-- Name: generic_drug_name_pkey; Type: CONSTRAINT; Schema: public; Owner: ihaywood
+--
+
+ALTER TABLE ONLY generic_drug_name
+    ADD CONSTRAINT generic_drug_name_pkey PRIMARY KEY (id);
+
+
+--
+-- TOC entry 232 (OID 237190)
+-- Name: $1; Type: CONSTRAINT; Schema: public; Owner: ihaywood
+--
+
+ALTER TABLE ONLY generic_drug_name
+    ADD CONSTRAINT "$1" FOREIGN KEY (id_drug) REFERENCES drug_element(id) ON UPDATE NO ACTION ON DELETE NO ACTION;
+
+
+--
+-- TOC entry 233 (OID 237194)
+-- Name: $1; Type: CONSTRAINT; Schema: public; Owner: ihaywood
+--
+
+ALTER TABLE ONLY link_compound_generics
+    ADD CONSTRAINT "$1" FOREIGN KEY (id_compound) REFERENCES drug_element(id) ON UPDATE NO ACTION ON DELETE NO ACTION;
+
+
+--
+-- TOC entry 234 (OID 237198)
+-- Name: $2; Type: CONSTRAINT; Schema: public; Owner: ihaywood
+--
+
+ALTER TABLE ONLY link_compound_generics
+    ADD CONSTRAINT "$2" FOREIGN KEY (id_component) REFERENCES drug_element(id) ON UPDATE NO ACTION ON DELETE NO ACTION;
+
+
+--
+-- TOC entry 235 (OID 237202)
+-- Name: $1; Type: CONSTRAINT; Schema: public; Owner: ihaywood
+--
+
+ALTER TABLE ONLY link_country_drug_name
+    ADD CONSTRAINT "$1" FOREIGN KEY (id_drug_name) REFERENCES generic_drug_name(id) ON UPDATE NO ACTION ON DELETE NO ACTION;
+
+
+--
+-- TOC entry 197 (OID 237206)
+-- Name: drug_dosage_pkey; Type: CONSTRAINT; Schema: public; Owner: ihaywood
+--
+
+ALTER TABLE ONLY drug_dosage
+    ADD CONSTRAINT drug_dosage_pkey PRIMARY KEY (id);
+
+
+--
+-- TOC entry 236 (OID 237208)
+-- Name: $1; Type: CONSTRAINT; Schema: public; Owner: ihaywood
+--
+
+ALTER TABLE ONLY drug_dosage
+    ADD CONSTRAINT "$1" FOREIGN KEY (id_drug) REFERENCES drug_element(id) ON UPDATE NO ACTION ON DELETE NO ACTION;
+
+
+--
+-- TOC entry 237 (OID 237212)
+-- Name: $2; Type: CONSTRAINT; Schema: public; Owner: ihaywood
+--
+
+ALTER TABLE ONLY drug_dosage
+    ADD CONSTRAINT "$2" FOREIGN KEY (id_drug_warning_categories) REFERENCES drug_warning_categories(id) ON UPDATE NO ACTION ON DELETE NO ACTION;
+
+
+--
+-- TOC entry 238 (OID 237216)
+-- Name: $3; Type: CONSTRAINT; Schema: public; Owner: ihaywood
+--
+
+ALTER TABLE ONLY drug_dosage
+    ADD CONSTRAINT "$3" FOREIGN KEY (id_info_reference) REFERENCES info_reference(id) ON UPDATE NO ACTION ON DELETE NO ACTION;
+
+
+--
+-- TOC entry 239 (OID 237220)
+-- Name: $4; Type: CONSTRAINT; Schema: public; Owner: ihaywood
+--
+
+ALTER TABLE ONLY drug_dosage
+    ADD CONSTRAINT "$4" FOREIGN KEY (id_route) REFERENCES drug_routes(id) ON UPDATE NO ACTION ON DELETE NO ACTION;
+
+
+--
+-- TOC entry 198 (OID 237224)
+-- Name: substance_dosage_pkey; Type: CONSTRAINT; Schema: public; Owner: ihaywood
+--
+
+ALTER TABLE ONLY substance_dosage
+    ADD CONSTRAINT substance_dosage_pkey PRIMARY KEY (id);
+
+
+--
+-- TOC entry 240 (OID 237226)
+-- Name: $1; Type: CONSTRAINT; Schema: public; Owner: ihaywood
+--
+
+ALTER TABLE ONLY substance_dosage
+    ADD CONSTRAINT "$1" FOREIGN KEY (id_dosage) REFERENCES drug_dosage(id) ON UPDATE NO ACTION ON DELETE NO ACTION;
+
+
+--
+-- TOC entry 241 (OID 237230)
+-- Name: $2; Type: CONSTRAINT; Schema: public; Owner: ihaywood
+--
+
+ALTER TABLE ONLY substance_dosage
+    ADD CONSTRAINT "$2" FOREIGN KEY (id_unit) REFERENCES drug_units(id) ON UPDATE NO ACTION ON DELETE NO ACTION;
+
+
+--
+-- TOC entry 242 (OID 237234)
+-- Name: $3; Type: CONSTRAINT; Schema: public; Owner: ihaywood
+--
+
+ALTER TABLE ONLY substance_dosage
+    ADD CONSTRAINT "$3" FOREIGN KEY (id_component) REFERENCES drug_element(id) ON UPDATE NO ACTION ON DELETE NO ACTION;
+
+
+--
+-- TOC entry 243 (OID 237238)
+-- Name: $1; Type: CONSTRAINT; Schema: public; Owner: ihaywood
+--
+
+ALTER TABLE ONLY link_drug_class
+    ADD CONSTRAINT "$1" FOREIGN KEY (id_drug) REFERENCES drug_element(id) ON UPDATE NO ACTION ON DELETE NO ACTION;
+
+
+--
+-- TOC entry 244 (OID 237242)
+-- Name: $2; Type: CONSTRAINT; Schema: public; Owner: ihaywood
+--
+
+ALTER TABLE ONLY link_drug_class
+    ADD CONSTRAINT "$2" FOREIGN KEY (id_class) REFERENCES drug_element(id) ON UPDATE NO ACTION ON DELETE NO ACTION;
+
+
+--
+-- TOC entry 245 (OID 237246)
+-- Name: $1; Type: CONSTRAINT; Schema: public; Owner: ihaywood
+--
+
+ALTER TABLE ONLY link_drug_warning
+    ADD CONSTRAINT "$1" FOREIGN KEY (id_drug) REFERENCES drug_element(id) ON UPDATE NO ACTION ON DELETE NO ACTION;
+
+
+--
+-- TOC entry 246 (OID 237250)
+-- Name: $2; Type: CONSTRAINT; Schema: public; Owner: ihaywood
+--
+
+ALTER TABLE ONLY link_drug_warning
+    ADD CONSTRAINT "$2" FOREIGN KEY (id_warning) REFERENCES drug_warning(id) ON UPDATE NO ACTION ON DELETE NO ACTION;
+
+
+--
+-- TOC entry 247 (OID 237254)
+-- Name: $1; Type: CONSTRAINT; Schema: public; Owner: ihaywood
+--
+
+ALTER TABLE ONLY link_drug_information
+    ADD CONSTRAINT "$1" FOREIGN KEY (id_drug) REFERENCES drug_element(id) ON UPDATE NO ACTION ON DELETE NO ACTION;
+
+
+--
+-- TOC entry 248 (OID 237258)
+-- Name: $2; Type: CONSTRAINT; Schema: public; Owner: ihaywood
+--
+
+ALTER TABLE ONLY link_drug_information
+    ADD CONSTRAINT "$2" FOREIGN KEY (id_info) REFERENCES drug_information(id) ON UPDATE NO ACTION ON DELETE NO ACTION;
+
+
+--
+-- TOC entry 202 (OID 237262)
+-- Name: severity_level_pkey; Type: CONSTRAINT; Schema: public; Owner: ihaywood
+--
+
+ALTER TABLE ONLY severity_level
+    ADD CONSTRAINT severity_level_pkey PRIMARY KEY (id);
+
+
+--
+-- TOC entry 203 (OID 237264)
+-- Name: adverse_effects_pkey; Type: CONSTRAINT; Schema: public; Owner: ihaywood
+--
+
+ALTER TABLE ONLY adverse_effects
+    ADD CONSTRAINT adverse_effects_pkey PRIMARY KEY (id);
+
+
+--
+-- TOC entry 249 (OID 237266)
+-- Name: $1; Type: CONSTRAINT; Schema: public; Owner: ihaywood
+--
+
+ALTER TABLE ONLY adverse_effects
+    ADD CONSTRAINT "$1" FOREIGN KEY (severity) REFERENCES severity_level(id) ON UPDATE NO ACTION ON DELETE NO ACTION;
+
+
+--
+-- TOC entry 250 (OID 237270)
+-- Name: $1; Type: CONSTRAINT; Schema: public; Owner: ihaywood
+--
+
+ALTER TABLE ONLY link_drug_adverse_effects
+    ADD CONSTRAINT "$1" FOREIGN KEY (id_drug) REFERENCES drug_element(id) ON UPDATE NO ACTION ON DELETE NO ACTION;
+
+
+--
+-- TOC entry 251 (OID 237274)
+-- Name: $2; Type: CONSTRAINT; Schema: public; Owner: ihaywood
+--
+
+ALTER TABLE ONLY link_drug_adverse_effects
+    ADD CONSTRAINT "$2" FOREIGN KEY (id_adverse_effect) REFERENCES adverse_effects(id) ON UPDATE NO ACTION ON DELETE NO ACTION;
+
+
+--
+-- TOC entry 204 (OID 237278)
+-- Name: interactions_pkey; Type: CONSTRAINT; Schema: public; Owner: ihaywood
+--
+
+ALTER TABLE ONLY interactions
+    ADD CONSTRAINT interactions_pkey PRIMARY KEY (id);
+
+
+--
+-- TOC entry 205 (OID 237280)
+-- Name: link_drug_interactions_pkey; Type: CONSTRAINT; Schema: public; Owner: ihaywood
+--
+
+ALTER TABLE ONLY link_drug_interactions
+    ADD CONSTRAINT link_drug_interactions_pkey PRIMARY KEY (id);
+
+
+--
+-- TOC entry 252 (OID 237282)
+-- Name: $1; Type: CONSTRAINT; Schema: public; Owner: ihaywood
+--
+
+ALTER TABLE ONLY link_drug_interactions
+    ADD CONSTRAINT "$1" FOREIGN KEY (id_drug) REFERENCES drug_element(id) ON UPDATE NO ACTION ON DELETE NO ACTION;
+
+
+--
+-- TOC entry 253 (OID 237286)
+-- Name: $2; Type: CONSTRAINT; Schema: public; Owner: ihaywood
+--
+
+ALTER TABLE ONLY link_drug_interactions
+    ADD CONSTRAINT "$2" FOREIGN KEY (id_interacts_with) REFERENCES drug_element(id) ON UPDATE NO ACTION ON DELETE NO ACTION;
+
+
+--
+-- TOC entry 254 (OID 237290)
+-- Name: $3; Type: CONSTRAINT; Schema: public; Owner: ihaywood
+--
+
+ALTER TABLE ONLY link_drug_interactions
+    ADD CONSTRAINT "$3" FOREIGN KEY (id_interaction) REFERENCES interactions(id) ON UPDATE NO ACTION ON DELETE NO ACTION;
+
+
+--
+-- TOC entry 255 (OID 237294)
+-- Name: $4; Type: CONSTRAINT; Schema: public; Owner: ihaywood
+--
+
+ALTER TABLE ONLY link_drug_interactions
+    ADD CONSTRAINT "$4" FOREIGN KEY (severity) REFERENCES severity_level(id) ON UPDATE NO ACTION ON DELETE NO ACTION;
+
+
+--
+-- TOC entry 206 (OID 237298)
+-- Name: link_drug_disease_interactions_pkey; Type: CONSTRAINT; Schema: public; Owner: ihaywood
+--
+
+ALTER TABLE ONLY link_drug_disease_interactions
+    ADD CONSTRAINT link_drug_disease_interactions_pkey PRIMARY KEY (id);
+
+
+--
+-- TOC entry 256 (OID 237300)
+-- Name: $1; Type: CONSTRAINT; Schema: public; Owner: ihaywood
+--
+
+ALTER TABLE ONLY link_drug_disease_interactions
+    ADD CONSTRAINT "$1" FOREIGN KEY (id_drug) REFERENCES drug_element(id) ON UPDATE NO ACTION ON DELETE NO ACTION;
+
+
+--
+-- TOC entry 257 (OID 237304)
+-- Name: $2; Type: CONSTRAINT; Schema: public; Owner: ihaywood
+--
+
+ALTER TABLE ONLY link_drug_disease_interactions
+    ADD CONSTRAINT "$2" FOREIGN KEY (id_disease_code) REFERENCES disease_code(id) ON UPDATE NO ACTION ON DELETE NO ACTION;
+
+
+--
+-- TOC entry 258 (OID 237308)
+-- Name: $3; Type: CONSTRAINT; Schema: public; Owner: ihaywood
+--
+
+ALTER TABLE ONLY link_drug_disease_interactions
+    ADD CONSTRAINT "$3" FOREIGN KEY (id_interaction) REFERENCES interactions(id) ON UPDATE NO ACTION ON DELETE NO ACTION;
+
+
+--
+-- TOC entry 207 (OID 237312)
+-- Name: product_pkey; Type: CONSTRAINT; Schema: public; Owner: ihaywood
+--
+
+ALTER TABLE ONLY product
+    ADD CONSTRAINT product_pkey PRIMARY KEY (id);
+
+
+--
+-- TOC entry 259 (OID 237314)
+-- Name: $1; Type: CONSTRAINT; Schema: public; Owner: ihaywood
+--
+
+ALTER TABLE ONLY product
+    ADD CONSTRAINT "$1" FOREIGN KEY (id_drug) REFERENCES drug_element(id) ON UPDATE NO ACTION ON DELETE NO ACTION;
+
+
+--
+-- TOC entry 260 (OID 237318)
+-- Name: $2; Type: CONSTRAINT; Schema: public; Owner: ihaywood
+--
+
+ALTER TABLE ONLY product
+    ADD CONSTRAINT "$2" FOREIGN KEY (id_formulation) REFERENCES drug_formulations(id) ON UPDATE NO ACTION ON DELETE NO ACTION;
+
+
+--
+-- TOC entry 261 (OID 237322)
+-- Name: $3; Type: CONSTRAINT; Schema: public; Owner: ihaywood
+--
+
+ALTER TABLE ONLY product
+    ADD CONSTRAINT "$3" FOREIGN KEY (id_packing_unit) REFERENCES drug_units(id) ON UPDATE NO ACTION ON DELETE NO ACTION;
+
+
+--
+-- TOC entry 262 (OID 237326)
+-- Name: $4; Type: CONSTRAINT; Schema: public; Owner: ihaywood
+--
+
+ALTER TABLE ONLY product
+    ADD CONSTRAINT "$4" FOREIGN KEY (id_route) REFERENCES drug_routes(id) ON UPDATE NO ACTION ON DELETE NO ACTION;
+
+
+--
+-- TOC entry 263 (OID 237330)
+-- Name: $1; Type: CONSTRAINT; Schema: public; Owner: ihaywood
+--
+
+ALTER TABLE ONLY package_size
+    ADD CONSTRAINT "$1" FOREIGN KEY (id_product) REFERENCES product(id) ON UPDATE NO ACTION ON DELETE NO ACTION;
+
+
+--
+-- TOC entry 264 (OID 237334)
+-- Name: $1; Type: CONSTRAINT; Schema: public; Owner: ihaywood
+--
+
+ALTER TABLE ONLY link_product_component
+    ADD CONSTRAINT "$1" FOREIGN KEY (id_product) REFERENCES product(id) ON UPDATE NO ACTION ON DELETE NO ACTION;
+
+
+--
+-- TOC entry 265 (OID 237338)
+-- Name: $2; Type: CONSTRAINT; Schema: public; Owner: ihaywood
+--
+
+ALTER TABLE ONLY link_product_component
+    ADD CONSTRAINT "$2" FOREIGN KEY (id_component) REFERENCES drug_element(id) ON UPDATE NO ACTION ON DELETE NO ACTION;
+
+
+--
+-- TOC entry 266 (OID 237342)
+-- Name: $3; Type: CONSTRAINT; Schema: public; Owner: ihaywood
+--
+
+ALTER TABLE ONLY link_product_component
+    ADD CONSTRAINT "$3" FOREIGN KEY (id_unit) REFERENCES drug_units(id) ON UPDATE NO ACTION ON DELETE NO ACTION;
+
+
+--
+-- TOC entry 208 (OID 237346)
+-- Name: drug_flags_pkey; Type: CONSTRAINT; Schema: public; Owner: ihaywood
+--
+
+ALTER TABLE ONLY drug_flags
+    ADD CONSTRAINT drug_flags_pkey PRIMARY KEY (id);
+
+
+--
+-- TOC entry 267 (OID 237348)
+-- Name: $1; Type: CONSTRAINT; Schema: public; Owner: ihaywood
+--
+
+ALTER TABLE ONLY link_flag_product
+    ADD CONSTRAINT "$1" FOREIGN KEY (id_product) REFERENCES product(id) ON UPDATE NO ACTION ON DELETE NO ACTION;
+
+
+--
+-- TOC entry 268 (OID 237352)
+-- Name: $2; Type: CONSTRAINT; Schema: public; Owner: ihaywood
+--
+
+ALTER TABLE ONLY link_flag_product
+    ADD CONSTRAINT "$2" FOREIGN KEY (id_flag) REFERENCES drug_flags(id) ON UPDATE NO ACTION ON DELETE NO ACTION;
+
+
+--
+-- TOC entry 269 (OID 237356)
+-- Name: $1; Type: CONSTRAINT; Schema: public; Owner: ihaywood
+--
+
+ALTER TABLE ONLY available
+    ADD CONSTRAINT "$1" FOREIGN KEY (id_product) REFERENCES product(id) ON UPDATE NO ACTION ON DELETE NO ACTION;
+
+
+--
+-- TOC entry 209 (OID 237360)
+-- Name: manufacturer_pkey; Type: CONSTRAINT; Schema: public; Owner: ihaywood
+--
+
+ALTER TABLE ONLY manufacturer
+    ADD CONSTRAINT manufacturer_pkey PRIMARY KEY (id);
+
+
+--
+-- TOC entry 270 (OID 237362)
+-- Name: $1; Type: CONSTRAINT; Schema: public; Owner: ihaywood
+--
+
+ALTER TABLE ONLY link_product_manufacturer
+    ADD CONSTRAINT "$1" FOREIGN KEY (id_product) REFERENCES product(id) ON UPDATE NO ACTION ON DELETE NO ACTION;
+
+
+--
+-- TOC entry 271 (OID 237366)
+-- Name: $2; Type: CONSTRAINT; Schema: public; Owner: ihaywood
+--
+
+ALTER TABLE ONLY link_product_manufacturer
+    ADD CONSTRAINT "$2" FOREIGN KEY (id_manufacturer) REFERENCES manufacturer(id) ON UPDATE NO ACTION ON DELETE NO ACTION;
+
+
+--
+-- TOC entry 211 (OID 237370)
+-- Name: subsidies_pkey; Type: CONSTRAINT; Schema: public; Owner: ihaywood
+--
+
+ALTER TABLE ONLY subsidies
+    ADD CONSTRAINT subsidies_pkey PRIMARY KEY (id);
+
+
+--
+-- TOC entry 212 (OID 237372)
+-- Name: conditions_pkey; Type: CONSTRAINT; Schema: public; Owner: ihaywood
+--
+
+ALTER TABLE ONLY conditions
+    ADD CONSTRAINT conditions_pkey PRIMARY KEY (id);
+
+
+--
+-- TOC entry 272 (OID 237374)
+-- Name: $1; Type: CONSTRAINT; Schema: public; Owner: ihaywood
+--
+
+ALTER TABLE ONLY conditions
+    ADD CONSTRAINT "$1" FOREIGN KEY (id_subsidy) REFERENCES subsidies(id) ON UPDATE NO ACTION ON DELETE NO ACTION;
+
+
+--
+-- TOC entry 273 (OID 237378)
+-- Name: $2; Type: CONSTRAINT; Schema: public; Owner: ihaywood
+--
+
+ALTER TABLE ONLY conditions
+    ADD CONSTRAINT "$2" FOREIGN KEY (id_drug) REFERENCES drug_element(id) ON UPDATE NO ACTION ON DELETE NO ACTION;
+
+
+--
+-- TOC entry 213 (OID 237382)
+-- Name: subsidized_products_pkey; Type: CONSTRAINT; Schema: public; Owner: ihaywood
+--
+
+ALTER TABLE ONLY subsidized_products
+    ADD CONSTRAINT subsidized_products_pkey PRIMARY KEY (id);
+
+
+--
+-- TOC entry 274 (OID 237384)
+-- Name: $1; Type: CONSTRAINT; Schema: public; Owner: ihaywood
+--
+
+ALTER TABLE ONLY subsidized_products
+    ADD CONSTRAINT "$1" FOREIGN KEY (id_product) REFERENCES product(id) ON UPDATE NO ACTION ON DELETE NO ACTION;
+
+
+--
+-- TOC entry 275 (OID 237388)
+-- Name: $2; Type: CONSTRAINT; Schema: public; Owner: ihaywood
+--
+
+ALTER TABLE ONLY subsidized_products
+    ADD CONSTRAINT "$2" FOREIGN KEY (id_subsidy) REFERENCES subsidies(id) ON UPDATE NO ACTION ON DELETE NO ACTION;
+
+
+--
+-- TOC entry 216 (OID 237392)
+-- Name: link_dosage_indication_pkey; Type: CONSTRAINT; Schema: public; Owner: ihaywood
+--
+
+ALTER TABLE ONLY link_dosage_indication
+    ADD CONSTRAINT link_dosage_indication_pkey PRIMARY KEY (id);
+
+
+--
+-- TOC entry 276 (OID 237394)
+-- Name: $1; Type: CONSTRAINT; Schema: public; Owner: ihaywood
+--
+
+ALTER TABLE ONLY link_dosage_indication
+    ADD CONSTRAINT "$1" FOREIGN KEY (id_drug_dosage) REFERENCES drug_dosage(id) ON UPDATE NO ACTION ON DELETE NO ACTION;
+
+
+--
+-- TOC entry 277 (OID 237398)
+-- Name: $2; Type: CONSTRAINT; Schema: public; Owner: ihaywood
+--
+
+ALTER TABLE ONLY link_dosage_indication
+    ADD CONSTRAINT "$2" FOREIGN KEY (id_disease_code) REFERENCES disease_code(id) ON UPDATE NO ACTION ON DELETE NO ACTION;
+
+
+--
+-- TOC entry 219 (OID 237402)
+-- Name: link_drug_indication_pkey; Type: CONSTRAINT; Schema: public; Owner: ihaywood
+--
+
+ALTER TABLE ONLY link_drug_indication
+    ADD CONSTRAINT link_drug_indication_pkey PRIMARY KEY (id);
+
+
+--
+-- TOC entry 278 (OID 237404)
+-- Name: $1; Type: CONSTRAINT; Schema: public; Owner: ihaywood
+--
+
+ALTER TABLE ONLY link_drug_indication
+    ADD CONSTRAINT "$1" FOREIGN KEY (id_drug) REFERENCES drug_element(id) ON UPDATE NO ACTION ON DELETE NO ACTION;
+
+
+--
+-- TOC entry 279 (OID 237408)
+-- Name: $2; Type: CONSTRAINT; Schema: public; Owner: ihaywood
+--
+
+ALTER TABLE ONLY link_drug_indication
+    ADD CONSTRAINT "$2" FOREIGN KEY (id_disease_code) REFERENCES disease_code(id) ON UPDATE NO ACTION ON DELETE NO ACTION;
+
+
+--
+-- TOC entry 220 (OID 237422)
+-- Name: comments_pkey; Type: CONSTRAINT; Schema: public; Owner: ihaywood
+--
+
+ALTER TABLE ONLY comments
+    ADD CONSTRAINT comments_pkey PRIMARY KEY (id);
+
+
+--
+-- TOC entry 280 (OID 237424)
+-- Name: $1; Type: CONSTRAINT; Schema: public; Owner: ihaywood
+--
+
+ALTER TABLE ONLY comments
+    ADD CONSTRAINT "$1" FOREIGN KEY (source) REFERENCES info_reference(id) ON UPDATE NO ACTION ON DELETE NO ACTION;
+
+
+--
+-- TOC entry 4 (OID 180830)
+-- Name: TABLE audit_drugs; Type: COMMENT; Schema: public; Owner: ihaywood
+--
+
+COMMENT ON TABLE audit_drugs IS 'ancestor table to mark tables for auditing';
+
+
+--
+-- TOC entry 6 (OID 180835)
+-- Name: TABLE info_reference; Type: COMMENT; Schema: public; Owner: ihaywood
+--
+
+COMMENT ON TABLE info_reference IS 'Source of any reference information in this database';
+
+
+--
+-- TOC entry 7 (OID 180835)
+-- Name: COLUMN info_reference.source_category; Type: COMMENT; Schema: public; Owner: ihaywood
+--
+
+COMMENT ON COLUMN info_reference.source_category IS 'p=peer reviewed, a=official authority, i=independend source, m=manufacturer, o=other, s=self defined';
+
+
+--
+-- TOC entry 8 (OID 180835)
+-- Name: COLUMN info_reference.description; Type: COMMENT; Schema: public; Owner: ihaywood
+--
+
+COMMENT ON COLUMN info_reference.description IS 'URL or address or similar informtion allowing to reproduce the source of information';
+
+
+--
+-- TOC entry 11 (OID 180845)
+-- Name: TABLE code_systems; Type: COMMENT; Schema: public; Owner: ihaywood
+--
+
+COMMENT ON TABLE code_systems IS 'listing of disease coding systems used for drug indication listing';
+
+
+--
+-- TOC entry 12 (OID 180845)
+-- Name: COLUMN code_systems.iso_countrycode; Type: COMMENT; Schema: public; Owner: ihaywood
+--
+
+COMMENT ON COLUMN code_systems.iso_countrycode IS 'ISO country code of country where this code system applies. Use "**" for wildcard';
+
+
+--
+-- TOC entry 13 (OID 180845)
+-- Name: COLUMN code_systems.name; Type: COMMENT; Schema: public; Owner: ihaywood
+--
+
+COMMENT ON COLUMN code_systems.name IS 'name of the code systme like ICD, ICPC';
+
+
+--
+-- TOC entry 14 (OID 180845)
+-- Name: COLUMN code_systems."version"; Type: COMMENT; Schema: public; Owner: ihaywood
+--
+
+COMMENT ON COLUMN code_systems."version" IS 'version of the code system, like "10" for ICD-10';
+
+
+--
+-- TOC entry 15 (OID 180845)
+-- Name: COLUMN code_systems.revision; Type: COMMENT; Schema: public; Owner: ihaywood
+--
+
+COMMENT ON COLUMN code_systems.revision IS 'revision of the version of the coding system/classification';
+
+
+--
+-- TOC entry 18 (OID 180851)
+-- Name: TABLE disease_code; Type: COMMENT; Schema: public; Owner: ihaywood
+--
+
+COMMENT ON TABLE disease_code IS 'holds actual coding systems';
+
+
+--
+-- TOC entry 21 (OID 180859)
+-- Name: TABLE drug_units; Type: COMMENT; Schema: public; Owner: ihaywood
+--
+
+COMMENT ON TABLE drug_units IS '(SI) units used to quantify/measure drugs';
+
+
+--
+-- TOC entry 22 (OID 180859)
+-- Name: COLUMN drug_units.unit; Type: COMMENT; Schema: public; Owner: ihaywood
+--
+
+COMMENT ON COLUMN drug_units.unit IS '(SI) units used to quantify/measure drugs like "mg", "ml"';
+
+
+--
+-- TOC entry 25 (OID 180864)
+-- Name: TABLE drug_formulations; Type: COMMENT; Schema: public; Owner: ihaywood
+--
+
+COMMENT ON TABLE drug_formulations IS 'presentations or formulations of drugs like "tablet", "capsule" ...';
+
+
+--
+-- TOC entry 26 (OID 180864)
+-- Name: COLUMN drug_formulations.description; Type: COMMENT; Schema: public; Owner: ihaywood
+--
+
+COMMENT ON COLUMN drug_formulations.description IS 'the formulation of the drug, such as "tablet", "cream", "suspension"';
+
+
+--
+-- TOC entry 29 (OID 180872)
+-- Name: TABLE drug_routes; Type: COMMENT; Schema: public; Owner: ihaywood
+--
+
+COMMENT ON TABLE drug_routes IS 'administration routes of drugs';
+
+
+--
+-- TOC entry 30 (OID 180872)
+-- Name: COLUMN drug_routes.description; Type: COMMENT; Schema: public; Owner: ihaywood
+--
+
+COMMENT ON COLUMN drug_routes.description IS 'administration route of a drug like "oral", "sublingual", "intravenous" ...';
+
+
+--
+-- TOC entry 33 (OID 180880)
+-- Name: TABLE drug_element; Type: COMMENT; Schema: public; Owner: ihaywood
+--
+
+COMMENT ON TABLE drug_element IS 'collection of all drug elements: classes, compounds, and substances';
+
+
+--
+-- TOC entry 34 (OID 180880)
+-- Name: COLUMN drug_element.category; Type: COMMENT; Schema: public; Owner: ihaywood
+--
+
+COMMENT ON COLUMN drug_element.category IS 't = therapeutic class, p = pharmaceutical class, s = substance, c = compound, k= category';
+
+
+--
+-- TOC entry 37 (OID 180888)
+-- Name: VIEW drug_class; Type: COMMENT; Schema: public; Owner: ihaywood
+--
+
+COMMENT ON VIEW drug_class IS 'drug classes of specified categories';
+
+
+--
+-- TOC entry 38 (OID 180888)
+-- Name: COLUMN drug_class.category; Type: COMMENT; Schema: public; Owner: ihaywood
+--
+
+COMMENT ON COLUMN drug_class.category IS 'category of this class (t = therapeutic class, s = substance class)';
+
+
+--
+-- TOC entry 40 (OID 180891)
+-- Name: TABLE link_drug_atc; Type: COMMENT; Schema: public; Owner: ihaywood
+--
+
+COMMENT ON TABLE link_drug_atc IS 'many to many pivot table associating drug elements and ATC codes';
+
+
+--
+-- TOC entry 42 (OID 180896)
+-- Name: TABLE drug_warning_categories; Type: COMMENT; Schema: public; Owner: ihaywood
+--
+
+COMMENT ON TABLE drug_warning_categories IS 'enumeration of categories of warnings associated with a specific drug (as in product information)';
+
+
+--
+-- TOC entry 43 (OID 180896)
+-- Name: COLUMN drug_warning_categories.description; Type: COMMENT; Schema: public; Owner: ihaywood
+--
+
+COMMENT ON COLUMN drug_warning_categories.description IS 'the warning category such as "pregnancy", "lactation", "renal" ...';
+
+
+--
+-- TOC entry 46 (OID 180904)
+-- Name: TABLE drug_warning; Type: COMMENT; Schema: public; Owner: ihaywood
+--
+
+COMMENT ON TABLE drug_warning IS 'any warning associated with a specific drug';
+
+
+--
+-- TOC entry 47 (OID 180904)
+-- Name: COLUMN drug_warning.code; Type: COMMENT; Schema: public; Owner: ihaywood
+--
+
+COMMENT ON COLUMN drug_warning.code IS 'could have been implemented as foreign key to a table of severity codes, but was considered uneccessary';
+
+
+--
+-- TOC entry 50 (OID 180913)
+-- Name: TABLE information_topic; Type: COMMENT; Schema: public; Owner: ihaywood
+--
+
+COMMENT ON TABLE information_topic IS 'topics for drug information, such as pharmaco-kinetics, indications, etc.';
+
+
+--
+-- TOC entry 51 (OID 180913)
+-- Name: COLUMN information_topic.target; Type: COMMENT; Schema: public; Owner: ihaywood
+--
+
+COMMENT ON COLUMN information_topic.target IS 'the target of this information: h=health professional, p=patient';
+
+
+--
+-- TOC entry 54 (OID 180919)
+-- Name: TABLE drug_information; Type: COMMENT; Schema: public; Owner: ihaywood
+--
+
+COMMENT ON TABLE drug_information IS 'any product information about a specific drug in HTML format';
+
+
+--
+-- TOC entry 55 (OID 180919)
+-- Name: COLUMN drug_information.info; Type: COMMENT; Schema: public; Owner: ihaywood
+--
+
+COMMENT ON COLUMN drug_information.info IS 'the drug product information in HTML format';
+
+
+--
+-- TOC entry 58 (OID 180926)
+-- Name: VIEW generic_drug; Type: COMMENT; Schema: public; Owner: ihaywood
+--
+
+COMMENT ON VIEW generic_drug IS 'A generic drug, either single substance or compound';
+
+
+--
+-- TOC entry 59 (OID 180926)
+-- Name: COLUMN generic_drug.is_compound; Type: COMMENT; Schema: public; Owner: ihaywood
+--
+
+COMMENT ON COLUMN generic_drug.is_compound IS 'false if this drug is based on a single substance (like Trimethoprim),
+	true if based on a compound (like Cotrimoxazole)';
+
+
+--
+-- TOC entry 61 (OID 180931)
+-- Name: TABLE generic_drug_name; Type: COMMENT; Schema: public; Owner: ihaywood
+--
+
+COMMENT ON TABLE generic_drug_name IS 'this table allows synonyms / dictionary functionality for generic drug names';
+
+
+--
+-- TOC entry 62 (OID 180931)
+-- Name: COLUMN generic_drug_name.name; Type: COMMENT; Schema: public; Owner: ihaywood
+--
+
+COMMENT ON COLUMN generic_drug_name.name IS 'the generic name of this drug, must be unique';
+
+
+--
+-- TOC entry 65 (OID 180938)
+-- Name: TABLE link_compound_generics; Type: COMMENT; Schema: public; Owner: ihaywood
+--
+
+COMMENT ON TABLE link_compound_generics IS 'links singular generic drugs to a compound drug (like Trimethoprim and Sulfamethoxazole to Cotrimoxazole)';
+
+
+--
+-- TOC entry 68 (OID 180941)
+-- Name: TABLE link_country_drug_name; Type: COMMENT; Schema: public; Owner: ihaywood
+--
+
+COMMENT ON TABLE link_country_drug_name IS 'indicates in which country a specific generic drug name is in use. ''**'' marks the international name';
+
+
+--
+-- TOC entry 224 (OID 180943)
+-- Name: FUNCTION get_drug_name (integer); Type: COMMENT; Schema: public; Owner: ihaywood
+--
+
+COMMENT ON FUNCTION get_drug_name (integer) IS 'guaranteed returns a name for a drug/class';
+
+
+--
+-- TOC entry 71 (OID 180946)
+-- Name: TABLE drug_dosage; Type: COMMENT; Schema: public; Owner: ihaywood
+--
+
+COMMENT ON TABLE drug_dosage IS 'This is a drug-dose-route tuple. For dosage recommadations, and the basis for products and subsidies.';
+
+
+--
+-- TOC entry 72 (OID 180946)
+-- Name: COLUMN drug_dosage.id_drug_warning_categories; Type: COMMENT; Schema: public; Owner: ihaywood
+--
+
+COMMENT ON COLUMN drug_dosage.id_drug_warning_categories IS 'indicates whether this dosage is targeted for specific patients, like paediatric or renal impairment';
+
+
+--
+-- TOC entry 73 (OID 180946)
+-- Name: COLUMN drug_dosage.dosage_hints; Type: COMMENT; Schema: public; Owner: ihaywood
+--
+
+COMMENT ON COLUMN drug_dosage.dosage_hints IS 'free text warnings, tips & hints regarding applying this dosage recommendation';
+
+
+--
+-- TOC entry 76 (OID 180955)
+-- Name: TABLE substance_dosage; Type: COMMENT; Schema: public; Owner: ihaywood
+--
+
+COMMENT ON TABLE substance_dosage IS 'Dosage suggestion for a particular /substance/ (not compound). This the old dosage.';
+
+
+--
+-- TOC entry 77 (OID 180955)
+-- Name: COLUMN substance_dosage.id_component; Type: COMMENT; Schema: public; Owner: ihaywood
+--
+
+COMMENT ON COLUMN substance_dosage.id_component IS 'the component of a compound referred to by this row';
+
+
+--
+-- TOC entry 78 (OID 180955)
+-- Name: COLUMN substance_dosage.dosage_type; Type: COMMENT; Schema: public; Owner: ihaywood
+--
+
+COMMENT ON COLUMN substance_dosage.dosage_type IS '*=absolute, w=weight based (per kg body weight), s=surface based (per m2 body surface), a=age based (in months)';
+
+
+--
+-- TOC entry 79 (OID 180955)
+-- Name: COLUMN substance_dosage.dosage_start; Type: COMMENT; Schema: public; Owner: ihaywood
+--
+
+COMMENT ON COLUMN substance_dosage.dosage_start IS 'lowest value of recommended dosage range';
+
+
+--
+-- TOC entry 80 (OID 180955)
+-- Name: COLUMN substance_dosage.dosage_max; Type: COMMENT; Schema: public; Owner: ihaywood
+--
+
+COMMENT ON COLUMN substance_dosage.dosage_max IS 'maximum value of recommended dosage range, zero if no range';
+
+
+--
+-- TOC entry 83 (OID 180960)
+-- Name: TABLE link_drug_class; Type: COMMENT; Schema: public; Owner: ihaywood
+--
+
+COMMENT ON TABLE link_drug_class IS 'A many-to-many pivot table linking classes to drugs';
+
+
+--
+-- TOC entry 86 (OID 180963)
+-- Name: TABLE link_drug_warning; Type: COMMENT; Schema: public; Owner: ihaywood
+--
+
+COMMENT ON TABLE link_drug_warning IS 'A many-to-many pivot table linking warnings to drugs';
+
+
+--
+-- TOC entry 89 (OID 180966)
+-- Name: TABLE link_drug_information; Type: COMMENT; Schema: public; Owner: ihaywood
+--
+
+COMMENT ON TABLE link_drug_information IS 'A many-to-many pivot table linking product information to drugs';
+
+
+--
+-- TOC entry 93 (OID 180980)
+-- Name: TABLE adverse_effects; Type: COMMENT; Schema: public; Owner: ihaywood
+--
+
+COMMENT ON TABLE adverse_effects IS 'listing of possible adverse effects to drugs';
+
+
+--
+-- TOC entry 94 (OID 180980)
+-- Name: COLUMN adverse_effects.severity; Type: COMMENT; Schema: public; Owner: ihaywood
+--
+
+COMMENT ON COLUMN adverse_effects.severity IS 'the severity of a reaction. The scale has yet to be aggreed upon.';
+
+
+--
+-- TOC entry 95 (OID 180980)
+-- Name: COLUMN adverse_effects.description; Type: COMMENT; Schema: public; Owner: ihaywood
+--
+
+COMMENT ON COLUMN adverse_effects.description IS 'the type of adverse effect like "pruritus", "hypotension", ...';
+
+
+--
+-- TOC entry 98 (OID 180986)
+-- Name: TABLE link_drug_adverse_effects; Type: COMMENT; Schema: public; Owner: ihaywood
+--
+
+COMMENT ON TABLE link_drug_adverse_effects IS 'many to many pivot table linking drugs to adverse effects';
+
+
+--
+-- TOC entry 99 (OID 180986)
+-- Name: COLUMN link_drug_adverse_effects.frequency; Type: COMMENT; Schema: public; Owner: ihaywood
+--
+
+COMMENT ON COLUMN link_drug_adverse_effects.frequency IS 'The likelihood this adverse effect happens: c=common, i=infrequent, r=rare';
+
+
+--
+-- TOC entry 100 (OID 180986)
+-- Name: COLUMN link_drug_adverse_effects.important; Type: COMMENT; Schema: public; Owner: ihaywood
+--
+
+COMMENT ON COLUMN link_drug_adverse_effects.important IS 'modifier for attribute "frequency" allowing to weigh rare adverse effects too important to miss';
+
+
+--
+-- TOC entry 103 (OID 180996)
+-- Name: TABLE interactions; Type: COMMENT; Schema: public; Owner: ihaywood
+--
+
+COMMENT ON TABLE interactions IS 'possible interactions between drugs';
+
+
+--
+-- TOC entry 104 (OID 180996)
+-- Name: COLUMN interactions.description; Type: COMMENT; Schema: public; Owner: ihaywood
+--
+
+COMMENT ON COLUMN interactions.description IS 'the type of interaction (like: "increases half life")';
+
+
+--
+-- TOC entry 107 (OID 181005)
+-- Name: TABLE link_drug_interactions; Type: COMMENT; Schema: public; Owner: ihaywood
+--
+
+COMMENT ON TABLE link_drug_interactions IS 'many to many pivot table linking drugs and their interactions';
+
+
+--
+-- TOC entry 110 (OID 181014)
+-- Name: TABLE link_drug_disease_interactions; Type: COMMENT; Schema: public; Owner: ihaywood
+--
+
+COMMENT ON TABLE link_drug_disease_interactions IS 'many to many pivot table linking interactions between drugs and diseases';
+
+
+--
+-- TOC entry 113 (OID 181023)
+-- Name: TABLE product; Type: COMMENT; Schema: public; Owner: ihaywood
+--
+
+COMMENT ON TABLE product IS 'dispensable form of a generic drug including strength, package size etc';
+
+
+--
+-- TOC entry 114 (OID 181023)
+-- Name: COLUMN product.id_packing_unit; Type: COMMENT; Schema: public; Owner: ihaywood
+--
+
+COMMENT ON COLUMN product.id_packing_unit IS 'unit of drug "entities" as packed: for tablets and similar discrete formulations it should be the id of "each", for fixed-course kits it should be the id of "day"';
+
+
+--
+-- TOC entry 115 (OID 181023)
+-- Name: COLUMN product.amount; Type: COMMENT; Schema: public; Owner: ihaywood
+--
+
+COMMENT ON COLUMN product.amount IS 'for fluid drugs, the amount in each ampoule, syringe, etc. distinct of the
+	package size. For solid drugs (tablet, capsule), this is usually "1".';
+
+
+--
+-- TOC entry 118 (OID 181031)
+-- Name: TABLE package_size; Type: COMMENT; Schema: public; Owner: ihaywood
+--
+
+COMMENT ON TABLE package_size IS 'the various packing sizes available for this product';
+
+
+--
+-- TOC entry 121 (OID 181034)
+-- Name: TABLE link_product_component; Type: COMMENT; Schema: public; Owner: ihaywood
+--
+
+COMMENT ON TABLE link_product_component IS 'many-to-many pivot table linking products with their components';
+
+
+--
+-- TOC entry 124 (OID 181039)
+-- Name: TABLE drug_flags; Type: COMMENT; Schema: public; Owner: ihaywood
+--
+
+COMMENT ON TABLE drug_flags IS 'flags for adjuvants such as ''gluten-free'', ''paediatric formulation'', etc.';
+
+
+--
+-- TOC entry 127 (OID 181042)
+-- Name: TABLE link_flag_product; Type: COMMENT; Schema: public; Owner: ihaywood
+--
+
+COMMENT ON TABLE link_flag_product IS 'many-to-many pivot table linking products to flags';
+
+
+--
+-- TOC entry 130 (OID 181045)
+-- Name: TABLE available; Type: COMMENT; Schema: public; Owner: ihaywood
+--
+
+COMMENT ON TABLE available IS 'availability of products in specific countries - this allows multinational drug databases without redundancy';
+
+
+--
+-- TOC entry 131 (OID 181045)
+-- Name: COLUMN available.iso_countrycode; Type: COMMENT; Schema: public; Owner: ihaywood
+--
+
+COMMENT ON COLUMN available.iso_countrycode IS 'ISO country code of the country where this drug product is available';
+
+
+--
+-- TOC entry 132 (OID 181045)
+-- Name: COLUMN available.available_from; Type: COMMENT; Schema: public; Owner: ihaywood
+--
+
+COMMENT ON COLUMN available.available_from IS 'date from which on the product is available in this country (if known)';
+
+
+--
+-- TOC entry 133 (OID 181045)
+-- Name: COLUMN available.banned; Type: COMMENT; Schema: public; Owner: ihaywood
+--
+
+COMMENT ON COLUMN available.banned IS 'date from which on this product is/was banned in the specified country, if applicable';
+
+
+--
+-- TOC entry 136 (OID 181052)
+-- Name: TABLE manufacturer; Type: COMMENT; Schema: public; Owner: ihaywood
+--
+
+COMMENT ON TABLE manufacturer IS 'list of pharmaceutical manufacturers';
+
+
+--
+-- TOC entry 137 (OID 181052)
+-- Name: COLUMN manufacturer.iso_countrycode; Type: COMMENT; Schema: public; Owner: ihaywood
+--
+
+COMMENT ON COLUMN manufacturer.iso_countrycode IS 'ISO country code of the location of this company';
+
+
+--
+-- TOC entry 138 (OID 181052)
+-- Name: COLUMN manufacturer.address; Type: COMMENT; Schema: public; Owner: ihaywood
+--
+
+COMMENT ON COLUMN manufacturer.address IS 'complete printable address with embeded newline characters as "
+"';
+
+
+--
+-- TOC entry 139 (OID 181052)
+-- Name: COLUMN manufacturer.phone; Type: COMMENT; Schema: public; Owner: ihaywood
+--
+
+COMMENT ON COLUMN manufacturer.phone IS 'phone number of company';
+
+
+--
+-- TOC entry 140 (OID 181052)
+-- Name: COLUMN manufacturer.fax; Type: COMMENT; Schema: public; Owner: ihaywood
+--
+
+COMMENT ON COLUMN manufacturer.fax IS 'fax number of company';
+
+
+--
+-- TOC entry 141 (OID 181052)
+-- Name: COLUMN manufacturer.code; Type: COMMENT; Schema: public; Owner: ihaywood
+--
+
+COMMENT ON COLUMN manufacturer.code IS 'two-letter symbol of manufacturer';
+
+
+--
+-- TOC entry 144 (OID 181059)
+-- Name: TABLE link_product_manufacturer; Type: COMMENT; Schema: public; Owner: ihaywood
+--
+
+COMMENT ON TABLE link_product_manufacturer IS 'many to many pivot table linking drug products and manufacturers';
+
+
+--
+-- TOC entry 147 (OID 181065)
+-- Name: TABLE subsidies; Type: COMMENT; Schema: public; Owner: ihaywood
+--
+
+COMMENT ON TABLE subsidies IS 'listing of possible subsidies for drug products';
+
+
+--
+-- TOC entry 148 (OID 181065)
+-- Name: COLUMN subsidies.iso_countrycode; Type: COMMENT; Schema: public; Owner: ihaywood
+--
+
+COMMENT ON COLUMN subsidies.iso_countrycode IS 'ISO country code of the country where this subsidy applies';
+
+
+--
+-- TOC entry 149 (OID 181065)
+-- Name: COLUMN subsidies.name; Type: COMMENT; Schema: public; Owner: ihaywood
+--
+
+COMMENT ON COLUMN subsidies.name IS 'description of the subsidy (like PBS or RPBS in Australia)';
+
+
+--
+-- TOC entry 152 (OID 181074)
+-- Name: TABLE conditions; Type: COMMENT; Schema: public; Owner: ihaywood
+--
+
+COMMENT ON TABLE conditions IS 'normalised prescribing requirements for a drug or drugs';
+
+
+--
+-- TOC entry 153 (OID 181074)
+-- Name: COLUMN conditions.title; Type: COMMENT; Schema: public; Owner: ihaywood
+--
+
+COMMENT ON COLUMN conditions.title IS 'short summary for selection in the database.';
+
+
+--
+-- TOC entry 154 (OID 181074)
+-- Name: COLUMN conditions.id_drug; Type: COMMENT; Schema: public; Owner: ihaywood
+--
+
+COMMENT ON COLUMN conditions.id_drug IS 'the drug or class to which this
+	condition *universially* applies.';
+
+
+--
+-- TOC entry 155 (OID 181074)
+-- Name: COLUMN conditions.authority; Type: COMMENT; Schema: public; Owner: ihaywood
+--
+
+COMMENT ON COLUMN conditions.authority IS 'true if prescriber must contact the third-party before approval';
+
+
+--
+-- TOC entry 158 (OID 181083)
+-- Name: TABLE subsidized_products; Type: COMMENT; Schema: public; Owner: ihaywood
+--
+
+COMMENT ON TABLE subsidized_products IS 'listing of drug products that may attract a subsidy. Drugs are ';
+
+
+--
+-- TOC entry 159 (OID 181083)
+-- Name: COLUMN subsidized_products.quantity; Type: COMMENT; Schema: public; Owner: ihaywood
+--
+
+COMMENT ON COLUMN subsidized_products.quantity IS 'quantity of packaged units dispensed under subsidy for any one prescription. 
+AU: this the maximum quantity in the Yellow Book. 
+DE: is the package size (N1, N2, N3), etc. 
+Drugs are explicitly permitted to have several entries in this table for 
+these different sizes. (DE only)';
+
+
+--
+-- TOC entry 160 (OID 181083)
+-- Name: COLUMN subsidized_products.max_rpt; Type: COMMENT; Schema: public; Owner: ihaywood
+--
+
+COMMENT ON COLUMN subsidized_products.max_rpt IS 'maximum number of repeat (refill) authorizations allowed on any one subsidised prescription (series)';
+
+
+--
+-- TOC entry 161 (OID 181083)
+-- Name: COLUMN subsidized_products.copayment; Type: COMMENT; Schema: public; Owner: ihaywood
+--
+
+COMMENT ON COLUMN subsidized_products.copayment IS 'patient co-payment under subsidy regulation; if this is absolute or percentage is regulation dependend and not specified here';
+
+
+--
+-- TOC entry 162 (OID 181083)
+-- Name: COLUMN subsidized_products.restriction; Type: COMMENT; Schema: public; Owner: ihaywood
+--
+
+COMMENT ON COLUMN subsidized_products.restriction IS 'restriction applied only to this subsidy, not to the drug in general';
+
+
+--
+-- TOC entry 165 (OID 181095)
+-- Name: TABLE link_dosage_indication; Type: COMMENT; Schema: public; Owner: ihaywood
+--
+
+COMMENT ON TABLE link_dosage_indication IS 'many to many pivot table linking drug dosages and indications';
+
+
+--
+-- TOC entry 166 (OID 181095)
+-- Name: COLUMN link_dosage_indication.id_disease_code; Type: COMMENT; Schema: public; Owner: ihaywood
+--
+
+COMMENT ON COLUMN link_dosage_indication.id_disease_code IS 'link to the disease code';
+
+
+--
+-- TOC entry 167 (OID 181095)
+-- Name: COLUMN link_dosage_indication.line; Type: COMMENT; Schema: public; Owner: ihaywood
+--
+
+COMMENT ON COLUMN link_dosage_indication.line IS 'the line (first-line, second-line) of this drug for this indication';
+
+
+--
+-- TOC entry 169 (OID 181104)
+-- Name: TABLE link_drug_indication; Type: COMMENT; Schema: public; Owner: ihaywood
+--
+
+COMMENT ON TABLE link_drug_indication IS 'many to many pivot table linking whole drugs and indications';
+
+
+--
+-- TOC entry 170 (OID 181104)
+-- Name: COLUMN link_drug_indication.id_disease_code; Type: COMMENT; Schema: public; Owner: ihaywood
+--
+
+COMMENT ON COLUMN link_drug_indication.id_disease_code IS 'link to the disease code';
+
+
+--
+-- TOC entry 171 (OID 181104)
+-- Name: COLUMN link_drug_indication.line; Type: COMMENT; Schema: public; Owner: ihaywood
+--
+
+COMMENT ON COLUMN link_drug_indication.line IS 'the line (first-line, second-line) of this drug for this indication';
+
+
+--
+-- TOC entry 174 (OID 237414)
+-- Name: TABLE comments; Type: COMMENT; Schema: public; Owner: ihaywood
+--
+
+COMMENT ON TABLE comments IS 'table for comments made o records of other tables';
+
+
+--
+-- TOC entry 175 (OID 237414)
+-- Name: COLUMN comments.table_name; Type: COMMENT; Schema: public; Owner: ihaywood
+--
+
+COMMENT ON COLUMN comments.table_name IS 'name of the table contain ing the record.';
+
+
+--
+-- TOC entry 176 (OID 237414)
+-- Name: COLUMN comments.table_row; Type: COMMENT; Schema: public; Owner: ihaywood
+--
+
+COMMENT ON COLUMN comments.table_row IS 'the value of the field ''id'' in this table (must ecists).';
+
+
+--
+-- TOC entry 177 (OID 237414)
+-- Name: COLUMN comments.who; Type: COMMENT; Schema: public; Owner: ihaywood
+--
+
+COMMENT ON COLUMN comments.who IS 'the database user making this comment.';
+
+
+--
+-- TOC entry 178 (OID 237414)
+-- Name: COLUMN comments.source; Type: COMMENT; Schema: public; Owner: ihaywood
+--
+
+COMMENT ON COLUMN comments.source IS 'the source the user used for their comment, if any.';
+
+
+--
+-- TOC entry 179 (OID 237414)
+-- Name: COLUMN comments.signature; Type: COMMENT; Schema: public; Owner: ihaywood
+--
+
+COMMENT ON COLUMN comments.signature IS 'the GPG digital signature of the user.';
+
+
