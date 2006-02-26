@@ -14,7 +14,7 @@ Class Module {
     // $_SESSION["userid"]: user_id of person logged in
     //
     // - the following are set in role table
-    // $_SESSION["priv_add"]: sees add buttons
+    // $_SESSION["priv_add"]: sees add button
     // $_SESSION["priv_update"]: sees update button
     // $_SESSION["priv_delete"]: sees delete button
     //
@@ -44,7 +44,7 @@ Class Module {
 
     function module () {
         $this->author = "Herman Tolentino MD";
-        $this->version = "1.8";
+        $this->version = "1.10";
         // version 0.7
         // added confirm_delete()
         // 0.8: moved module functions out of index.php
@@ -60,6 +60,8 @@ Class Module {
         // 1.7 modified for PHP5 October 2004
         //     specifically changed long global $HTTP_* vars to short PHP autoglobal form
         // 1.8 defined class variables, debugged activation method, delete module (leave sql) bug
+        // 1.9 directory changes, directory constants implemented
+        // 1.10 changed eval() to call_user_func();
 
     }
 
@@ -100,10 +102,10 @@ Class Module {
             $module->form_menuorder($this->post_vars, $this->get_vars);
             break;
         case "HELP":
-            site::display_file("../module.help.php");
+            site::display_file(GAME_DIR."modules/module.help.php");
             print "<h3>MODULE CLASS SOURCE CODE</h3>";
             print "<small>";
-            show_source("../class.module.php");
+            show_source("class/class.module.php");
             print "</small>";
             break;
         case "PERMS":
@@ -182,11 +184,11 @@ Class Module {
             switch ($this->post_vars["confirm_delete"]) {
             case "Yes":
                 return true;
-                break;
+                //break;
             case "No":
                 header("location: ".$_SERVER["HTTP_REFERRER"]);
                 return false;
-                break;
+                //break;
             }
         } else {
             print "<table>";
@@ -233,6 +235,10 @@ Class Module {
         //
         // this executes class methods based on menu id
         //
+        $module_name = "";
+        $menu_action = "";
+        $menu_action_function = "";
+
         if (func_num_args()>0) {
             $this->arg_list = func_get_args();
             $this->menu_id = $this->arg_list[0];
@@ -250,7 +256,9 @@ Class Module {
                 // this string simulates a PHP command
                 // and is evaluated with PHP eval() below
                 $eval_string = $module_name."::".$menu_action."(\$this->menu_id,\$this->post_vars,\$this->get_vars,\$this->validuser,\$this->isadmin)".";";
-                eval("$eval_string");
+                $menu_action_function = $menu_action."(\$this->menu_id,\$this->post_vars,\$this->get_vars,\$this->validuser,\$this->isadmin)";
+                call_user_func(array($module_name, $menu_action_function));
+                //eval("$eval_string");
             }
         }
     }
@@ -369,8 +377,8 @@ Class Module {
             $this->arg_list = func_get_args();
             $sql = $this->arg_list[0];    // SQL file
         }
-        if (file_exists("../sql/$sql")) {
-            if ($fp = fopen("../sql/$sql", "r")) {
+        if (file_exists(GAME_DIR."sql/$sql")) {
+            if ($fp = fopen(GAME_DIR."sql/$sql", "r")) {
                 while (!feof ($fp)) {
                     $sql_buffer = fgets($fp, 4096);
                     if ($result = mysql_query($sql_buffer)) {
@@ -393,8 +401,8 @@ Class Module {
         if ($result = mysql_query($sql)) {
             if (mysql_num_rows($result)) {
                 while (list($module_name) = mysql_fetch_array($result)) {
-                    if (file_exists("../modules/".$module_name."/class.".$module_name.".php")) {
-                        include("../modules/".$module_name."/class.".$module_name.".php");
+                    if (file_exists(GAME_DIR."modules/".$module_name."/class.".$module_name.".php")) {
+                        include(GAME_DIR."modules/".$module_name."/class.".$module_name.".php");
                         $$module_name = new $module_name;
                         //
                         if (!module::activated("$module_name") && $_GET["initmod"]==1) {
@@ -475,7 +483,7 @@ Class Module {
             print_r($this->post_vars);
             // important variables
             $module_id = $this->post_vars["module_id"];
-            $module_name = $this->module_name($module_id);
+            print $module_name = $this->module_name($module_id);
 
             // rewrite _modules.php so that only registered
             // modules appear
@@ -490,10 +498,10 @@ Class Module {
             $sql = "delete from modules where module_id = '$module_name'";
             if ($result = mysql_query($sql)) {
                 // remove files
-                unlink("../modules/_uploads/class.$module_name.php.gz");
-                unlink("../modules/$module_name/class.$module_name.php");
+                unlink(GAME_DIR."modules/_uploads/class.$module_name.php.gz");
+                unlink(GAME_DIR."modules/$module_name/class.$module_name.php");
                 // remove directory
-                rmdir("../modules/$module_name");
+                rmdir(GAME_DIR."modules/$module_name");
             }
 
         }
@@ -560,10 +568,12 @@ Class Module {
             $this->arg_list = func_get_args();
             $this->post_vars = $this->arg_list[0];
             $this->post_files = $this->arg_list[1];
-            //print_r($post_files);
-            $uploadfile = "../modules/_uploads/".$_FILES["module_file"]["name"];
-            if (move_uploaded_file($_FILES["module_file"]["tmp_name"], $uploadfile)) {
-                return $this->uncompress($uploadfile);
+            //print_r($_FILES); // uncomment for debugging
+            $uploadfile = GAME_DIR."modules/_uploads/".$_FILES["module_file"]["name"];
+            if (file_exists($_FILES["module_file"]["tmp_name"])) {
+                if (move_uploaded_file($_FILES["module_file"]["tmp_name"], $uploadfile)) {
+                    return $this->uncompress($uploadfile);
+                }
             }
         }
     }
@@ -603,14 +613,14 @@ Class Module {
             print "<b>Module Author:</b><br>".$module["module_author"]."<br>";
             print "<b>Module Description:</b><br>".$module["module_desc"]."<br><br>";
             $class = "class.".$module["module_name"].".php";
-            print "<b>Source Code:</b> <a href='../source.php?class=$class' target='_blank'>VIEW</a>";
+            print "<b>Source Code:</b> <a href='".GAME_DIR."source.php?class=$class' target='_blank'>VIEW</a>";
             print "</td><td bgcolor='#99FF66'>";
             print "<b>Module Requires:</b><br>".$this->requires($module["module_name"])."<br>";
             print "<b>Module Dependents:</b><br>".$this->depends($module["module_name"])."<br>";
             print "<br></td></tr>";
-            print "<tr valign='top'><td>";
-            print "<span class='boxtitle'>LEAVE SQL TABLES</span><br> ";
-            print "<input type='checkbox' name='leave_sql' value='1' ".($this->post_vars["leave_sql"]?"checked":"")."> Check to leave tables intact<br>";
+            print "<tr valign='top' colspan='2'><td>";
+            print "<span class='boxtitle'>PRESERVE SQL TABLES ?</span><br> ";
+            print "<input type='checkbox' name='leave_sql' value='1' ".($this->post_vars["leave_sql"]?"checked":"")."> Check to leave tables intact, when deleting.<br>";
             print "</td></tr></table>";
             print "</td></tr>";
 
@@ -685,7 +695,6 @@ Class Module {
         }
     }
 
-
     function uncompress() {
         // WHAT THIS DOES:
         // 1. Reads file uploaded to modules/_uploads
@@ -707,13 +716,16 @@ Class Module {
         // $xx = class
         // $yy = php
         // $zz = gz
-        list($xx,$main,$yy,$zz) = explode(".",basename($file));
+        //print system("tar zxvf /home/herman/public_html/softlab/$file", $err);
+
+        list($xx, $main,$yy,$zz) = explode(".",basename($file));
+        print $main;
 
         // create module directory
-        $dir = @mkdir("../modules/$main");
+        $dir = @mkdir(GAME_DIR."modules/$main");
 
         // write $contents to file
-        if ($fp2 = fopen("../modules/$main/class.$main.php", "w+")) {
+        if ($fp2 = fopen(GAME_DIR."modules/$main/class.$main.php", "w+")) {
             fwrite($fp2, $contents);
             fclose($fp2);
             // update database
@@ -844,8 +856,8 @@ Class Module {
                             }
                         }
                     }
-                    $modphp .= "if (file_exists('../modules/$modname/class.$modname.php')) {\n";
-                    $modphp .= "\tinclude '../modules/$modname/class.$modname.php';\n";
+                    $modphp .= "if (file_exists(GAME_DIR.'modules/$modname/class.$modname.php')) {\n";
+                    $modphp .= "\tinclude GAME_DIR.'modules/$modname/class.$modname.php';\n";
                     $modphp .= "\t\$$modname = new $modname;\n";
                     $modphp .= "\tif (!\$module->activated('$value') && \$_GET[\"initmod\"]==1) {\n";
                     $modphp .= "\t\t\$".$modname."->init_sql();\n";
@@ -869,12 +881,12 @@ Class Module {
                 $modswitch .= "\n// END SERVER CODE\n";
                 $modswitch .= "\n?>";
 
-                if ($fp_modphp = fopen("../modules/_modules.php", "w+")) {
+                if ($fp_modphp = fopen(GAME_DIR."modules/_modules.php", "w+")) {
                     if (fwrite($fp_modphp, $modphp)) {
                         fclose($fp_modphp);
                     }
                 }
-                if ($fp_modswitch = fopen("../modules/_menu.php", "w+")) {
+                if ($fp_modswitch = fopen(GAME_DIR."modules/_menu.php", "w+")) {
                     if (fwrite($fp_modswitch, $modswitch)) {
                         fclose($fp_modswitch);
                     }
@@ -1529,6 +1541,7 @@ Class Module {
     //
     // reorder menu through this
     //
+
         if (func_num_args()>0) {
             $this->arg_list = func_get_args();
             $this->post_vars = $this->arg_list[0];
@@ -1543,6 +1556,7 @@ Class Module {
         if ($result = mysql_query($sql)) {
             if (mysql_num_rows($result)) {
                 print "<table width='300' cellspacing='0'>";
+                $prevcat = "";
                 while (list($id, $title, $cat, $rank) = mysql_fetch_array($result)) {
                     if ($prevcat<>$cat) {
                         print "<tr bgcolor='#66CC00'><td colspan='3'><a name='$cat'><b>$cat</b></td></tr>";
@@ -1565,7 +1579,9 @@ Class Module {
     function missing_dependencies() {
     //
     // answers query: does this require any module?
-    // if yes and missing, return false
+    // if yes and missing, return warning
+    // if yes and not missing, return false
+    // if no dependencies, return false
     //
         if (func_num_args()>0) {
             $this->arg_list = func_get_args();
@@ -1575,9 +1591,13 @@ Class Module {
         $sql = "select req_module from module_dependencies where module_id = '$module_name'";
         if ($result = mysql_query($sql)) {
             if (mysql_num_rows($result)) {
+
                 while (list($module_name) = mysql_fetch_array($result)) {
+                    // to check if missing, determine if class is loaded
                     if (!class_exists("$module_name")) {
                         $ret_val .= "<font color='red'><b>WARNING</b></font>: <b>$module_name</b> missing.<br>";
+                    } else {
+                        $ret_val = false;
                     }
                 }
                 if (strlen($ret_val)>0) {
@@ -1586,8 +1606,8 @@ Class Module {
                     return false;
                 }
             } else {
-                $ret_valexec_menu .= "<font color='red'><b>WARNING</b></font>: <b>$module_name</b> is not loaded.<br>";
-                return $ret_val;
+                //$ret_val .= "<font color='red'><b>WARNING</b></font>: <b>$module_name</b> is not loaded.<br>";
+                return false;
             }
         }
     }
@@ -1620,6 +1640,8 @@ Class Module {
     function strfraction() {
     // prevents long text running off
     // when displaying table contents
+
+        $retval = "";
         if (func_num_args()>0) {
             $this->arg_list = func_get_args();
             $string = $this->arg_list[0];
@@ -1649,6 +1671,10 @@ Class Module {
 
     function readconfig() {
     // read the xml database
+
+        $tags = array();
+        $values = 0;
+
         if (func_num_args()>0) {
             $arg_list = func_get_args();
             $filename = $arg_list[0];
@@ -1742,32 +1768,24 @@ Class Module {
 
         // check dump tree
         $error_message = "";
-        if (is_dir("../dump")) {
-            if (!is_writable("../dump")) {
+        if (is_dir(GAME_DIR."dump")) {
+            if (!is_writable(GAME_DIR."dump")) {
                 $error_message .= "<b>dump</b> directory is not writable.<br>";
             }
         } else {
             $error_message .= "<b>dump</b> directory does not exist.<br>";
         }
-        // check gsm tree
-        if (is_dir("../gsm")) {
-            if (!is_writable("../gsm")) {
-                $error_message .= "<b>gsm</b> directory is not writable.<br>";
-            }
-        } else {
-            $error_message .= "<b>gsm</b> directory does not exist.<br>";
-        }
         // check source tree
-        if (is_dir("../source")) {
-            if (!is_writable("../source")) {
+        if (is_dir(GAME_DIR."source")) {
+            if (!is_writable(GAME_DIR."source")) {
                 $error_message .= "<b>source</b> directory is not writable.<br>";
             }
         } else {
             $error_message .= "<b>source</b> directory does not exist.<br>";
         }
         // check module tree
-        if (is_dir("../modules")) {
-            if (!is_writable("../modules")) {
+        if (is_dir(GAME_DIR."modules")) {
+            if (!is_writable(GAME_DIR."modules")) {
                 $error_message .= "<b>module</b> directory is not writable.<br>";
             }
         } else {
