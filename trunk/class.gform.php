@@ -66,9 +66,14 @@ Class GForm {
         $this->visible = false;
     }
 
-    function setFormLayout($spacing, $padding) {
-        $this->form_spacing = $spacing;
-        $this->form_padding = $padding;
+    function setFormLayout() {
+        if (func_num_args()==0) {
+            print "SYNTAX: setFormLayout(\$spacing int, \$padding int)";
+        } else {
+            $arg_list = func_get_args();
+            $this->form_spacing = $arg_list[0];
+            $this->form_padding = $arg_list[1];
+        }
     }
 
     function setMethod($param) {
@@ -224,6 +229,7 @@ Class GForm_TextBox extends GForm {
     var $customstyle;
     var $label;
     var $widget;
+    var $value;
 
     function GForm_TextBox () {
         $this->text = "";
@@ -426,8 +432,49 @@ Class GForm_Select extends GForm {
     function widget() {
         reset($this->selectlist);
         $labelborder = ($this->labelborder=="none"?"":"border: 1px ".$this->labelborder." ".$this->labelbackgroundcolor.";");
-        $labelbackground = ($this->labelbackgroundcolor=="none"?"":"background-color: ".$this->labelbackgroundcolor.";");
-        $this->widget .= "<div style='position: relative; top:0px; border: 1px dotted black; left:0px; $labelbackgroundcolor padding: 0.8px; padding-left: 3px; width: ".(strlen($this->label)*10)."px;'><b>".strtoupper($this->label)."</b></div>";
+        $labelbackgroundcolor = ($this->labelbackgroundcolor=="none"?"":"background-color: ".$this->labelbackgroundcolor.";");
+        $this->widget .= "<div style='position: relative; top:0px; $labelborder left:0px; $labelbackgroundcolor padding: 0.8px; padding-left: 3px; width: ".(strlen($this->label)*10)."px;'><b>".strtoupper($this->label)."</b></div>";
+        $this->widget .= "<select name='".$this->name."'>";
+        while (list($index, $array) = each($this->selectlist)) {
+            list($key, $value) = each($array);
+            $this->widget .= "<option value='".$key."'>".$value."</option>";
+        }
+        $this->widget .= "</select>";
+        return $this->widget;
+    }
+
+}
+
+Class GForm_TextArea {
+
+    var $name;
+    var $text;
+    var $label;
+    var $widget;
+    var $group;
+    var $columns;
+    var $rows;
+    var $refresh;
+    var $labelborder;
+    var $labelbackgroundcolor;
+
+    function GForm_Select () {
+        $this->text = "";
+        $this->widget = "";
+        $this->labelborder = "dotted";
+        $this->labelbackgroundcolor = "#C3C3C3";
+    }
+
+    function setList($mylist, $default) {
+        $this->selectlist = $mylist;
+        $this->listdefault = $default;
+    }
+
+    function widget() {
+        reset($this->selectlist);
+        $labelborder = ($this->labelborder=="none"?"":"border: 1px ".$this->labelborder." ".$this->labelbackgroundcolor.";");
+        $labelbackgroundcolor = ($this->labelbackgroundcolor=="none"?"":"background-color: ".$this->labelbackgroundcolor.";");
+        $this->widget .= "<div style='position: relative; top:0px; $labelborder left:0px; $labelbackgroundcolor padding: 0.8px; padding-left: 3px; width: ".(strlen($this->label)*10)."px;'><b>".strtoupper($this->label)."</b></div>";
         $this->widget .= "<select name='".$this->name."'>";
         while (list($index, $array) = each($this->selectlist)) {
             list($key, $value) = each($array);
