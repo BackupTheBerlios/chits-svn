@@ -29,7 +29,7 @@
     <tr>
         <td>
         <?
-        $menu_array = module::readconfig("../menu.xml", "menu");
+        $menu_array = module::readconfig(GAME_DIR."config/menu.xml", "menu");
         if ($_SESSION["isadmin"]) {
             $site->main_cat($_SESSION["validuser"], $_SESSION["isadmin"], $_GET, $menu_array);
         }
@@ -40,7 +40,9 @@
         <td>
         <?
         if ($_SESSION["isadmin"]) {
-            $site->main_menu($_SESSION["validuser"], $_SESSION["isadmin"], $_GET["page"], $menu_array);
+            if (isset($_GET["page"])) {
+                $site->main_menu($_SESSION["validuser"], $_SESSION["isadmin"], $_GET["page"], $menu_array);
+            }
         }
         ?>
         </td>

@@ -13,6 +13,7 @@ class Site {
     var $menu_list;
     var $menu_id;
     var $menu_title;
+    var $get_vars = array();
 
     function Site () {
         $this->author = "Herman Tolentino MD";
@@ -86,7 +87,7 @@ class Site {
                     $content[$col][$level] = $module;
                     // get max values for column and level
                     $maxcol = ($maxcol>$col?$maxcol:$col);
-                    $maxlev = ($maxlev>$level?$maxlevel:$level);
+                    $maxlev = ($maxlev>$level?$maxlev:$level);
                 }
                 //print "maxcol: ".$this->maxcol."<br/>";
                 //print "maxlev: ".$this->maxlev."<br/>";
@@ -163,9 +164,9 @@ class Site {
             $get_vars = $arg_list[2];
             $validuser = $arg_list[3];
             $isadmin = $arg_list[4];
-            print_r($arg_list);
+            //print_r($arg_list);
         }
-        print $sql = "select content_id, content_module, content_column, content_level, content_display, content_active ".
+        $sql = "select content_id, content_module, content_column, content_level, content_display, content_active ".
                "from content where content_id = '".$get_vars["content_id"]."'";
         if ($result = mysql_query($sql)) {
             if (mysql_num_rows($result)) {
@@ -366,10 +367,10 @@ class Site {
             $arg_list = func_get_args();
             $post_vars = $arg_list[0];
         }
-        if (!file_exists("../modules/_dbselect.php")) {
+        if (!file_exists(GAME_DIR."modules/_dbselect.php")) {
             if ($post_vars["submitdb"]) {
                 if ($post_vars["db_name"]) {
-                    if ($fp = fopen("../modules/_dbselect.php","w+")) {
+                    if ($fp = fopen(GAME_DIR."modules/_dbselect.php","w+")) {
                         $t .= "<?\n";
                         $t .= "\$db = new MySQLDB;\n";
                         $t .= "\$db->selectdb(\"".$post_vars["db_name"]."\");\n";
@@ -431,6 +432,7 @@ class Site {
     }
 
     function main_cat() {
+
         if (func_num_args()>0) {
             $arg_list = func_get_args();
             $validuser = $arg_list[0];
@@ -438,7 +440,8 @@ class Site {
             $get_vars = $arg_list[2];
             $menu_array = $arg_list[3];
         }
-        //print_r($arg_list);
+
+        //print_r($arg_list[2]);
         if ($validuser && $isadmin) {
             print "<table width='160' style='border: 1px solid black' bgcolor='#99CCFF' cellspacing='0' cellpadding='5'>";
             print "<tr bgcolor='#669999'><td>";
@@ -447,7 +450,7 @@ class Site {
             print "<tr><td>";
             foreach($menu_array as $key=>$subarray) {
                 foreach($subarray as $key=>$pagename) {
-                    print "<a href='".$_SERVER["PHP_SELF"]."?page=$pagename' class='catmenu'>".($get_vars["page"]==$pagename?"<b>$pagename</b>":"$pagename")."</a><br/>";
+                    print "<a href='".$_SERVER["PHP_SELF"]."?page=$pagename' class='catmenu'>".((isset($get_vars["page"]) && $get_vars["page"]==$pagename)?"<b>$pagename</b>":"$pagename")."</a><br/>";
                 }
             }
             print "</td></tr>";
@@ -511,6 +514,7 @@ class Site {
             $isadmin = $arg_list[1];
             $page = $arg_list[2];
             $menu_array = $arg_list[3];
+            $menu_list = "";
         }
         if ($page && $page<>"HOWTO" && $page<>"ABOUT" && $page<>"CREDITS") {
             if ($isadmin) {
@@ -554,7 +558,7 @@ class Site {
                                     $show_menu = true;
                                 }
                                 if ($show_menu) {
-                                    $menu_list .= "<a href='".$_SERVER["PHP_SELF"]."?page=$menu_cat&menu_id=$menu_id' class='sidemenu'>".($get_vars["menu_id"]==$menu_id?"<b>$menu_title</b>":"$menu_title")."</a><br>";
+                                    $menu_list .= "<a href='".$_SERVER["PHP_SELF"]."?page=$menu_cat&menu_id=$menu_id' class='sidemenu'>".((isset($get_vars["menu_id"]) && $get_vars["menu_id"]==$menu_id)?"<b>$menu_title</b>":"$menu_title")."</a><br>";
                                 }
                             }
                             if (strlen($menu_list)>0) {
@@ -624,7 +628,7 @@ class Site {
             print "<div align='center'>";
             print "<font face='Verdana'>";
             print "<b>".LBL_NAVIGATION." > </b>";
-            print "<a href='".$_SERVER["PHP_SELF"]."' class='topmenu'>".LBL_HOME."</a>";
+            print "<a href='".$_SERVER["PHP_SELF"]."?page=HOME' class='topmenu'>".LBL_HOME."</a>";
             if ($_SESSION["validuser"]) {
                 if ($_SESSION["isadmin"]) {
                     print "<a href='".$_SERVER["PHP_SELF"]."?page=ADMIN' class='topmenu'>".MENU_ADMIN."</a>";
@@ -641,7 +645,7 @@ class Site {
             print "<div align='center'>";
             print "<font face='Verdana'>";
             print "<b>".LBL_NAVIGATION." > </b>";
-            print "<a href='".$_SERVER["PHP_SELF"]."' class='topmenu'>".LBL_HOME."</a>";
+            print "<a href='".$_SERVER["PHP_SELF"]."?page=HOME' class='topmenu'>".LBL_HOME."</a>";
             $sql = "select menu_id, menu_cat, module_id, menu_title from module_menu order by menu_rank";
             if ($result = mysql_query($sql)) {
                 if (mysql_num_rows($result)) {
@@ -678,11 +682,11 @@ class Site {
                             $this->menu_list .= "<a href='".$_SERVER["PHP_SELF"]."?page=$menu_cat&menu_id=".$this->menu_id."' class='topmenu'>".strtoupper($item)."</a>";
                         }
                     }
-                        if (strlen($this->menu_list)>0) {
-                            print $this->menu_list;
-                        } else {
-                            print "NO MENUS";
-                        }
+                    if (strlen($this->menu_list)>0) {
+                        print $this->menu_list;
+                    } else {
+                        print "NO MENUS";
+                    }
                 }
             }
             print "</font>";
@@ -700,7 +704,7 @@ class Site {
         switch ($site) {
         case "INFO":
         default:
-            $this->display_file("../site/howto.html");
+            $this->display_file("chits/site/howto.html");
         }
     }
 
@@ -717,7 +721,7 @@ class Site {
     }
 
     function print_credits () {
-        $this->display_file("../site/credits.html");
+        $this->display_file("chits/site/credits.html");
     }
 
     function print_about () {
@@ -728,7 +732,7 @@ class Site {
         switch ($site) {
         case "INFO":
         default:
-            $this->display_file("../site/siteinfo.html");
+            $this->display_file("chits/site/siteinfo.html");
         }
     }
 
@@ -778,9 +782,11 @@ class Site {
         print "<ol>$error</ol>";
     }
 
-    function flash_header() {
-        if (!extension_loaded("ming")) {
+    function flash_enabled() {
+        if (!extension_loaded("php-ming")) {
             print "Ming library required.";
+        } else {
+            return true;
         }
     }
 

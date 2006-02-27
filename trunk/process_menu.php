@@ -10,6 +10,7 @@ if (isset($_GET["menu_id"])) {
             if ($result = mysql_query($sql)) {
                 if (mysql_num_rows($result)) {
                     if (list($module_id, $menu_action) = mysql_fetch_array($result)) {
+                        $menu_id = $_GET["menu_id"];
                         $module_exec = "\$".$module_id."->".$menu_action."(\$menu_id, \$_POST, \$_GET,\$_SESSION[\"validuser\"],\$_SESSION[\"isadmin\"]);";
                         eval($module_exec);
                     }
@@ -24,7 +25,6 @@ if (isset($_GET["menu_id"])) {
     // if $menu_id is not in URL,
     //   the following pages are displayed.
     //
-    print "hello";
     if (isset($_GET["page"])) {
         switch ($_GET["page"]) {
         case "WELCOME":
@@ -82,7 +82,9 @@ if (isset($_GET["menu_id"])) {
         if (isset($_GET["page"]) && module::in_menu($_GET["page"],array_values($menu_array[0]))) {
             $module->default_action($_GET["page"]);
         } else {
-            $site->deploy_content($_GET["menu_id"], $_POST, $_GET);
+            if (isset($_GET["menu_id"])) {
+                $site->deploy_content($_GET["menu_id"], $_POST, $_GET);
+            }
         }
     } // end case
 }

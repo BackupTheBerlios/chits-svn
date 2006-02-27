@@ -29,23 +29,29 @@ header("Cache-Control: no-cache, must-revalidate"); // HTTP/1.1
 header("Pragma: no-cache"); // HTTP/1.0
 
 // standard class includes
-include "../class.mysqldb.php";
-include "../class.user.php";
-include "../class.site.php";
-include "../class.module.php";
-include "../class.datanode.php";
-include "../class.gform.php";
+define("GAME_DIR", '../');
+define("GAME_DUMP_DIR", '../dump');
+define("GAME_GRAPH_DIR", '../graph');
+define("JPGRAPH_DIR", '/home/herman/Documents/Download/jpgraph/jpgraph-1.20.2/src/');
+
+// standard class includes
+include GAME_DIR."class.mysqldb.php";
+include GAME_DIR."class.user.php";
+include GAME_DIR."class.site.php";
+include GAME_DIR."class.module.php";
+include GAME_DIR."class.datanode.php";
+include GAME_DIR."class.gform.php";
 
 // load PDF open source modules
 // courtesy of http://www.fpdf.org/
-include "../class.fpdf.php";
-include "../class.pdf.php";
-include "../class.xmlrpc.php"; // use web services
+include GAME_DIR."class.fpdf.php";
+include GAME_DIR."class.pdf.php";
+include GAME_DIR."class.xmlrpc.php"; // use web services
 
 // very important setting for FPDF
 define("FPDF_FONTPATH",'../fonts/');
 // load session variables
-include "../initsession.php";
+include GAME_DIR."initsession.php";
 
 // initialize database connection
 $db = new MySQLDB;
@@ -76,7 +82,7 @@ if ($user->check_users()) {
 //
 // this "include" initializes all modules
 //
-include "../process_module.php";
+include GAME_DIR."process_module.php";
 
 ?>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
@@ -133,11 +139,7 @@ small { font-family: verdana, sans serif}
   <tr bgcolor="#FF0000">
     <td valign="top">
     <?
-    if (Site::flash_header()) {
-        print "<img src='../images/".$_SESSION["datanode"]["banner"]."' border='0'>";
-    } else {
-        print "<img src='../images/".$_SESSION["datanode"]["banner"]."' border='0'>";
-    }
+    print "<img src=".GAME_DIR."'images/".$_SESSION["datanode"]["banner"]."' border='0'>";
     ?>
     </td>
   </tr>
