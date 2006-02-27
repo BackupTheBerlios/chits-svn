@@ -1,5 +1,6 @@
 <?php
 class DataNode {
+
     var $name;      // node name
     var $code;      // three digit code
     var $telephone; // node phone
@@ -15,7 +16,9 @@ class DataNode {
     }
 
     function readConfig($filename) {
-    // read the xml database
+
+        // read the xml database
+        print "FILE: $filename";
         $data = implode("",file($filename));
         $parser = xml_parser_create();
         xml_parser_set_option($parser,XML_OPTION_CASE_FOLDING,0);
