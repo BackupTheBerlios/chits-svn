@@ -124,25 +124,26 @@ Class Module {
             break;
         case "MODDB":
         default:
-            switch ($this->post_vars["submitmodule"]) {
-            case "Yes, Delete Module":
-                $module->delete_module($this->post_vars);
-                header("location: ".$_SERVER["PHP_SELF"]."?page=MODULES");
-                break;
-            case "Delete Module":
-                print "<font color='red' size='3'><b>Are you sure you want to DELETE this module?</b></font>";
-                $module->form_module($this->get_vars, $this->post_vars);
-                break;
-            case "Add Module":
-            default:
-                if ($module_id = $module->process_module($this->post_vars, $this->post_files)) {
-                    // comment out line below for debugging
-                    // while developing modules
-                    //header("location: ".$_SERVER["PHP_SELF"]."?page=MODULES");
+                switch ($this->post_vars["submitmodule"]) {
+                case "Yes, Delete Module":
+                    $module->delete_module($this->post_vars);
+                    header("location: ".$_SERVER["PHP_SELF"]."?page=MODULES");
+                    break;
+                case "Delete Module":
+                    print "<font color='red' size='3'><b>Are you sure you want to DELETE this module?</b></font>";
+                    $module->form_module($this->get_vars, $this->post_vars);
+                    break;
+                case "Add Module":
+                default:
+                    if ($module_id = $module->process_module($this->post_vars, $this->post_files)) {
+                        // comment out line below for debugging
+                        // while developing modules
+                        //header("location: ".$_SERVER["PHP_SELF"]."?page=MODULES");
+                        print "hello";
+                    }
+                    $module->form_module($this->get_vars, $this->post_vars);
+                    $module->display_modules();
                 }
-                $module->form_module($this->get_vars, $this->post_vars);
-                $module->display_modules();
-            }
         }
     }
 
@@ -561,9 +562,11 @@ Class Module {
             $this->post_vars = $this->arg_list[0];
             $this->post_files = $this->arg_list[1];
             //print_r($post_files);
-            $uploadfile = "../modules/_uploads/".$_FILES["module_file"]["name"];
-            if (move_uploaded_file($_FILES["module_file"]["tmp_name"], $uploadfile)) {
-                return $this->uncompress($uploadfile);
+            if (isset($_FILES["module_file"])) {
+                $uploadfile = "../modules/_uploads/".$_FILES["module_file"]["name"];
+                if (move_uploaded_file($_FILES["module_file"]["tmp_name"], $uploadfile)) {
+                    return $this->uncompress($uploadfile);
+                }
             }
         }
     }
@@ -577,7 +580,7 @@ Class Module {
             $this->get_vars = $this->arg_list[0];
             $this->post_vars = $this->arg_list[1];
             //print_r($this->arg_list);
-            if ($this->get_vars["module_id"]) {
+            if (isset($this->get_vars["module_id"])) {
                 $sql = "select module_id, module_name, module_desc, module_version, module_init, module_author from modules ".
                        "where module_id = '".$this->get_vars["module_id"]."'";
                 if ($result = mysql_query($sql)) {
@@ -589,12 +592,12 @@ Class Module {
             }
         }
         print "<table width='500'>";
-        print "<form enctype='multipart/form-data' action = '".$_SERVER["SELF"]."?page=".$this->get_vars["page"]."&module_id=".$this->get_vars["module_id"]."' name='form_module' method='post'>";
+        print "<form enctype='multipart/form-data' action = '".$_SERVER["PHP_SELF"]."?page=".(isset($this->get_vars["page"])?$this->get_vars["page"]:"")."&module_id=".(isset($this->get_vars["module_id"])?$this->get_vars["module_id"]:"")."' name='form_module' method='post'>";
         print "<tr valign='top'><td>";
-        print "<a name='mod_".$module["module_id"]."'>";
+        print "<a name='mod_".(isset($module["module_id"])?$module["module_id"]:"")."'>";
         print "<span class='module'>MODULE DATABASE</span><br><br>";
         print "</td></tr>";
-        if ($this->get_vars["module_id"]) {
+        if (isset($this->get_vars["module_id"])) {
             print "<tr valign='top'><td>";
             print "<table width='500' cellpadding='2' cellspacing='0' style='border: 2px solid black'>";
             print "<tr valign='top'><td bgcolor='#FFFF99'>";
@@ -617,11 +620,11 @@ Class Module {
         } else {
             print "<tr valign='top'><td>";
             print "<span class='boxtitle'>MODULE FILE</span><br> ";
-            print "<input type='file' class='textbox' size='35' style='border: 1px solid black' maxlength='100' name='module_file' value='".($image["image_filename"]?$image["module_file"]:$this->post_vars["module_file"])."'>";
+            print "<input type='file' class='textbox' size='35' style='border: 1px solid black' maxlength='100' name='module_file' value='".(isset($image["image_filename"])?$image["module_file"]:(isset($this->post_vars["module_file"])?$this->post_vars["module_file"]:""))."'>";
             print "</td></tr>";
         }
         print "<tr><td><br>";
-        if ($this->get_vars["module_id"]) {
+        if (isset($this->get_vars["module_id"])) {
             print "<input type='hidden' name='module_id' value='".$this->get_vars["module_id"]."'>";
             if ($this->post_vars["noconfirm"]) {
                 print "<input type='submit' value = 'Yes, Delete Module' class='textbox' name='submitmodule' style='border: 1px solid #000000'> ";
@@ -636,7 +639,7 @@ Class Module {
         print "</td></tr>";
         print "</form>";
         print "</table><br>";
-        if ($this->get_vars["module_id"]) {
+        if (isset($this->get_vars["module_id"])) {
             print "<small>";
             //show_source("../modules/".$module["module_name"]."/class.".$module["module_name"].".php");
             print "</small>";
