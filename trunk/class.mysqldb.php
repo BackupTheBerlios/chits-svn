@@ -1,5 +1,6 @@
 <?
 class MySQLDB {
+
     var $conn = 0;
 
     function mysqldb () {
@@ -8,8 +9,8 @@ class MySQLDB {
     //
         $this->version = "0.4";
         $this->author = "Herman Tolentino MD";
-        if (!file_exists("../modules/_dbselect.php")) {
-            $this->setup("../db.xml");
+        if (!file_exists(GAME_DIR."modules/_dbselect.php")) {
+            $this->setup(GAME_DIR."config/db.xml");
         }
         // 0.3 modified system table creation process
         // 0.4 added mysql_version()
@@ -31,7 +32,8 @@ class MySQLDB {
                     $_SESSION[$key] = $value;
                 }
             }
-            if ($fp = @fopen("../modules/_dbselect.php", "w+")) {
+            $dbfile = "";
+            if ($fp = @fopen(GAME_DIR."modules/_dbselect.php", "w+")) {
                 $dbfile .= "<?php\n";
                 $dbfile .= "\$_SESSION[\"dbname\"] = \"".$_SESSION["dbname"]."\";\n";
                 $dbfile .= "\$_SESSION[\"dbuser\"] = \"".$_SESSION["dbuser"]."\";\n";
@@ -90,13 +92,15 @@ class MySQLDB {
         //
         // set up system tables
         //
-        module::execsql("set foreign_key_checks=0;");
+        if (module::execsql("set foreign_key_checks=0;")) {
+            print "<font color='BLUE'>FOREIGN KEY CHECKS DISABLED...</font><br>";
+        }
 
         // table: content
         // this table manages content module layout in content section
         //    of enterprise application; this means you can set up any
         //    content management module (news, quotes, articles, etc.)
-        module::execsql("CREATE TABLE content (".
+        if (module::execsql("CREATE TABLE content (".
             "content_id int(11) NOT NULL auto_increment,".
             "content_module varchar(25) NOT NULL default '',".
             "content_column int(11) NOT NULL default '0',".
@@ -106,16 +110,20 @@ class MySQLDB {
             "PRIMARY KEY  (content_id),".
             "KEY key_module (content_module),".
             "CONSTRAINT `content_ibfk_1` FOREIGN KEY (`content_module`) REFERENCES `modules` (`module_id`) ON DELETE CASCADE".
-            ") TYPE=InnoDB;");
+            ") TYPE=InnoDB;")) {
+            print "<font color='BLUE'>CONTENT table created...</font><br>";
+        }
         // content content
         module::execsql("INSERT INTO content VALUES (1,'news',1,'Y',10,1);");
 
         // error codes
-        module::execsql("CREATE TABLE errorcodes (".
+        if (module::execsql("CREATE TABLE errorcodes (".
             "error_id char(3) NOT NULL default '',".
             "error_name varchar(100) NOT NULL default '',".
             "PRIMARY KEY  (error_id)".
-            ") TYPE=MyISAM;");
+            ") TYPE=MyISAM;")) {
+            print "<font color='BLUE'>ERRORCODES table created...</font><br>";
+        }
         // error codes content
         module::execsql("INSERT INTO errorcodes VALUES ('001','Invalid account.');");
         module::execsql("INSERT INTO errorcodes VALUES ('002','Please complete entries');");
@@ -127,7 +135,7 @@ class MySQLDB {
         // can specify more fine-grained permissions for read, update and delete,
         // and to the module menu and global permissions for menu-level permissions. A
         // module can be created for more fine-grained access at the module level.
-        module::execsql("CREATE TABLE game_user (".
+        if (module::execsql("CREATE TABLE game_user (".
             "user_id float NOT NULL auto_increment,".
             "user_lastname varchar(100) NOT NULL default '',".
             "user_firstname varchar(100) NOT NULL default '',".
@@ -144,7 +152,9 @@ class MySQLDB {
             "user_pin varchar(4) NOT NULL default '',".
             "user_active char(1) NOT NULL default '',".
             "PRIMARY KEY  (user_id)".
-            ") TYPE=InnoDB;");
+            ") TYPE=InnoDB;")) {
+            print "<font color='BLUE'>GAME_USER table created...</font><br>";
+        }
 
         // game user content
         module::execsql("INSERT INTO game_user VALUES (1,'User','Admin','','0000-00-00','','','Y','admin','43e9a4ab75570f5b','english','','','','Y');");
@@ -153,11 +163,13 @@ class MySQLDB {
         // This table interacts with permission system to specify module access
         // per given location. A location entity is typical of health care enterprise
         // systems.
-        module::execsql("CREATE TABLE location (".
+        if (module::execsql("CREATE TABLE location (".
             "location_id varchar(10) NOT NULL default '',".
             "location_name varchar(50) NOT NULL default '',".
             "PRIMARY KEY  (location_id)".
-            ") TYPE=InnoDB;");
+            ") TYPE=InnoDB;")) {
+            print "<font color='BLUE'>LOCATION table created...</font><br>";
+        }
 
         // location content
         module::execsql("INSERT INTO location VALUES ('ADM','Admissions');");
@@ -169,17 +181,19 @@ class MySQLDB {
         // This table takes care of tracking module dependencies as
         // the central table. Dependencies are specified at the module
         // level through module::set_dep().
-        module::execsql("CREATE TABLE module_dependencies (".
+        if (module::execsql("CREATE TABLE module_dependencies (".
             "module_id varchar(25) NOT NULL default '',".
             "req_module varchar(25) NOT NULL default '',".
             "PRIMARY KEY  (module_id,req_module),".
             "CONSTRAINT `foreign` FOREIGN KEY (`module_id`) REFERENCES `modules` (`module_id`) ON DELETE CASCADE ON UPDATE CASCADE".
-            ") TYPE=InnoDB;");
+            ") TYPE=InnoDB;")) {
+            print "<font color='BLUE'>MODULE_DEPENDENCIES table created...</font><br>";
+        }
 
         // table: module_menu
         // This table stores menu information for each module. Modules
         // specify their own menus.
-        module::execsql("CREATE TABLE module_menu (".
+        if (module::execsql("CREATE TABLE module_menu (".
             "menu_id int(11) NOT NULL auto_increment,".
             "module_id varchar(25) NOT NULL default '0',".
             "menu_cat varchar(10) NOT NULL default '',".
@@ -191,11 +205,13 @@ class MySQLDB {
             "UNIQUE KEY ukey_modulemenu (module_id,menu_action),".
             "KEY key_module (module_id),".
             "CONSTRAINT `module_menu_ibfk_1` FOREIGN KEY (`module_id`) REFERENCES `modules` (`module_id`) ON DELETE CASCADE".
-            ") TYPE=InnoDB;");
+            ") TYPE=InnoDB;")) {
+            print "<font color='BLUE'>MODULE_MENU table created...</font><br>";
+        }
 
         // table: module_menu_location
         // This table is a bridge entity between menu and location
-        module::execsql("CREATE TABLE module_menu_location (".
+        if (module::execsql("CREATE TABLE module_menu_location (".
             "location_id varchar(10) NOT NULL default '',".
             "module_id varchar(25) NOT NULL default '',".
             "menu_id int(11) NOT NULL default '0',".
@@ -206,12 +222,14 @@ class MySQLDB {
             "CONSTRAINT `module_menu_location_ibfk_1` FOREIGN KEY (`module_id`) REFERENCES `modules` (`module_id`) ON DELETE CASCADE,".
             "CONSTRAINT `module_menu_location_ibfk_2` FOREIGN KEY (`location_id`) REFERENCES `location` (`location_id`) ON DELETE CASCADE,".
             "CONSTRAINT `module_menu_location_ibfk_3` FOREIGN KEY (`menu_id`) REFERENCES `module_menu` (`menu_id`) ON DELETE CASCADE".
-            ") TYPE=InnoDB;");
+            ") TYPE=InnoDB;")) {
+            print "<font color='BLUE'>MODULE_MENU_LOCATION table created...</font><br>";
+        }
 
         // table: module_menu_permissions
         // This table is a bridge entity and stores information about
         // what menus are available for each game user.
-        module::execsql("CREATE TABLE module_menu_permissions (".
+        if (module::execsql("CREATE TABLE module_menu_permissions (".
             "module_id varchar(25) NOT NULL default '',".
             "menu_id float NOT NULL default '0',".
             "user_id float NOT NULL default '0',".
@@ -220,22 +238,26 @@ class MySQLDB {
             "KEY key_menu (menu_id),".
             "KEY key_user (user_id),".
             "CONSTRAINT `module_menu_permissions_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `game_user` (`user_id`) ON DELETE CASCADE".
-            ") TYPE=InnoDB;");
+            ") TYPE=InnoDB;")) {
+            print "<font color='BLUE'>MODULE_MENU_PERMISSIONS table created...</font><br>";
+        }
 
         // table: module_permissions
         // This table is a bridge entity and stores module level permissions per user.
-        module::execsql("CREATE TABLE module_permissions (".
+        if (module::execsql("CREATE TABLE module_permissions (".
             "module_id varchar(25) NOT NULL default '0',".
             "user_id float NOT NULL default '0',".
             "PRIMARY KEY  (module_id,user_id),".
             "KEY key_module (module_id),".
             "KEY key_user (user_id),".
             "CONSTRAINT `module_permissions_ibfk_1` FOREIGN KEY (`module_id`) REFERENCES `modules` (`module_id`) ON DELETE CASCADE".
-            ") TYPE=InnoDB;");
+            ") TYPE=InnoDB;")) {
+            print "<font color='BLUE'>MODULE_PERMISSIONS table created...</font><br>";
+        }
 
         // table: module_user_location
         // This table is a bridge entity and tracks which users are at what location
-        module::execsql("CREATE TABLE module_user_location (".
+        if (module::execsql("CREATE TABLE module_user_location (".
             "location_id varchar(10) NOT NULL default '',".
             "user_id float NOT NULL default '0',".
             "PRIMARY KEY  (location_id,user_id),".
@@ -243,11 +265,13 @@ class MySQLDB {
             "KEY key_location (location_id),".
             "CONSTRAINT `module_user_location_ibfk_1` FOREIGN KEY (`location_id`) REFERENCES `location` (`location_id`) ON DELETE CASCADE,".
             "CONSTRAINT `module_user_location_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `game_user` (`user_id`) ON DELETE CASCADE".
-            ") TYPE=InnoDB;");
+            ") TYPE=InnoDB;")) {
+            print "<font color='BLUE'>MODULE_USER_LOCATION table created...</font><br>";
+        }
 
         // table: modules
         // This table stores module definitions
-        module::execsql("CREATE TABLE modules (".
+        if (module::execsql("CREATE TABLE modules (".
             "module_id varchar(25) NOT NULL default '',".
             "module_init char(1) NOT NULL default 'N',".
             "module_version varchar(25) default '',".
@@ -256,16 +280,20 @@ class MySQLDB {
             "module_name varchar(100) NOT NULL default '',".
             "PRIMARY KEY  (module_id),".
             "UNIQUE KEY ukey_modules (module_name)".
-            ") TYPE=InnoDB;");
+            ") TYPE=InnoDB;")) {
+            print "<font color='BLUE'>MODULES table created...</font><br>";
+        }
 
         // table: role
         // This table stores role definitions
-        module::execsql("CREATE TABLE role (".
+        if (module::execsql("CREATE TABLE role (".
             "role_id varchar(10) NOT NULL default '',".
             "role_dataaccess char(3) NOT NULL default '',".
             "role_name varchar(100) NOT NULL default '',".
             "PRIMARY KEY  (role_id)".
-            ") TYPE=InnoDB;");
+            ") TYPE=InnoDB;")) {
+            print "<font color='BLUE'>ROLE table created...</font><br>";
+        }
 
         // role content
         // NOTE: you change this to be more specific to your setting
@@ -278,7 +306,7 @@ class MySQLDB {
 
         // table: terms
         // this is the multilingualization table
-        module::execsql("CREATE TABLE terms (".
+        if (module::execsql("CREATE TABLE terms (".
             "termid varchar(50) NOT NULL default '',".
             "languageid varchar(10) NOT NULL default '',".
             "langtext text,".
@@ -287,15 +315,25 @@ class MySQLDB {
             "module_id varchar(25) NOT NULL default '',".
             "isenglish char(1) NOT NULL default 'Y',".
             "PRIMARY KEY  (termid,languageid)".
-            ") TYPE=MyISAM;");
+            ") TYPE=MyISAM;")) {
+            print "<font color='BLUE'>TERMS table created...</font><br>";
+        }
 
-        module::execsql("set foreign_key_checks=1;");
+        if (module::execsql("set foreign_key_checks=1;")) {
+            print "<font color='BLUE'>FOREIGN KEY CHECKS ENABLED...</font><br>";
+        }
     }
 
     function parseXML($mvalues) {
-        for ($i=0; $i < count($mvalues); $i++)
-            $node[$mvalues[$i]["tag"]] = $mvalues[$i]["value"];
-        return ($node);
+
+        for ($i=0; $i<count($mvalues); $i++) {
+            if (isset($mvalues[$i]["value"])) {
+                $node[$mvalues[$i]["tag"]] = $mvalues[$i]["value"];
+            }
+        }
+        if (isset($node)) {
+            return ($node);
+        }
     }
 
     function readconfig($filename) {
