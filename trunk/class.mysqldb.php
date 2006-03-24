@@ -7,13 +7,14 @@ class MySQLDB {
     //
     // database module
     //
-        $this->version = "0.4";
+        $this->version = "0.5";
         $this->author = "Herman Tolentino MD";
         if (!file_exists(GAME_DIR."modules/_dbselect.php")) {
             $this->setup(GAME_DIR."config/db.xml");
         }
         // 0.3 modified system table creation process
         // 0.4 added mysql_version()
+        // 0.5 added table creation information
     }
 
     function setup() {
