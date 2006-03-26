@@ -44,21 +44,14 @@ class User {
         module::set_lang("BTN_ADD_USER", "english", "Add User", "Y");
         module::set_lang("FTITLE_USERLOCATION_FORM", "english", "WORK LOCATION FORM", "Y");
         module::set_lang("FTITLE_SITE_USER", "english", "SITE USER FORM", "Y");
-        module::set_lang("LBL_APPOINTMENT_NAME", "english", "APPOINTMENT NAME", "Y");
-        module::set_lang("FTITLE_APPOINTMENT_SCHEDULER", "english", "APPOINTMENT SCHEDULER", "Y");
-        module::set_lang("LBL_APPOINTMENT_DATE", "english", "APPOINTMENT DATE", "Y");
-        module::set_lang("LBL_APPOINTMENT_CODE", "english", "APPOINTMENT CODE", "Y");
-        module::set_lang("LBL_REMINDER_FLAG", "english", "SEND REMINDER?", "Y");
-        module::set_lang("FTITLE_APPOINTMENTS_MADE_TODAY", "english", "APPOINTMENTS MADE TODAY", "Y");
-        module::set_lang("FTITLE_PREVIOUS_APPOINTMENTS", "english", "PREVIOUS APPOINTMENTS", "Y");
-        module::set_lang("LBL_EXPECTED_TO_ARRIVE_TODAY", "english", "THE FOLLOWING PATIENTS ARE EXPECTED TO ARRIVE TODAY", "Y");
-        module::set_lang("FTITLE_APPOINTMENTS_TODAY", "english", "APPOINTMENTS TODAY", "Y");
-        module::set_lang("LBL_FOLLOW_UP_BEHAVIOR", "english", "FOLLOW UP BEHAVIOR", "Y");
-        module::set_lang("LBL_DEFER_CONSULT", "english", "DEFER CONSULT", "Y");
-        module::set_lang("INSTR_DEFER_CONSULT", "english", "Check to defer consult", "Y");
-        module::set_lang("LBL_PATIENT_DETAILS", "english", "PATIENT DETAILS", "Y");
-        module::set_lang("FTITLE_FAMILY_INFO", "english", "FAMILY INFO", "Y");
-        module::set_lang("FTITLE_CONSULTS_APPT", "english", "CONSULTS FOR", "Y");
+        module::set_lang("FTITLE_ROLE_LIST", "english", "CHITS ROLES", "Y");
+        module::set_lang("THEAD_NAME", "english", "NAME", "Y");
+        module::set_lang("THEAD_ACCESS", "english", "ACCESS", "Y");
+        module::set_lang("FTITLE_ROLE_FORM", "english", "ROLE FORM", "Y");
+        module::set_lang("INSTR_ROLE_FORM", "english", "Please fill up role values below.", "Y");
+        module::set_lang("LBL_ROLE_ID", "english", "ROLE ID", "Y");
+        module::set_lang("LBL_ROLE_NAME", "english", "ROLE NAME", "Y");
+        module::set_lang("LBL_DATA_ACCESS", "english", "ROLE DATA ACCESS", "Y");
 
     }
 
