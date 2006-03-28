@@ -9,12 +9,13 @@ class patient extends module{
         // do not forget to update version
         //
         $this->author = 'Herman Tolentino MD';
-        $this->version = "0.42-".date("Y-m-d");
+        $this->version = "0.43-".date("Y-m-d");
         $this->module = "patient";
         $this->description = "CHITS Module - Patient";
         // 0.4 installed foreign key constraints
         // 0.41 fixed patient update bug with gender
         // 0.42 included uniquid for cross-healthcenter migration
+        // 0.43 bug fixes
     }
 
     // --------------- STANDARD MODULE FUNCTIONS ------------------
@@ -53,6 +54,8 @@ class patient extends module{
         module::set_lang("LBL_REGISTERED_BY", "english", "REGISTERED BY", "Y");
         module::set_lang("LBL_MOTHERS_NAME", "english", "MOTHER\'S MAIDEN NAME", "Y");
         module::set_lang("INSTR_LOAD_PATIENT_RECORD", "english", "LOAD PATIENT RECORD", "Y");
+        module::set_lang("FTITLE_PATIENT_MODULE", "english", "PATIENT MODULE FORM", "Y");
+        module::set_lang("LBL_PATIENT_MODULE", "english", "PATIENT MODULE", "Y");
 
     }
 
@@ -156,13 +159,13 @@ class patient extends module{
         print "<table width='300'>";
         print "<form action = '".$_SERVER["SELF"]."?page=".$get_vars["page"]."&menu_id=$menu_id' name='form_module' method='post'>";
         print "<tr valign='top'><td>";
-        print "<span class='module'>".FTITLE_CONSULT_MODULE."</span><br/><br/>";
+        print "<span class='module'>".FTITLE_PATIENT_MODULE."</span><br/><br/>";
         print "</td></tr>";
         print "<tr valign='top'><td>";
         print "<b>NOTE: You are adding a sub-module to the patient module. Please read instructions for module integration.</b><br/><br/>";
         print "</td></tr>";
         print "<tr valign='top'><td>";
-        print "<span class='boxtitle'>".LBL_CONSULT_MODULE."</span><br> ";
+        print "<span class='boxtitle'>".LBL_PATIENT_MODULE."</span><br> ";
         print module::show_modules($module["module_id"]?$module["module_id"]:$post_vars["module"]);
         print "<br/><br/></td></tr>";
         print "<tr><td>";
