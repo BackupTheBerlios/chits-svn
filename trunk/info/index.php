@@ -33,6 +33,8 @@ define("GAME_DIR", '../');
 define("GAME_DUMP_DIR", '../dump');
 define("GAME_GRAPH_DIR", '../graph');
 define("JPGRAPH_DIR", '/home/herman/Documents/Download/jpgraph/jpgraph-1.20.2/src/');
+// very important setting for FPDF
+define("FPDF_FONTPATH",'../fonts/');
 
 // standard class includes
 include GAME_DIR."class.mysqldb.php";
@@ -48,8 +50,6 @@ include GAME_DIR."class.fpdf.php";
 include GAME_DIR."class.pdf.php";
 include GAME_DIR."class.xmlrpc.php"; // use web services
 
-// very important setting for FPDF
-define("FPDF_FONTPATH",'../fonts/');
 // load session variables
 include GAME_DIR."initsession.php";
 
@@ -59,7 +59,7 @@ $conn = $db->connid();
 
 // the following file is server-generated
 // DO NOT EDIT THIS!
-include "../modules/_dbselect.php";
+include GAME_DIR."modules/_dbselect.php";
 
 // These are the key modules for game engine.
 // We will initialize them here.
@@ -91,10 +91,10 @@ include GAME_DIR."process_module.php";
 <title><?=strtoupper($_SESSION["datanode"]["name"])?> Info Desktop</title>
 <?
 $form = new GForm;
-$form->load_javascript("../javascript/range.js");
-$form->load_javascript("../javascript/timer.js");
-$form->load_javascript("../javascript/slider.js");
-$form->load_css("../javascript/css/swing/swing.css");
+$form->load_javascript(GAME_DIR."javascript/range.js");
+$form->load_javascript(GAME_DIR."javascript/timer.js");
+$form->load_javascript(GAME_DIR."javascript/slider.js");
+$form->load_css(GAME_DIR."javascript/css/swing/swing.css");
 ?>
 <style type="text/css">
 <!--
@@ -139,7 +139,7 @@ small { font-family: verdana, sans serif}
   <tr bgcolor="#FF0000">
     <td valign="top">
     <?
-    print "<img src=".GAME_DIR."'images/".$_SESSION["datanode"]["banner"]."' border='0'>";
+    print "<img src='".GAME_DIR."images/".$_SESSION["datanode"]["banner"]."' border='0'>";
     ?>
     </td>
   </tr>
