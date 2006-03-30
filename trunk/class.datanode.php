@@ -18,7 +18,7 @@ class DataNode {
     function readConfig($filename) {
 
         // read the xml database
-        print "FILE: $filename";
+        //print "FILE: $filename";
         $data = implode("",file($filename));
         $parser = xml_parser_create();
         xml_parser_set_option($parser,XML_OPTION_CASE_FOLDING,0);
