@@ -44,7 +44,7 @@ Class Module {
 
     function module () {
         $this->author = "Herman Tolentino MD";
-        $this->version = "1.8";
+        $this->version = "1.9";
         // version 0.7
         // added confirm_delete()
         // 0.8: moved module functions out of index.php
@@ -60,6 +60,9 @@ Class Module {
         // 1.7 modified for PHP5 October 2004
         //     specifically changed long global $HTTP_* vars to short PHP autoglobal form
         // 1.8 defined class variables, debugged activation method, delete module (leave sql) bug
+        // 1.9 Fixed installation bug - Fixed by Aditya Naik
+        //     Module details would show up correctly immediately after installation
+        //     Can also be deleted immediately after installation
 
     }
 
@@ -135,13 +138,22 @@ Class Module {
                     break;
                 case "Add Module":
                 default:
-                    if ($module_id = $module->process_module($this->post_vars, $this->post_files)) {
+                    // Commented off by Aditya Naik for v1.9
+                    //if ($module_id = $module->process_module($this->post_vars, $this->post_files)) {
                         // comment out line below for debugging
                         // while developing modules
                         //header("location: ".$_SERVER["PHP_SELF"]."?page=MODULES");
-                        print "hello";
-                    }
-                    $module->form_module($this->get_vars, $this->post_vars);
+                        //print "hello";
+                    //}
+                    
+                    // Added by Aditya Naik for v1.9
+                    // Moved out of the empty if loop
+                    $module_id = $module->process_module($this->post_vars, $this->post_files);
+                    
+                    // Added by Aditya Naik for v1.9
+                    // this will send the module id of the newly installed 
+                    // module to the form module function
+                    $module->form_module($this->get_vars, $this->post_vars, $module_id);
                     $module->display_modules();
                 }
         }
@@ -580,6 +592,12 @@ Class Module {
             $this->get_vars = $this->arg_list[0];
             $this->post_vars = $this->arg_list[1];
             //print_r($this->arg_list);
+            // Added by Aditya Naik for v1.9
+			// if the module id is sent as arguments it will be set into the getvars
+			if (isset($this->arg_list[2])) {
+                $this->get_vars["module_id"] = $this->arg_list[2];
+            } 
+            
             if (isset($this->get_vars["module_id"])) {
                 $sql = "select module_id, module_name, module_desc, module_version, module_init, module_author from modules ".
                        "where module_id = '".$this->get_vars["module_id"]."'";
@@ -723,7 +741,7 @@ Class Module {
             $sql = "insert into modules (module_id, module_name) values ('$main', '$main')";
             if ($result = mysql_query($sql)) {
                 $id = mysql_insert_id();
-                return $id;
+                return $main;
             } else {
                 $sql = "select module_id from modules where module_name = '$main'";
                 if ($result = mysql_query($sql)) {
