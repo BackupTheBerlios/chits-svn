@@ -225,7 +225,7 @@ class Module {
 	/**
 	 * getter function for the version of the module
 	 *
-	 * @return string
+	 * @return string version of the module
 	 */
 	function get_version() {
 		return $this->version;
@@ -365,7 +365,7 @@ class Module {
 	 * table module_dependencies
 	 * @param string $internal_module parent module on which $external_module is dependent
 	 * @param string $external_module module which is dependent on $internal module
-	 * @return boolean $sucess sucess flag
+	 * @return boolean sucess flag
 	 */
 	function set_dep() {
 		if (func_num_args()) {
@@ -396,15 +396,15 @@ class Module {
 	 * @param string $lang language or dialect
 	 * @param string $text translated text
 	 * @param char $is_english is it english: Y or N
-	 * @return boolean $sucess sucess flag
+	 * @return boolean sucess flag
 	 */
 	function set_lang() {
 		if (func_num_args()) {
 			$this->arg_list = func_get_args();
-			$term = $this->arg_list[0];	// constant term
-			$lang = $this->arg_list[1];	// language or dialect
-			$text = $this->arg_list[2];	// translated text
-			$is_english = $this->arg_list[3]; // is it english: Y or N
+			$term = $this->arg_list[0];
+			$lang = $this->arg_list[1];
+			$text = $this->arg_list[2];
+			$is_english = $this->arg_list[3];
 		}
 		$sql = "insert into terms (termid, languageid, langtext, isenglish) ".
 			   "values ('$term','$lang', '$text', '$is_english');";
@@ -424,10 +424,10 @@ class Module {
 	function set_menu() {
 		if (func_num_args()) {
 			$this->arg_list = func_get_args();
-			$module = $this->arg_list[0];	  // module name
-			$menu_title = $this->arg_list[1];   // menu title (what is displayed)
-			$menu_cat = $this->arg_list[2];  // menu categories (top menu)
-			$menu_action = $this->arg_list[3];  // script executed in class
+			$module = $this->arg_list[0];
+			$menu_title = $this->arg_list[1];
+			$menu_cat = $this->arg_list[2];
+			$menu_action = $this->arg_list[3];
 			//print_r($this->arg_list);
 		}
 		// insert new menu entry
@@ -445,16 +445,20 @@ class Module {
 	/**
 	 * updates table module
 	 * for final activation verification
-	 * @todo create argument list
-	 * @todo finish doc block
+	 * @todo fix the code to return false
+	 * @param string $description module description
+	 * @param string $version module version
+	 * @param string $author module author
+	 * @param string $module module name
+	 * @return boolean sucess flag
 	 */
 	function set_detail() {
 		if (func_num_args()) {
 			$this->arg_list = func_get_args();
-			$description = $this->arg_list[0];  // module description
-			$version = $this->arg_list[1];	  // module version
-			$author = $this->arg_list[2];		// module author
-			$module = $this->arg_list[3];		// module name
+			$description = $this->arg_list[0];
+			$version = $this->arg_list[1];
+			$author = $this->arg_list[2];
+			$module = $this->arg_list[3];
 		}
 		$sql = "update modules set module_desc = '$description', ".
 			   "module_version = '".$version."', module_author = '".$author."' ".
@@ -469,14 +473,15 @@ class Module {
 
 	/**
 	 * generic sql execution method
-	 * @todo create argument list
-	 * @todo finish doc block
+	 * @todo fix the code to return false
+	 * @param string $sql SQL statement
+	 * @return boolean sucess flag
 	 */
 	function execsql() {
 		if (func_num_args()) {
 			$this->arg_list = func_get_args();
 			// print $sql below for diagnostics
-			$sql = $this->arg_list[0];  // SQL statement
+			$sql = $this->arg_list[0];
 		}
 		if ($result = mysql_query($sql)) {
 			return true;
@@ -485,13 +490,13 @@ class Module {
 
 	/**
 	 * load sql files from sql directory
-	 * @todo create argument list
-	 * @todo finish doc block
+	 * @param string $sql SQL filename
+	 * @return boolean sucess flag
 	 */
 	function load_sql () {
 		if (func_num_args()) {
 			$this->arg_list = func_get_args();
-			$sql = $this->arg_list[0];  // SQL file
+			$sql = $this->arg_list[0];
 		}
 		if (file_exists("../sql/$sql")) {
 			if ($fp = fopen("../sql/$sql", "r")) {
@@ -514,6 +519,8 @@ class Module {
 
 	/**
 	 * Activates the modules
+	 *
+	 * @todo add some more explaination to the function
 	 */
 	function activate() {
 		$sql = "select module_name from modules order by module_name";
@@ -541,8 +548,8 @@ class Module {
 
 	/**
 	 * display all the modules in the system
-	 * @todo create argument list
-	 * @todo finish doc block
+	 * @param array $post_vars Post variables
+	 *
 	 */
 	function display_modules() {
 		if (func_num_args()) {
@@ -575,8 +582,8 @@ class Module {
 
 	/**
 	 * show all the modules in the system in a drop down
-	 * @todo create argument list
-	 * @todo finish doc block
+	 * @param string $module_id module id to be selected
+	 * @return string code to show the modules in a drop down
 	 */
 	function show_modules() {
 		if (func_num_args()) {
@@ -601,13 +608,13 @@ class Module {
 
 	/**
 	 * delete a module from the system
-	 * 
+	 *
 	 * delete module from database<br/>
 	 * including all references<br/>
 	 * delete all files
-	 * 
-	 * @todo create argument list
-	 * @todo finish doc block
+	 *
+	 * @param array $post_vars Post vars
+	 *
 	 */
 	function delete_module() {
 		if (func_num_args()) {
@@ -642,9 +649,9 @@ class Module {
 
 	/**
 	 * gets module name based on module_id
-	 * 
-	 * @todo create argument list
-	 * @todo finish doc block
+	 *
+	 * @param string $id module id
+	 * @return string module name
 	 */
 	function module_name() {
 		if (func_num_args()) {
@@ -662,9 +669,9 @@ class Module {
 
 	/**
 	 * gets module id based on module_name
-	 * 
-	 * @todo create argument list
-	 * @todo finish doc block
+	 *
+	 * @param string $name module name
+	 * @return string module id
 	 */
 	function module_id() {
 		if (func_num_args()) {
@@ -682,9 +689,9 @@ class Module {
 
 	/**
 	 * gets module id for menu item
-	 * 
-	 * @todo create argument list
-	 * @todo finish doc block
+	 *
+	 * @param string $menu_id Menu ID
+	 * @return string Module ID
 	 */
 	function menu_module_id() {
 		if (func_num_args()) {
@@ -704,9 +711,10 @@ class Module {
 
 	/**
 	 * process module submissions
-	 * 
-	 * @todo create argument list
-	 * @todo finish doc block
+	 *
+	 * @param array $post_vars Post vars
+	 * @param array $post_file Post vars
+	 * @todo fix code to refer to $post_files and not $_FILES
 	 */
 	function process_module() {
 		if (func_num_args()) {
@@ -725,9 +733,10 @@ class Module {
 
 	/**
 	 * for uploading new modules
-	 * 
-	 * @todo create argument list
-	 * @todo finish doc block
+	 *
+	 * @param array $get_vars Get Vars
+	 * @param array $post_vars Post vars
+	 * @param string $module_id Module ID for thhe module to be displayed vars
 	 */
 	function form_module() {
 		if (func_num_args()) {
@@ -809,9 +818,10 @@ class Module {
 
 	/**
 	 * shows the modules required for this module
-	 * 
-	 * @todo create argument list
-	 * @todo finish doc block
+	 *
+	 * @param string $module_id module id
+	 * @return string HTML code for displaying the required modules and their status
+	 * @todo fix the distinction in the code between module name and module id
 	 */
 	function requires() {
 		if (func_num_args()) {
@@ -835,9 +845,10 @@ class Module {
 
 	/**
 	 * shows the dependencies of a module
-	 * 
-	 * @todo create argument list
-	 * @todo finish doc block
+	 *
+	 * @param string $module_id module id
+	 * @return string HTML code for displaying the dependency of module and their status
+	 * @todo fix the distinction in the code between module name and module id
 	 */
 	function depends() {
 		if (func_num_args()) {
@@ -863,19 +874,20 @@ class Module {
 
 
 	/**
-	 * shows the dependencies of a module
-	 * 
-	 * WHAT THIS DOES:
-	 * 1. Reads file uploaded to modules/_uploads
-	 * 2. Uncompresses it and stores it to $contents
-	 * 3. Writes directory modules/$main
+	 * uncompress the unloaded module
+	 *
+	 * <b>WHAT THIS DOES:<b/><br/>
+	 * 1. Reads file uploaded to modules/_uploads<br/>
+	 * 2. Uncompresses it and stores it to $contents<br/>
+	 * 3. Writes directory modules/$main<br/>
 	 * 4. Writes class file into modules/$main
 	 *
-	 * IMPORTANT
+	 * <b>IMPORTANT<b/><br/>
 	 * File must be of format class.<modname>.php.gz
-	 * 
-	 * @todo create argument list
-	 * @todo finish doc block
+	 *
+	 * @param string $file filename
+	 * @return string $id module id
+	 * @todo check the code for incorrect insert query loop
 	 */
 	function uncompress() {
 		$maxfilesize = 250000;
@@ -919,13 +931,14 @@ class Module {
 	// ---------------------- MODULE ACTIVATION METHODS ----------------------
 
 	/**
-	 * @todo create argument list
-	 * @todo finish doc block
+	 * show activation form for modules
+	 *
+	 * @param string $module_id Module ID
+	 * @param array $post_vars Post Vars
+	 *
+	 * @todo describe the logic of the function
 	 */
 	function form_initmodule() {
-	//
-	// activation form for modules
-	//
 		if (func_num_args()) {
 			$this->arg_list = func_get_args();
 			$module_id = $this->arg_list[0];
@@ -960,8 +973,10 @@ class Module {
 	}
 
 	/**
-	 * @todo create argument list
-	 * @todo finish doc block
+	 * get menu id baed on menu action'
+	 *
+	 * @param string $menu_action Menu Action
+	 * @return string $menu_id menu ID
 	 */
 	function get_menu_id() {
 		if (func_num_args()) {
@@ -978,8 +993,10 @@ class Module {
 	}
 
 	/**
-	 * @todo create argument list
-	 * @todo finish doc block
+	 * show error message based on error id
+	 *
+	 * @param string $error_id Error ID
+	 *
 	 */
 	function error_message() {
 		if (func_num_args()) {
@@ -996,14 +1013,15 @@ class Module {
 	}
 
 	/**
-	 * @todo create argument list
-	 * @todo finish doc block
+	 * intialize module
+	 *
+	 * called from menu<br/>
+	 * writes ../modules/_modules.php and ../modules/_menu.php
+	 *
+	 * @param array $post_vars Post Vars
+	 * @todo Describe logic of the function
 	 */
 	function process_initmodule() {
-		//
-		// called from menu
-		// writes ../modules/_modules.php and ../modules/_menu.php
-		//
 		if (func_num_args()>0) {
 			$this->arg_list = func_get_args();
 			$this->post_vars = $this->arg_list[0];
@@ -1088,7 +1106,7 @@ class Module {
 
 	/**
 	 * Checks if the given module is activated
-	 * 
+	 *
 	 * @param string $module_id Module ID
 	 * @return boolean $activated returns if the module is activate or not
 	 */
@@ -1112,8 +1130,9 @@ class Module {
 	}
 
 	/**
-	 * @todo create argument list
-	 * @todo finish doc block
+	 * checks if there are any modules that require activation
+	 *
+	 * @return booleam returns Y if there are any
 	 */
 	function req_activation() {
 		// answers question: are there modules that require activation?
@@ -1135,14 +1154,13 @@ class Module {
 	// ---------------------- MODULE PERMISSIONS METHODS ----------------------
 
 	/**
-	 * @todo create argument list
-	 * @todo finish doc block
+	 * get permission status for modules per user
+	 * @param string $module module id
+	 * @param string $user_id user id
+	 * @return string|0
+	 * @todo fix the return -string/0
 	 */
 	function module_permission_status() {
-	//
-	// get permission status for modules
-	// per user
-	//
 		if (func_num_args()) {
 			$this->arg_list = func_get_args();
 			$module = $this->arg_list[0];
@@ -1161,14 +1179,13 @@ class Module {
 	}
 
 	/**
-	 * @todo create argument list
-	 * @todo finish doc block
+	 * get permission status for menu items per module per user
+	 * @param string $menu_id menu id
+	 * @param string $user_id user id
+	 * @return string|0
+	 * @todo fix the return -string/0
 	 */
 	function menu_permission_status() {
-	//
-	// get permission status for menu items per module
-	// per user
-	//
 		if (func_num_args()) {
 			$this->arg_list = func_get_args();
 			$menu_id = $this->arg_list[0];
@@ -1187,14 +1204,13 @@ class Module {
 	}
 
 	/**
-	 * @todo create argument list
-	 * @todo finish doc block
+	 * get permission status for menu items per location
+	 * @param string $menu_id menu id
+	 * @param string $location_id location id
+	 * @return string|0
+	 * @todo fix the return -string/0
 	 */
 	function location_permission_status() {
-	//
-	// get permission status for menu items per location
-	// per user
-	//
 		if (func_num_args()) {
 			$this->arg_list = func_get_args();
 			$menu_id = $this->arg_list[0];
@@ -1213,8 +1229,11 @@ class Module {
 	}
 
 	/**
-	 * @todo create argument list
-	 * @todo finish doc block
+	 * get permission status for location per module per user
+	 * @param string $location_id menu id
+	 * @param string $user_id location id
+	 * @return string|0
+	 * @todo fix the return -string/0
 	 */
 	function location_user_permission_status() {
 	//
@@ -1239,8 +1258,11 @@ class Module {
 	}
 
 	/**
-	 * @todo create argument list
-	 * @todo finish doc block
+	 * process the permissions for modules
+	 * @todo describe the logic of the function
+	 * @param array $post_vars post vars
+	 * @param array $get_vars get vars
+	 *
 	 */
 	function process_permissions() {
 		if (func_num_args()>0) {
@@ -1307,8 +1329,11 @@ class Module {
 	}
 
 	/**
-	 * @todo create argument list
-	 * @todo finish doc block
+	 * show permission form for users
+	 *
+	 * shows what permissions can be granted at module and menu level
+	 * @param array $post_vars post vars
+	 * @param array $get_vars get vars
 	 */
 	function form_permissions() {
 	//
@@ -1393,14 +1418,12 @@ class Module {
 	}
 
 	/**
-	 * @todo create argument list
-	 * @todo finish doc block
+	 * show permission form for users
+	 * shows what permissions can be granted at location and menu level
+	 * @param array $post_vars post vars
+	 * @param array $get_vars get vars
 	 */
 	function form_locations() {
-	//
-	// shows what permissions can be granted
-	// at module and menu level
-	//
 		if (func_num_args()>0) {
 			$this->arg_list = func_get_args();
 			$this->post_vars = $this->arg_list[0];
@@ -1469,14 +1492,14 @@ class Module {
 	}
 
 	/**
-	 * @todo create argument list
-	 * @todo finish doc block
+	 * Show locations
+	 *
+	 * Show locations in the system and select the location given by location_id. also the code will automatically submit on change
+	 *
+	 * @param string $location_id Location ID
+	 * @return string HTML code to show the location and automatic submission on change
 	 */
 	function show_locations() {
-	//
-	// difference with user::show_locations is the refresh on selection by
-	// onchange; for exclusive use of menu by location
-	//
 		if (func_num_args()) {
 			$this->arg_list = func_get_args();
 			$location_id = $this->arg_list[0];
@@ -1496,14 +1519,14 @@ class Module {
 	}
 
 	/**
-	 * @todo create argument list
-	 * @todo finish doc block
+	 * Show Users
+	 *
+	 * Show Users in the system and select the user given by user_id. also the code will automatically submit on change
+	 *
+	 * @param string $module_user module user
+	 * @return string HTML code to display the users in the system and automatic submission on change
 	 */
 	function show_users() {
-	//
-	// difference with user::show_users is the refresh on selection by
-	// onchange; for exclusive use of module and menu permissions
-	//
 		if (func_num_args()>0) {
 			$this->arg_list = func_get_args();
 			$module_user = $this->arg_list[0];
@@ -1523,8 +1546,11 @@ class Module {
 	}
 
 	/**
-	 * @todo create argument list
-	 * @todo finish doc block
+	 * Show Modules and users permissions for them
+	 * @todo fix the function - $module is never used
+	 * @param string $module Modules
+	 * @param string $module_user Module User
+	 * @return string HTML Code for check boxes with modules and the permissions for the user
 	 */
 	function show_module_selection() {
 		if (func_num_args()) {
@@ -1545,8 +1571,11 @@ class Module {
 	}
 
 	/**
-	 * @todo create argument list
-	 * @todo finish doc block
+	 * Show Menus and permissions for the location to these menus
+	 * @todo fix the function - $menu is never used
+	 * @param string $menu Modules
+	 * @param string $location location for which the permission are to be shown
+	 * @return string HTML Code for check boxes with menus and the permissions for that location
 	 */
 	function show_module_menubylocation_selection() {
 		if (func_num_args()) {
@@ -1567,8 +1596,11 @@ class Module {
 	}
 
 	/**
-	 * @todo create argument list
-	 * @todo finish doc block
+	 * Show locations and permissions for the users to these locations
+	 * @todo fix the function - $location is never used
+	 * @param string $location Location
+	 * @param string $user_id user for which the permission are to be shown
+	 * @return string HTML Code for check boxes with locations and the permissions for the users to those locations
 	 */
 	function show_module_location_selection() {
 		if (func_num_args()) {
@@ -1589,8 +1621,11 @@ class Module {
 	}
 
 	/**
-	 * @todo create argument list
-	 * @todo finish doc block
+	 * Show menus and permissions for the user to these menu
+	 * @todo fix the function - $location is never used
+	 * @param string $menu Menu
+	 * @param string $module_user user for which the permission are to be shown
+	 * @return string HTML Code for check boxes with menu and the permissions for the users to those menus
 	 */
 	function show_module_menu_selection() {
 		if (func_num_args()) {
@@ -1613,13 +1648,12 @@ class Module {
 	// ----------------MODULE SQL FILE PROCESSING METHODS ----------------------
 
 	/**
-	 * @todo create argument list
-	 * @todo finish doc block
+	 * for uploading SQL files for modules
+	 *
+	 * @param array $get_vars get vars
+	 * @param array $post_vars post vars
 	 */
 	function form_module_sql() {
-	//
-	// for uploading SQL files for modules
-	//
 		if (func_num_args()) {
 			$this->arg_list = func_get_args();
 			$get_vars = $this->arg_list[0];
@@ -1644,13 +1678,12 @@ class Module {
 	}
 
 	/**
-	 * @todo create argument list
-	 * @todo finish doc block
+	 * for processing uploaded SQL files for modules
+	 * @param array $post_vars post vars
+	 * @param array $get_vars get vars
+	 * @param array $post_files post files
 	 */
 	function process_module_sql() {
-	//
-	// for processing uploaded SQL files for modules
-	//
 		if (func_num_args()>0) {
 			$this->arg_list = func_get_args();
 			$this->post_vars = $this->arg_list[0];
@@ -1684,8 +1717,12 @@ class Module {
 	// ---------------------- MODULE MENU SYSTEM METHODS ----------------------
 
 	/**
-	 * @todo create argument list
-	 * @todo finish doc block
+	 * checks if the page is in the menu
+	 *
+	 * looks for $page in menu array called from index.php
+	 * @param string $page Page
+	 * @param array $menu Menu array
+	 * @return boolean true if found
 	 */
 	function in_menu() {
 	//
@@ -1707,9 +1744,9 @@ class Module {
 	}
 
 	/**
-	 * 
+	 * Default action for the page
 	 * @param string $page page name
-	 * @todo finish doc block
+	 * @return boolean true if user has access to the page
 	 */
 	function default_action() {
 		if (func_num_args()>0) {
@@ -1742,8 +1779,11 @@ class Module {
 	}
 
 	/**
-	 * @todo create argument list
-	 * @todo finish doc block
+	 * Process Order
+	 * 
+	 * Process the reordering of the menus
+	 * @param array $post_vars post vars
+	 * @param array $get_vars get vars
 	 */
 	function process_order() {
 	//
@@ -1807,13 +1847,12 @@ class Module {
 	}
 
 	/**
-	 * @todo create argument list
-	 * @todo finish doc block
+	 * Reorder menu
+	 *
+	 * @param array $post_vars post vars
+	 * @param array $get_vars get vars
 	 */
 	function form_menuorder() {
-	//
-	// reorder menu through this
-	//
 		if (func_num_args()>0) {
 			$this->arg_list = func_get_args();
 			$this->post_vars = $this->arg_list[0];
@@ -1848,14 +1887,13 @@ class Module {
 	// ---------------------- MODULE MISCELLANEOUS METHODS --------------------
 
 	/**
-	 * @todo create argument list
-	 * @todo finish doc block
+	 * Check Missing Dependencies
+	 *
+	 * does this require any module? if yes and missing, return false
+	 * @param string $module_name Module name
+	 * @return boolean
 	 */
 	function missing_dependencies() {
-	//
-	// answers query: does this require any module?
-	// if yes and missing, return false
-	//
 		if (func_num_args()>0) {
 			$this->arg_list = func_get_args();
 			$module_name = $this->arg_list[0];
@@ -1883,9 +1921,9 @@ class Module {
 
 	/**
 	 * Convert list in two columns table
-	 * 
+	 *
 	 * convert vertical list of array elements into two column table
-	 * 
+	 *
 	 * @param array $list list of elements
 	 * @return string $retval html for displaying elements in two column
 	 */
@@ -1915,12 +1953,15 @@ class Module {
 	}
 
 	/**
-	 * @todo create argument list
-	 * @todo finish doc block
+	 * String Fraction
+	 * 
+	 * prevents long text running off when displaying table contents
+	 *
+	 * @param string $string
+	 * @param int $strlen
+	 * @return string
 	 */
 	function strfraction() {
-	// prevents long text running off
-	// when displaying table contents
 		if (func_num_args()>0) {
 			$this->arg_list = func_get_args();
 			$string = $this->arg_list[0];
@@ -1940,21 +1981,22 @@ class Module {
 
 
 	/**
-	 * @todo create argument list
-	 * @todo finish doc block
+	 * Parse XML
+	 * used in reading xml configuration files
+	 * @param array $mvalues
+	 * @return array
 	 */
 	function parsexml($mvalues) {
-	//
-	// used in reading xml configuration files
-	//
 		for ($i=0; $i < count($mvalues); $i++)
 			$node[$mvalues[$i]["tag"]] = $mvalues[$i]["value"];
 		return ($node);
 	}
 
 	/**
-	 * @todo create argument list
-	 * @todo finish doc block
+	 * read the xml database
+	 * @param string $filename Filename
+	 * @param string $xmltag xmlTag to be read
+	 * @return string
 	 */
 	function readconfig() {
 	// read the xml database
@@ -1990,11 +2032,11 @@ class Module {
 
 	/**
 	 * to compute similarity between two terms
-	 * 
+	 *
 	 * @todo check validity of the function. This function will always return zero
-	 * @param string $var1 
-	 * @param string $var2 
-	 * @param float $var3 
+	 * @param string $var1
+	 * @param string $var2
+	 * @param float $var3
 	 * @return float $ref
 	 */
 	function compute_similarity () {
@@ -2016,8 +2058,10 @@ class Module {
 	}
 
 	/**
-	 * @todo create argument list
-	 * @todo finish doc block
+	 * Show Military Time
+	 * 
+	 * @param string $injury_time selected injury time
+	 * @return string HTML Code gor showing a drop down list of times
 	 */
 	function show_military_time() {
 		if (func_num_args()>0) {
@@ -2046,8 +2090,11 @@ class Module {
 	}
 
 	/**
-	 * @todo create argument list
-	 * @todo finish doc block
+	 * Pad Zeros
+	 * 
+	 * Pads zeros to a left of a string
+	 * @param string $input_string String
+	 * @param int $pad_length length of the 
 	 */
 	function pad_zero() {
 		if (func_num_args()>0) {
@@ -2059,14 +2106,12 @@ class Module {
 	}
 
 	/**
-	 * @todo create argument list
-	 * @todo finish doc block
+	 * check directory permissions
+	 *
+	 * checks whether main writable directories exist and are writable
+	 * @todo check multiple returns in the end
 	 */
 	function directory_permissions () {
-	//
-	// checks whether main writable directories exist and are writable
-	//
-
 		// check dump tree
 		$error_message = "";
 		if (is_dir("../dump")) {
