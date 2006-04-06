@@ -1,37 +1,59 @@
 <?
+
+
+/**
+ * Patient Module
+ * 
+ * @package module 
+ */
+
+/**
+ * Patient Class
+ *
+ * <b>VERSION HISTORY</b><br/>
+ * 0.4 installed foreign key constraints<br/>
+ * 0.41 fixed patient update bug with gender<br/>
+ * 0.42 included uniquid for cross-healthcenter migration<br/>
+ * 0.43 bug fixes
+ *  
+ * @package module
+ * @author Herman Tolentino,MD <herman.tolentino@gmail.com>
+ * @version 1.09
+ * @copyright Copyright 2002, Herman Tolentino,MD
+ */
 class patient extends module{
 
-    // Author: Herman Tolentino MD
-    // CHITS Project 2004
+	/**
+	 * Patient Class Constructor
+	 *
+	 * Creates the patient class and sets the author name and version
+	 *
+	 * @return module instance of module class
+	 */
+	function patient() {
+		$this->author = 'Herman Tolentino MD';
+		$this->version = "0.42-".date("Y-m-d");
+		$this->module = "patient";
+		$this->description = "CHITS Module - Patient";
+	}
 
-    function patient() {
-        //
-        // do not forget to update version
-        //
-        $this->author = 'Herman Tolentino MD';
-        $this->version = "0.43-".date("Y-m-d");
-        $this->module = "patient";
-        $this->description = "CHITS Module - Patient";
-        // 0.4 installed foreign key constraints
-        // 0.41 fixed patient update bug with gender
-        // 0.42 included uniquid for cross-healthcenter migration
-        // 0.43 bug fixes
-    }
+	// --------------- STANDARD MODULE FUNCTIONS ------------------
 
-    // --------------- STANDARD MODULE FUNCTIONS ------------------
-
-    function init_deps() {
-    //
-    // insert dependencies in module_dependencies
-    //
+	/**
+	 * Initilize Dependencies
+	 * 
+	 * Insert dependencies in module_dependencies
+	 */
+	function init_deps() {
         module::set_dep($this->module, "module");
-    }
+	}
 
-    function init_lang() {
-    //
-    // insert necessary language directives
-    // NOTES:
-    //
+	/**
+	 * Initilize Language
+	 * 
+	 * insert necessary language directives
+	 */
+	function init_lang() {
         module::set_lang("THEAD_NAME", "english", "NAME", "Y");
         module::set_lang("THEAD_DESCRIPTION", "english", "DESCRIPTION", "Y");
         module::set_lang("FTITLE_PATIENTS", "english", "PATIENTS", "Y");
@@ -54,15 +76,22 @@ class patient extends module{
         module::set_lang("LBL_REGISTERED_BY", "english", "REGISTERED BY", "Y");
         module::set_lang("LBL_MOTHERS_NAME", "english", "MOTHER\'S MAIDEN NAME", "Y");
         module::set_lang("INSTR_LOAD_PATIENT_RECORD", "english", "LOAD PATIENT RECORD", "Y");
-        module::set_lang("FTITLE_PATIENT_MODULE", "english", "PATIENT MODULE FORM", "Y");
-        module::set_lang("LBL_PATIENT_MODULE", "english", "PATIENT MODULE", "Y");
+        module::set_lang("INSTR_CLICK_PATIENT_NAME_TO_EDIT", "english", "CLICK ON PATIENT NAME TO EDIT DATA", "Y");
+        module::set_lang("ERR_NO_MODULES_LOADED", "english", "No modules loaded.", "Y");
+	}
 
-    }
+	/**
+	 * Initialize Help
+	 */
+	function init_help() {
+	}
 
-    function init_help() {
-    }
-
-    function init_menu() {
+	/**
+	 * Initilize Menu
+	 * 
+	 * Sets Menu Entried and detail
+	 */
+	function init_menu() {
         if (func_num_args()>0) {
             $arg_list = func_get_args();
         }
@@ -76,14 +105,17 @@ class patient extends module{
         // put in more details
         module::set_detail($this->description, $this->version, $this->author, $this->module);
 
-    }
+	}
 
-    function init_sql() {
+	/**
+	 * Initilize SQL
+	 */
+	function init_sql() {
         if (func_num_args()>0) {
-            $arg_list = func_get_args();
-        }
+			$arg_list = func_get_args();
+		}
 
-        // this is not auto_increment
+		// this is not auto_increment
         module::execsql("CREATE TABLE `m_patient` (".
             "`patient_id` float NOT NULL auto_increment,".
             "`healthcenter_id` int(11) NOT NULL default '0',".
@@ -111,19 +143,32 @@ class patient extends module{
                "PRIMARY KEY  (`module_id`), ".
                "CONSTRAINT `fkey_m_patient_modules_module` FOREIGN KEY (`module_id`) REFERENCES `modules` (`module_id`) ON DELETE CASCADE".
                ") TYPE=InnoDB;");
-    }
+	}
 
-    function drop_tables() {
+	/**
+	 * Drop Tables
+	 */
+	function drop_tables() {
 
         module::execsql("SET foreign_key_checks=0;");
         module::execsql("DROP TABLE `m_patient`;");
         module::execsql("DROP TABLE `m_patient_modules`;");
         module::execsql("SET foreign_key_checks=1;");
-    }
+	}
 
-    // --------------- CUSTOM MODULE FUNCTIONS ------------------
+	// --------------- CUSTOM MODULE FUNCTIONS ------------------
 
-    function menu_modules() {
+	/**
+	 * Menu Modules
+	 * 
+	 * @param string $menu_id
+	 * @param array $past_vars
+	 * @param array $get_vars
+	 * @param boolean $validuser
+	 * @param booleam $isadmin
+	 * @todo Explain what this function does
+	 */
+	function menu_modules() {
         if (func_num_args()) {
             $arg_list = func_get_args();
             $menu_id = $arg_list[0];
@@ -146,9 +191,17 @@ class patient extends module{
                 print "</td></tr></table>";
             }
         }
-    }
+	}
 
-    function form_selectmodule() {
+	/**
+	 * Form for Select Module
+	 * 
+	 * Creates form for Select module function
+	 * @param string $menu_id
+	 * @param array $post_vars
+	 * @param array $get_vars 
+	 */
+	function form_selectmodule() {
         if (func_num_args()>0) {
             $arg_list = func_get_args();
             $menu_id = $arg_list[0];
@@ -159,13 +212,13 @@ class patient extends module{
         print "<table width='300'>";
         print "<form action = '".$_SERVER["SELF"]."?page=".$get_vars["page"]."&menu_id=$menu_id' name='form_module' method='post'>";
         print "<tr valign='top'><td>";
-        print "<span class='module'>".FTITLE_PATIENT_MODULE."</span><br/><br/>";
+        print "<span class='module'>".FTITLE_CONSULT_MODULE."</span><br/><br/>";
         print "</td></tr>";
         print "<tr valign='top'><td>";
         print "<b>NOTE: You are adding a sub-module to the patient module. Please read instructions for module integration.</b><br/><br/>";
         print "</td></tr>";
         print "<tr valign='top'><td>";
-        print "<span class='boxtitle'>".LBL_PATIENT_MODULE."</span><br> ";
+        print "<span class='boxtitle'>".LBL_CONSULT_MODULE."</span><br> ";
         print module::show_modules($module["module_id"]?$module["module_id"]:$post_vars["module"]);
         print "<br/><br/></td></tr>";
         print "<tr><td>";
@@ -173,9 +226,20 @@ class patient extends module{
         print "</td></tr>";
         print "</form>";
         print "</table><br>";
-    }
+	}
 
-    function process_module() {
+	/**
+	 * Process Module
+	 * 
+	 * Process the module action for the patient submodules
+	 * 
+	 * @param string $menu_id
+	 * @param array $past_vars
+	 * @param array $get_vars
+	 * @param boolean $validuser
+	 * @param booleam $isadmin
+	 */
+	function process_module() {
         if (func_num_args()>0) {
             $arg_list = func_get_args();
             $menu_id = $arg_list[0];
@@ -198,25 +262,35 @@ class patient extends module{
             }
             break;
         }
-    }
+	}
 
-    function display_modules() {
-        if (func_num_args()) {
-            $arg_list = func_get_args();
-            $menu_id = $arg_list[0];
-            $post_vars = $arg_list[1];
-            $get_vars = $arg_list[2];
-            $validuser = $arg_list[3];
-            $isadmin = $arg_list[4];
-        }
-        print "<table width='620'>";
-        print "<tr valign='top'><td colspan='3'>";
-        print "<span class='module'>".FTITLE_LOADED_PATIENT_MODULES."</span><br><br>";
-        print "</td></tr>";
-        print "<tr valign='top'><td colspan='4'>";
-        print "<b>Click on module name to see details (and source code).</b><br><br>";
-        print "</td></tr>";
-        print "<tr valign='top'><td><b>ID</b></td><td><b>NAME</b></td><td><b>INIT STATUS</b></td><td><b>VERSION</b></td><td><b>DESCRIPTION</b></td></tr>";
+	/**
+	 * Display Modules
+	 * 
+	 * Display the submodules loaded for patient
+	 * @param string $menu_id
+	 * @param array $past_vars
+	 * @param array $get_vars
+	 * @param boolean $validuser
+	 * @param booleam $isadmin
+	 */
+	function display_modules() {
+		if (func_num_args()) {
+			$arg_list = func_get_args();
+			$menu_id = $arg_list[0];
+			$post_vars = $arg_list[1];
+			$get_vars = $arg_list[2];
+			$validuser = $arg_list[3];
+			$isadmin = $arg_list[4];
+		}
+		print "<table width='620'>";
+		print "<tr valign='top'><td colspan='3'>";
+		print "<span class='module'>".FTITLE_LOADED_PATIENT_MODULES."</span><br><br>";
+		print "</td></tr>";
+		print "<tr valign='top'><td colspan='4'>";
+		print "<b>Click on module name to see details (and source code).</b><br><br>";
+		print "</td></tr>";
+		print "<tr valign='top'><td><b>ID</b></td><td><b>NAME</b></td><td><b>INIT STATUS</b></td><td><b>VERSION</b></td><td><b>DESCRIPTION</b></td></tr>";
         $sql = "select p.module_id, m.module_name, m.module_init, m.module_version, m.module_desc ".
                "from modules m, m_patient_modules p ".
                "where m.module_id = p.module_id order by m.module_name";
@@ -224,17 +298,27 @@ class patient extends module{
             if (mysql_num_rows($result)) {
                 while (list($id, $name, $init, $version, $desc) = mysql_fetch_array($result)) {
                     print "<tr class='tinylight' valign='top'><td>$id</td><td><a href='".$_SERVER["SELF"]."?page=MODULES&module_id=$id'>$name</a></td><td>".($init=="N"?"No <a href='".$_SERVER["PHP_SELF"]."?page=MODULES&method=INIT'>[<b>activate</b>]</a>":"Yes")."</td><td>$version</td><td>".($desc?"$desc":"<font color='red'>empty</font>")."</td></tr>";
-                }
-            } else {
-                print "<tr valign='top'><td colspan='4'>";
-                print "<font color='red'>No modules loaded.</font><br>";
-                print "</td></tr>";
-            }
-        }
-        print "</table><br>";
-    }
+				}
+			} else {
+				print "<tr valign='top'><td colspan='4'>";
+				print "<font color='red'>".ERR_NO_MODULES_LOADED."</font><br>";
+				print "</td></tr>";
+			}
+		}
+		print "</table><br>";
+	}
 
-    function _patient() {
+	/**
+	 * Main Patient Module
+	 * 
+	 * Module is called when clicked on Records for Patients
+	 * @param string $menu_id
+	 * @param array $past_vars
+	 * @param array $get_vars
+	 * @param boolean $validuser
+	 * @param booleam $isadmin
+	 */
+	 function _patient() {
         if (func_num_args()>0) {
             $arg_list = func_get_args();
             $menu_id = $arg_list[0];
@@ -265,12 +349,22 @@ class patient extends module{
         print "</td><td>";
         patient::form_patient($menu_id, $post_vars, $get_vars);
         print "</td></tr></table>";
-    }
+	}
 
-    function patient_info() {
-    //
-    // patients registered today
-    //
+	/**
+	 * Show Patient Info
+	 * 
+	 * Show information about the patients registered today
+	 * @param string $menu_id
+	 * @param array $past_vars
+	 * @param array $get_vars
+	 * @param boolean $validuser
+	 * @param booleam $isadmin
+	 */
+	function patient_info() {
+		//
+		// patients registered today
+		//
         if (func_num_args()>0) {
             $arg_list = func_get_args();
             $menu_id = $arg_list[0];
@@ -287,7 +381,7 @@ class patient extends module{
             print "<tr><td>";
             print "<font color='red'><b>".FTITLE_REGISTERED_TODAY."</b></font><br>";
             if (mysql_num_rows($result)) {
-                print "<span class='tinylight'>CLICK ON PATIENT NAME TO EDIT DATA</span><br/>";
+                print "<span class='tinylight'>".INSTR_CLICK_PATIENT_NAME_TO_EDIT."</span><br/>";
                 $i=0;
                 while (list($pid, $plast, $pfirst, $pdob, $pgender, $p_age) = mysql_fetch_array($result)) {
                     $patient_array[$i] .= "<a href='".$_SERVER["PHP_SELF"]."?page=PATIENTS&menu_id=$menu_id&patient_id=$pid#ptform'><b>$plast, $pfirst</b></a> [$p_age/$pgender] $pdob";
@@ -310,11 +404,21 @@ class patient extends module{
                 print "No patients registered today.";
             }
             print "</td></tr>";
-            print "</table>";
-        }
-    }
+			print "</table>";
+		}
+	}
 
-    function process_search() {
+	/**
+	 * Process Search
+	 * 
+	 * process the search paramaters and show the found patients
+	 * @param string $menu_id
+	 * @param array $past_vars
+	 * @param array $get_vars
+	 * @param boolean $validuser
+	 * @param booleam $isadmin
+	 */
+	function process_search() {
         if (func_num_args()>0) {
             $arg_list = func_get_args();
             $menu_id = $arg_list[0];
@@ -350,13 +454,23 @@ class patient extends module{
                     print "</form>";
                     print "</table><br/>";
                 } else {
-                    print "<b><font color='red'>NO RECORDS FOUND.</a></font></b><br><br>";
+                    print "<b><font color='red'>NO RECORDS FOUND.</font></b><br><br>";
                 }
             }
-        }
-    }
+		}
+	}
 
-    function process_patient() {
+	/**
+	 * Process Patient
+	 * 
+	 * Process the operation being performed on the patient information
+	 * @param string $menu_id
+	 * @param array $past_vars
+	 * @param array $get_vars
+	 * @param boolean $validuser
+	 * @param booleam $isadmin
+	 */
+	function process_patient() {
         if (func_num_args()>0) {
             $arg_list = func_get_args();
             $menu_id = $arg_list[0];
@@ -415,38 +529,54 @@ class patient extends module{
             break;
         }
 
-    }
+	}
 
+	/**
+	 * Show Search form for Patient
+	 * 
+	 * @param string $menu_id
+	 * @param array $past_vars
+	 * @param array $get_vars
+	 * @todo rename the function correctly according to naming conventions
+	 */
     function newsearch () {
         if (func_num_args()>0) {
             $arg_list = func_get_args();
             $menu_id = $arg_list[0];
-            $post_vars = $arg_list[1];
-            $get_vars = $arg_list[2];
-        }
-        print "<table width='300'>";
-        print "<form action = '".$_SERVER["PHP_SELF"]."?page=".$get_vars["page"]."&menu_id=$menu_id' name='form_search' method='post'>";
-        print "<tr valign='top'><td>";
-        print "<font color='#666699' size='5'><b>".FTITLE_OLD_PATIENT."</b></font><br>";
-        print "</td></tr>";
-        print "<tr valign='top'><td>";
-        print "<b>Note: Use this form for patients who have visited the center already. <br><br>";
-        print "</td></tr>";
-        print "<tr valign='top'><td>";
-        print "<span class='boxtitle'>".LBL_FIRST_NAME."</span><br> ";
-        print "<input type='text' class='textbox' name='first' style='border: 1px solid #000000'><br>";
-        print "</td></tr>";
-        print "<tr valign='top'><td>";
-        print "<span class='boxtitle'>".LBL_LAST_NAME."</span><br> ";
-        print "<input type='text' class='textbox' name='last' style='border: 1px solid #000000'><br>";
-        print "</td></tr>";
-        print "<tr><td>";
-        print "<br><input type='submit' value = 'Search' class='textbox' name='submitsearch' style='border: 1px solid #000000'><br>";
-        print "</td></tr>";
-        print "</form>";
-        print "</table><br>";
-    }
+			$post_vars = $arg_list[1];
+			$get_vars = $arg_list[2];
+		}
+		print "<table width='300'>";
+		print "<form action = '".$_SERVER["PHP_SELF"]."?page=".$get_vars["page"]."&menu_id=$menu_id' name='form_search' method='post'>";
+		print "<tr valign='top'><td>";
+		print "<font color='#666699' size='5'><b>".FTITLE_OLD_PATIENT."</b></font><br>";
+		print "</td></tr>";
+		print "<tr valign='top'><td>";
+		print "<b>Note: Use this form for patients who have visited the center already. <br><br>";
+		print "</td></tr>";
+		print "<tr valign='top'><td>";
+		print "<span class='boxtitle'>".LBL_FIRST_NAME."</span><br> ";
+		print "<input type='text' class='textbox' name='first' style='border: 1px solid #000000'><br>";
+		print "</td></tr>";
+		print "<tr valign='top'><td>";
+		print "<span class='boxtitle'>".LBL_LAST_NAME."</span><br> ";
+		print "<input type='text' class='textbox' name='last' style='border: 1px solid #000000'><br>";
+		print "</td></tr>";
+		print "<tr><td>";
+		print "<br><input type='submit' value = 'Search' class='textbox' name='submitsearch' style='border: 1px solid #000000'><br>";
+		print "</td></tr>";
+		print "</form>";
+		print "</table><br>";
+	}
 
+	/**
+	 * Show Patient Form 
+	 * 
+	 * Show form for adding or updating patient
+	 * @param string $menu_id
+	 * @param array $past_vars
+	 * @param array $get_vars
+	 */
     function form_patient () {
         if (func_num_args()>0) {
             $arg_list = func_get_args();
@@ -466,27 +596,27 @@ class patient extends module{
             }
         }
         print "<a name='ptform'>";
-        print "<table width='300'>";
-        print "<form action = '".$_SERVER["SELF"]."?page=".$get_vars["page"]."&menu_id=$menu_id' name='form_patient' method='post'>";
-        if ($get_vars["patient_id"]) {
-            print "<tr valign='top'><td>";
-            print "<font color='#99CC00' size='5'><b>".FTITLE_EDIT_PATIENT."</b></font>";
-            print "</td></tr>";
-        } else {
-            print "<tr valign='top'><td>";
-            print "<font color='#99CC00' size='5'><b>".FTITLE_NEW_PATIENT."</b></font>";
-            print "</td></tr>";
-            print "<tr valign='top'><td>";
-            print "<b>NOTE: This form is for new patients.</b><br><br>";
-            print "</td></tr>";
-        }
-        if ($get_vars["patient_id"]) {
-            print "<tr valign='top'><td>";
-            print "<span class='boxtitle'>".LBL_REGISTRATION_DATE."</span><br> ";
-            print $patient["registration_date"]."<br/>";
-            print "</td></tr>";
-            print "<tr valign='top'><td>";
-            print "<span class='boxtitle'>".LBL_REGISTERED_BY."</span><br> ";
+		print "<table width='300'>";
+		print "<form action = '".$_SERVER["SELF"]."?page=".$get_vars["page"]."&menu_id=$menu_id' name='form_patient' method='post'>";
+		if ($get_vars["patient_id"]) {
+			print "<tr valign='top'><td>";
+			print "<font color='#99CC00' size='5'><b>".FTITLE_EDIT_PATIENT."</b></font>";
+			print "</td></tr>";
+		} else {
+			print "<tr valign='top'><td>";
+			print "<font color='#99CC00' size='5'><b>".FTITLE_NEW_PATIENT."</b></font>";
+			print "</td></tr>";
+			print "<tr valign='top'><td>";
+			print "<b>NOTE: This form is for new patients.</b><br><br>";
+			print "</td></tr>";
+		}
+		if ($get_vars["patient_id"]) {
+			print "<tr valign='top'><td>";
+			print "<span class='boxtitle'>".LBL_REGISTRATION_DATE."</span><br> ";
+			print $patient["registration_date"]."<br/>";
+			print "</td></tr>";
+			print "<tr valign='top'><td>";
+			print "<span class='boxtitle'>".LBL_REGISTERED_BY."</span><br> ";
             print user::get_username($patient["user_id"])."<br/>";
             print "</td></tr>";
         }
@@ -544,26 +674,41 @@ class patient extends module{
         print "</td></tr>";
         print "</form>";
         print "</table><br>";
-    }
+	}
 
-    function _patient_modules() {
+	/**
+	 * Process the submodules
+	 * 
+	 * @param string $menu_id
+	 * @param array $past_vars
+	 * @param array $get_vars
+	 * @param boolean $validuser
+	 * @param booleam $isadmin
+	 */
+	function _patient_modules() {
         if (func_num_args()>0) {
-            $arg_list = func_get_args();
-            $menu_id = $arg_list[0];
-            $post_vars = $arg_list[1];
-            $get_vars = $arg_list[2];
-            $validuser = $arg_list[3];
-            $isadmin = $arg_list[4];
-            //print_r($arg_list);
-        }
-        if ($post_vars["submitmodule"]) {
-            $this->process_module($menu_id, $post_vars, $get_vars);
-        }
-        $this->display_modules($menu_id, $post_vars, $get_vars);
-        $this->form_selectmodule($menu_id, $post_vars, $get_vars);
-    }
+			$arg_list = func_get_args();
+			$menu_id = $arg_list[0];
+			$post_vars = $arg_list[1];
+			$get_vars = $arg_list[2];
+			$validuser = $arg_list[3];
+			$isadmin = $arg_list[4];
+			//print_r($arg_list);
+		}
+		if ($post_vars["submitmodule"]) {
+			$this->process_module($menu_id, $post_vars, $get_vars);
+		}
+		$this->display_modules($menu_id, $post_vars, $get_vars);
+		$this->form_selectmodule($menu_id, $post_vars, $get_vars);
+	}
 
-    function is_adolescent() {
+	/**
+	 * Is Patient Adolescent
+	 * @param int $age
+	 * @return boolean true if the patient is adolescent
+	 * @static
+	 */
+	function is_adolescent() {
         if (func_num_args()>0) {
             $arg_list = func_get_args();
             $age = $arg_list[0];
@@ -573,12 +718,24 @@ class patient extends module{
         } else {
             return false;
         }
-    }
+	}
 
-    function is_reproductive_age() {
-    }
+	/**
+	 * Is reproductive age
+	 * @todo finish the function
+	 */
+	function is_reproductive_age() {
+	}
 
-    function get_gender() {
+	/**
+	 * Get Gender of a patient
+	 * 
+	 * @static
+	 * @param string $patient_id
+	 * @return string Gender of the patient
+	 * @todo fix to return in case patient is not found
+	 */
+	function get_gender() {
         if (func_num_args()>0) {
             $arg_list = func_get_args();
             $patient_id = $arg_list[0];
@@ -587,12 +744,19 @@ class patient extends module{
         if ($result = mysql_query($sql)) {
             if (mysql_num_rows($result)) {
                 list($gender) = mysql_fetch_array($result);
-                return $gender;
-            }
-        }
-    }
+				return $gender;
+			}
+		}
+	}
 
-    function get_age() {
+	/**
+	 * Get Age
+	 * @static 
+	 * @param string $patient_id
+	 * @return int age of the patient
+	 * @todo fix return if patient is not found
+	 */
+	function get_age() {
         if (func_num_args()>0) {
             $arg_list = func_get_args();
             $patient_id = $arg_list[0];
@@ -601,12 +765,20 @@ class patient extends module{
         if ($result = mysql_query($sql)) {
             if (mysql_num_rows($result)) {
                 list($age) = mysql_fetch_array($result);
-                return $age;
-            }
-        }
-    }
+				return $age;
+			}
+		}
+	}
 
-    function get_name() {
+	/**
+	 * Get Name
+	 * 
+	 * @static
+	 * @param string $patient_id
+	 * @return string $name
+	 * @todo fix return if patient is not found
+	 */
+	function get_name() {
         if (func_num_args()>0) {
             $arg_list = func_get_args();
             $patient_id = $arg_list[0];
@@ -615,12 +787,19 @@ class patient extends module{
         if ($result = mysql_query($sql)) {
             if (mysql_num_rows($result)) {
                 list($name) = mysql_fetch_array($result);
-                return $name;
-            }
-        }
-    }
+				return $name;
+			}
+		}
+	}
 
-    function get_dob() {
+	/**
+	 * Get Date of Birth
+	 * @param string $patient_id
+	 * @return string $dob
+	 * @static
+	 * @todo fix return if patient is not found
+	 */
+	function get_dob() {
         if (func_num_args()>0) {
             $arg_list = func_get_args();
             $patient_id = $arg_list[0];
@@ -629,49 +808,58 @@ class patient extends module{
         if ($result = mysql_query($sql)) {
             if (mysql_num_rows($result)) {
                 list($dob) = mysql_fetch_array($result);
-                return $dob;
-            }
-        }
-    }
+				return $dob;
+			}
+		}
+	}
 
-    // SIMILARITIES AND DUPLICATES
+	// SIMILARITIES AND DUPLICATES
 
-    function get_duplicates() {
+	/**
+	 * Get Duplicates
+	 * 
+	 * @static
+	 * @param array $post_vars
+	 * @param int $threshold 
+	 * @return int
+	 * @todo since compute similarity in module will always return zero this function will always return zero
+	 */
+	function get_duplicates() {
         if (func_num_args()>0) {
-            $arg_list = func_get_args();
-            $post_vars = $arg_list[0];
-            $threshold = $arg_list[1]; // percent
-            //print_r($post_vars);
-        }
-    //
-    // uses compute_similarity (string1, string2, threshold_percent)
-    //
-        if ($post_vars["patient_firstname"]) {
-            $fields .= "lower(patient_firstname),";
-            $test_string .= strtolower($post_vars["patient_firstname"]);
-        }
-        if ($post_vars["patient_middle"]) {
-            $fields .= "lower(patient_middle),";
-            $test_string .= strtolower($post_vars["patient_middle"]);
-        }
-        if ($post_vars["patient_lastname"]) {
-            $fields .= "lower(patient_lastname),";
-            $test_string .= strtolower($post_vars["patient_lastname"]);
-        }
-        // this is different because date representations
-        // are different for form and database
-        if ($post_vars["conv_dob"]) {
-            $fields .= "patient_dob,";
-            $test_string .= $post_vars["conv_dob"];
-        }
-        if ($post_vars["patient_gender"]) {
-            $fields .= "patient_gender,";
-            $test_string .= $post_vars["patient_gender"];
-        }
-        if ($post_vars["patient_mother"]) {
-            $fields .= "lower(patient_mother),";
-            $test_string .= strtolower($post_vars["patient_mother"]);
-        }
+			$arg_list = func_get_args();
+			$post_vars = $arg_list[0];
+			$threshold = $arg_list[1]; // percent
+			//print_r($post_vars);
+		}
+		//
+		// uses compute_similarity (string1, string2, threshold_percent)
+		//
+		if ($post_vars["patient_firstname"]) {
+			$fields .= "lower(patient_firstname),";
+			$test_string .= strtolower($post_vars["patient_firstname"]);
+		}
+		if ($post_vars["patient_middle"]) {
+			$fields .= "lower(patient_middle),";
+			$test_string .= strtolower($post_vars["patient_middle"]);
+		}
+		if ($post_vars["patient_lastname"]) {
+			$fields .= "lower(patient_lastname),";
+			$test_string .= strtolower($post_vars["patient_lastname"]);
+		}
+		// this is different because date representations
+		// are different for form and database
+		if ($post_vars["conv_dob"]) {
+			$fields .= "patient_dob,";
+			$test_string .= $post_vars["conv_dob"];
+		}
+		if ($post_vars["patient_gender"]) {
+			$fields .= "patient_gender,";
+			$test_string .= $post_vars["patient_gender"];
+		}
+		if ($post_vars["patient_mother"]) {
+			$fields .= "lower(patient_mother),";
+			$test_string .= strtolower($post_vars["patient_mother"]);
+		}
         $fields = "concat(".substr($fields,0,strlen($fields)-1).") ";
         $sql_index = "select patient_id, $fields ".
                      "from m_patient order by registration_date desc";
@@ -684,8 +872,75 @@ class patient extends module{
                     }
                 }
 
-            }
-        }
-    }
+			}
+		}
+	}
+}
+
+/**
+ * Patient Object Class
+ * 
+ * this is the patient object and a replica of the database of the patient
+ * @author Aditya Naik <aditya@adityanaik.com>
+ * @version 0.1
+ */
+class patient_object {
+	/**
+	 * Patient ID
+	 * @var float
+	 */
+	var $patient_id;
+	/**
+	 * HealthCenter ID
+	 * @var integer
+	 */
+	var $healthcenter_id;
+	/**
+	 * User ID
+	 * @var float
+	 */
+	var $user_id;
+	/**
+	 * Last Name
+	 * @var string
+	 */
+	var $patient_lastname;
+	/**
+	 * First Name
+	 * @var string
+	 */
+	var $patient_firstname;
+	/**
+	 * Middle Name
+	 * @var string
+	 */
+	var $patient_middle;
+	/**
+	 * Date of Birth
+	 * @var date
+	 */
+	var $patient_dob;
+	/**
+	 * Patient's Mother name
+	 * @var string
+	 */
+	var $patient_mother;
+	/**
+	 * Registration Date
+	 * @var datetime
+	 */
+	var $registration_date;
+	/**
+	 * Gender
+	 * @var char M: Male, F: Female
+	 */
+	var $patient_gender;
+	
+	function patient(){
+	}
+	
+	function getDOB(){
+	}
+	
 }
 ?>
