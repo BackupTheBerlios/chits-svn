@@ -15,6 +15,7 @@
  * 0.41 fixed patient update bug with gender<br/>
  * 0.42 included uniquid for cross-healthcenter migration<br/>
  * 0.43 bug fixes
+ * 0.44 Added Documentation
  *  
  * @package module
  * @author Herman Tolentino,MD <herman.tolentino@gmail.com>
