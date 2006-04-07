@@ -19,8 +19,8 @@
  *  
  * @package module
  * @author Herman Tolentino,MD <herman.tolentino@gmail.com>
- * @version 1.09
- * @copyright Copyright 2002, Herman Tolentino,MD
+ * @version 0.44
+ * @copyright Copyright 2006, Herman Tolentino,MD
  */
 class patient extends module{
 
@@ -33,7 +33,7 @@ class patient extends module{
 	 */
 	function patient() {
 		$this->author = 'Herman Tolentino MD';
-		$this->version = "0.42-".date("Y-m-d");
+		$this->version = "0.44-".date("Y-m-d");
 		$this->module = "patient";
 		$this->description = "CHITS Module - Patient";
 	}
