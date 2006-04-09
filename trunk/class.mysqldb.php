@@ -1,26 +1,56 @@
 <?
+/**
+ * contains the mysqldb class
+ *
+ * @package game
+ */
+
+/**
+ * MYSQLDB Class
+ *
+ * GAME Project 2004<br/>
+ * Generic Architecture for Modular Enterprise
+ * 
+ * <b>Version History</b><br/>
+ * 0.3 modified system table creation process<br/>
+ * 0.4 added mysql_version()<br/>
+ * 0.5 added table creation information<br/>
+ * 0.6 Added by Aditya Naik<br/>
+ *     - Changed the connectdb function to also check if the tables exists. if not then create the tables also.
+ *     - Added Documentation  
+ * 
+ * @package game
+ * @author Herman Tolentino,MD <herman.tolentino@gmail.com>
+ * @version 0.6
+ * @copyright Copyright 2006, Herman Tolentino,MD
+ */
 class MySQLDB {
 
+    /**
+     * Connection ID
+     * @var int
+     */
     var $conn = 0;
 
+    /**
+     * Constructor
+     */
     function mysqldb () {
-    //
-    // database module
-    //
-        $this->version = "0.5";
+        $this->version = "0.6";
         $this->author = "Herman Tolentino MD";
         if (!file_exists(GAME_DIR."modules/_dbselect.php")) {
             $this->setup(GAME_DIR."config/db.xml");
         }
-        // 0.3 modified system table creation process
-        // 0.4 added mysql_version()
-        // 0.5 added table creation information
     }
 
+    /**
+     * Setup
+     * 
+     * writes down _dbselect.php in the modules directory
+     * 
+     * @param string $filename
+     */
     function setup() {
-    //
-    // writes down _dbselect.php
-    //
         if (func_num_args()>0) {
             $arg_list = func_get_args();
             $filename = $arg_list[0];
@@ -49,6 +79,13 @@ class MySQLDB {
         }
     }
 
+    /**
+     * Connect DB
+     * 
+     * Connect to the database. If they do not exist create database and system tables
+     * 
+     * @param string $dbname 
+     */
     function connectdb() {
         if (func_num_args()>0) {
             $arg_list = func_get_args();
@@ -56,37 +93,77 @@ class MySQLDB {
         }
         //$self->conn = mysql_connect($_SESSION["dbhost"], $_SESSION["dbuser"], $_SESSION["dbpass"]) or die(mysql_errno().": ".mysql_error());
         if (!mysql_select_db($dbname)) {
-            $this->create_system_tables($dbname);
-
-        }
+        	$this->create_system_db($dbname);
+        }  else {
+        	$sql = "show tables like 'game_user';";
+			if ($result = mysql_query($sql)) {
+				if (!mysql_num_rows($result)) {
+					$this->create_system_tables($dbname);
+				}
+			}
+        
+		}
     }
 
+    /**
+     * Select DB
+     * 
+     * @param string $db
+     */
     function selectdb ($db) {
         mysql_select_db("$db");
     }
 
+    /**
+     * Connection ID
+     * 
+     * @return int $conn
+     *  
+     */
     function connid () {
         return $this->conn;
     }
 
+    /**
+     * Mysql Version 
+     * 
+     * Check MySQL version. due to password field change, longer hash in 4.0+ versions
+     * 
+     * @return string $mysql_server_version
+     */
     function mysql_version() {
-    //
-    // checks mysql version
-    // due to password field change, longer hash in 4.0+ versions
-    //
         list($mysql_server_version, $x) = explode("-",mysql_get_server_info());
         return $mysql_server_version;
     }
+    
+    /**
+     * Create System Database
+     * 
+     * @param string $dbname
+     */
+    function create_system_db() {
+		 if (func_num_args()>0) {
+            $arg_list = func_get_args();
+            $dbname = $arg_list[0];
+        }
+        
+        mysql_query("CREATE DATABASE `$dbname`;") or die(mysql_errno().": ".mysql_error());
+        
+		$this->create_system_tables($dbname);           	
+    }
+    
 
+    /**
+     * Create System Tables
+     * 
+     * @param string $dbname
+     */
     function create_system_tables() {
-    //
-    // create system tables if not present
-    //
         if (func_num_args()>0) {
             $arg_list = func_get_args();
             $dbname = $arg_list[0];
         }
-        mysql_query("CREATE DATABASE `$dbname`;") or die(mysql_errno().": ".mysql_error());
+
         mysql_select_db($dbname);
 
         //module::load_sql("setup.sql");
@@ -325,6 +402,11 @@ class MySQLDB {
         }
     }
 
+    /**
+     * Parse XML
+     * 
+     * @todo explain the function
+     */
     function parseXML($mvalues) {
 
         for ($i=0; $i<count($mvalues); $i++) {
@@ -337,8 +419,14 @@ class MySQLDB {
         }
     }
 
+    /**
+     * Read Configuration
+     * 
+     * read the xml database
+     * @param string $filename
+     * @return array $tdb values from the configuartion file 
+     */
     function readconfig($filename) {
-    // read the xml database
         $data = implode("",file($filename));
         $parser = xml_parser_create();
         xml_parser_set_option($parser,XML_OPTION_CASE_FOLDING,0);
@@ -364,6 +452,12 @@ class MySQLDB {
         return $tdb;
     }
 
+    /** 
+     * Backup Database
+     * 
+     * intentionally empty function
+     * @todo create the function
+     */
     function backup_database() {
     }
 
