@@ -11,11 +11,12 @@ class appointment extends module {
     // do not forget to update version
     //
         $this->author = 'Herman Tolentino MD';
-        $this->version = "0.4-".date("Y-m-d");
+        $this->version = "0.5-".date("Y-m-d");
         $this->module = "appointment";
         $this->description = "CHITS Module - Appointments";
         // 0.3 added foreign key for appointment_id to m_consult_appointments
         // 0.4 added unique key constraint (consult_id, appointment_id) to m_consult_appointment
+        // 0.5 solved calendar bug
     }
 
     // --------------- STANDARD MODULE FUNCTIONS ------------------
