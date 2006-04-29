@@ -18,7 +18,9 @@
  * 0.6 Added by Aditya Naik<br/>
  *     - Changed the connectdb function to also check if the tables exists. if not then create the tables also.
  *     - Added Documentation  
- * 
+ * 0.07 Added by Herman Tolentino
+ *     - added check_engine_active() function to check if INNODB or other engine is active.
+ *
  * @package game
  * @author Herman Tolentino,MD <herman.tolentino@gmail.com>
  * @version 0.6
@@ -40,6 +42,27 @@ class MySQLDB {
         $this->author = "Herman Tolentino MD";
         if (!file_exists(GAME_DIR."modules/_dbselect.php")) {
             $this->setup(GAME_DIR."config/db.xml");
+        }
+    }
+
+    /**
+     * Check Engine Active
+     * 
+     * checks if MySQL engine is active
+     * parameter is engine name:
+     * INNODB, MYISAM, NDB
+     * 
+     * @param string $engine
+     */
+    function check_engine_active($engine = "INNODB") {
+        
+        $sql = "show $engine status";
+        if ($result = mysql_query($sql)) {
+        } else {
+            if (ereg("skip-innodb is defined", mysql_error())) {
+                print "Database ERROR: InnoDB engine is not enabled in MySQL. Please enable";
+                exit;
+            }
         }
     }
 
@@ -92,6 +115,7 @@ class MySQLDB {
             $dbname = $arg_list[0];
         }
         //$self->conn = mysql_connect($_SESSION["dbhost"], $_SESSION["dbuser"], $_SESSION["dbpass"]) or die(mysql_errno().": ".mysql_error());
+        $this->check_engine_active("INNODB");
         if (!mysql_select_db($dbname)) {
         	$this->create_system_db($dbname);
         }  else {
@@ -240,7 +264,8 @@ class MySQLDB {
         // table: location
         // This table interacts with permission system to specify module access
         // per given location. A location entity is typical of health care enterprise
-        // systems.
+        // systems. Examples of locations in health centers: admission section,
+        // treatment rooms, consulation and laboratory.
         if (module::execsql("CREATE TABLE location (".
             "location_id varchar(10) NOT NULL default '',".
             "location_name varchar(50) NOT NULL default '',".
@@ -250,6 +275,7 @@ class MySQLDB {
         }
 
         // location content
+        // we put here some locations mentioned above
         module::execsql("INSERT INTO location VALUES ('ADM','Admissions');");
         module::execsql("INSERT INTO location VALUES ('CONS','Consultations');");
         module::execsql("INSERT INTO location VALUES ('LAB','Laboratory');");
@@ -288,7 +314,8 @@ class MySQLDB {
         }
 
         // table: module_menu_location
-        // This table is a bridge entity between menu and location
+        // This table is a bridge entity between menu and location. This enables location-based 
+        // menu access.
         if (module::execsql("CREATE TABLE module_menu_location (".
             "location_id varchar(10) NOT NULL default '',".
             "module_id varchar(25) NOT NULL default '',".
@@ -363,7 +390,10 @@ class MySQLDB {
         }
 
         // table: role
-        // This table stores role definitions
+        // This table stores role definitions. Data access field is codes as follows:
+        // Position 1: Read (1 or 0)
+        // Position 2: Update (1 or 0)
+        // Position 3: Delete (1 or 0)
         if (module::execsql("CREATE TABLE role (".
             "role_id varchar(10) NOT NULL default '',".
             "role_dataaccess char(3) NOT NULL default '',".
@@ -383,7 +413,8 @@ class MySQLDB {
         module::execsql("INSERT INTO role VALUES ('LABAIDE','110','Lab Aide');");
 
         // table: terms
-        // this is the multilingualization table
+        // This is the multilingualization table. Please see detailed description in
+        // developer guide.
         if (module::execsql("CREATE TABLE terms (".
             "termid varchar(50) NOT NULL default '',".
             "languageid varchar(10) NOT NULL default '',".
