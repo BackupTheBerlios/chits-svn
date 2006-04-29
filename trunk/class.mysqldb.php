@@ -38,7 +38,7 @@ class MySQLDB {
      * Constructor
      */
     function mysqldb () {
-        $this->version = "0.6";
+        $this->version = "0.07";
         $this->author = "Herman Tolentino MD";
         if (!file_exists(GAME_DIR."modules/_dbselect.php")) {
             $this->setup(GAME_DIR."config/db.xml");
