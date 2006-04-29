@@ -60,6 +60,7 @@ class patient extends module{
         module::set_lang("FTITLE_OLD_PATIENT", "english", "OLD PATIENT", "Y");
         module::set_lang("FTITLE_CONSULT_MODULE", "english", "CONSULT MODULES", "Y");
         module::set_lang("LBL_FIRST_NAME", "english", "FIRST NAME", "Y");
+        module::set_lang("LBL_CONSULT_MODULE", "english", "CONSULT MODULE", "Y");
         module::set_lang("LBL_LAST_NAME", "english", "LAST NAME", "Y");
         module::set_lang("LBL_PATIENT_DOB", "english", "DATE OF BIRTH", "Y");
         module::set_lang("LBL_PATIENT_ID", "english", "PATIENT ID", "Y");
