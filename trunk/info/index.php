@@ -11,10 +11,10 @@ ob_start();
 //              everything starts from here!!!
 //
 // Version 1.1
-// 0.9 nothing done
-// 1.0 code reorganization
-// 1.1 use web services
-//
+// 0.90 nothing done
+// 1.00 code reorganization
+// 1.01 use web services
+//      tested JPGRAPH
 // TODO
 // 1. template based layout using buffer and regular expression functions
 // -------------------------------------------------------------------------------
@@ -32,7 +32,7 @@ header("Pragma: no-cache"); // HTTP/1.0
 define("GAME_DIR", '../');
 define("GAME_DUMP_DIR", '../dump');
 define("GAME_GRAPH_DIR", '../graph');
-define("JPGRAPH_DIR", '/home/herman/Documents/Download/jpgraph/jpgraph-1.20.2/src/');
+define("JPGRAPH_DIR", '../jpgraph/');
 // very important setting for FPDF
 define("FPDF_FONTPATH",'../fonts/');
 
