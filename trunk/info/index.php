@@ -17,6 +17,8 @@ ob_start();
 //      tested JPGRAPH
 // TODO
 // 1. template based layout using buffer and regular expression functions
+// 2. move css to file
+// 3. objectify all include calls
 // -------------------------------------------------------------------------------
 
 // start session
