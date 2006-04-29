@@ -1,10 +1,8 @@
 <?
-
-
 /**
  * Patient Module
  * 
- * @package module 
+ * @package chits-base 
  */
 
 /**
