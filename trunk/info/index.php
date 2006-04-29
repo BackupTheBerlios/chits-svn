@@ -10,7 +10,7 @@ ob_start();
 // Description: this is level one script for GAME
 //              everything starts from here!!!
 //
-// Version 1.1
+// Version 1.01
 // 0.90 nothing done
 // 1.00 code reorganization
 // 1.01 use web services
