@@ -1,60 +1,59 @@
 <?
-if (!isset($_SESSION["mainparam"])) {
-    session_register("mainparam");
-}
-if (!isset($_SESSION["db"])) {
-    session_register("db");
-}
-if (!isset($_SESSION["dbname"])) {
-    session_register("dbname");
-}
-if (!isset($_SESSION["dbuser"])) {
-    session_register("dbuser");
-}
-if (!isset($_SESSION["dbpass"])) {
-    session_register("dbpass");
-}
-if (!isset($_SESSION["validuser"])) {
-    session_register("validuser");
-    $_SESSION["validuser"] = 0;
-}
-if (!isset($_SESSION["userid"])) {
-    session_register("userid");
-}
-if (!isset($_SESSION["isadmin"])) {
-    session_register("isadmin");
-}
-if (!isset($myencoding)) {
-    session_register("myencoding");
-    $_SESSION["myencoding"] = "iso-8859-1";
-}
-if (!isset($user_lang)) {
+/**
+*
+*   Initialize session variables here
+*   Make sure register_globals is Off in php.ini
+*
+**/
+if (!isset($SESSION["user_lang"])) {
     session_register("myencoding");
     session_register("user_lang");
     $_SESSION["user_lang"] = "english";
+    $_SESSION["myencoding"] = "iso-8859-1";
 }
-if (!isset($chits_debug)) {
-    session_register("debug");
-    $_SESSION["chits_debug"] = false;
+if (!isset($_SESSION["mainparam"])) {
+    $_SESSION["mainparam"] = "";
 }
-if (!isset($patient_id)) {
-    session_register("patient_id");
+if (!isset($_SESSION["validuser"])) {
+    $_SESSION["validuser"] = 0;
 }
-if (!isset($consult_id)) {
-    session_register("consult_id");
+if (!isset($_SESSION["db"])) {
+    $_SESSION["db"] = "";
 }
-if (!isset($recordlevel)) {
-    session_register("recordlevel");
+if (!isset($_SESSION["dbname"])) {
+    $_SESSION["dbname"] = "";
 }
-if (!isset($gamedb)) {
-    session_register("gamedb");
+if (!isset($_SESSION["dbuser"])) {
+    $_SESSION["dbuser"] = "";
 }
-if (!isset($datanode)) {
-    session_register("datanode");
+if (!isset($_SESSION["dbpass"])) {
+    $_SESSION["dbpass"] = "";
+}
+if (!isset($_SESSION["userid"])) {
+    $_SESSION["userid"] = "";
+}
+if (!isset($_SESSION["isadmin"])) {
+    $_SESSION["isadmin"] = false ;
+}
+if (!isset($_SESSION["gamedb"])) {
+    $_SESSION["gamedb"] = "";
+}
+if (!isset($_SESSION["datanode"])) {
     $_SESSION["datanode"] = array();
 }
-if (!isset($user_role)) {
-    session_register("user_role");
+if (!isset($_SESSION["chits_debug"])) {
+    $_SESSION["chits_debug"] = false;
 }
-
+if (!isset($_SESSION["patient_id"])) {
+    $_SESSION["patient_id"] = 0;
+}
+if (!isset($_SESSION["consult_id"])) {
+    $_SESSION["consult_id"] = 0;
+}
+if (!isset($_SESSION["recordlevel"])) {
+    $_SESSION["recordlevel"] = "";
+}
+if (!isset($_SESSION["user_role"])) {
+    $_SESSION["user_role"] = "";
+}
 ?>
