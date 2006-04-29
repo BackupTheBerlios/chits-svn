@@ -23,7 +23,7 @@
  *
  * @package game
  * @author Herman Tolentino,MD <herman.tolentino@gmail.com>
- * @version 0.6
+ * @version 0.07
  * @copyright Copyright 2006, Herman Tolentino,MD
  */
 class MySQLDB {
@@ -60,7 +60,7 @@ class MySQLDB {
         if ($result = mysql_query($sql)) {
         } else {
             if (ereg("skip-innodb is defined", mysql_error())) {
-                print "Database ERROR: InnoDB engine is not enabled in MySQL. Please enable";
+                print "Database ERROR: InnoDB engine is not enabled in MySQL. Please enable.";
                 exit;
             }
         }
