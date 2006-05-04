@@ -1,36 +1,54 @@
 <?
+/**
+ * contains the module class
+ *
+ * @package module
+ */
+/**
+ * Complaint Module Class
+ *
+ * <b>VERSION HISTORY</b><br/>
+ * 0.20 installed foreign key constraints<br/>
+ * 0.21 fixed the sql to create the table for compaints 
+ *
+ * @package module
+ * @author Herman Tolentino,MD <herman.tolentino@gmail.com>
+ * @version 0.21
+ * @copyright Copyright 2002, Herman Tolentino,MD
+ */
 class complaint extends module {
 
-    // Author: Herman Tolentino MD
-    // CHITS Project 2004
-
-    function complaint() {
-        //
-        // do not forget to update version
-        //
+    /**
+	 * Complaint Class Constructor
+	 *
+	 * Creates the complaint class and sets the author name and version
+	 *
+	 * @return module instance of complaint class
+	 */
+	function complaint() {
         $this->author = 'Herman Tolentino MD';
-        $this->version = "0.2-".date("Y-m-d");
+        $this->version = "0.21-".date("Y-m-d");
         $this->module = "complaint";
         $this->description = "CHITS Library - Chief Complaint";
-        // 0.2 installed foreign key constraints
-
     }
 
-    // --------------- STANDARD MODULE FUNCTIONS ------------------
-
-    function init_deps() {
-    //
-    // insert dependencies in module_dependencies
-    //
+    /**
+	 * Initilize Dependencies
+	 * 
+	 * Insert dependencies in module_dependencies
+	 */
+	function init_deps() {
         module::set_dep($this->module, "module");
         module::set_dep($this->module, "healthcenter");
 
     }
 
-    function init_lang() {
-    //
-    // insert necessary language directives
-    //
+    /**
+	 * Initilize Language
+	 * 
+	 * insert necessary language directives
+	 */
+	function init_lang() {
         module::set_lang("LBL_COMPLAINTCAT", "english", "COMPLAINT CATEGORY", "Y");
         module::set_lang("FTITLE_CONSULT_COMPLAINT", "english", "CONSULT COMPLAINT", "Y");
         module::set_lang("LBL_COMPLAINT", "english", "COMPLAINT", "Y");
@@ -45,23 +63,30 @@ class complaint extends module {
     function init_stats() {
     }
 
+	/**
+	 * Initialize Help
+	 */
     function init_help() {
     }
 
+	/**
+	 * Initilize Menu
+	 * 
+	 * Sets Menu Entried and detail
+	 */
     function init_menu() {
-        // use this for updating menu system
         if (func_num_args()>0) {
             $arg_list = func_get_args();
         }
 
-        // menu entries
         module::set_menu($this->module, "Complaint", "LIBRARIES", "_complaint");
-        
-        // add more detail
         module::set_detail($this->description, $this->version, $this->author, $this->module);
 
     }
 
+	/**
+	 * Initilize SQL
+	 */
     function init_sql() {
         if (func_num_args()>0) {
             $arg_list = func_get_args();
@@ -73,7 +98,7 @@ class complaint extends module {
                "`complaint_id` varchar(10) NOT NULL default '',".
                "`complaint_module` varchar(25) NOT NULL default '',".
                "`complaint_name` varchar(100) NOT NULL default '',".
-               "PRIMARY KEY  (`complaint_id`), ".
+               "PRIMARY KEY  (`complaint_id`) ".
                ") TYPE=InnoDB;");
 
         // load initial data
@@ -84,31 +109,31 @@ class complaint extends module {
 
     }
 
+ 	/**
+	 * Drop Tables
+	 */
     function drop_tables() {
         module::execsql("DROP TABLE `m_lib_complaint`;");
     }
 
 
-    // --------------- CUSTOM MODULE FUNCTIONS ------------------
+	/* 
+	 * Changes by Aditya Naik for v0.21
+	 * deleted function delted module_name
+	 * the function was the same function from the parent module class
+	 */
 
-    function module_name() {
-        if (func_num_args()) {
-            $arg_list = func_get_args();
-            $id = $arg_list[0];
-            $sql = "select complaint_module from m_lib_complaint where complaint_id = '$id'";
-            if ($result = mysql_query($sql)) {
-                if (mysql_num_rows($result)) {
-                    list($name) = mysql_fetch_array($result);
-                    return $name;
-                }
-            }
-        }
-    }
-
+	/**
+	 * Menu Modules
+	 * 
+	 * @param string $menu_id
+	 * @param array $post_vars
+	 * @param array $get_vars
+	 * @param boolean $validuser
+	 * @param booleam $isadmin
+	 * @todo Explain what this function does
+	 */
     function menu_modules() {
-    //
-    // sets up complaint modules as menu
-    //
         if (func_num_args()) {
             $arg_list = func_get_args();
             $menu_id = $arg_list[0];
@@ -132,7 +157,18 @@ class complaint extends module {
         }
     }
 
-    function _complaint() {
+    /**
+	 * Main Complaint Module function
+	 * 
+	 * this function is called when clicked on Complaints in the library module
+	 * 
+	 * @param string $menu_id
+	 * @param array $post_vars
+	 * @param array $get_vars
+	 * @param boolean $validuser
+	 * @param booleam $isadmin
+	 */
+	 function _complaint() {
         if (func_num_args()>0) {
             $arg_list = func_get_args();
             $menu_id = $arg_list[0];
@@ -153,7 +189,17 @@ class complaint extends module {
         $this->form_complaint($menu_id, $post_vars, $get_vars);
     }
 
-    function display_complaint() {
+    /**
+     * Display Complaints
+     * 
+     * Shows all the complaints in the database
+	 * @param string $menu_id
+	 * @param array $post_vars
+	 * @param array $get_vars
+	 * @param boolean $validuser
+	 * @param booleam $isadmin
+     */
+     function display_complaint() {
         if (func_num_args()) {
             $arg_list = func_get_args();
             $menu_id = $arg_list[0];
@@ -178,6 +224,15 @@ class complaint extends module {
         print "</table><br>";
     }
 
+    /**
+     * Process Complaints
+     * 
+     * Processes any complaint update, addition or deletion
+     * 
+	 * @param string $menu_id
+	 * @param array $post_vars
+	 * @param array $get_vars
+     */
     function process_complaint() {
         if (func_num_args()>0) {
             $arg_list = func_get_args();
@@ -223,6 +278,15 @@ class complaint extends module {
         }
     }
 
+    /**
+     * Show Form for Complaints
+     * 
+     * Show a form to add, update and delete complaint
+     * 
+	 * @param string $menu_id
+	 * @param array $post_vars
+	 * @param array $get_vars
+     */
     function form_complaint() {
         if (func_num_args()>0) {
             $arg_list = func_get_args();
@@ -269,7 +333,18 @@ class complaint extends module {
         print "</form>";
         print "</table><br>";
     }
-    function show_complaintcat() {
+    
+    
+    /**
+	 * Show complaint in dropdown box
+	 * 
+	 * @param string $menu_id
+	 * @param array $post_vars
+	 * @param array $get_vars
+	 * @param boolean $validuser
+	 * @param booleam $isadmin
+	 */
+	 function show_complaintcat() {
         if (func_num_args()) {
             $arg_list = func_get_args();
             $menu_id = $arg_list[0];
@@ -290,7 +365,12 @@ class complaint extends module {
         }
     }
 
-    function checkbox_complaintcat() {
+    /**
+	 * Show complaint with a checkbox
+	 * 
+	 * @param string $complaint_id
+	 */
+	 function checkbox_complaintcat() {
         if (func_num_args()) {
             $arg_list = func_get_args();
             $complaint_id = $arg_list[0];
@@ -305,7 +385,5 @@ class complaint extends module {
         }
         
     }
-
-// end of class
 }
 ?>
